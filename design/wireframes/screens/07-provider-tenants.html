@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Provider console: tenants · Metis wireframe</title>
+<meta name="wf:id" content="provider-tenants">
+<meta name="wf:title" content="Provider console: tenants">
+<meta name="wf:area" content="Access & tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="TEN-01 TEN-06 TEN-07 TEN-08 TEN-09 TEN-13 TEN-15">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Provider operations console: list and create tenants, move them through their lifecycle, with metadata and usage only and no access to business data without a support grant.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="provider" data-nav="provider-tenants" data-crumbs="Metis operations / Tenants">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Tenants</div>
+      <div class="muted small" style="margin-top:4px">Provider operations · data as of 22 Sep 2026, 09:40</div>
+    </div>
+    <span class="btn primary">Create tenant</span>
+  </section>
+
+  <div class="banner warn" data-req="TEN-08 TEN-09">
+    <span class="anno" data-n="1"></span>
+    <div>Provider staff see tenant metadata and usage only. Business data (projects, WBS, reports) needs an active support grant from that tenant's admin, and every access is logged in the tenant's audit log.</div>
+  </div>
+
+  <section class="grid c5" data-req="TEN-06">
+    <div class="card kpi"><div class="k-label">Tenants</div><div class="k-value">46</div></div>
+    <div class="card kpi"><div class="k-label">Active</div><div class="k-value">38</div></div>
+    <div class="card kpi"><div class="k-label">Trial</div><div class="k-value">6</div><div class="k-delta">2 end this week</div></div>
+    <div class="card kpi"><div class="k-label">Suspended</div><div class="k-value">1</div></div>
+    <div class="card kpi"><div class="k-label">Cancelled, in export window</div><div class="k-value">1</div></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr)">
+    <div class="stack">
+      <div class="card" data-req="TEN-08 TEN-06">
+        <div class="head"><span class="h3">All tenants</span><div class="input ph" style="width:220px">Search tenants</div><div class="select" style="min-width:120px">Any plan</div><div class="select" style="min-width:120px">Any status</div></div>
+        <table class="table">
+          <thead><tr><th>Tenant</th><th>Plan</th><th>Region <span class="anno" data-n="5"></span></th><th>Status</th><th class="num">Seats</th><th class="num">Storage</th><th class="num">MCP calls</th></tr></thead>
+          <tbody>
+            <tr class="sel"><td class="wrap"><div>Acme Holdings</div><div class="small muted">since 3 Feb 2026</div></td><td>Business</td><td>APAC</td><td><span class="chip good">Active</span></td><td class="num">180 / 250</td><td class="num">62 GB</td><td class="num">41.2K</td></tr>
+            <tr><td class="wrap"><div>Blue Harbor Bank</div><div class="small muted">since 12 Nov 2025</div></td><td>Enterprise</td><td>APAC</td><td><span class="chip good">Active</span></td><td class="num">1,240 / 1,500</td><td class="num">410 GB</td><td class="num">380K</td></tr>
+            <tr><td class="wrap"><div>Kite Logistics</div><div class="small muted">trial started 13 Sep 2026</div></td><td>Business</td><td>EU</td><td><span class="chip running">Trial · day 9</span></td><td class="num">22 / 50</td><td class="num">3 GB</td><td class="num">2.1K</td></tr>
+            <tr><td class="wrap"><div>Orchid Retail</div><div class="small muted">unpaid invoice</div></td><td>Team</td><td>US</td><td><span class="chip waiting">Suspended</span></td><td class="num">40 / 40</td><td class="num">12 GB</td><td class="num">0</td></tr>
+            <tr><td class="wrap"><div>Lumen Health Group</div><div class="small muted">export window until 30 Sep 2026</div></td><td>Enterprise</td><td>EU</td><td><span class="chip critical">Cancelled</span></td><td class="num">0 / 300</td><td class="num">88 GB</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+        <div class="body row between">
+          <span class="small muted">Selected: Acme Holdings · tenant admin Q. Tran · support grant active until 24 Sep 2026, 18:00</span>
+          <div class="row"><span class="btn secondary sm">Suspend</span><span class="btn danger sm">Cancel tenant <span class="anno" data-n="4"></span></span></div>
+        </div>
+      </div>
+
+      <div class="card" data-req="TEN-06 TEN-07">
+        <div class="head"><span class="h3">Tenant lifecycle <span class="anno" data-n="3"></span></span></div>
+        <div class="body stack">
+          <div class="pipeline">
+            <div class="st">Trial<div class="small muted">full product, plan limits</div></div><span class="gate"></span>
+            <div class="st cur">Active<div class="small muted">contract in force · Acme Holdings</div></div><span class="gate"></span>
+            <div class="st">Suspended<div class="small muted">read-only, export allowed</div></div><span class="gate"></span>
+            <div class="st">Cancelled<div class="small muted">30-day export window</div></div><span class="gate"></span>
+            <div class="st">Deleted<div class="small muted">purged after retention</div></div>
+          </div>
+          <div class="small muted">Deletion produces a deletion certificate for the customer. Suspension never removes data.</div>
+        </div>
+      </div>
+
+      <div class="card" style="opacity:.6" data-req="TEN-15">
+        <div class="head"><span class="h3">Usage metering export <span class="anno" data-n="6"></span></span><span class="tag future">Planned V2</span></div>
+        <div class="body small muted">Monthly usage per tenant (active users, storage, MCP calls) for billing and capacity planning.</div>
+      </div>
+    </div>
+
+    <div class="card" data-req="TEN-01 TEN-13">
+      <div class="head"><span class="h3">Create tenant <span class="anno" data-n="2"></span></span></div>
+      <div class="body stack s">
+        <div class="field"><label>Organization name <span class="req">*</span></label><div class="input">Nova Energy</div></div>
+        <div class="field"><label>Email domains</label><div class="input">nova.example</div></div>
+        <div class="field"><label>First tenant admin <span class="req">*</span></label><div class="input">it.admin@nova.example</div></div>
+        <div class="grid c2">
+          <div class="field"><label>Plan</label><div class="select">Business</div></div>
+          <div class="field"><label>Start as</label><span class="seg"><span class="on">Trial</span><span>Active</span></span></div>
+        </div>
+        <div class="grid c2">
+          <div class="field"><label>Trial length</label><div class="select">30 days</div></div>
+          <div class="field"><label>Region <span class="tag future">Planned V2: choice</span></label><div class="select">EU</div></div>
+        </div>
+        <div class="banner small">Creates the tenant, sends the admin invitation, adds a default workspace and the default lifecycle framework from the global library.</div>
+        <span class="btn primary" style="align-self:flex-start">Create tenant</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">TEN-08, TEN-09</span> The provider console shows metadata and usage only; business data needs a time-limited support grant from the tenant admin.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">TEN-01</span> Creating a tenant also invites its first admin and seeds a default workspace and lifecycle framework, so the tenant can start at once.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">TEN-06</span> Lifecycle states and what each allows: suspended tenants are read-only and can still export.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">TEN-07</span> Cancelling opens an export window before deletion; the tenant can export all data and files during it.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">TEN-13</span> Every tenant has a home region; choosing a region for data residency is P1, so the MVP uses the default region.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">TEN-15</span> Usage metering for billing is P1; the MVP shows usage per tenant in this table only.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

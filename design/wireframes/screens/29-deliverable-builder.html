@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deliverable Builder · Metis wireframe</title>
+<meta name="wf:id" content="deliverable-builder">
+<meta name="wf:title" content="Deliverable Builder">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="BLD-01 BLD-02 BLD-03 BLD-04 BLD-05 BLD-06 BLD-07 BLD-08 BLD-10 BLD-12 BR-31 BR-41">
+<meta name="wf:poc" content="15 16 17 18">
+<meta name="wf:summary" content="Pick a target deliverable and a process framework, adjust the swimlane canvas or its keyboard list view, preview the result, then build 16 pre-wired WBS items with labels, dependencies and a saved Blueprint.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-bg { position: absolute; inset: 0; z-index: 1; overflow: hidden; }
+  .x-fw { border: 1.5px solid var(--line); border-radius: var(--radius); padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }
+  .x-fw.on { border-color: var(--accent); background: var(--accent-soft); }
+  .x-radio { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; }
+  .x-radio::before { content: ""; width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--line-strong); background: var(--canvas); }
+  .x-radio.on::before { border: 4px solid var(--ink); }
+  .x-build .node { font-size: 11.5px; padding: 0 8px; }
+  .x-fk { padding: 2px 5px; border-radius: 4px; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="wbs">
+<main>
+
+  <section class="overlay" style="border-radius:var(--radius-lg);padding:16px">
+    <div class="card x-bg"><div class="body muted small">WBS Master (table) behind the Builder</div></div>
+
+    <div class="modal">
+      <div class="head"><span class="h3">Deliverable Builder · 1.4 Demo Deliverable</span><span class="right btn ghost sm">Close</span></div>
+      <div class="stack" style="padding:16px 18px">
+
+        <div class="grid" style="grid-template-columns: minmax(0, 1fr) minmax(0, 2fr)">
+          <div class="stack s" data-req="BLD-01">
+            <div class="label">1 · Which deliverable is this for? <span class="anno" data-n="1"></span></div>
+            <span class="x-radio">Build under an existing item</span>
+            <span class="x-radio on">Create a new deliverable</span>
+            <div class="field"><label>Deliverable name</label><div class="input">Demo Deliverable</div></div>
+            <div class="field"><label>Parent category</label><div class="select">1.0 Deliverables</div></div>
+            <div class="small muted">New code: 1.4 (generated)</div>
+          </div>
+          <div class="stack s" data-req="BLD-02">
+            <div class="label">2 · Choose a process framework</div>
+            <div class="grid c3">
+              <div class="x-fw on"><b>CGI Still Renders</b><span class="small muted">Camera Angle to Draft to Pre-Finals to Final, gated by approvals, quality checks, deposits and milestones</span><span class="small num">16 items · 15 relationships</span><span class="btn ghost sm" style="padding-left:0">Preview</span></div>
+              <div class="x-fw"><b>3D Animation / Video</b><span class="small muted">PreViz to Draft Flow to Frame Check to Final Render, with client approvals and voice or footage inputs</span><span class="small num">12 items · 11 relationships</span><span class="btn ghost sm" style="padding-left:0">Preview</span></div>
+              <div class="x-fw"><b>Simple Review Loop</b><span class="small muted">Draft to Internal Review to Client Review to Final</span><span class="small num">6 items · 5 relationships</span><span class="btn ghost sm" style="padding-left:0">Preview</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row between" data-req="BLD-03 BLD-04 BLD-12 BR-41">
+          <div class="row"><div class="field"><label>Start date</label><div class="input" style="min-width:150px">22 Sep 2026</div></div><span class="anno" data-n="2"></span><span class="seg" style="align-self:flex-end"><span class="on">Canvas</span><span>List</span></span></div>
+          <div class="small muted" style="max-width:700px">Mouse: drag a node along its lane to reschedule, click to edit with the full item form, drag the link handle onto another node to connect, double-click a lane line to add a point, select an arrow and press Delete, + adds a node. Keyboard: Tab, arrow keys, Enter, C and Delete on the canvas, or every edit in the List view.</div>
+        </div>
+
+        <div class="canvas x-build" style="height:384px" data-req="BLD-03 BLD-04 BLD-06">
+          <svg class="links" viewBox="0 0 1090 384" width="1090" height="384" aria-hidden="true">
+            <defs><marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8B8B96"/></marker></defs>
+            <g fill="none" stroke="#8B8B96" stroke-width="1.5" marker-end="url(#a)">
+              <path d="M315 145V49"/><path d="M170 337V125H345V49"/><path d="M440 47V79"/><path d="M565 81V49"/>
+              <path d="M480 111V271"/><path d="M590 47V207"/><path d="M700 145V113"/><path d="M655 209V128H690V113"/>
+              <path d="M815 81V49"/><path d="M750 337V113"/><path d="M870 47V207"/><path d="M930 209V113"/>
+              <path d="M1040 111V271"/><path d="M1060 145V49"/><path d="M1000 81V49"/>
+            </g>
+          </svg>
+          <div class="lane"><span class="lname">Deliverables</span>
+            <div class="node" style="left:300px"><span class="code">1.4.1</span> Camera Angle</div>
+            <div class="node" style="left:560px"><span class="code">1.4.2</span> Draft</div>
+            <div class="node" style="left:800px"><span class="code">1.4.3</span> Pre-Finals</div>
+            <div class="node" style="left:985px"><span class="code">1.4.4</span> Final</div>
+          </div>
+          <div class="lane"><span class="lname">Approval</span>
+            <div class="node" style="left:420px"><span class="code">1.4.5</span> <span class="lbl gate"></span> C.A. Approval</div>
+            <div class="node" style="left:680px"><span class="code">1.4.6</span> <span class="lbl gate"></span> Draft Approval</div>
+            <div class="node" style="left:880px"><span class="code">1.4.7</span> <span class="lbl gate"></span> Prefinal Approval</div>
+          </div>
+          <div class="lane"><span class="lname">Input required</span>
+            <div class="node" style="left:150px"><span class="code">1.4.8</span> <span class="lbl inreq"></span> Confirmed Modeling</div>
+            <div class="node" style="left:600px"><span class="code">1.4.9</span> <span class="lbl inreq"></span> Payment Deposit 1</div>
+            <div class="node" style="left:900px"><span class="code">1.4.10</span> <span class="lbl inreq"></span> Payment Deposit 2</div>
+          </div>
+          <div class="lane"><span class="lname">Quality gate</span>
+            <div class="node" style="left:520px"><span class="code">1.4.11</span> <span class="lbl cp"></span> Quality Check 1</div>
+            <div class="node" style="left:760px"><span class="code">1.4.12</span> <span class="lbl cp"></span> Final Quality Check</div>
+          </div>
+          <div class="lane"><span class="lname">Milestones</span>
+            <div class="node" style="left:360px"><span class="code">1.4.13</span> <span class="lbl ms"></span> Milestone 1: Angles locked</div>
+            <div class="node sel" style="left:840px"><span class="code">1.4.14</span> <span class="lbl ms"></span> Milestone 2: Prefinal locked</div>
+          </div>
+          <div class="lane"><span class="lname">Risk</span>
+            <div class="node" style="left:150px"><span class="code">1.4.15</span> <span class="lbl risk"></span> Risk Mitigation #1</div>
+            <div class="node" style="left:640px"><span class="code">1.4.16</span> <span class="lbl risk"></span> Communication</div>
+          </div>
+        </div>
+
+        <div class="row small" data-req="BLD-06">
+          <span class="label">Lane to WBS label <span class="anno" data-n="4"></span></span>
+          <span class="tag">Approval → <span class="lbl gate">Approval Gate</span></span>
+          <span class="tag">Input required → <span class="lbl inreq">Input Required</span></span>
+          <span class="tag">Quality gate → <span class="lbl cp">Checkpoint</span></span>
+          <span class="tag">Milestones → <span class="lbl ms">Milestone</span></span>
+          <span class="tag">Risk → <span class="lbl risk">Risk Related</span></span>
+          <span class="muted">All items are created under 1.4</span>
+        </div>
+
+        <div class="card sunk" data-req="BLD-05 BLD-07 BLD-12 BR-31">
+          <div class="head"><span class="h3">3 · Preview what will be built <span class="anno" data-n="7"></span></span><span class="small muted">Updates as you edit the canvas or the list</span></div>
+          <div class="body grid" style="grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 18px">
+            <div class="stack s small">
+              <div><b class="num">16 items</b> under 1.4 Demo Deliverable: 4 work items (1.4.1 to 1.4.4), 3 Approval Gate (1.4.5 to 1.4.7), 3 Input Required (1.4.8 to 1.4.10), 2 Checkpoint (1.4.11, 1.4.12), 2 Milestone (1.4.13, 1.4.14), 2 Risk Related (1.4.15, 1.4.16)</div>
+              <div><b class="num">15 relationships</b> exactly as drawn; dates computed from the start date 22 Sep 2026 and the framework offsets</div>
+              <div>Blueprint saved for 1.4; each item records framework CGI Still Renders v1.1</div>
+            </div>
+            <div class="stack s small">
+              <div><b>Same input, same result.</b> The same framework version, target and start date always build the same items, codes and links.</div>
+              <div><span class="anno" data-n="5"></span> <b>Running again for 1.4</b> first shows the difference: items to add, items unchanged, and items with progress, effort or comments, which are never overwritten. Then you add another set or cancel. 1.4 has no generated items yet.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot" data-req="BLD-05 BLD-08 BLD-10">
+        <span class="muted small" style="margin-right:auto">16 items · 15 relationships · framework CGI Still Renders v1.1 (built-in) <span class="anno" data-n="3"></span></span>
+        <span class="btn secondary">Back</span><span class="btn primary">Build 16 items into the WBS</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-req="BLD-12 BR-41">
+    <div class="head"><span class="h3">List view of the same canvas <span class="anno" data-n="6"></span></span><span class="small muted">Shown after Canvas / List is switched to List; both views edit one model</span></div>
+    <table class="table">
+      <thead><tr><th>Lane</th><th>Code</th><th>Node</th><th>Label</th><th>Connected from</th></tr></thead>
+      <tbody>
+        <tr><td>Input required</td><td>1.4.8</td><td>Confirmed Modeling</td><td><span class="lbl inreq">Input Required</span></td><td class="muted">Start of flow</td></tr>
+        <tr><td>Risk</td><td>1.4.15</td><td>Risk Mitigation #1</td><td><span class="lbl risk">Risk Related</span></td><td class="muted">Start of flow</td></tr>
+        <tr class="sel"><td>Deliverables</td><td>1.4.1</td><td><span class="kbd-focus x-fk">Camera Angle</span></td><td class="muted">None</td><td>1.4.8, 1.4.15</td></tr>
+        <tr><td>Approval</td><td>1.4.5</td><td>C.A. Approval</td><td><span class="lbl gate">Approval Gate</span></td><td>1.4.1</td></tr>
+        <tr><td>Deliverables</td><td>1.4.2</td><td>Draft</td><td class="muted">None</td><td>1.4.5</td></tr>
+        <tr><td>Milestones</td><td>1.4.13</td><td>Milestone 1: Angles locked</td><td><span class="lbl ms">Milestone</span></td><td>1.4.5</td></tr>
+        <tr><td colspan="5" class="muted">10 more nodes and 10 more relationships</td></tr>
+      </tbody>
+    </table>
+    <div class="body small muted">Keyboard: Tab moves through nodes lane by lane · arrow keys move the selected node · Enter edits · C connects to another node · Delete removes · ? lists every shortcut. The focused node shows the focus ring; the selected row uses the selection fill.</div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">BLD-01, BLD-02</span> Build under an existing item or create a new deliverable with its parent category; framework cards show the flow and item and relationship counts, with a read-only preview.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">BLD-03, BLD-04, BR-41</span> Lanes come from the framework. One start date drives every node date, and the canvas keeps the POC gestures: drag along the lane, click to edit, drag to connect, Delete to remove. Each gesture has a keyboard equivalent on the canvas, and the List view covers every edit without a pointer.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">BLD-05, BLD-10, BLD-08</span> Building creates 16 items and 15 dependencies in the WBS, saves this canvas as the Blueprint of 1.4, and records the framework and version on each generated item.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">BLD-06</span> Each lane maps to a WBS label and all items sit under the target deliverable, as recommended for the Builder rules decision. The POC instead created new top-level groups 7.x to 10.x.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">BLD-07, BLD-12, BR-31</span> Re-running the Builder never overwrites work: a second run for 1.4 first shows the difference against the existing set, then offers to add another set or cancel; items with progress, effort or comments are never changed.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">BLD-12, BR-41</span> The Canvas / List switch shows the same framework graph as an outline of lanes and nodes. Both views edit one model, so switching never loses work, and the list is the keyboard equivalent of the canvas: Tab moves through nodes, arrow keys move a node, Enter edits, C connects, Delete removes, ? lists every shortcut.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">BLD-12, BLD-05</span> Before anything is written, the preview lists the items, labels, relationships and dates that will be created; its counts equal what the build creates. Building is deterministic: the same framework version, target and start date always give the same result.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

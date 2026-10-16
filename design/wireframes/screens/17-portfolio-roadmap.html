@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portfolio roadmap · Metis wireframe</title>
+<meta name="wf:id" content="portfolio-roadmap">
+<meta name="wf:title" content="Portfolio roadmap">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="RMP-01 RMP-02 RMP-03 RMP-04 WBS-14 BR-23">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Eighteen-month roadmap of projects, MVP milestones and gates grouped by portfolio and program, with the cross-project dependency overlay and its conflicts.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-rm .scale { grid-template-columns: 230px repeat(6, 1fr); }
+  .x-rm .lane { grid-template-columns: 230px 1fr; }
+  .x-rm .bar { top: 20px; height: 8px; }
+  .x-rm .ms { top: 18px; }
+  .x-rm .lane .name .rag { margin-left: 6px; font-size: 11.5px; }
+  .x-rm .lane.group .name { white-space: nowrap; overflow: visible; }
+  .x-rm .lane.prog { min-height: 26px; }
+  .x-rm .lane.prog .name { font-size: 12px; color: var(--muted); padding-left: 18px; }
+  .x-rm .lane.prog .bed, .x-rm .lane.group .bed { height: 26px; }
+  .x-rm .ms.late { background: var(--critical); }
+  .x-rm .ms.gate.late { border-color: var(--critical); }
+  .x-rm .bar.pend { background: transparent; border: 1.5px dashed var(--line-strong); }
+  .x-rm .blabel { position: absolute; top: 3px; font-size: 11px; line-height: 13px; color: var(--muted); white-space: nowrap; }
+  .x-key { display: inline-flex; align-items: center; gap: 6px; }
+  .x-key .sw-bar { width: 22px; height: 8px; border-radius: 3px; background: var(--series-1); }
+  .x-key .sw-ms { width: 9px; height: 9px; transform: rotate(45deg); background: var(--ink); }
+  .x-key .sw-gate { width: 9px; height: 9px; transform: rotate(45deg); border: 2px solid var(--accent); }
+  .x-key .sw-late { width: 9px; height: 9px; transform: rotate(45deg); background: var(--critical); }
+  .x-key .sw-today { width: 0; height: 12px; border-left: 1.5px solid var(--critical); }
+</style>
+</head>
+<body data-shell="app" data-nav="roadmap" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / Roadmap">
+<main>
+
+  <section class="row between">
+    <div class="row"><span class="title">Roadmap</span><span class="muted">Q3 2026 to Q4 2027 · 128 projects, 11 shown</span></div>
+    <div class="row"><span class="btn secondary">Export</span></div>
+  </section>
+
+  <section class="card pad" data-req="RMP-01 RMP-03 RMP-04">
+    <div class="filters">
+      <div class="field"><label>Portfolio</label><div class="select">All</div></div>
+      <div class="field"><label>Program</label><div class="select">All</div></div>
+      <div class="field"><label>Health</label><div class="select">All</div></div>
+      <div class="field"><label>Zoom <span class="anno" data-n="1"></span></label><div class="seg"><span class="on">Quarter</span><span>Month</span></div></div>
+      <div class="field"><label>Group by</label><div class="row"><div class="seg"><span class="on">Portfolio</span><span>Strategic theme</span></div><span class="tag future">Planned V2</span></div></div>
+      <div class="field"><label>Show</label><div class="row"><span class="check on">MVPs</span><span class="check on">Gates</span><span class="check on">Dependencies</span></div></div>
+      <div class="field" style="opacity:.6"><label>Overlay <span class="anno" data-n="4"></span></label><div class="row"><span class="toggle">Lifecycle stages</span><span class="tag future">Planned V2</span></div></div>
+    </div>
+  </section>
+
+  <section class="card" data-req="RMP-01 RMP-02 WBS-14">
+    <div class="head">
+      <span class="h3">Projects, MVPs and gates</span>
+      <div class="legend">
+        <span class="x-key"><span class="sw-bar"></span>Project</span>
+        <span class="x-key"><span class="sw-ms"></span>MVP or milestone</span>
+        <span class="x-key"><span class="sw-gate"></span>Gate</span>
+        <span class="x-key"><span class="sw-late"></span>Late or conflict</span>
+        <span class="x-key"><span class="sw-today"></span>Today, 22 Sep 2026</span>
+      </div>
+    </div>
+    <div class="body">
+      <div class="rm x-rm" style="--cols:6; position:relative" id="x-rm">
+        <div class="scale"><span>Project</span><span>Q3 2026</span><span>Q4 2026</span><span>Q1 2027</span><span>Q2 2027</span><span>Q3 2027</span><span>Q4 2027</span></div>
+
+        <div class="lane group"><div class="name">Growth</div><div class="bed"><span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane prog"><div class="name">MSME Transformation</div><div class="bed"><span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane"><div class="name">MSME Payment<span class="rag g">On track</span></div><div class="bed">
+          <span class="bar" style="left:0;width:66.7%"></span>
+          <span class="ms" style="left:calc(49.8% - 6px)"></span><span class="blabel" style="left:calc(49.8% + 10px)">MVP1 30 Mar <span class="anno" data-n="3"></span></span>
+          <span class="ms late" id="x-mvp2" style="left:calc(68.1% - 6px)"></span><span class="blabel" style="left:calc(68.1% + 10px);color:var(--critical-text)">MVP2 forecast 8 Jul, baseline end 30 Jun</span>
+          <span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane"><div class="name">Merchant Onboarding<span class="rag a">At risk</span></div><div class="bed">
+          <span class="bar" style="left:0;width:69.4%"></span>
+          <span class="ms gate late" style="left:calc(14.3% - 6px)"></span><span class="blabel" style="left:calc(14.3% + 10px);color:var(--critical-text)">Solution gate, 5 days overdue</span>
+          <span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane prog"><div class="name">Customer</div><div class="bed"><span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane"><div class="name">Digital Sales<span class="rag a">At risk</span></div><div class="bed">
+          <span class="bar" style="left:0;width:83.3%"></span>
+          <span class="ms gate" style="left:calc(25% - 6px)"></span>
+          <span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane"><div class="name">Mobile App<span class="rag a">At risk</span></div><div class="bed">
+          <span class="bar" style="left:0;width:97.1%"></span>
+          <span class="bar pend" style="left:97.1%;width:2.9%"></span><span class="blabel" style="left:calc(97.1% - 190px)">CR-016 would add 4 weeks</span>
+          <span class="today" style="left:15.2%"></span></div></div>
+
+        <div class="lane group"><div class="name">Technology &amp; Regulatory</div><div class="bed"><span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane prog"><div class="name">Platform</div><div class="bed"><span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane"><div class="name">Core Platform<span class="rag r">Off track</span></div><div class="bed">
+          <span class="bar" style="left:0;width:75.9%"></span>
+          <span class="ms late" id="x-api" style="left:calc(66.1% - 6px)"></span><span class="blabel" style="left:calc(66.1% - 236px)">Core API v2 forecast 27 Jun (+12 days)</span>
+          <span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane"><div class="name">Data Platform<span class="rag a">At risk</span></div><div class="bed">
+          <span class="bar" style="left:0;width:88.9%"></span>
+          <span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane"><div class="name">Treasury API<span class="rag g">On track</span></div><div class="bed">
+          <span class="bar" style="left:0;width:61.2%"></span>
+          <span class="ms gate" style="left:calc(15.9% - 6px)"></span><span class="blabel" style="left:calc(15.9% + 10px)">Solution gate 26 Sep</span>
+          <span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane prog"><div class="name">Regulatory</div><div class="bed"><span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane"><div class="name">AML Upgrade<span class="rag g">On track</span></div><div class="bed">
+          <span class="bar" style="left:0;width:50%"></span>
+          <span class="ms gate" style="left:calc(47% - 6px)"></span>
+          <span class="today" style="left:15.2%"></span></div></div>
+        <div class="lane"><div class="name">KYC Automation<span class="rag a">At risk</span></div><div class="bed">
+          <span class="bar" style="left:0;width:44.3%"></span>
+          <span class="today" style="left:15.2%"></span></div></div>
+
+        <svg class="x-dep" viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;left:230px;top:0;width:calc(100% - 230px);height:100%;pointer-events:none;overflow:visible">
+          <polyline points="67.04,64.87 67.1,64.87 67.1,21.25 67.16,21.25" fill="none" vector-effect="non-scaling-stroke" style="stroke:var(--critical);stroke-width:1.5"></polyline>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-req="RMP-02 WBS-14 BR-23">
+    <div class="head"><span class="h3">Dependency conflicts <span class="anno" data-n="2"></span></span><span class="chip critical">1</span></div>
+    <div class="list-row"><span class="chip critical">Conflict</span><div class="grow"><div class="title-line">Core Platform, Core API v2 to MSME Payment, MVP2 (finish to start)</div><div class="sub">Predecessor forecast 27 Jun 2027 (+12 days) leaves MVP2 at 8 Jul 2027, after the MSME Payment baseline end of 30 Jun 2027. Nothing was moved automatically.</div></div><span class="btn secondary sm">Open dependency</span><span class="btn primary sm">Raise change request</span></div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">RMP-01</span> A 12 to 24 month window with quarter or month zoom and the shared filter row; the window starts in the current quarter so the today line is always visible.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">RMP-02, WBS-14, BR-23</span> The overlay draws cross-project dependencies and turns a link red when the successor cannot meet its date; the platform flags the conflict and never reschedules on its own.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">RMP-01</span> Filled diamonds are MVP releases and milestones from the WBS, outlined diamonds are lifecycle gates; anything late is red and keeps its label.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">RMP-03, RMP-04</span> Grouping by strategic theme needs the strategy model and the lifecycle stage overlay is planned; both are V2.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

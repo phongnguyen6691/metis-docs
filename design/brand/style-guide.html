@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metis style guide 0.4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600&family=Newsreader:opsz,wght@6..72,500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--text); font: 400 var(--fs-body)/1.5 var(--font-ui); }
+  .page { max-width: 1120px; margin: 0 auto; padding: 48px 32px 80px; }
+  header.hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid var(--line-strong); }
+  header.hero img { height: 64px; }
+  header.hero p { margin: 0; color: var(--muted); max-width: 520px; }
+  h1 { font: 500 var(--fs-display)/1.2 var(--font-display); letter-spacing: -0.01em; margin: 0 0 6px; }
+  h2 { font: 600 20px/1.3 var(--font-ui); margin: 44px 0 6px; }
+  h2 + p.lead { color: var(--muted); margin: 0 0 18px; max-width: 760px; }
+  .label { font: 600 var(--fs-label)/1 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .grid { display: grid; gap: var(--gap); }
+  .g2 { grid-template-columns: repeat(2, 1fr); } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+  .logo-tile { height: 170px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg); border: 1px solid var(--line); }
+  .logo-tile.dark { background: var(--ink); border-color: var(--ink); }
+  .logo-tile.light { background: var(--white); }
+  .logo-tile img { max-height: 84px; max-width: 80%; }
+  .marks { display: flex; gap: 22px; align-items: flex-end; }
+  .marks img { display: block; }
+  .caption { color: var(--muted); font-size: var(--fs-small); margin-top: 8px; }
+  .sw { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+  .sw .chip-col { height: 72px; }
+  .sw .meta { padding: 10px 12px; font-size: var(--fs-small); }
+  .sw .meta b { display: block; font-size: 13px; }
+  .mono { font-variant-numeric: tabular-nums; color: var(--muted); }
+  table.t { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; font-size: var(--fs-table); }
+  table.t th { background: var(--surface-sunk); text-align: left; font: 600 var(--fs-label)/1 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 10px; border-bottom: 1px solid var(--line); }
+  table.t td { padding: 0 10px; height: var(--row-table); border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+  table.t tr:last-child td { border-bottom: 0; }
+  table.t tr.sel td { background: var(--accent-soft); }
+  .chip { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 9px; border-radius: 999px; font: 500 12px/1 var(--font-ui); white-space: nowrap; }
+  .chip i { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+  .c-good { background: var(--good-bg); color: var(--good-text); } .c-good i { background: var(--good); }
+  .c-waiting { background: var(--waiting-bg); color: var(--waiting-text); } .c-waiting i { background: var(--waiting); }
+  .c-serious { background: var(--serious-bg); color: var(--serious-text); } .c-serious i { background: var(--serious); }
+  .c-critical { background: var(--critical-bg); color: var(--critical-text); } .c-critical i { background: var(--critical); }
+  .c-running { background: var(--running-bg); color: var(--running-text); } .c-running i { background: var(--running); }
+  .c-review { background: var(--review-bg); color: var(--review-text); } .c-review i { background: var(--review); }
+  .c-neutral { background: var(--neutral-bg); color: var(--neutral-text); } .c-neutral i { background: var(--neutral); }
+  .rag { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+  .rag .s { font-size: 12px; }
+  .btn { font: 600 14px/1 var(--font-control); border-radius: var(--radius); padding: 9px 14px; border: 1px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--ink); color: var(--white); }
+  .btn-accent { background: var(--violet); color: var(--white); }
+  .btn-secondary { background: var(--white); border-color: var(--line-strong); color: var(--ink); }
+  .btn-ghost { background: transparent; color: var(--muted); }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .kpi .v { font: 600 var(--fs-figure)/1.1 var(--font-ui); margin: 6px 0 4px; }
+  .kpi .d { font-size: var(--fs-small); color: var(--muted); }
+  .kpi .d b { color: var(--critical-text); font-weight: 600; }
+  .meter { height: 8px; background: var(--line); border-radius: 999px; overflow: hidden; margin-top: 10px; }
+  .meter span { display: block; height: 100%; background: var(--good); border-radius: 999px; }
+  .type-row { display: grid; grid-template-columns: 200px 1fr; gap: 16px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .type-row:last-child { border-bottom: 0; }
+  .avatar { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; font: 600 11px/1 var(--font-ui); }
+  .av-person { border-radius: 50%; background: var(--accent-soft); color: var(--violet); }
+  .av-client { border-radius: 50%; border: 1.5px dashed var(--line-strong); color: var(--muted); }
+  .av-ai { border-radius: 7px; background: var(--ink); color: var(--white); }
+  input.in { font: 400 14px var(--font-ui); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 8px 10px; width: 260px; }
+  input.in::placeholder { color: var(--muted); opacity: 1; }  /* 5.2:1: a placeholder is meaningful text (WCAG 2.2 AA 1.4.3) */
+  input.in.focus { border-color: var(--violet); box-shadow: var(--focus-ring); outline: none; }
+  .bars { display: grid; grid-template-columns: 110px 1fr 46px; gap: 8px 10px; align-items: center; font-size: var(--fs-small); }
+  .bars .track { height: 14px; display: flex; gap: 2px; }
+  .bars .track span { display: block; height: 100%; }
+  .bars .track span:first-child { border-radius: 4px 0 0 4px; } .bars .track span:last-child { border-radius: 0 4px 4px 0; }
+  .legend { display: flex; gap: 14px; font-size: var(--fs-small); color: var(--muted); margin-bottom: 10px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+  .dont { color: var(--critical-text); } .do { color: var(--good-text); }
+  footer { margin-top: 56px; color: var(--muted); font-size: var(--fs-small); }
+  .kbd { box-shadow: var(--focus-ring); }
+  .st { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+  .st b { font-weight: 700; }
+  .st.ok b { color: var(--good); } .st.run b { color: var(--running); } .st.bad { color: var(--critical-text); font-weight: 600; } .st.bad b { color: var(--critical); }
+  .st.stale { color: var(--waiting-text); } .st.stale b { color: var(--waiting); } .st.part b { color: var(--running); }
+  .ban { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: var(--radius); font-size: 13px; }
+  .ban.ro { background: var(--neutral-bg); } .ban.ai { background: var(--white); border: 1.5px solid var(--violet); }
+  .conflict { border: 1.5px solid var(--critical); border-radius: var(--radius); padding: 10px 12px; font-size: 13px; background: var(--critical-bg); }
+  .conflict .vals { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+  .conflict .vals div { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 8px; }
+  .planned { display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 999px; border: 1px dashed var(--violet); color: var(--violet); font: 500 12px/1 var(--font-ui); }
+  .btn-sm { padding: 6px 10px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="hero">
+  <div>
+    <div class="label">Style guide 0.4 · 3 Oct 2026</div>
+    <h1>Metis, the visual system</h1>
+    <p>One ink, one accent, one paper. The system uses neutrals and type families, an editorial serif logo and hairlines instead of shadows. Values come from <code>tokens.css</code>, shared with the wireframes.</p>
+  </div>
+  <img src="logo/metis-wordmark.svg" alt="Metis">
+</header>
+
+<h2>Logo</h2>
+<p class="lead">The i is "intelligence" in the accent colour; its dot is a diamond, the milestone and gate symbol of governance. Built from Fraunces 700 outlines. Clear space equals the height of the e.</p>
+<div class="grid g2">
+  <div><div class="logo-tile light"><img src="logo/metis-wordmark.svg" alt="Metis wordmark on light"></div><div class="caption">metis-wordmark.svg, default on light</div></div>
+  <div><div class="logo-tile dark"><img src="logo/metis-wordmark-on-dark.svg" alt="Metis wordmark on dark"></div><div class="caption">metis-wordmark-on-dark.svg</div></div>
+</div>
+<div class="card" style="margin-top:var(--gap)">
+  <div class="marks">
+    <div><img src="logo/metis-mark.svg" width="96" height="96" alt="Mark"><div class="caption">Mark</div></div>
+    <div><img src="logo/metis-app-icon.svg" width="96" height="96" alt="App icon"><div class="caption">App icon</div></div>
+    <div><img src="logo/metis-mark-small.svg" width="32" height="32" alt="Small mark"><div class="caption">Small, 32px</div></div>
+    <div><img src="logo/metis-favicon.svg" width="16" height="16" alt="Favicon"><div class="caption">Favicon, 16px</div></div>
+    <div><img src="logo/metis-wordmark-mono.svg" height="40" alt="Mono"><div class="caption">Mono</div></div>
+  </div>
+</div>
+
+<h2>Colour</h2>
+<p class="lead">Brand and app tokens. Contrast measured on white with the dataviz checker. Faint is for disabled controls and decorative detail only: placeholders use muted, because a placeholder is text a user has to read.</p>
+<div class="grid g4">
+  <div class="sw"><div class="chip-col" style="background:var(--ink)"></div><div class="meta"><b>Ink</b><span class="mono">#111827 · 17.7:1</span></div></div>
+  <div class="sw"><div class="chip-col" style="background:var(--violet)"></div><div class="meta"><b>Violet (accent)</b><span class="mono">#6D3BEF · 6.0:1</span></div></div>
+  <div class="sw"><div class="chip-col" style="background:var(--paper)"></div><div class="meta"><b>Paper</b><span class="mono">#FAF7F2</span></div></div>
+  <div class="sw"><div class="chip-col" style="background:var(--white)"></div><div class="meta"><b>White, canvas</b><span class="mono">#FFFFFF</span></div></div>
+  <div class="sw"><div class="chip-col" style="background:var(--muted)"></div><div class="meta"><b>Muted</b><span class="mono">#6C6C78 · 5.2:1</span></div></div>
+  <div class="sw"><div class="chip-col" style="background:var(--faint)"></div><div class="meta"><b>Faint</b><span class="mono">#A0A0AC · 2.6:1 · disabled and decorative only</span></div></div>
+  <div class="sw"><div class="chip-col" style="background:var(--line-strong)"></div><div class="meta"><b>Line strong / line</b><span class="mono">#D4D4DB / #E6E6EB</span></div></div>
+  <div class="sw"><div class="chip-col" style="background:var(--accent-soft)"></div><div class="meta"><b>Accent soft</b><span class="mono">#F0EAFE</span></div></div>
+</div>
+
+<h2>Status</h2>
+<p class="lead">Colour, shape and words together, never colour alone. Text shades reach 4.5:1 on their soft background.</p>
+<div class="card">
+  <div class="row" style="margin-bottom:14px">
+    <span class="rag"><span class="s" style="color:var(--good)">●</span> On track</span>
+    <span class="rag"><span class="s" style="color:var(--waiting)">▲</span> At risk</span>
+    <span class="rag"><span class="s" style="color:var(--critical)">■</span> Off track</span>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+    <span class="label" style="width:110px">Item status</span>
+    <span class="chip c-neutral"><i></i>Not Started</span><span class="chip c-running"><i></i>In Progress</span><span class="chip c-waiting"><i></i>Waiting</span><span class="chip c-critical"><i></i>Blocked</span><span class="chip c-good"><i></i>Done</span>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+    <span class="label" style="width:110px">Priority, risk</span>
+    <span class="chip c-neutral"><i></i>Low</span><span class="chip c-waiting"><i></i>Medium</span><span class="chip c-serious"><i></i>High</span><span class="chip c-critical"><i></i>Critical</span>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+    <span class="label" style="width:110px">Change request</span>
+    <span class="chip c-neutral"><i></i>Draft</span><span class="chip c-review"><i></i>Under review</span><span class="chip c-good"><i></i>Approved</span><span class="chip c-running"><i></i>Approved, pending application</span><span class="chip c-waiting"><i></i>Deferred</span><span class="chip c-critical"><i></i>Rejected</span>
+  </div>
+  <div class="row">
+    <span class="label" style="width:110px">Gate decision</span>
+    <span class="chip c-good"><i></i>Pass</span><span class="chip c-waiting"><i></i>Pass with conditions</span><span class="chip c-serious"><i></i>Rework</span><span class="chip c-neutral"><i></i>Hold</span><span class="chip c-critical"><i></i>Reject</span>
+  </div>
+</div>
+
+<h2>Type</h2>
+<p class="lead">Newsreader for titles only, Inter for everything you read and every number, Manrope for menus and buttons. Fraunces lives only inside the logo.</p>
+<div class="card">
+  <div class="type-row"><span class="label">Display · Newsreader 500 30</span><span style="font:500 30px/1.2 var(--font-display);letter-spacing:-.01em">Good morning, Nadia. Three gates need you today.</span></div>
+  <div class="type-row"><span class="label">Section · Inter 600 18</span><span style="font:600 18px var(--font-ui)">Requires attention</span></div>
+  <div class="type-row"><span class="label">Body · Inter 400 14</span><span>Charter sections V and VI update live from the WBS Master.</span></div>
+  <div class="type-row"><span class="label">Table · Inter 13 tabular</span><span style="font-size:13px;font-variant-numeric:tabular-nums">1.1.2 · Phase 2 Render Delivery · 25 Jul to 10 Aug · 17d</span></div>
+  <div class="type-row"><span class="label">Label · Inter 600 11 caps</span><span class="label" style="color:var(--text)">Needs attention</span></div>
+  <div class="type-row"><span class="label">Control · Manrope 600 14</span><span style="font:600 14px var(--font-control)">Raise change request</span></div>
+  <div class="type-row"><span class="label">Figure · Inter 600 28</span><span style="font:600 28px var(--font-ui)">$50.2M</span></div>
+</div>
+
+<h2>Components</h2>
+<div class="grid g2">
+  <div class="card">
+    <div class="label" style="margin-bottom:12px">Buttons</div>
+    <div class="row"><button class="btn btn-primary">Publish weekly status</button><button class="btn btn-accent">Approve gate</button><button class="btn btn-secondary">Export</button><button class="btn btn-ghost">Cancel</button></div>
+    <div class="label" style="margin:18px 0 10px">Inputs</div>
+    <div class="row"><input class="in" placeholder="Search projects or WBS items"><input class="in focus" value="Meridian CGI Campaign"></div>
+    <div class="label" style="margin:18px 0 10px">Avatars</div>
+    <div class="row"><span class="avatar av-person">NR</span><span>Person</span><span class="avatar av-client">CL</span><span>Client (external)</span><span class="avatar av-ai">AI</span><span>Action via MCP</span></div>
+  </div>
+  <div class="card kpi">
+    <div class="label">Stat tiles</div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><div class="d">Overdue work items</div><div class="v">9</div><div class="d"><b>+3</b> since last week</div></div>
+      <div class="card"><div class="d">Overall progress</div><div class="v">25%</div><div class="d">3 of 12 work items done</div><div class="meter"><span style="width:25%"></span></div></div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:var(--gap)">
+  <table class="t">
+    <thead><tr><th>WBS</th><th>Name</th><th>PIC</th><th>Target</th><th>Status</th><th>Risk</th></tr></thead>
+    <tbody>
+      <tr><td>1.1</td><td>51 Render Images</td><td>Denny K.</td><td>10 Aug</td><td><span class="chip c-running"><i></i>In Progress</span></td><td><span class="chip c-waiting"><i></i>Medium</span></td></tr>
+      <tr class="sel"><td>1.1.2</td><td>◆ Phase 2 Render Delivery</td><td>Denny K.</td><td>10 Aug</td><td><span class="chip c-neutral"><i></i>Not Started</span></td><td><span class="chip c-waiting"><i></i>Medium</span></td></tr>
+      <tr><td>2.1</td><td>↘ CAD / Design Files</td><td>Client</td><td>3 Jul</td><td><span class="chip c-good"><i></i>Done</span></td><td><span class="chip c-neutral"><i></i>Low</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>States and accessibility</h2>
+<p class="lead">Keyboard focus has its own ring and is never used to show selection. Saving, conflicts, read-only, data freshness, planned features and AI work each have one fixed pattern, always with words, never colour alone.</p>
+<div class="grid g2">
+  <div class="card">
+    <div class="label" style="margin-bottom:12px">Focus and selection</div>
+    <div class="row"><button class="btn btn-secondary kbd">Keyboard focus</button><span class="caption" style="margin:0">2px white gap + 2px violet ring</span></div>
+    <table class="t" style="margin-top:12px"><tbody><tr class="sel"><td>1.1.2</td><td>Selected row: accent-soft fill, no ring</td></tr></tbody></table>
+    <div class="label" style="margin:18px 0 10px">Save state, one place on every editing screen</div>
+    <div class="row"><span class="st ok"><b>✓</b>All changes saved · 09:41</span><span class="st run"><b>↻</b>Saving…</span><span class="st bad"><b>!</b>Couldn't save: connection lost · Retry</span></div>
+    <div class="label" style="margin:18px 0 10px">Data freshness, next to every figure</div>
+    <div class="row"><span class="st ok"><b>●</b>As of 09:41 · metrics v1.2</span><span class="st stale"><b>▲</b>Stale · 9 days</span><span class="st part"><b>◐</b>Partial · 2 projects missing</span><span class="st"><b>?</b>Unknown</span></div>
+    <div class="label" style="margin:18px 0 10px">Planned capability</div>
+    <div class="row"><span class="planned">Planned V2</span><span class="caption" style="margin:0">Dashed outline, not clickable; a disabled button means "not allowed yet", not "not built"</span></div>
+  </div>
+  <div class="card">
+    <div class="label" style="margin-bottom:12px">Conflict, inline at the field</div>
+    <div class="conflict"><b>Planned effort was changed by Denny K. at 09:38 while you were editing.</b>
+      <div class="vals"><div><span class="caption" style="margin:0">Yours</span><br>24h</div><div><span class="caption" style="margin:0">Theirs</span><br>32h</div></div>
+      <div class="row"><button class="btn btn-secondary btn-sm">Keep mine</button><button class="btn btn-secondary btn-sm">Take theirs</button><button class="btn btn-ghost btn-sm">Merge</button></div></div>
+    <div class="label" style="margin:18px 0 10px">Read-only and no access</div>
+    <div class="ban ro">🔒 <span><b>Read-only.</b> This workspace is archived. Restore it from Settings to edit, or export its data.</span></div>
+    <div class="label" style="margin:18px 0 10px">AI attribution</div>
+    <div class="row" style="margin-bottom:10px"><span class="avatar av-ai">AI</span><span>Added a journal entry <span class="caption">via MCP · token "Nadia laptop"</span></span></div>
+    <div class="ban ai"><span class="avatar av-ai">AI</span><span><b>Prepared via MCP</b> (token "Nadia laptop"): CR-004 decision draft. A person must review and confirm.<br><span class="row" style="margin-top:8px"><button class="btn btn-accent btn-sm">Confirm</button><button class="btn btn-secondary btn-sm">Discard</button></span></span></div>
+  </div>
+</div>
+
+<h2>Charts</h2>
+<p class="lead">Form first, colour second. Categorical order validated (adjacent CVD &Delta;E 9.1, normal-vision &Delta;E 19.6 on white). Slots 3 to 5 need visible labels or a table view.</p>
+<div class="grid g2">
+  <div class="card">
+    <div class="label" style="margin-bottom:12px">Categorical order</div>
+    <div class="row">
+      <span class="chip" style="background:var(--series-1);color:#fff">1</span><span class="chip" style="background:var(--series-2);color:#fff">2</span><span class="chip" style="background:var(--series-3);color:#fff">3</span><span class="chip" style="background:var(--series-4);color:#111827">4</span><span class="chip" style="background:var(--series-5);color:#111827">5</span><span class="chip" style="background:var(--series-6);color:#fff">6</span><span class="chip" style="background:var(--series-7);color:#fff">7</span><span class="chip" style="background:var(--series-8);color:#fff">8</span>
+    </div>
+    <div class="label" style="margin:18px 0 10px">Sequential and diverging</div>
+    <div style="display:flex;height:16px;border-radius:4px;overflow:hidden"><span style="flex:1;background:var(--seq-100)"></span><span style="flex:1;background:var(--seq-250)"></span><span style="flex:1;background:var(--seq-400)"></span><span style="flex:1;background:var(--seq-550)"></span><span style="flex:1;background:var(--seq-700)"></span></div>
+    <div style="display:flex;height:16px;border-radius:4px;overflow:hidden;margin-top:8px"><span style="flex:1;background:var(--div-neg)"></span><span style="flex:1;background:var(--div-mid)"></span><span style="flex:1;background:var(--div-pos)"></span></div>
+  </div>
+  <div class="card">
+    <div class="label" style="margin-bottom:10px">Capacity by capability, Q2 (FTE)</div>
+    <div class="legend"><span><i style="background:var(--series-1)"></i>Allocated</span><span><i style="background:var(--series-2)"></i>Requested</span></div>
+    <div class="bars">
+      <span>Engineering</span><span class="track"><span style="width:62%;background:var(--series-1)"></span><span style="width:16%;background:var(--series-2)"></span></span><span class="mono">112%</span>
+      <span>Data</span><span class="track"><span style="width:58%;background:var(--series-1)"></span><span style="width:20%;background:var(--series-2)"></span></span><span class="mono">118%</span>
+      <span>UX</span><span class="track"><span style="width:44%;background:var(--series-1)"></span><span style="width:12%;background:var(--series-2)"></span></span><span class="mono">84%</span>
+    </div>
+    <p class="caption">Bars 14px, 2px gap between segments, value labels in text colour, table view available.</p>
+  </div>
+</div>
+
+<h2>Do and don't</h2>
+<div class="grid g2">
+  <div class="card"><b class="do">Do</b><ul><li>Show status with colour, shape and words.</li><li>Use one primary button per area.</li><li>Use the same metric definition on every screen.</li><li>Mark actions made through MCP with the square AI avatar.</li><li>Give every drag or canvas action a keyboard equivalent, such as "Move to…".</li><li>Keep 13px as the floor for anything a user clicks or reads as content.</li></ul></div>
+  <div class="card"><b class="dont">Don't</b><ul><li>Use the violet diamond as decoration outside the logo.</li><li>Put numbers in Newsreader or Fraunces.</li><li>Use donut charts for progress; use a meter or a stat tile.</li><li>Use faint for anything a user must read, placeholders included.</li><li>Use the focus ring to show selection, or remove it.</li><li>Show planned features as disabled buttons.</li><li>Report an error only in a toast.</li></ul></div>
+</div>
+
+<footer>Metis style guide 0.4 · brand/style-guide.md is the written source · logo built with brand/tools · tokens in brand/tokens.css</footer>
+</div>
+</body>
+</html>

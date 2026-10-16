@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Set up with your own AI · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-own-ai">
+<meta name="wf:title" content="Set up with your own AI">
+<meta name="wf:area" content="Access &amp; tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-07 ONB-21 MCP-15 MCP-20 ONB-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="The bring-your-own-AI path: the admin switch for the setup tool group, an onboarding token limited to the setup tools and the Draft workspace, the connection test, the copy-ready prompt pack and a live feed of what the client's AI proposes; launch stays in Metis.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-top { align-items: start; }
+  .x-grow { flex: 1; }
+  .x-or { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 12px; }
+  .x-or::before, .x-or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .x-token { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface-sunk); padding: 10px 12px; font-size: 13px; line-height: 1.5; }
+  /* the prompt list is a .qcard only so that the .qcard .guess highlight applies; its own box is removed */
+  .x-prompts { border: 0; border-radius: 0; padding: 0; gap: 0; }
+  .x-prompt { display: flex; align-items: center; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .x-prompt:last-child { border-bottom: 0; }
+  .x-prompt .x-text { flex: 1; min-width: 0; padding: 8px 10px; font-size: 13.5px; line-height: 1.45; text-wrap: pretty; }
+  .x-src { width: 128px; flex: none; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+  .banner, .x-token, .x-note, .feed-row .grow { text-wrap: balance; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Kite Logistics Portfolio" data-tenant="Kite Logistics" data-user="OS" data-crumbs="My profile / AI access / Set up with your own AI">
+<main>
+
+  <section class="row between">
+    <div>
+      <h1 class="title">Set up with your own AI</h1>
+      <div class="muted small" style="margin-top:4px">Your AI reads your files where they are and sends Metis what it finds. Metis records every value as <b>Customer AI</b> with the passage your AI reported, and does not claim to have read the document itself, so a value that locks a budget or grants access is confirmed by a person here. You review and launch in Metis.</div>
+    </div>
+    <div class="seg"><span>Profile</span><span>Notifications</span><span class="on" aria-current="page">AI access</span></div>
+  </section>
+
+  <section class="grid c2 x-top">
+    <div class="stack">
+
+      <div class="card" data-req="ONB-07 MCP-20">
+        <div class="head"><span class="h3">1 · Allowed by your admin <span class="anno" data-n="1"></span></span></div>
+        <div class="body stack s">
+          <span class="toggle on">Setup tools for MCP clients</span>
+          <div class="small muted x-note">Switched on by your tenant admin on 2 Oct 2026 · MCP clients allowed by your client policy (MCP-20)</div>
+        </div>
+      </div>
+
+      <div class="card" data-req="ONB-21 MCP-15">
+        <div class="head"><span class="h3">2 · Connect <span class="anno" data-n="2"></span></span><span class="tag">OAuth recommended</span></div>
+        <div class="body stack s">
+          <div class="row" style="flex-wrap:nowrap"><div class="input mono" style="flex:1;min-width:0">https://kite.mcp.metis.example/mcp</div><span class="btn secondary sm">Copy</span></div>
+          <div class="x-or">or</div>
+          <div class="x-token">Onboarding token · name Kite setup · tools: setup tools only · workspace: Kite Logistics Portfolio (Draft) · expires in 7 days</div>
+          <div class="banner ok small">Test connection: connected as Omar Sato · 13 setup tools allowed · Draft workspace only</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card" data-req="ONB-21 ONB-39">
+      <div class="head"><span class="h3">3 · Paste one prompt <span class="anno" data-n="3"></span></span></div>
+      <div class="body stack s">
+        <div class="qcard x-prompts">
+          <div class="x-prompt"><div class="x-text guess">Use the Metis tools to set up our company from these files. Start with get_setup_context and follow it.</div><span class="btn secondary sm">Copy</span></div>
+          <div class="x-prompt"><div class="x-text">Add the projects in this file to our Metis setup, with their owners, dates, budgets and status.</div><span class="btn secondary sm">Copy</span></div>
+          <div class="x-prompt"><div class="x-text">From this handbook, describe in Metis how our projects get approved and who approves them.</div><span class="btn secondary sm">Copy</span></div>
+          <div class="x-prompt"><div class="x-text">Add the people in this org chart to our Metis setup with their titles and suggested roles.</div><span class="btn secondary sm">Copy</span></div>
+          <div class="x-prompt"><div class="x-text">Fill in the budgets of our Metis projects from this finance sheet.</div><span class="btn secondary sm">Copy</span></div>
+          <div class="x-prompt"><div class="x-text">Get the open Metis setup questions and answer the ones these files can answer by proposing the values with the setup tools; leave the others.</div><span class="btn secondary sm">Copy</span></div>
+        </div>
+        <div class="row" style="gap:8px"><span class="tag future">In your AI's prompt menu and preview: Planned V2</span><span class="anno" data-n="4"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid c2 x-top">
+
+    <div class="card" data-req="ONB-21">
+      <div class="head"><span class="h3">4 · What your AI is proposing <span class="anno" data-n="5"></span></span></div>
+      <div class="feed-row"><span class="ic" aria-hidden="true">▤</span><div class="grow">Read Ops handbook 2025.pdf: approval flow of 5 stages and 3 approval points (pages 6 to 11)</div><span class="x-src"><span class="tag">Reported by your AI</span></span></div>
+      <div class="feed-row"><span class="ic" aria-hidden="true">▭</span><div class="grow">Read Board deck Q3.pptx: 3 strategic objectives (slide 4)</div><span class="x-src"><span class="tag">Reported by your AI</span></span></div>
+      <div class="feed-row"><span class="ic" aria-hidden="true">?</span><div class="grow">Raised 2 questions: who chairs the investment board? Is Hub expansion Rotterdam committed?</div><span class="x-src"><span class="tag">Reported by your AI</span></span></div>
+      <div class="feed-row"><span class="ic" aria-hidden="true">↻</span><div class="grow">Corrected itself after a Metis check: the approval point Investment board had no approver</div><span class="x-src"><span class="tag">Reported by your AI</span><span class="chip good">Fixed</span></span></div>
+    </div>
+
+    <div class="stack">
+
+      <div class="banner accent" data-req="ONB-21">
+        <div class="x-grow">Launch happens in Metis only. Your AI cannot launch, invite people or grant roles. <span class="anno" data-n="6"></span></div>
+      </div>
+
+      <div class="card" data-req="MCP-15">
+        <div class="head"><span class="h3">Verified clients <span class="anno" data-n="7"></span></span></div>
+        <table class="table">
+          <thead><tr><th>Client</th><th>Sign-in</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Desktop LLM app</td><td>Token</td><td><span class="chip good">Verified for onboarding</span></td></tr>
+            <tr><td>Chat assistant (OAuth)</td><td>OAuth</td><td><span class="chip good">Verified for onboarding</span></td></tr>
+            <tr><td>Code editor</td><td>Token</td><td><span class="chip">Verified, not for onboarding</span></td></tr>
+            <tr><td>Internal agent</td><td>Token</td><td><span class="chip">Not yet verified</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-07, MCP-20</span> The setup tool group is off by default for external clients; the tenant admin switches it on within the client policy.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-21</span> OAuth, or an onboarding token limited to the setup tools and one Draft workspace, valid 7 days by default; the test shows exactly what the token allows.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-21</span> Prompts stay short because the first call returns the setup context served by Metis.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-39</span> Serving the pack as MCP prompts and previewing inside the client come after Release 1.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">ONB-21, ONB-07</span> The live feed shows what the client's AI proposes, with the sources it reports; Metis validation errors let it correct itself.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">ONB-21</span> Launch stays in Metis; the client's AI cannot launch, invite or grant roles (BR-35).</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">MCP-15, ONB-21</span> Verified clients gain a "verified for onboarding" mark once they pass Metis's onboarding test scenario.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

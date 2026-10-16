@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tenant admin: AI access (MCP) · Metis wireframe</title>
+<meta name="wf:id" content="tenant-admin-ai-access">
+<meta name="wf:title" content="Tenant admin: AI access (MCP)">
+<meta name="wf:area" content="Access & tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="MCP-01 MCP-02 MCP-03 MCP-04 MCP-08 MCP-12 MCP-13 MCP-14 MCP-16 MCP-19 MCP-20 TEN-04">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Tenant policy for the MCP server: endpoint, how clients sign in, scopes by role, action classes and their policy, client allowlist and workspace restrictions, data protection, rate limits, and every active token with revoke.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="admin" data-nav="admin-ai" data-crumbs="Tenant admin / AI access (MCP)">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">AI access (MCP)</div>
+      <div class="muted small" style="margin-top:4px">Lets LLM clients that implement the MCP specification read and log work in Acme Holdings, acting as the signed-in user. Verified clients are listed on each user's AI access page.</div>
+    </div>
+    <div class="row"><span class="toggle on">MCP server enabled</span><span class="btn primary">Save policy</span></div>
+  </section>
+
+  <section class="grid c3">
+    <div class="card" data-req="MCP-01">
+      <div class="head"><span class="h3">Endpoint <span class="anno" data-n="1"></span></span><span class="chip good">Healthy</span></div>
+      <div class="body stack s">
+        <div class="row" style="flex-wrap:nowrap"><div class="input mono" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11.5px">https://acme.mcp.metis.example/mcp</div><span class="btn secondary sm">Copy</span></div>
+        <dl class="kv"><dt>Transport</dt><dd>Streamable HTTP</dd><dt>Protocol version</dt><dd>2026-07-28</dd><dt>Scope</dt><dd>One endpoint for the tenant; data filtered per user</dd></dl>
+      </div>
+    </div>
+    <div class="card" data-req="MCP-02 MCP-03">
+      <div class="head"><span class="h3">How clients sign in <span class="anno" data-n="2"></span></span></div>
+      <div class="body stack s">
+        <span class="check on">Personal access tokens (Authorization: Bearer)</span>
+        <span class="check on">OAuth (MCP authorization flow)</span>
+        <div class="grid c2">
+          <div class="field"><label>Maximum token lifetime</label><div class="select">90 days</div></div>
+          <div class="field"><label>Default lifetime</label><div class="select">30 days</div></div>
+        </div>
+        <span class="toggle on">Revoke a user's tokens when the user is deactivated</span>
+      </div>
+    </div>
+    <div class="card" data-req="MCP-12">
+      <div class="head"><span class="h3">Rate limits <span class="anno" data-n="5"></span></span></div>
+      <div class="body stack s">
+        <div class="grid c2">
+          <div class="field"><label>Per token</label><div class="select">60 calls a minute</div></div>
+          <div class="field"><label>Per tenant (plan)</label><div class="input locked">100,000 a month</div></div>
+        </div>
+        <div class="row between small"><span>Used this month</span><span class="num">41,200 of 100,000</span></div>
+        <div class="meter acc"><span style="width:41%"></span></div>
+        <div class="small muted">Over the limit a client gets a retry-after error; the web app is never slowed down.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr)">
+    <div class="card" data-req="MCP-04">
+      <div class="head"><span class="h3">What each role may allow <span class="anno" data-n="3"></span></span><span class="muted small">Token scopes can only narrow this</span></div>
+      <table class="table">
+        <thead><tr><th>Role</th><th>Read</th><th>Append</th><th>Update</th></tr></thead>
+        <tbody>
+          <tr><td>Executive</td><td><span class="chip good">Portfolio, projects</span></td><td><span class="chip good">Journal, comments</span></td><td><span class="chip">No</span></td></tr>
+          <tr><td>Portfolio Manager</td><td><span class="chip good">Portfolio, projects</span></td><td><span class="chip good">Journal, comments</span></td><td><span class="chip running">Second increment</span></td></tr>
+          <tr><td>Project Manager</td><td><span class="chip good">Own projects</span></td><td><span class="chip good">Journal, comments</span></td><td><span class="chip running">Second increment</span></td></tr>
+          <tr><td>Team member</td><td><span class="chip good">Assigned projects</span></td><td><span class="chip good">Comments</span></td><td><span class="chip">No</span></td></tr>
+          <tr><td>Viewer</td><td><span class="chip good">Granted views</span></td><td><span class="chip">No</span></td><td><span class="chip">No</span></td></tr>
+          <tr><td>Client (external)</td><td><span class="chip">No MCP access</span></td><td><span class="chip">No</span></td><td><span class="chip">No</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" data-req="MCP-19 MCP-14 MCP-08">
+      <div class="head"><span class="h3">Action classes <span class="anno" data-n="7"></span></span><span class="muted small">Policy per class</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line">Read</div><div class="sub">Runs directly. list_projects, get_project_overview, get_wbs_items, get_my_focus, list_risks, get_report</div></div><span class="toggle on">On</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line">Append-only</div><div class="sub">New journal entries and comments; runs directly and is attributed to the user and token in activity. add_journal_entry, add_comment</div></div><span class="toggle on">On</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line">Reversible write</div><div class="sub">Field updates and drafts, undoable from the item's activity; each call needs a record version and an idempotency key. update_wbs_item, create_change_request_draft, create_risk, generate_report</div><div class="row" style="margin-top:6px"><span class="toggle">Ask the user to confirm in the app</span></div></div><span class="tag">Second increment</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line">Prepare-only <span class="anno" data-n="4"></span></div><div class="sub">Governance actions: approvals, gate and portfolio decisions, baseline changes, deletions, permission and token changes; a person confirms them in the app</div></div><span class="chip review">Prepare only</span><span class="muted">🔒</span></div>
+    </div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr)">
+    <div class="card" data-req="MCP-20 MCP-03">
+      <div class="head"><span class="h3">Client allowlist <span class="anno" data-n="8"></span></span><div class="field" style="flex-direction:row;align-items:center;gap:8px"><label>Clients that may connect</label><div class="select">Named list</div></div></div>
+      <table class="table">
+        <thead><tr><th>Client</th><th>Status</th><th>Users</th><th></th></tr></thead>
+        <tbody>
+          <tr><td><div>Chat assistant (OAuth)</div><div class="small muted">First seen 4 Aug 2026</div></td><td><span class="chip good">Allowed</span></td><td class="num">12</td><td><span class="btn danger sm">Block</span></td></tr>
+          <tr><td><div>Team analytics agent</div><div class="small muted">First seen 30 Aug 2026</div></td><td><span class="chip good">Allowed</span></td><td class="num">2</td><td><span class="btn danger sm">Block</span></td></tr>
+                                        <tr><td><div>Browser extension assistant</div><div class="small muted">Refused 3 times since 18 Sep 2026</div></td><td><span class="chip critical">Not on the list</span></td><td class="num">0</td><td><span class="btn secondary sm">Allow</span></td></tr>
+        </tbody>
+      </table>
+      <div class="body small muted">The list covers OAuth clients, which are identified by their registration. A client that is not on the list is refused with a message naming this policy. The other option is "All clients that implement the MCP specification". Personal tokens cannot prove which application uses them, so they are allowed or blocked per workspace on the right.</div>
+    </div>
+    <div class="stack">
+      <div class="card" data-req="MCP-20">
+        <div class="head"><span class="h3">Workspaces MCP may reach</span><span class="muted small">MCP access · personal tokens</span></div>
+        <div class="list-row"><span class="grow">Creative Studio</span><span class="toggle on">Reachable</span><span class="toggle on">Tokens</span></div>
+        <div class="list-row"><span class="grow">Digital Products</span><span class="toggle on">Reachable</span><span class="toggle">Tokens</span></div>
+        <div class="list-row"><span class="grow">Corporate PMO</span><span class="toggle">Excluded</span><span class="toggle">Tokens</span></div>
+        <div class="list-row"><span class="grow small muted">A token cannot reach an excluded workspace, whatever its scopes. Where personal tokens are off, only allowed OAuth clients can connect; a call with a personal token is refused with this policy named.</span></div>
+      </div>
+      <div class="card" data-req="MCP-13 MCP-16">
+        <div class="head"><span class="h3">Data protection <span class="anno" data-n="9"></span></span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Minimal fields</div><div class="sub">Tools return only the fields a task needs; contact emails and phones need a separate contacts scope</div></div><span class="chip good">On</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Record text is data</div><div class="sub">Text inside comments, descriptions and files is returned as data and never treated as instructions; writes act only on explicit parameters</div></div><span class="chip good">Always</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-req="MCP-02 TEN-04">
+    <div class="head"><span class="h3">Active tokens <span class="anno" data-n="6"></span></span><span class="muted small">4 of 37 shown · tokens are stored hashed</span><span class="btn secondary sm">Revoke all</span></div>
+    <table class="table">
+      <thead><tr><th>User</th><th>Token</th><th>Scopes</th><th>Client (as reported)</th><th>Created</th><th>Expires</th><th>Last used</th><th></th></tr></thead>
+      <tbody>
+        <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">NR</span>Nadia R.</div></td><td><div>Nadia's assistant</div><div class="small muted mono">mts_pat_••••3f9a</div></td><td class="wrap small">projects:read, wbs:read, journal:write, comments:write</td><td class="wrap">Desktop LLM app<div class="small muted">self-reported</div></td><td>2 Sep 2026</td><td>1 Dec 2026</td><td>Today 09:31</td><td><span class="btn danger sm">Revoke</span></td></tr>
+        <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">AW</span>A. Wong</div></td><td><div>Gate prep</div><div class="small muted">OAuth</div></td><td class="wrap small">portfolio:read, projects:read, changes:read</td><td>Chat assistant (OAuth)</td><td>15 Aug 2026</td><td>13 Nov 2026</td><td>Today 08:55</td><td><span class="btn danger sm">Revoke</span></td></tr>
+        <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">MJ</span>M. Johnson</div></td><td><div>Weekly status agent</div><div class="small muted mono">mts_pat_••••81c2</div></td><td class="wrap small">projects:read, reports:read</td><td class="wrap">Internal agent<div class="small muted">self-reported</div></td><td>1 Jul 2026</td><td><span class="chip waiting">29 Sep 2026</span></td><td>20 Sep 2026</td><td><span class="btn danger sm">Revoke</span></td></tr>
+        <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">LW</span>L. Wang</div></td><td><div>IDE assistant</div><div class="small muted mono">mts_pat_••••d07e</div></td><td class="wrap small">wbs:read</td><td class="wrap">Code editor<div class="small muted">self-reported</div></td><td>10 Sep 2026</td><td>9 Oct 2026</td><td>21 Sep 2026</td><td><span class="btn danger sm">Revoke</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">MCP-01</span> One tenant-specific HTTPS endpoint using the Streamable HTTP transport of the MCP specification 2026-07-28 [Source: modelcontextprotocol.io/specification/2026-07-28, transports].</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">MCP-02, MCP-03</span> Personal access tokens work with clients that can send an Authorization: Bearer header; OAuth follows the MCP authorization flow for clients that support it [Source: modelcontextprotocol.io/specification/2026-07-28/basic/authorization].</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">MCP-04</span> The effective right of a call is the user's role intersected with the token's scopes, inside one tenant only.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">MCP-08</span> Governance actions are locked to the prepare-only class: an AI client can draft a decision but a person confirms it in the app.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">MCP-12</span> Limits apply per token and per tenant (from the plan); exceeding them affects only the calling client.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">MCP-02, TEN-04</span> The admin sees and can revoke every token in the tenant; a token shows only its prefix and last four characters.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">MCP-19, MCP-14</span> Every tool belongs to exactly one action class, shown in the tool list and recorded in the audit log: read and append-only run directly; a reversible write needs a record version and an idempotency key, can be undone from the item's activity by a person with edit rights and can be set to ask for confirmation in the app; prepare-only covers governance actions.</span></li>
+    <li><span class="anno" data-n="8"></span><span><span class="req">MCP-20, MCP-03</span> The tenant admin allows all clients that implement the MCP specification or only a named list; under a named list a client that is not on it is refused with a message naming the policy, and Block removes a client at once. OAuth clients are identified by their registration. A personal token is a bearer token that works from any application holding it, so it cannot be matched to the list: personal tokens are allowed or blocked as a whole, per workspace. Excluding a workspace closes it to every token and client.</span></li>
+    <li><span class="anno" data-n="9"></span><span><span class="req">MCP-13, MCP-16</span> Tools return only the fields a task needs and keep contact data behind its own scope; text stored in records is treated as data, so instructions hidden in a comment cannot trigger any server action.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

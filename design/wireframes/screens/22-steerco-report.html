@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SteerCo report · Metis wireframe</title>
+<meta name="wf:id" content="steerco-report">
+<meta name="wf:title" content="SteerCo report">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="V2">
+<meta name="wf:requirements" content="ANL-01 ANL-02 ANL-03 ANL-04 AIC-06 BR-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Report builder and preview for the executive portfolio review: health, investment, movements, decisions required and appendices, generated from live data for a period and portfolio.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-doc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px 32px; }
+  .x-doc h2.x-dt { font: 500 24px/1.2 var(--font-display); margin: 0 0 4px; }
+  .x-doc .x-sec { margin-top: 22px; }
+  .x-doc .x-sec > .label { display: block; margin-bottom: 8px; }
+  .x-doc p { max-width: 70ch; font-size: 13.5px; line-height: 1.55; }
+  .x-doc ol { margin: 0; padding-left: 18px; font-size: 13.5px; line-height: 1.6; }
+  .x-mv { display: grid; grid-template-columns: 22px 1fr auto; gap: 6px 8px; font-size: 13.5px; align-items: baseline; }
+  .x-mv .x-up { color: var(--good-text); font-weight: 600; } .x-mv .x-dn { color: var(--critical-text); font-weight: 600; }
+</style>
+</head>
+<body data-shell="app" data-nav="steerco" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / SteerCo">
+<main>
+
+  <div class="banner accent small"><b>Planned for V2.</b> <span>The MVP has project-level weekly status reports; portfolio packs for SteerCo come with portfolio analytics.</span></div>
+
+  <section class="row between">
+    <div class="title">SteerCo report</div>
+    <div class="row"><span class="btn secondary">Save</span><span class="btn secondary">Share link</span><span class="btn primary">Export PDF</span></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 300px 1fr; align-items: start">
+    <div class="card" data-req="ANL-01 ANL-02">
+      <div class="head"><span class="h3">Build <span class="anno" data-n="1"></span></span></div>
+      <div class="body stack">
+        <div class="field"><label>Template <span class="anno" data-n="2"></span></label><div class="seg"><span class="on">SteerCo pack</span><span>Weekly</span></div></div>
+        <div class="field"><label>Period</label><div class="select">Q3 2026 · 1 Jul to 30 Sep</div></div>
+        <div class="field"><label>Portfolio</label><div class="select">All portfolios</div></div>
+        <div class="field"><label>Sections</label>
+          <div class="stack s">
+            <span class="check on">Executive summary</span>
+            <span class="check on">Top movements</span>
+            <span class="check on">Decisions required</span>
+            <span class="check on">Project health</span>
+            <span class="check on">Risks</span>
+            <span class="check on">Change requests</span>
+            <span class="check on">Capacity</span>
+            <span class="check on">Investment</span>
+            <span class="check on">Governance</span>
+          </div>
+        </div>
+        <div class="stack s" style="opacity:.6">
+          <span class="small muted">Draft narrative with AI</span> <span class="tag future">Planned V3</span>
+          <span class="small muted">Drafts are reviewed and edited by a person before the pack is published. <span class="anno" data-n="5"></span></span>
+        </div>
+        <span class="btn primary">Generate</span>
+      </div>
+    </div>
+
+    <div class="x-doc" data-req="ANL-01 ANL-03 ANL-04">
+      <div class="label">Digital Products · prepared by M. Johnson (PMO) · 22 Sep 2026</div>
+      <h2 class="x-dt">SteerCo portfolio review, Q3 2026</h2>
+      <div class="muted small">Data as of 22 Sep 2026, 09:40 · metrics v1 · every figure links to its records <span class="anno" data-n="3"></span></div>
+
+      <div class="x-sec">
+        <span class="label">Executive summary</span>
+        <div class="grid c4">
+          <div class="card kpi"><div class="k-label">Portfolio health</div><div class="k-value">73 / 100</div><div class="k-delta">delivery 81 · risk 64</div></div>
+          <div class="card kpi"><div class="k-label">Investment</div><div class="k-value">$50.2M</div><div class="k-delta">forecast $51.9M</div></div>
+          <div class="card kpi alert"><div class="k-label">Off track</div><div class="k-value">17</div><div class="k-delta">of 128 projects</div></div>
+          <div class="card kpi alert"><div class="k-label">Capacity</div><div class="k-value">105%</div><div class="k-delta">demand 474 · capacity 452 FTE</div></div>
+        </div>
+        <p style="margin-top:12px">Delivery held steady but risk and capacity worsened. Core Platform is the main exposure: it reports On track while the rules compute Off track, and its Core API v2 delay pushes MSME Payment MVP2 past its baseline end. Data and Engineering capacity are above the critical threshold in Q4.</p>
+      </div>
+
+      <div class="x-sec">
+        <span class="label">Top movements since the Q2 review</span>
+        <div class="x-mv">
+          <span class="x-up">▲</span><span>Payment adoption (MSME Payment MVP1)</span><span class="num">43% to 49%</span>
+          <span class="x-dn">▼</span><span>Projects off track</span><span class="num">13 to 17</span>
+          <span class="x-dn">▼</span><span>Engineering capacity after attrition</span><span class="num">158 to 150 FTE</span>
+          <span class="x-dn">▼</span><span>Open change requests</span><span class="num">2 to 5</span>
+        </div>
+      </div>
+
+      <div class="x-sec">
+        <span class="label">Decisions required</span>
+        <ol>
+          <li><b>CR-016, Mobile App iOS support</b> (+$300K, +4 weeks, +6 Engineering FTE): approve, or defer to FY2028. Recommendation: defer, Engineering is at 112%.</li>
+          <li><b>Core Platform recovery plan</b>: accept the computed Off track status and re-plan Core API v2, or record an override with rationale. Owner L. Wang.</li>
+          <li><b>Reallocate 12 Engineering FTE</b> from stopped and delayed work to Core Platform and Data Platform. Owner Resource Manager.</li>
+        </ol>
+      </div>
+
+      <div class="x-sec">
+        <span class="label">Governance <span class="anno" data-n="4"></span></span>
+        <div class="grid c4">
+          <div class="card kpi"><div class="k-label">Gates decided</div><div class="k-value">14</div><div class="k-delta">11 pass · 2 conditional · 1 rework</div></div>
+          <div class="card kpi"><div class="k-label">First-pass approval</div><div class="k-value">79%</div><div class="k-delta">11 of 14 gates</div></div>
+          <div class="card kpi"><div class="k-label">CR cycle time</div><div class="k-value">6 days</div><div class="k-delta">median, submission to decision</div></div>
+          <div class="card kpi"><div class="k-label">Reporting compliance</div><div class="k-value">96%</div><div class="k-delta">4 weekly reports missing</div></div>
+        </div>
+      </div>
+
+      <div class="x-sec">
+        <span class="label">Appendix</span>
+        <div class="row"><span class="tag">A. Project health, 128 projects</span><span class="tag">B. Risks, 13 critical</span><span class="tag">C. Change requests, 5 open</span><span class="tag">D. Capacity by capability</span><span class="tag">E. Investment by program</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ANL-01</span> The pack is generated for a chosen period and portfolio from live data, with selectable sections; saved packs keep the figures of their generation date.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ANL-02</span> The weekly portfolio report variant shows only material changes since the previous week and the exceptions that need action.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ANL-03, BR-39</span> Every figure in the preview links to the projects and source records behind it, using the BRD Section 12 definitions; the pack states its as-of time and metric version, and a saved pack is a snapshot.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ANL-04</span> Governance analytics: gate outcomes, first-pass approval, CR cycle time and reporting compliance for the period.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">AIC-06</span> AI drafting of the narrative is V3; a person always reviews and edits the text before the pack is published.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

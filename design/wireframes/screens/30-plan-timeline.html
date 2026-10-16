@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project plan, timeline · Metis wireframe</title>
+<meta name="wf:id" content="plan-timeline">
+<meta name="wf:title" content="Project plan: timeline">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLN-01 PLN-02 PLN-03 PLN-04 WBS-13 BR-23 BR-40">
+<meta name="wf:poc" content="22">
+<meta name="wf:summary" content="Point-based timeline of dated work items with days relative to today, OVERDUE tags, a today line and dependency conflicts flagged with the WBS rules; stage overlay and Gantt come in V2.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-tl { height: 400px; }
+  .x-tl .card { width: 290px; }
+  .x-tl .x-line { display: flex; gap: 6px; align-items: center; font-size: 12px; padding: 2px 0; white-space: nowrap; }
+  .x-tl .x-line .code { min-width: 34px; }
+  .x-od { font: 600 10px/1 var(--font-ui); color: var(--critical-text); background: var(--critical-bg); border-radius: 4px; padding: 3px 5px; margin-left: auto; }
+  .x-tick { position: absolute; bottom: 18px; font-size: 11.5px; color: var(--muted); }
+  .x-band { position: absolute; bottom: 66px; height: 16px; display: flex; gap: 2px; opacity: .45; }
+  .x-dep { color: var(--critical); font-weight: 700; }
+  .x-band span { font-size: 10px; color: var(--muted); background: var(--surface-sunk); border: 1px solid var(--line); border-radius: 3px; padding: 1px 6px; white-space: nowrap; overflow: hidden; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="plan">
+<main>
+
+  <section class="row between" data-req="PLN-01">
+    <div class="row"><span class="seg"><span class="on">Timeline</span><span>Board</span><span>Changes</span><span>Reports</span></span><span class="anno" data-n="1"></span></div>
+    <div class="row" data-req="PLN-02">
+      <div class="select" style="min-width:150px">Filter: all work items</div>
+      <span class="btn secondary sm">−</span><span class="small num">100%</span><span class="btn secondary sm">+</span>
+      <span class="seg"><span class="on">Horizontal</span><span>Vertical</span></span>
+      <span class="check">Equal spacing</span>
+      <span class="anno" data-n="3"></span>
+      <span class="btn secondary sm" style="opacity:.55">Gantt <span class="tag future">Planned V2</span></span>
+      <span class="btn secondary sm">Full screen</span>
+    </div>
+  </section>
+
+  <section class="card pad" data-req="PLN-02 PLN-03">
+    <div class="row between" style="margin-bottom:10px">
+      <span class="h3">Work items by target date <span class="anno" data-n="2"></span></span>
+      <span class="small muted">25 Jun to 30 Sep 2026 · 12 work items · 9 overdue · today 22 Sep</span>
+    </div>
+    <div class="tl x-tl">
+      <div class="card" style="left:16px;top:20px">
+        <div class="small muted">29 Jun to 5 Jul · 85 to 79 days ago</div>
+        <div class="x-line"><span class="code">5.1</span>Render Farm Allocation<span class="chip good" style="margin-left:auto">Done</span></div>
+        <div class="x-line"><span class="code">2.1</span><span class="lbl inreq"></span>CAD / Design Files<span class="chip good" style="margin-left:auto">Done</span></div>
+        <div class="x-line"><span class="code">2.2</span>Tone / Mood Reference<span class="chip good" style="margin-left:auto">Done</span></div>
+      </div>
+      <div class="card" style="left:240px;top:160px">
+        <div class="small muted">24 to 25 Jul · 60 and 59 days ago</div>
+        <div class="x-line"><span class="code">1.1.1</span><span class="lbl ms"></span>Phase 1 Render Delivery<span class="x-od">OVERDUE</span></div>
+        <div class="x-line"><span class="code">3.1</span><span class="lbl gate"></span>Visual Quality Approval<span class="x-od">OVERDUE</span></div>
+      </div>
+      <div class="card" style="left:470px;top:20px">
+        <div class="small muted">10 Aug · 43 days ago</div>
+        <div class="x-line"><span class="code">1.1</span>51 Render Images<span class="x-od">OVERDUE</span></div>
+        <div class="x-line"><span class="code">1.1.2</span><span class="lbl ms"></span>Phase 2 Render Delivery<span class="x-od">OVERDUE</span></div>
+        <div class="x-line"><span class="code">4.1</span><span class="lbl risk"></span>Timeline Risk<span class="x-od">OVERDUE</span></div>
+      </div>
+      <div class="card" style="left:700px;top:150px">
+        <div class="small muted">28 Aug to 2 Sep · 25 and 20 days ago</div>
+        <div class="x-line"><span class="code">1.2</span>3D Film (2 to 3 min)<span class="x-dep">⚠</span><span class="x-od">OVERDUE</span></div>
+        <div class="x-line"><span class="code">3.2</span><span class="lbl gate"></span>Client Approval Gate<span class="x-dep">⚠</span><span class="x-od">OVERDUE</span></div>
+        <div class="x-line"><span class="code">6.1</span><span class="lbl risk"></span>Client Feedback Risk<span class="x-od">OVERDUE</span></div>
+        <div class="x-line"><span class="code">1.3</span><span class="lbl ms"></span>Final Delivery<span class="x-od">OVERDUE</span></div>
+      </div>
+
+      <div class="stem" style="left:65px;top:122px;height:230px"></div>
+      <div class="stem" style="left:110px;top:122px;height:230px"></div>
+      <div class="stem" style="left:133px;top:122px;height:230px"></div>
+      <div class="stem" style="left:348px;top:244px;height:108px"></div>
+      <div class="stem" style="left:359px;top:244px;height:108px"></div>
+      <div class="stem" style="left:540px;top:122px;height:230px"></div>
+      <div class="stem" style="left:743px;top:276px;height:76px"></div>
+      <div class="stem" style="left:800px;top:276px;height:76px"></div>
+
+      <div class="x-band" style="left:20px;width:1000px" title="Lifecycle stages">
+        <span style="width:60px">Initiation</span><span style="width:90px">Planning</span><span style="width:520px">Production · stage 3 of 6</span><span style="width:150px">Review</span><span style="width:120px">Delivery</span>
+      </div>
+      <span class="tag future" style="position:absolute;left:20px;bottom:86px">Planned V2: stage overlay</span>
+      <span class="anno" data-n="4" style="position:absolute;left:186px;bottom:87px"></span>
+
+      <div class="axis"></div>
+      <div class="pt" style="left:65px;border-color:var(--good)"></div>
+      <div class="pt" style="left:110px;border-color:var(--good)"></div>
+      <div class="pt" style="left:133px;border-color:var(--good)"></div>
+      <div class="pt ms late" style="left:348px"></div>
+      <div class="pt late" style="left:359px"></div>
+      <div class="pt ms late" style="left:540px"></div>
+      <div class="pt late" style="left:743px"></div>
+      <div class="pt ms late" style="left:800px"></div>
+      <div class="today" style="left:1025px"></div>
+      <span class="small" style="position:absolute;left:1032px;top:8px;color:var(--critical-text);font-weight:600">Today · 22 Sep</span>
+
+      <span class="x-tick" style="left:20px">25 Jun</span>
+      <span class="x-tick" style="left:88px">Jul</span>
+      <span class="x-tick" style="left:438px">Aug</span>
+      <span class="x-tick" style="left:788px">Sep</span>
+    </div>
+    <div class="row small muted" style="margin-top:10px">
+      <span>● point = target date of a work item</span><span>◆ = milestone</span><span style="color:var(--critical-text)">red = not Done and past target</span><span style="color:var(--critical-text)">⚠ = dependency conflict</span><span>Clusters group items whose dates overlap at this zoom</span>
+    </div>
+    <div class="banner bad small" style="margin-top:10px" data-req="WBS-13 BR-23 BR-40"><span class="x-dep">⚠</span><span><b>1 dependency conflict.</b> 1.2 then 3.2 (finish to start): 3.2 starts 20 Aug before 1.2 finishes 28 Aug. Flagged on both items; no date is moved. A link with a missing date shows "schedule data incomplete" instead, as for 2.2 then 3.1 (3.1 has no start date).</span><span class="anno" data-n="6"></span><span class="btn secondary sm" style="margin-left:auto">Open in WBS tree</span></div>
+  </section>
+
+  <section class="card pad row" style="opacity:.6" data-req="PLN-04">
+    <span class="h3">Gantt with bars and dependency lines</span><span class="tag future">Planned V2</span><span class="anno" data-n="5"></span>
+    <span class="small muted">Evaluated in V2 together with the portfolio roadmap component; until then the WBS table carries start and target dates.</span>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLN-01</span> Project Plan groups Timeline, Board, Changes and Reports and keeps the project context when switching.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">PLN-02</span> Each point is a dated work item. Cards show the date, days relative to today, code and name; OVERDUE means not Done and target before today, the same rule as Overview and Focus.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLN-02</span> Filter, zoom (default 100%), horizontal or vertical orientation and equal spacing behave as in the POC.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">PLN-03</span> Lifecycle stage and gate overlay on the timeline is planned for V2.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">PLN-04</span> A bar Gantt with dependency lines is not in the MVP; it is evaluated in V2.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">WBS-13, BR-23, BR-40</span> The timeline marks both items of a dependency conflict with the same rule as the WBS: a conflict is evaluated only when both compared dates exist, otherwise the link reads "schedule data incomplete". 3.2 starts 20 Aug before 1.2 finishes 28 Aug, so both carry the marker; no date moves until a person changes it.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

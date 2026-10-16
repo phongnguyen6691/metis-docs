@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Capacity · Metis wireframe</title>
+<meta name="wf:id" content="capacity">
+<meta name="wf:title" content="Capacity control tower">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="RES-01 RES-02 RES-03 RES-04 BR-07 BR-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Capacity, demand, utilization and gap by capability for the workspace, with monthly heat and the projects behind each bottleneck; the allocation editor that feeds demand opens in a side drawer from Edit allocations.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-heat { width: 100%; border-collapse: separate; border-spacing: 2px; font-size: 12px; font-variant-numeric: tabular-nums; }
+  .x-heat th { font: 600 10.5px/1.2 var(--font-ui); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); text-align: center; padding: 4px; }
+  .x-heat th:first-child { text-align: left; }
+  .x-heat td { height: 28px; text-align: center; border-radius: 4px; }
+  .x-heat td:first-child { text-align: left; padding-left: 4px; }
+  .x-h1 { background: var(--seq-100); color: var(--ink); } .x-h2 { background: var(--seq-250); color: var(--ink); }
+  .x-h3 { background: var(--seq-400); color: var(--ink); } .x-h4 { background: var(--seq-550); color: #fff; } .x-h5 { background: var(--seq-700); color: #fff; }
+  .x-scale { display: flex; gap: 2px; align-items: center; font-size: 11.5px; color: var(--muted); }
+  .x-scale span.sw { width: 34px; height: 10px; border-radius: 2px; display: inline-block; }
+  .x-cell { display: inline-block; min-width: 46px; padding: 3px 6px; border: 1px solid var(--line-strong); border-radius: 4px; text-align: right; background: var(--canvas); }
+  .x-drawer { width: 780px; max-width: 100%; border-radius: 0; box-shadow: -14px 0 36px rgba(17, 24, 39, .22); display: flex; flex-direction: column; }
+  .x-drawer > .body { flex: 1; }
+</style>
+</head>
+<body data-shell="app" data-nav="capacity" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / Capacity">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Capacity</div>
+      <div class="muted small" style="margin-top:4px">Demand from project allocations · capacity from the resource plan · <span class="fresh">As of 22 Sep 2026, 09:40 · metrics v1</span></div>
+    </div>
+    <div class="filters">
+      <div class="field"><label>Period</label><div class="seg"><span class="on">Q4 2026</span><span>Q1 2027</span><span>Month</span></div></div>
+      <div class="field"><label>Capability</label><div class="select">All</div></div>
+      <span class="btn secondary">Import capacity file</span>
+      <span class="btn secondary">Scenario <span class="tag future">Planned V2</span> <span class="anno" data-n="6"></span></span>
+      <span class="btn primary">Edit allocations</span>
+    </div>
+  </section>
+
+  <section class="grid c4" data-req="RES-01 BR-39">
+    <div class="card kpi"><div class="k-label">Capacity <span class="anno" data-n="7"></span></div><div class="k-value">452 FTE</div><div class="k-delta">7 capabilities</div><div class="fresh stale">last confirmed 10 Sep · 12 days ago</div></div>
+    <div class="card kpi"><div class="k-label">Demand</div><div class="k-value">474 FTE</div><div class="k-delta">from 96 committed projects</div><div class="fresh">as of 22 Sep 09:40</div></div>
+    <div class="card kpi alert"><div class="k-label">Utilization</div><div class="k-value">105%</div><div class="k-delta"><span class="up-bad">-22 FTE</span> gap</div></div>
+    <div class="card kpi"><div class="k-label">Capabilities over threshold</div><div class="k-value">4</div><div class="k-delta">2 critical · 2 warning</div></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 1.5fr 1fr">
+    <div class="stack">
+      <div class="card" data-req="RES-01 BR-07">
+        <div class="head"><span class="h3">By capability, Q4 2026 <span class="anno" data-n="1"></span></span><span class="muted small">warning from 100%, critical from 110% <span class="anno" data-n="2"></span></span><span class="btn ghost sm">Table view</span></div>
+        <table class="table">
+          <thead><tr><th>Capability</th><th class="num">Capacity</th><th class="num">Demand</th><th>Utilization</th><th class="num">Gap</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Data</td><td class="num">40</td><td class="num">47</td><td><div class="row"><div class="meter bad" style="width:120px"><span style="width:100%"></span></div><span class="num">118%</span></div></td><td class="num">-7</td><td><span class="chip critical">Critical</span></td></tr>
+            <tr><td>Engineering</td><td class="num">150</td><td class="num">168</td><td><div class="row"><div class="meter bad" style="width:120px"><span style="width:100%"></span></div><span class="num">112%</span></div></td><td class="num">-18</td><td><span class="chip critical">Critical</span></td></tr>
+            <tr><td>Product</td><td class="num">45</td><td class="num">48</td><td><div class="row"><div class="meter warn" style="width:120px"><span style="width:100%"></span></div><span class="num">107%</span></div></td><td class="num">-3</td><td><span class="chip waiting">Warning</span></td></tr>
+            <tr><td>QA</td><td class="num">60</td><td class="num">62</td><td><div class="row"><div class="meter warn" style="width:120px"><span style="width:100%"></span></div><span class="num">103%</span></div></td><td class="num">-2</td><td><span class="chip waiting">Warning</span></td></tr>
+            <tr><td>Operations</td><td class="num">112</td><td class="num">109</td><td><div class="row"><div class="meter" style="width:120px"><span style="width:97%"></span></div><span class="num">97%</span></div></td><td class="num">+3</td><td><span class="chip good">OK</span></td></tr>
+            <tr><td>Risk</td><td class="num">20</td><td class="num">19</td><td><div class="row"><div class="meter" style="width:120px"><span style="width:95%"></span></div><span class="num">95%</span></div></td><td class="num">+1</td><td><span class="chip good">OK</span></td></tr>
+            <tr><td>UX</td><td class="num">25</td><td class="num">21</td><td><div class="row"><div class="meter" style="width:120px"><span style="width:84%"></span></div><span class="num">84%</span></div></td><td class="num">+4</td><td><span class="chip good">OK</span></td></tr>
+            <tr class="cat"><td>Total</td><td class="num">452</td><td class="num">474</td><td><span class="num">105%</span></td><td class="num">-22</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" data-req="RES-01">
+        <div class="head"><span class="h3">Utilization by month <span class="anno" data-n="3"></span></span><span class="btn ghost sm">Table view</span></div>
+        <div class="body stack s">
+          <table class="x-heat">
+            <thead><tr><th>Capability</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Jan</th><th>Feb</th><th>Mar</th></tr></thead>
+            <tbody>
+              <tr><td>Data</td><td class="x-h4">112</td><td class="x-h4">118</td><td class="x-h5">124</td><td class="x-h5">121</td><td class="x-h4">117</td><td class="x-h4">110</td></tr>
+              <tr><td>Engineering</td><td class="x-h3">106</td><td class="x-h4">112</td><td class="x-h4">118</td><td class="x-h4">115</td><td class="x-h4">110</td><td class="x-h3">104</td></tr>
+              <tr><td>Product</td><td class="x-h3">103</td><td class="x-h3">107</td><td class="x-h4">111</td><td class="x-h3">108</td><td class="x-h3">104</td><td class="x-h2">99</td></tr>
+              <tr><td>QA</td><td class="x-h3">100</td><td class="x-h3">103</td><td class="x-h3">106</td><td class="x-h3">104</td><td class="x-h3">100</td><td class="x-h2">96</td></tr>
+              <tr><td>Operations</td><td class="x-h2">95</td><td class="x-h2">97</td><td class="x-h2">99</td><td class="x-h2">98</td><td class="x-h2">96</td><td class="x-h2">94</td></tr>
+              <tr><td>Risk</td><td class="x-h2">93</td><td class="x-h2">95</td><td class="x-h2">97</td><td class="x-h2">96</td><td class="x-h2">94</td><td class="x-h2">92</td></tr>
+              <tr><td>UX</td><td class="x-h1">82</td><td class="x-h1">84</td><td class="x-h1">86</td><td class="x-h1">87</td><td class="x-h1">85</td><td class="x-h1">81</td></tr>
+            </tbody>
+          </table>
+          <div class="x-scale"><span class="sw x-h1"></span><span class="sw x-h2"></span><span class="sw x-h3"></span><span class="sw x-h4"></span><span class="sw x-h5"></span><span style="margin-left:6px">under 90% · 90 to 99 · 100 to 109 · 110 to 119 · 120% and over</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack">
+    <div class="card" data-req="RES-02">
+      <div class="head"><span class="h3">Top bottlenecks <span class="anno" data-n="4"></span></span><span class="chip critical">2</span></div>
+      <div class="body stack s">
+        <div class="row between"><b>Data · 118%</b><span class="muted small">7 FTE short in Q4</span></div>
+        <div class="hbars">
+          <span>Data Platform</span><span class="track"><span class="s1" style="width:62%"></span></span><span class="val">15.0 FTE</span>
+          <span>MSME Payment</span><span class="track"><span class="s1" style="width:39%"></span></span><span class="val">9.3 FTE</span>
+          <span>Core Platform</span><span class="track"><span class="s1" style="width:27%"></span></span><span class="val">6.7 FTE</span>
+          <span>Digital Sales</span><span class="track"><span class="s1" style="width:17%"></span></span><span class="val">4.1 FTE</span>
+          <span>18 other projects</span><span class="track"><span class="s1" style="width:50%"></span></span><span class="val">12.0 FTE</span>
+        </div>
+        <div class="hr"></div>
+        <div class="row between"><b>Engineering · 112%</b><span class="muted small">18 FTE short in Q4</span></div>
+        <div class="hbars">
+          <span>Core Platform</span><span class="track"><span class="s1" style="width:30%"></span></span><span class="val">32 FTE</span>
+          <span>Mobile App</span><span class="track"><span class="s1" style="width:15%"></span></span><span class="val">16 FTE</span>
+          <span>Data Platform</span><span class="track"><span class="s1" style="width:13%"></span></span><span class="val">14 FTE</span>
+          <span>41 other projects</span><span class="track"><span class="s1" style="width:100%"></span></span><span class="val">106 FTE</span>
+        </div>
+        <div class="banner warn small">CR-016 (Mobile App, add iOS) would add 6 Engineering FTE if approved.</div>
+        <div class="row"><span class="btn secondary sm">Open Data Platform</span><span class="btn secondary sm">Open Core Platform</span></div>
+      </div>
+    </div>
+    <div class="card" data-req="BR-07">
+      <div class="head"><span class="h3">Thresholds</span><span class="muted small">per capability</span><span class="btn secondary sm">Edit</span></div>
+      <table class="table">
+        <thead><tr><th>Capability</th><th class="num">Warning</th><th class="num">Critical</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>All capabilities</td><td class="num">100%</td><td class="num">110%</td><td class="muted">Workspace default</td></tr>
+          <tr><td>Operations</td><td class="num">105%</td><td class="num">115%</td><td class="muted">Override, shift-based team</td></tr>
+        </tbody>
+      </table>
+      <div class="list-row"><span class="muted small grow">Changes are audited and apply to the next calculation; history is not recoloured.</span></div>
+    </div>
+    </div>
+  </section>
+
+  <div class="label">Drawer opened from Edit allocations <span class="anno" data-n="5"></span></div>
+  <section class="overlay card" style="display:flex;justify-content:flex-end;overflow:hidden" data-req="RES-03">
+    <div class="muted small" style="flex:1;padding:24px">Capacity page: summary, month strip and bottlenecks stay in place behind the drawer</div>
+    <div class="modal x-drawer">
+      <div class="head"><span class="h3" style="flex:1">Edit allocations</span><span class="btn ghost sm">Close</span></div>
+      <div class="body stack s">
+        <div class="row">
+          <div class="field"><label>Capability</label><div class="select">Data</div></div>
+          <div class="field"><label>Period</label><div class="select">Q4 2026 by month</div></div>
+          <div class="small muted grow" style="align-self:flex-end">FTE per project per month · entered by project managers, approved by the Resource Manager</div>
+        </div>
+        <table class="table">
+          <thead><tr><th>Project</th><th>Owner</th><th class="num">Oct</th><th class="num">Nov</th><th class="num">Dec</th><th class="num">Q4 average</th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">PRJ-006</span> Data Platform</td><td>L. Wang</td><td class="num"><span class="x-cell">14.0</span></td><td class="num"><span class="x-cell">15.0</span></td><td class="num"><span class="x-cell">16.0</span></td><td class="num">15.0</td></tr>
+            <tr><td><span class="code">PRJ-001</span> MSME Payment</td><td>A. Wong</td><td class="num"><span class="x-cell">9.0</span></td><td class="num"><span class="x-cell">9.0</span></td><td class="num"><span class="x-cell">10.0</span></td><td class="num">9.3</td></tr>
+            <tr><td><span class="code">PRJ-005</span> Core Platform</td><td>L. Wang</td><td class="num"><span class="x-cell">6.0</span></td><td class="num"><span class="x-cell">7.0</span></td><td class="num"><span class="x-cell">7.0</span></td><td class="num">6.7</td></tr>
+            <tr><td><span class="code">PRJ-003</span> Digital Sales</td><td>M. Johnson</td><td class="num"><span class="x-cell">3.8</span></td><td class="num"><span class="x-cell">4.0</span></td><td class="num"><span class="x-cell">4.5</span></td><td class="num">4.1</td></tr>
+            <tr><td>18 other projects</td><td class="muted">various</td><td class="num">12.0</td><td class="num">12.0</td><td class="num">12.0</td><td class="num">12.0</td></tr>
+            <tr class="cat"><td>Demand</td><td></td><td class="num">44.8</td><td class="num">47.0</td><td class="num">49.5</td><td class="num">47.1</td></tr>
+            <tr><td class="muted">Capacity</td><td></td><td class="num muted">40.0</td><td class="num muted">40.0</td><td class="num muted">40.0</td><td class="num muted">40.0</td></tr>
+            <tr><td class="muted">Utilization</td><td></td><td class="num" style="color:var(--critical-text)">112%</td><td class="num" style="color:var(--critical-text)">118%</td><td class="num" style="color:var(--critical-text)">124%</td><td class="num" style="color:var(--critical-text)">118%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="foot"><span class="btn secondary sm" style="margin-right:auto">Import from file</span><span class="btn ghost">Cancel</span><span class="btn primary">Save allocations</span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">RES-01</span> Utilization is demand divided by capacity per capability; demand is the sum of active project allocations, so every figure traces to a project.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">BR-07</span> Warning and critical thresholds are configurable per capability and organization; status always shows a word next to the colour.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">RES-01</span> The month strip uses one blue ramp from light to dark (magnitude), cell text switches between ink and white by fill, and a table view carries the same numbers.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">RES-02</span> Each bottleneck lists the projects causing the demand, so the fix starts from a project, not from a person.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">RES-03</span> Allocations are edited in a side drawer opened from "Edit allocations", so the page keeps its summary, month strip and bottlenecks in view; saving recalculates demand. In the MVP, capacity is kept in the platform or imported from a file and project managers enter allocations; the HR integration that feeds capacity arrives in V2.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">RES-04</span> Capacity scenarios (add, remove or shift projects) are V2 and never change the approved baseline until a decision is made.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">BR-39</span> Capacity was last confirmed by resource managers 12 days ago, so this tile and the executive cockpit mark it stale with a warning triangle and words; demand is recalculated from allocations and is current.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

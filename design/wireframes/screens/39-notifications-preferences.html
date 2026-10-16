@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Notifications and preferences · Metis wireframe</title>
+<meta name="wf:id" content="notifications-preferences">
+<meta name="wf:title" content="Notifications and preferences">
+<meta name="wf:area" content="Personal & collaboration">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLT-09 PLT-10 PLT-18">
+<meta name="wf:poc" content="31">
+<meta name="wf:summary" content="Notification drawer with unread markers and deep links for each trigger, and the personal preferences page: channels per trigger with approval requests locked on, digest and chat channels planned for V2, display name, default landing tab, default WBS view and language.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-feed .list-row { align-items: flex-start; padding-top: 11px; padding-bottom: 11px; }
+  .x-feed .list-row.unread .title-line { font-weight: 600; }
+  .x-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 7px; flex: none; }
+  .x-dot.on { background: var(--violet); }
+  .x-ic { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); display: inline-flex; align-items: center; justify-content: center; font: 600 12px/1 var(--font-ui); color: var(--muted); flex: none; }
+  .x-quote { margin-top: 4px; padding-left: 8px; border-left: 2px solid var(--line-strong); font-size: 12.5px; color: var(--muted); }
+  .x-prefs td { height: 40px; }
+  .x-later { opacity: .6; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Nadia R. / Notifications and preferences">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Notifications and preferences</div>
+      <div class="muted small" style="margin-top:4px">Signed in as Nadia R. · the bell in the top bar opens the same list as a drawer</div>
+    </div>
+    <span class="save">All changes saved · 09:41</span>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 430px minmax(0, 1fr); align-items: start">
+
+    <div class="card x-feed" data-req="PLT-09">
+      <div class="head"><span class="h3">Notifications <span class="anno" data-n="1"></span></span><span class="small"><a>Mark all as read</a></span></div>
+      <div class="body" style="padding:10px 14px"><div class="seg"><span class="on">All</span><span>Unread (3)</span><span>Mentions</span><span>Approvals</span></div></div>
+      <div class="list-row unread"><span class="x-dot on"></span><span class="x-ic">@</span><div class="grow"><div class="title-line">Sasha W. mentioned you on 1.2 3D Film (2 to 3 minutes)</div><div class="x-quote">"Can J. Park review the animatic on Thursday?"</div><div class="sub">Meridian CGI Campaign · 09:20 · <a>Open comment</a></div></div></div>
+      <div class="list-row unread"><span class="x-dot on"></span><span class="x-ic">✓</span><div class="grow"><div class="title-line">H. Le approved CR-002 Move render farm to overnight queue</div><div class="sub">Ready to apply to the baseline · Meridian CGI Campaign · 08:40 · <a>Open CR-002</a></div></div></div>
+      <div class="list-row unread"><span class="x-dot on"></span><span class="x-ic">◇</span><div class="grow"><div class="title-line">Sasha W. voted Rework on the Planning gate</div><div class="sub">Votes 1/3 · quorum 2/3 · Spring Catalogue Renders · 08:15 · <a>Open gate review</a></div></div></div>
+      <div class="list-row"><span class="x-dot"></span><span class="x-ic">→</span><div class="grow"><div class="title-line">H. Le made you Reviewer of 1.3 Walkthrough Script</div><div class="sub">Northwind Showroom VR · yesterday 17:30 · <a>Open item</a></div></div></div>
+      <div class="list-row"><span class="x-dot"></span><span class="x-ic" style="color:var(--critical)">!</span><div class="grow"><div class="title-line">3 items you own are overdue</div><div class="sub">3.2 Client Approval Gate, 6.1 Client Feedback Risk, 1.3 Final Delivery · Meridian CGI Campaign · Mon 08:00 · <a>Open My focus</a></div></div></div>
+      <div class="list-row"><span class="x-dot"></span><span class="x-ic">▤</span><div class="grow"><div class="title-line">Weekly status missing for Spring Catalogue Renders</div><div class="sub">Not published by the Friday deadline; it now shows on the executive attention list · Fri 18 Sep · <a>Write status</a></div></div></div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="PLT-09">
+        <div class="head"><span class="h3">What notifies me, and where <span class="anno" data-n="2"></span></span></div>
+        <table class="table x-prefs">
+          <thead><tr><th>Trigger</th><th>In-app</th><th>Email</th><th></th></tr></thead>
+          <tbody>
+            <tr><td>@mentions</td><td><span class="toggle on"></span></td><td><span class="toggle on"></span></td><td></td></tr>
+            <tr><td>Assigned as PIC, Reviewer or Approver</td><td><span class="toggle on"></span></td><td><span class="toggle on"></span></td><td></td></tr>
+            <tr><td>A CR decision or gate vote is requested from you</td><td><span class="toggle on"></span></td><td><span class="toggle on"></span></td><td><span class="tag">🔒 Always on</span></td></tr>
+            <tr><td>A waiver or charter sign-off is requested from you</td><td><span class="toggle on"></span></td><td><span class="toggle on"></span></td><td><span class="tag">🔒 Always on</span></td></tr>
+            <tr><td>Decisions and votes on your requests</td><td><span class="toggle on"></span></td><td><span class="toggle"></span></td><td></td></tr>
+            <tr><td>Items you own due soon or overdue</td><td><span class="toggle on"></span></td><td><span class="toggle"></span></td><td></td></tr>
+            <tr><td>Weekly status missing on your projects</td><td><span class="toggle on"></span></td><td><span class="toggle on"></span></td><td></td></tr>
+          </tbody>
+        </table>
+        <div class="body small muted">Each event notifies you once, even when it matches more than one trigger. Approval requests cannot be muted so no decision gets stuck.</div>
+      </div>
+
+      <div class="grid c2">
+        <div class="card x-later" data-req="PLT-10">
+          <div class="head"><span class="h3">Daily digest <span class="anno" data-n="3"></span></span><span class="tag future">Planned V2</span></div>
+          <div class="body stack s small"><span class="toggle">Morning email of my Focus items</span><div class="muted">Overdue, due today and due this week, sent at 08:00 in my timezone.</div></div>
+        </div>
+        <div class="card x-later" data-req="PLT-10">
+          <div class="head"><span class="h3">Chat channel</span><span class="tag future">Planned V2</span></div>
+          <div class="body stack s small"><div class="select ph">Slack or Microsoft Teams</div><div class="muted">Send the same notifications to a chat app.</div></div>
+        </div>
+      </div>
+
+      <div class="card" data-req="PLT-18">
+        <div class="head"><span class="h3">Personal preferences <span class="anno" data-n="4"></span></span></div>
+        <div class="body grid c2">
+          <div class="field"><label>Display name</label><div class="input">Nadia R.</div><div class="small muted">Shown in activity, for example "Nadia R. changed Status"</div></div>
+          <div class="field"><label>Language</label><div class="select">English</div></div>
+          <div class="field"><label>Default landing tab</label><div class="select">Overview</div><div class="small muted">Opens first when you open or switch projects</div></div>
+          <div class="field"><label>Default WBS view</label><div class="seg" style="align-self:flex-start"><span class="on">Table</span><span>Tree</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLT-09</span> The drawer lists @mentions, assignments, decisions and gate votes, overdue items and missing weekly status, newest first; unread rows carry a dot and a bold title, the bell shows the unread count, and every row links to the item.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">PLT-09</span> Channels per trigger for in-app and email. Requests for a decision, vote, waiver or sign-off are locked on in both channels; every other trigger can be switched off.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLT-10</span> The morning digest and Slack or Microsoft Teams delivery are P1 and planned for V2.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">PLT-18</span> Display name, default landing tab and default WBS view apply when a project is opened or switched, as in the POC Settings, General; preferences autosave.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

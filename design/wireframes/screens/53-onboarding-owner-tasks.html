@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: owner tasks · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-owner-tasks">
+<meta name="wf:title" content="Onboarding: owner tasks">
+<meta name="wf:area" content="Onboarding">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-08 ONB-17 ONB-18 ONB-19 BR-48 PLT-09">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="After launch: the finisher's task list with pre-filled values and sources, the completeness bar the executive sees, the rule that keeps launch values by default at the due date, a suggestion from a new document waiting for a person, and a task raised at the moment of need.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-prog { grid-template-columns: 270px minmax(0, 1fr) 64px; row-gap: 12px; }
+  .x-prog .track { background: var(--line); border-radius: 4px; }
+  .x-task { align-items: flex-start; padding-top: 12px; padding-bottom: 12px; }
+  .x-task .x-acts { margin-top: 8px; }
+  .x-nb { white-space: nowrap; }
+  .banner { text-wrap: balance; }
+  .small.muted { text-wrap: pretty; }
+</style>
+</head>
+<body data-shell="app" data-nav="setup-tasks" data-workspace="Nova Energy Portfolio" data-tenant="Nova Energy" data-user="SV" data-crumbs="Nova Energy Portfolio / Setup tasks">
+<main>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1fr) 380px; align-items: start">
+
+    <div class="stack">
+
+      <div class="card" data-req="ONB-17">
+        <div class="head"><h1 class="title">Delegated follow-through: 39% of the handed-over items closed</h1><span class="anno" data-n="1"></span></div>
+        <div class="body stack">
+          <div class="stack s">
+            <div class="meter acc"><span style="width:39%"></span></div>
+            <div class="small muted">12 of 31 delegated items closed, as of 7 Oct 2026 · due 12 Oct 2026 · the launch itself completed on 5 Oct; this bar is only the work handed to owners, and Rosa Okafor sees it on her home until it closes</div>
+          </div>
+          <div class="hbars x-prog">
+            <div>Accountability and process (Sam Varga)</div><span class="track"><span class="s1" style="width:33%"></span></span><span class="val">3 of 9</span>
+            <div>Budgets (Tomas Iwata)</div><span class="track"><span class="s1" style="width:57%"></span></span><span class="val">4 of 7</span>
+            <div>Capacity (Priya Duarte)</div><span class="track"><span class="s1" style="width:0%"></span></span><span class="val">0 of 4</span>
+            <div>Project details (PMs)</div><span class="track"><span class="s1" style="width:45%"></span></span><span class="val">5 of 11</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-req="ONB-17">
+        <div class="head"><span class="h3">Your tasks, Sam <span class="anno" data-n="2"></span></span></div>
+        <div class="list-row x-task">
+          <div class="grow">
+            <div class="title-line">Name a sponsor for 4 committed projects</div>
+            <div class="row"><span class="sub">Suggested: North Grid Substation Upgrade, Amara Diallo (sponsor of a related project)</span></div>
+            <div class="row x-acts"><span class="btn primary sm">Accept the suggestions</span><span class="btn secondary sm">Edit</span><span class="btn ghost sm">Reassign</span></div>
+          </div>
+          <span class="chip waiting">Due 12 Oct</span>
+        </div>
+        <div class="list-row x-task">
+          <div class="grow">
+            <div class="title-line">Are Grid Outage Analytics and Outage Prediction Pilot the same project?</div>
+            <div class="row x-acts"><span class="btn secondary sm">Merge</span><span class="btn secondary sm">Keep both</span><span class="btn ghost sm">I don't know</span></div>
+          </div>
+          <span class="chip waiting">Due 12 Oct</span>
+        </div>
+        <div class="list-row x-task">
+          <div class="grow">
+            <div class="title-line">Name the Engineering director for Ready to energize</div>
+            <div class="row"><span class="sub">Amara Diallo approves meanwhile</span><span class="src assumed">Assumed</span></div>
+            <div class="row x-acts"><span class="btn primary sm">Name a person</span><span class="btn ghost sm">Reassign</span></div>
+          </div>
+          <span class="chip waiting">Due 12 Oct</span>
+        </div>
+        <div class="list-row x-task">
+          <div class="grow">
+            <div class="title-line">Adapt the Capital projects pack's process frameworks</div>
+            <div class="sub">Raised on 6 Oct, when J. Mensah first opened them; not one of the 31 setup items</div>
+            <div class="row x-acts"><span class="btn primary sm">Start</span><span class="btn ghost sm">Reassign</span></div>
+          </div>
+          <span class="chip waiting">Due 12 Oct</span>
+        </div>
+        <div class="list-row"><div class="grow muted">Concept approval board members confirmed</div><span class="chip good">Done</span></div>
+        <div class="list-row"><div class="grow muted">Programs of the Grid unit confirmed</div><span class="chip good">Done</span></div>
+        <div class="list-row"><div class="grow muted">Status list mapping confirmed</div><span class="chip good">Done</span></div>
+      </div>
+
+    </div>
+
+    <div class="stack">
+
+      <div class="card" data-req="BR-48">
+        <div class="head"><span class="h3">At the due date <span class="anno" data-n="3"></span></span></div>
+        <div class="body stack s">
+          <div>On 12 Oct, a normal value applied at launch that nobody confirmed stays as it is: its badge becomes <b>kept unchanged after the due date</b> and it stays in Sam Varga's attention list. Nothing new is applied automatically, and a high-impact value is never kept this way: it escalates and stays unconfirmed.</div>
+          <div><span class="src default">Kept unchanged after the due date</span></div>
+        </div>
+      </div>
+
+      <div class="card" data-req="ONB-18">
+        <div class="head"><span class="h3">Suggestion waiting for a person <span class="anno" data-n="4"></span></span></div>
+        <div class="body stack s">
+          <div>From 'Almeria status report October.docx', uploaded by J. Mensah on 6 Oct: target date <span class="x-nb">30 Jun 2027 → 31 Aug 2027.</span></div>
+          <div class="banner warn small">This is a baselined date: accepting it opens a change request.</div>
+          <div class="row"><span class="btn primary sm">Accept and raise a change request</span><span class="btn ghost sm">Dismiss</span></div>
+          <div class="small muted">Suggestions never apply themselves.</div>
+        </div>
+      </div>
+
+      <div class="card" data-req="ONB-19">
+        <div class="head"><span class="h3">Asked at the moment of need <span class="anno" data-n="5"></span></span></div>
+        <div class="body">J. Mensah opened deliverable process frameworks for the first time on 6 Oct; none is set up yet, so a task to adapt the Capital projects pack's frameworks went to Sam Varga, due 12 Oct. It is not one of the 31 setup items.</div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="small muted" data-req="PLT-09 ONB-08"><span class="anno" data-n="6"></span> Reminders by email and in the app on 9 Oct and on the morning of 12 Oct; overdue items go to Sam Varga, then appear in Rosa Okafor's attention queue. Each owner's assumed values awaiting confirmation, such as Amara Diallo approving Ready to energize, are counted in that owner's item there until someone confirms or changes them.</div>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-17, ONB-26</span> The bar is the share of delegated items closed and is labelled as such, because "39% of setup complete" reads as if the launch were unfinished when in fact it completed on day one. The two figures are never merged: the executive's launch completed at the commit, and this is the follow-through. Load per owner, queue age and overdue items at day 7 and day 14 are measured, so a short executive session that leaves a long organizational queue shows up as the cost it is.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-17</span> Tasks carry pre-filled values and their sources; accept, edit, reassign or "I don't know"; each has a due date.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">BR-48, BR-52</span> At the due date a normal value applied at launch is kept unchanged, badged in those words rather than as "kept by default", which read like a default value, and it stays in the finisher's attention list; nothing new applies itself, and a high-impact value is never kept this way but escalates.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-18</span> After launch a new document produces a suggestion that a person accepts; a change to a baselined value goes through a change request.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">ONB-19</span> Deferred items become tasks at the moment of need, here when deliverable process frameworks are first opened; they are not counted in the setup items of launch.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">PLT-09, ONB-08</span> Reminders and escalations use the Release 1 channels, in-app and email; an overdue item goes to the default owner, then to the executive's attention queue, which also counts each owner's assumed values awaiting confirmation until someone confirms or changes them.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

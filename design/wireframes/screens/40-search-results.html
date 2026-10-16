@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Search results · Metis wireframe</title>
+<meta name="wf:id" content="search-results">
+<meta name="wf:title" content="Search results">
+<meta name="wf:area" content="Personal & collaboration">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLT-12 PLT-13 PLT-04">
+<meta name="wf:poc" content="02 30">
+<meta name="wf:summary" content="Search by project name and WBS code or name, grouped into projects and WBS items with status, keyboard navigation, results limited to records the user can open, full-text search planned for V2 and an empty state that explains what is searched.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-q { font-size: 16px; min-height: 44px; display: flex; align-items: center; gap: 10px; }
+  .x-q .muted { font-size: 13px; }
+  .x-key { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 20px; padding: 0 5px; border: 1px solid var(--line-strong); border-bottom-width: 2px; border-radius: 4px; font: 600 11px/1 var(--font-ui); color: var(--muted); background: var(--surface); }
+  .x-hit { background: var(--waiting-bg); color: inherit; border-radius: 2px; padding: 0 1px; }
+  .x-res .list-row { min-height: 52px; }
+  .x-res .list-row.active { background: var(--accent-soft); }
+  .x-code { width: 44px; color: var(--muted); font-variant-numeric: tabular-nums; flex: none; }
+  .x-later { opacity: .6; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Search">
+<main>
+
+  <section class="stack s" data-req="PLT-12">
+    <div class="input x-q kbd-focus"><span class="muted">⌕</span><b>render</b><span class="right muted">5 results in Creative Studio</span></div>
+    <div class="row small muted"><span class="x-key">/</span> search <span class="x-key">↑</span><span class="x-key">↓</span> move <span class="x-key">Enter</span> open <span class="x-key">Esc</span> close <span class="anno" data-n="2"></span></div>
+  </section>
+
+  <div class="banner" data-req="PLT-04">
+    <span class="anno" data-n="3"></span>
+    <div>Results include only records you can open. Projects you are not a member of and other workspaces are never searched, and the counts do not include them.</div>
+  </div>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); align-items: start">
+    <div class="stack">
+      <div class="card x-res" data-req="PLT-12">
+        <div class="head"><span class="h3">Projects · 1 <span class="anno" data-n="1"></span></span><span class="small muted">matched on name</span></div>
+        <div class="list-row active"><span class="x-code">≡</span><div class="grow"><div class="title-line">Spring Catalogue <mark class="x-hit">Render</mark>s</div><div class="sub">Client Delivery › Contoso Retail · PM Nadia R. · stage Planning</div></div><span class="small muted">Enter to open</span></div>
+      </div>
+
+      <div class="card x-res" data-req="PLT-12">
+        <div class="head"><span class="h3">WBS items · 4</span><span class="small muted">matched on code or name</span></div>
+        <div class="list-row"><span class="x-code">1.1</span><div class="grow"><div class="title-line">51 <mark class="x-hit">Render</mark> Images</div><div class="sub">Meridian CGI Campaign · Deliverable · Denny K.</div></div><span class="chip running">In Progress</span><span class="small" style="color:var(--critical-text);width:110px">Overdue 43 days</span></div>
+        <div class="list-row"><span class="x-code">1.1.1</span><div class="grow"><div class="title-line">Phase 1 <mark class="x-hit">Render</mark> Delivery</div><div class="sub">Meridian CGI Campaign · Task · Denny K.</div></div><span class="chip running">In Progress</span><span class="small" style="color:var(--critical-text);width:110px">Overdue 60 days</span></div>
+        <div class="list-row"><span class="x-code">1.1.2</span><div class="grow"><div class="title-line">Phase 2 <mark class="x-hit">Render</mark> Delivery</div><div class="sub">Meridian CGI Campaign · Task · Denny K.</div></div><span class="chip">Not Started</span><span class="small" style="color:var(--critical-text);width:110px">Overdue 43 days</span></div>
+        <div class="list-row"><span class="x-code">5.1</span><div class="grow"><div class="title-line"><mark class="x-hit">Render</mark> Farm Allocation</div><div class="sub">Meridian CGI Campaign · under 5.0 Resource</div></div><span class="chip good">Done</span><span class="small muted" style="width:110px"></span></div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card x-later" data-req="PLT-13">
+        <div class="head"><span class="h3">Search inside text <span class="anno" data-n="4"></span></span><span class="tag future">Planned V2</span></div>
+        <div class="body stack s small">
+          <div>Full-text search across item descriptions, comments, journal entries and change requests, with the same access rules.</div>
+          <div class="muted">Until then, "render" in a description, a comment or a change request title is not found here.</div>
+        </div>
+      </div>
+
+      <div class="card" data-req="PLT-12">
+        <div class="head"><span class="h3">Empty state <span class="anno" data-n="5"></span></span><span class="small muted">query "kiosk"</span></div>
+        <div class="body"><div class="empty"><b>No projects or WBS items in Creative Studio match "kiosk".</b><br>Search looks at project names and WBS codes and names. Check the spelling or try a code such as 1.1.2.</div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLT-12</span> Results are grouped as Projects and WBS items with code, name, project, type, PIC and status; overdue follows Section 12 (not Done and target before today). Selecting a result opens the project or the item.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">PLT-12</span> Fully usable from the keyboard: / focuses search, arrow keys move through results, Enter opens and Esc closes. Focus stays in the search field (focus ring) while the active result uses the selection fill.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLT-04</span> The server filters results by permission before counting them, so a hidden project never shows up as a result, a count or an empty group.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">PLT-13</span> Full-text search across descriptions, comments, journal entries and change requests is P1 and planned for V2.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">PLT-12</span> The empty state says what is searched and suggests a next step; it never hints that a match exists somewhere the user cannot see.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Investment and benefits · Metis wireframe</title>
+<meta name="wf:id" content="investment-benefits">
+<meta name="wf:title" content="Investment and benefits">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="V2">
+<meta name="wf:requirements" content="INV-01 INV-02 INV-03 INV-04 CHR-13">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Portfolio investment by portfolio and program (approved, actual, forecast, CapEx and OpEx), the project value map, the benefits register and value at risk with its method.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-vm.hbars { grid-template-columns: 110px 1fr 128px; }
+</style>
+</head>
+<body data-shell="app" data-nav="investment" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / Investment">
+<main>
+
+  <div class="banner accent small"><b>Planned for V2.</b> <span>In the MVP, project budgets (approved, actual, forecast) roll up as simple sums in the cockpit; this screen adds CapEx and OpEx, benefits and value at risk. <span class="anno" data-n="5"></span></span></div>
+
+  <section class="row between">
+    <div>
+      <div class="title">Investment &amp; benefits</div>
+      <div class="muted small" style="margin-top:4px">FY2027 · USD · actuals imported 21 Sep 2026</div>
+    </div>
+    <div class="filters">
+      <div class="field"><label>Portfolio</label><div class="select">All</div></div>
+      <div class="field"><label>Fiscal year</label><div class="select">FY2027</div></div>
+      <span class="btn secondary">Export</span>
+    </div>
+  </section>
+
+  <section class="grid c5" data-req="INV-01 INV-03">
+    <div class="card kpi"><div class="k-label">Approved</div><div class="k-value">$50.2M</div><div class="k-delta">96 committed projects</div></div>
+    <div class="card kpi"><div class="k-label">Actual to date</div><div class="k-value">$21.6M</div><div class="k-delta">43% of approved</div></div>
+    <div class="card kpi"><div class="k-label">Forecast</div><div class="k-value">$51.9M</div><div class="k-delta"><span class="up-bad">+3.4%</span> vs approved</div></div>
+    <div class="card kpi"><div class="k-label">Expected value</div><div class="k-value">$83.0M</div><div class="k-delta">from 41 measured benefits</div></div>
+    <div class="card kpi alert"><div class="k-label">Value at risk</div><div class="k-value">$9.2M</div><div class="k-delta">4 projects</div></div>
+  </section>
+
+  <section class="card" data-req="INV-01 CHR-13">
+    <div class="head"><span class="h3">By portfolio and program <span class="anno" data-n="1"></span></span><span class="muted small">$M</span><span class="btn ghost sm">Table view</span></div>
+    <table class="table">
+      <thead><tr><th>Portfolio · program</th><th class="num">Approved</th><th class="num">Actual to date</th><th class="num">Forecast</th><th class="num">Variance</th><th class="num">CapEx</th><th class="num">OpEx</th><th class="num">Expected value</th></tr></thead>
+      <tbody>
+        <tr class="cat"><td>Growth</td><td class="num">27.1</td><td class="num">11.8</td><td class="num">28.3</td><td class="num">+4.4%</td><td class="num">16.2</td><td class="num">12.1</td><td class="num">49.0</td></tr>
+        <tr><td class="l2">MSME Transformation</td><td class="num">14.2</td><td class="num">6.3</td><td class="num">14.6</td><td class="num">+2.8%</td><td class="num">8.9</td><td class="num">5.7</td><td class="num">31.0</td></tr>
+        <tr><td class="l2">Customer</td><td class="num">12.9</td><td class="num">5.5</td><td class="num">13.7</td><td class="num" style="color:var(--critical-text)">+6.2%</td><td class="num">7.3</td><td class="num">6.4</td><td class="num">18.0</td></tr>
+        <tr class="cat"><td>Technology &amp; Regulatory</td><td class="num">23.1</td><td class="num">9.8</td><td class="num">23.6</td><td class="num">+2.2%</td><td class="num">15.1</td><td class="num">8.5</td><td class="num">34.0</td></tr>
+        <tr><td class="l2">Platform</td><td class="num">17.4</td><td class="num">7.6</td><td class="num">18.0</td><td class="num">+3.4%</td><td class="num">12.2</td><td class="num">5.8</td><td class="num">26.0</td></tr>
+        <tr><td class="l2">Regulatory</td><td class="num">5.7</td><td class="num">2.2</td><td class="num">5.6</td><td class="num">-1.8%</td><td class="num">2.9</td><td class="num">2.7</td><td class="num">8.0</td></tr>
+        <tr class="cat"><td>Total</td><td class="num">50.2</td><td class="num">21.6</td><td class="num">51.9</td><td class="num">+3.4%</td><td class="num">31.3</td><td class="num">20.6</td><td class="num">83.0</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="grid c2">
+    <div class="card" data-req="INV-01">
+      <div class="head"><span class="h3">Project value map</span><span class="muted small">approved vs expected value, $M</span></div>
+      <div class="body stack s">
+        <div class="legend"><span><i class="s1"></i>Approved investment</span><span><i class="s2"></i>Expected value</span></div>
+        <div class="hbars x-vm">
+          <span>MSME Payment</span><div class="stack s" style="gap:3px"><div class="track"><span class="s1" style="width:20%"></span></div><div class="track"><span class="s2" style="width:79%"></span></div></div><span class="val">2.4 · 9.5 · 4.0x</span>
+          <span>Core Platform</span><div class="stack s" style="gap:3px"><div class="track"><span class="s1" style="width:32%"></span></div><div class="track"><span class="s2" style="width:100%"></span></div></div><span class="val">3.8 · 12.0 · 3.2x</span>
+          <span>Data Platform</span><div class="stack s" style="gap:3px"><div class="track"><span class="s1" style="width:24%"></span></div><div class="track"><span class="s2" style="width:60%"></span></div></div><span class="val">2.9 · 7.2 · 2.5x</span>
+          <span>Digital Sales</span><div class="stack s" style="gap:3px"><div class="track"><span class="s1" style="width:16%"></span></div><div class="track"><span class="s2" style="width:26%"></span></div></div><span class="val">1.9 · 3.1 · 1.6x</span>
+          <span>Mobile App</span><div class="stack s" style="gap:3px"><div class="track"><span class="s1" style="width:13%"></span></div><div class="track"><span class="s2" style="width:17%"></span></div></div><span class="val">1.5 · 2.0 · 1.3x</span>
+        </div>
+        <div class="small muted">ROI proxy = expected value ÷ approved investment. AML Upgrade and KYC Automation are regulatory and carry no monetised value.</div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="INV-03">
+        <div class="head"><span class="h3">Value at risk <span class="anno" data-n="3"></span></span><span class="chip critical">$9.2M</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Core Platform</div><div class="sub">computed Off track · 3 milestones overdue</div></div><span class="num">$4.8M</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Digital Sales</div><div class="sub">forecast 21% over approved</div></div><span class="num">$1.9M</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Data Platform</div><div class="sub">Data capability at 118% in Q4</div></div><span class="num">$1.3M</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Mobile App</div><div class="sub">CR-016 pending, +4 weeks if approved</div></div><span class="num">$1.2M</span></div>
+        <div class="list-row"><span class="muted small grow">Method: expected value of projects that are Off track, more than 10% over budget or delayed past a release, weighted by slip probability. Configurable per workspace.</span><span class="btn secondary sm">Edit method</span></div>
+      </div>
+      <div class="card" data-req="INV-04">
+        <div class="head"><span class="h3">Funding checkpoints <span class="anno" data-n="4"></span></span></div>
+        <div class="list-row"><span class="lbl gate"></span><div class="grow"><div class="title-line">Merchant Onboarding · Solution gate</div><div class="sub">releases the build tranche of $0.6M · gate 5 days overdue</div></div><span class="chip waiting">Held</span></div>
+        <div class="list-row"><span class="lbl gate"></span><div class="grow"><div class="title-line">Treasury API · Solution gate, 26 Sep</div><div class="sub">releases $0.8M · readiness passed</div></div><span class="chip neutral">Scheduled</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-req="INV-02">
+    <div class="head"><span class="h3">Benefits register <span class="anno" data-n="2"></span></span><span class="muted small">41 benefits · 5 shown</span><span class="btn secondary sm">+ Add benefit</span></div>
+    <table class="table">
+      <thead><tr><th>KPI</th><th>Linked to</th><th class="num">Baseline</th><th class="num">Target</th><th class="num">Realized</th><th>Owner</th><th>Measured on</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Payment adoption</td><td>MSME Payment · MVP1</td><td class="num">42%</td><td class="num">57%</td><td class="num">49%</td><td>A. Wong</td><td>31 Mar 2027</td><td><span class="rag a">At risk</span></td></tr>
+        <tr><td>Reconciliation time</td><td>MSME Payment · MVP1</td><td class="num">3 h</td><td class="num">1 h</td><td class="num">1.5 h</td><td>A. Wong</td><td>31 Mar 2027</td><td><span class="rag a">At risk</span></td></tr>
+        <tr><td>Digital sales share</td><td>Digital Sales</td><td class="num">22%</td><td class="num">40%</td><td class="num">26%</td><td>M. Johnson</td><td>30 Sep 2027</td><td><span class="rag g">On track</span></td></tr>
+        <tr><td>Cost to serve per account</td><td>Core Platform</td><td class="num">$18.0</td><td class="num">$15.3</td><td class="num">$17.4</td><td>L. Wang</td><td>31 Dec 2027</td><td><span class="rag r">Off track</span></td></tr>
+        <tr><td>AML false positive rate</td><td>AML Upgrade</td><td class="num">12%</td><td class="num">6%</td><td class="num">11%</td><td>A. Wong</td><td>31 Mar 2027</td><td><span class="rag g">On track</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">INV-01, CHR-13</span> Approved, actual, forecast, variance, CapEx and OpEx by portfolio and program; every total reconciles with the project records it sums.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">INV-02</span> Each benefit is a KPI with baseline, target, realized value, an owner and a measurement date, linked to a project or MVP.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">INV-03</span> Value at risk shows its method next to the number; the method is configurable per workspace and changes are audited.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">INV-04</span> Funding tranches are tied to configured stage gates and released only by the gate decision.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">CHR-13</span> Until V2, budgets live on each project charter and the cockpit shows simple sums; no value figures are shown before benefits exist.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

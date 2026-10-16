@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tenant admin: audit log · Metis wireframe</title>
+<meta name="wf:id" content="tenant-admin-audit">
+<meta name="wf:title" content="Tenant admin: audit log">
+<meta name="wf:area" content="Access & tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLT-11 MCP-11 BR-12 BR-19">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Immutable, filterable log of configuration, governance and MCP actions with actor, channel, before and after values and reason, plus the detail of one MCP call.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="admin" data-nav="admin-audit" data-crumbs="Tenant admin / Audit log">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Audit log</div>
+      <div class="muted small" style="margin-top:4px">Entries cannot be edited or deleted · kept for the life of the tenant plus the retention period</div>
+    </div>
+    <span class="btn secondary">Export CSV <span class="anno" data-n="5"></span></span>
+  </section>
+
+  <section class="filters">
+    <div class="field"><label>Date</label><div class="select">Last 7 days</div></div>
+    <div class="field"><label>Actor</label><div class="select">Anyone</div></div>
+    <div class="field"><label>Channel</label><span class="seg"><span class="on">All</span><span>Web</span><span>MCP</span><span>API</span><span>System</span></span></div>
+    <div class="field"><label>Workspace</label><div class="select">All workspaces</div></div>
+    <div class="field"><label>Action type</label><div class="select">All actions</div></div>
+    <div class="field" style="min-width:220px"><label>Search</label><div class="input ph">Object, ticket, reason</div></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr)">
+    <div class="card" data-req="PLT-11 BR-12 BR-19">
+      <div class="head"><span class="h3">Events <span class="anno" data-n="1"></span></span><span class="muted small">8 of 1,240 in range</span></div>
+      <table class="table">
+        <thead><tr><th>Time</th><th>Actor</th><th>Channel</th><th>Action</th><th>Change</th></tr></thead>
+        <tbody>
+          <tr class="sel"><td>22 Sep 09:31</td><td class="wrap"><div class="row" style="flex-wrap:nowrap"><span class="av ai">AI</span><div><div>Nadia R.</div><div class="small muted">via MCP · token Nadia's assistant</div></div></div></td><td><span class="tag accent">MCP</span></td><td class="wrap">Journal entry added · Meridian CGI Campaign</td><td class="wrap small">Note linked to 1.1</td></tr>
+          <tr><td>22 Sep 09:12</td><td class="wrap"><div class="row" style="flex-wrap:nowrap"><span class="av">QT</span>Q. Tran</div></td><td><span class="tag">Web</span></td><td class="wrap">Support access granted · tenant</td><td class="wrap small">None to read-only, 72 h · reason: ticket #2291</td></tr>
+          <tr><td>22 Sep 08:55</td><td class="wrap"><div class="row" style="flex-wrap:nowrap"><span class="av ai">AI</span><div><div>A. Wong</div><div class="small muted">via MCP · token Gate prep</div></div></div></td><td><span class="tag accent">MCP</span></td><td class="wrap">Decision draft prepared · Merchant Onboarding, Solution gate</td><td class="wrap small">Draft created, awaiting a person to confirm</td></tr>
+          <tr><td>22 Sep 08:40</td><td class="wrap"><div class="row" style="flex-wrap:nowrap"><span class="av">HL</span>H. Le</div></td><td><span class="tag">Web</span></td><td class="wrap">Change request decided · CR-002</td><td class="wrap small">Under review to Approved · rationale: overnight queue frees the farm</td></tr>
+          <tr><td>21 Sep 17:02</td><td class="wrap"><div class="row" style="flex-wrap:nowrap"><span class="av">MJ</span>M. Johnson</div></td><td><span class="tag">Web</span></td><td class="wrap">Framework draft created · Company A Digital Delivery</td><td class="wrap small">v2.2 draft cloned from v2.1</td></tr>
+          <tr><td>21 Sep 16:20</td><td class="wrap"><div class="row" style="flex-wrap:nowrap"><span class="av">QT</span>Q. Tran</div></td><td><span class="tag">Web</span></td><td class="wrap">Member deactivated · Art Lead</td><td class="wrap small">Active to Deactivated · reason: left the company</td></tr>
+          <tr><td>21 Sep 16:20</td><td class="wrap"><div class="row" style="flex-wrap:nowrap"><span class="av">S</span>System</div></td><td><span class="tag">System</span></td><td class="wrap">Token revoked · Art Lead, "Render notes"</td><td class="wrap small">Revoked because the user was deactivated</td></tr>
+          <tr><td>20 Sep 15:44</td><td class="wrap"><div class="row" style="flex-wrap:nowrap"><span class="av ai">AI</span><div><div>L. Wang</div><div class="small muted">via MCP · token IDE assistant</div></div></div></td><td><span class="tag accent">MCP</span></td><td class="wrap">Tool call denied · update_wbs_item, Core Platform</td><td class="wrap small"><span class="chip critical">Denied</span> update tools are not enabled</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" data-req="MCP-11">
+      <div class="head"><span class="av ai">AI</span><span class="h3">MCP call detail <span class="anno" data-n="2"></span></span><span class="chip good">Success</span></div>
+      <div class="body stack">
+        <dl class="kv">
+          <dt>Time</dt><dd>22 Sep 2026, 09:31:12</dd>
+          <dt>User</dt><dd>Nadia R. (Project Manager, Creative Studio)</dd>
+          <dt>Token</dt><dd>Nadia's assistant · <span class="mono">mts_pat_••••3f9a</span></dd>
+          <dt>Client</dt><dd>Desktop LLM app (as reported by the client)</dd>
+          <dt>Tool</dt><dd class="mono">add_journal_entry</dd>
+          <dt>Parameters <span class="anno" data-n="3"></span></dt><dd>Project Meridian CGI Campaign · type Note · linked item 1.1 · 412 characters of text</dd>
+          <dt>Result</dt><dd>Journal entry created, 22 Sep 09:31</dd>
+          <dt>Request ID</dt><dd class="mono">req_7f2c91</dd>
+        </dl>
+        <div class="banner accent small">The full entry text is stored with the journal entry, not in the audit log. The audit keeps who, what, where and the outcome.</div>
+        <div class="row"><span class="btn secondary sm">Open journal entry</span><span class="btn ghost sm">All calls by this token</span></div>
+        <div class="hr"></div>
+        <div class="label">Why this matters <span class="anno" data-n="4"></span></div>
+        <div class="small muted">Approvals, decisions and configuration changes always appear here with actor and reason, whichever channel made them.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLT-11</span> Each event records time, actor, channel, action, object, before and after values and the reason. Entries are immutable.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">MCP-11</span> Every MCP call is logged with user, token, client name, tool and result; the square AI avatar marks actions made through MCP everywhere in the product.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">MCP-11</span> The audit stores a parameter summary, not the content, so the log does not become a second copy of business data.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">BR-12, BR-19</span> Approvals, governance decisions and configuration changes are always auditable, including denied attempts such as the blocked update_wbs_item call.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">PLT-11</span> Authorized roles can export the filtered log, for example for an external audit.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

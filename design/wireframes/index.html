@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Metis wireframes</title>
+<link rel="stylesheet" href="../brand/tokens.css"><link rel="stylesheet" href="assets/wireframe.css">
+<style>
+  body { background: var(--paper); }
+  .x-wrap { max-width: 1280px; margin: 0 auto; padding: 36px 28px 60px; }
+  .x-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 8px; }
+  .x-head img { height: 40px; }
+  .x-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 12px 0 30px; }
+  .x-card { display: flex; flex-direction: column; overflow: hidden; color: var(--text); }
+  .x-card img { width: 100%; height: 190px; object-fit: cover; object-position: top; border-bottom: 1px solid var(--line); }
+  .x-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+  .x-reqs { display: flex; flex-wrap: wrap; gap: 4px; }
+</style></head>
+<body><div class="x-wrap">
+<div class="x-head"><div><div class="label">Wireframes · BRD v4.3 and onboarding addendum · 58 screens · 2026-10-03</div>
+<div class="title">Metis wireframes</div>
+<p class="muted">Click a screen to open the HTML wireframe. PNGs are in png/, the machine-readable index is manifest.json.</p></div>
+<img src="../brand/logo/metis-wordmark.svg" alt="Metis"></div>
+<div class="h2">Access & tenancy</div><div class="x-grid"><a class="card x-card" href="screens/01-sign-in.html">
+  <img src="png/01-sign-in.png" alt="Sign in" loading="lazy">
+  <div class="x-body"><div class="row between"><b>01 · Sign in</b><span class="tag">MVP</span></div>
+  <div class="small muted">Tenant-aware sign-in: SSO by work email, email and password with MFA, magic link for invited external users, invitation acceptance, no public demo.</div>
+  <div class="x-reqs"><span class="tag">PLT-01</span> <span class="tag">PLT-02</span> <span class="tag">PLT-03</span> <span class="tag">TEN-03</span></div></div></a>
+<a class="card x-card" href="screens/02-tenant-admin-users.html">
+  <img src="png/02-tenant-admin-users.png" alt="Tenant admin: users and roles" loading="lazy">
+  <div class="x-body"><div class="row between"><b>02 · Tenant admin: users and roles</b><span class="tag">MVP</span></div>
+  <div class="small muted">Tenant admin manages every user of the organization: invitations, workspace and project roles, deactivation that keeps history, and SCIM provisioning later.</div>
+  <div class="x-reqs"><span class="tag">TEN-04</span> <span class="tag">PLT-03</span> <span class="tag">PLT-04</span> <span class="tag">WSP-11</span> <span class="tag">TEN-11</span> <span class="tag">BR-26</span></div></div></a>
+<a class="card x-card" href="screens/03-tenant-admin-security.html">
+  <img src="png/03-tenant-admin-security.png" alt="Tenant admin: sign-in and security" loading="lazy">
+  <div class="x-body"><div class="row between"><b>03 · Tenant admin: sign-in and security</b><span class="tag">MVP</span></div>
+  <div class="small muted">Tenant-level identity: SSO with SAML 2.0 or OIDC and verified domains, MFA and password policy, session lifetime, and time-limited support access grants for provider staff.</div>
+  <div class="x-reqs"><span class="tag">TEN-03</span> <span class="tag">TEN-04</span> <span class="tag">TEN-09</span> <span class="tag">PLT-01</span></div></div></a>
+<a class="card x-card" href="screens/04-tenant-admin-ai-access.html">
+  <img src="png/04-tenant-admin-ai-access.png" alt="Tenant admin: AI access (MCP)" loading="lazy">
+  <div class="x-body"><div class="row between"><b>04 · Tenant admin: AI access (MCP)</b><span class="tag">MVP</span></div>
+  <div class="small muted">Tenant policy for the MCP server: endpoint, how clients sign in, scopes by role, action classes and their policy, client allowlist and workspace restrictions, data protection, rate limits, and every active token with revoke.</div>
+  <div class="x-reqs"><span class="tag">MCP-01</span> <span class="tag">MCP-02</span> <span class="tag">MCP-03</span> <span class="tag">MCP-04</span> <span class="tag">MCP-08</span> <span class="tag">MCP-12</span> <span class="tag">MCP-13</span> <span class="tag">MCP-14</span> <span class="tag">MCP-16</span> <span class="tag">MCP-19</span> <span class="tag">MCP-20</span> <span class="tag">TEN-04</span></div></div></a>
+<a class="card x-card" href="screens/05-tenant-admin-plan-usage.html">
+  <img src="png/05-tenant-admin-plan-usage.png" alt="Tenant admin: plan and usage" loading="lazy">
+  <div class="x-body"><div class="row between"><b>05 · Tenant admin: plan and usage</b><span class="tag">MVP</span></div>
+  <div class="small muted">The tenant's plan, enabled modules, usage against each limit and what happens at a limit; self-serve billing arrives in V2.</div>
+  <div class="x-reqs"><span class="tag">TEN-05</span> <span class="tag">TEN-10</span> <span class="tag">MCP-12</span> <span class="tag">TEN-14</span></div></div></a>
+<a class="card x-card" href="screens/06-tenant-admin-audit.html">
+  <img src="png/06-tenant-admin-audit.png" alt="Tenant admin: audit log" loading="lazy">
+  <div class="x-body"><div class="row between"><b>06 · Tenant admin: audit log</b><span class="tag">MVP</span></div>
+  <div class="small muted">Immutable, filterable log of configuration, governance and MCP actions with actor, channel, before and after values and reason, plus the detail of one MCP call.</div>
+  <div class="x-reqs"><span class="tag">PLT-11</span> <span class="tag">MCP-11</span> <span class="tag">BR-12</span> <span class="tag">BR-19</span></div></div></a>
+<a class="card x-card" href="screens/07-provider-tenants.html">
+  <img src="png/07-provider-tenants.png" alt="Provider console: tenants" loading="lazy">
+  <div class="x-body"><div class="row between"><b>07 · Provider console: tenants</b><span class="tag">MVP</span></div>
+  <div class="small muted">Provider operations console: list and create tenants, move them through their lifecycle, with metadata and usage only and no access to business data without a support grant.</div>
+  <div class="x-reqs"><span class="tag">TEN-01</span> <span class="tag">TEN-06</span> <span class="tag">TEN-07</span> <span class="tag">TEN-08</span> <span class="tag">TEN-09</span> <span class="tag">TEN-13</span> <span class="tag">TEN-15</span></div></div></a>
+<a class="card x-card" href="screens/08-profile-ai-access.html">
+  <img src="png/08-profile-ai-access.png" alt="My profile: AI access (MCP)" loading="lazy">
+  <div class="x-body"><div class="row between"><b>08 · My profile: AI access (MCP)</b><span class="tag">MVP</span></div>
+  <div class="small muted">A user connects an LLM client that implements the MCP specification (verified clients listed) with OAuth or a personal access token, tests the connection, reads what each failure means and what to do, and sees the versioned tool list and what the client may do.</div>
+  <div class="x-reqs"><span class="tag">MCP-01</span> <span class="tag">MCP-02</span> <span class="tag">MCP-03</span> <span class="tag">MCP-05</span> <span class="tag">MCP-06</span> <span class="tag">MCP-08</span> <span class="tag">MCP-09</span> <span class="tag">MCP-10</span> <span class="tag">MCP-15</span> <span class="tag">MCP-19</span> <span class="tag">MCP-20</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/43-access-states.html">
+  <img src="png/43-access-states.png" alt="Access and session states" loading="lazy">
+  <div class="x-body"><div class="row between"><b>43 · Access and session states</b><span class="tag">MVP</span></div>
+  <div class="small muted">Seven states people meet when access is missing, limited or interrupted, each with its reason and next step: no permission for a project, an archived workspace that is read-only, an expired session that keeps unsaved input, a suspended tenant that can still read and export, a forgotten password, a failed single sign-on and an expired invitation.</div>
+  <div class="x-reqs"><span class="tag">PLT-04</span> <span class="tag">TEN-02</span> <span class="tag">WSP-02</span> <span class="tag">WSP-05</span> <span class="tag">TEN-06</span> <span class="tag">PLT-01</span> <span class="tag">BR-38</span> <span class="tag">PLT-03</span> <span class="tag">TEN-03</span></div></div></a>
+<a class="card x-card" href="screens/45-client-view.html">
+  <img src="png/45-client-view.png" alt="Client view of an invited project" loading="lazy">
+  <div class="x-body"><div class="row between"><b>45 · Client view of an invited project</b><span class="tag">MVP</span></div>
+  <div class="small muted">What an invited client representative sees after signing in: only the invited project, the inputs they owe, the approvals waiting for them, charter sign-off, comments on their items, reports shared with them (planned), and a plain list of what stays internal.</div>
+  <div class="x-reqs"><span class="tag">PLT-02</span> <span class="tag">PLT-04</span> <span class="tag">PLT-07</span> <span class="tag">CHR-06</span> <span class="tag">CHR-08</span> <span class="tag">WBS-12</span> <span class="tag">WBS-16</span> <span class="tag">WBS-17</span> <span class="tag">RPT-05</span></div></div></a>
+<a class="card x-card" href="screens/55-onboarding-own-ai.html">
+  <img src="png/55-onboarding-own-ai.png" alt="Set up with your own AI" loading="lazy">
+  <div class="x-body"><div class="row between"><b>55 · Set up with your own AI</b><span class="tag">MVP</span></div>
+  <div class="small muted">The bring-your-own-AI path: the admin switch for the setup tool group, an onboarding token limited to the setup tools and the Draft workspace, the connection test, the copy-ready prompt pack and a live feed of what the client's AI proposes; launch stays in Metis.</div>
+  <div class="x-reqs"><span class="tag">ONB-07</span> <span class="tag">ONB-21</span> <span class="tag">MCP-15</span> <span class="tag">MCP-20</span> <span class="tag">ONB-39</span></div></div></a>
+<a class="card x-card" href="screens/56-tenant-admin-ai-onboarding.html">
+  <img src="png/56-tenant-admin-ai-onboarding.png" alt="Tenant admin: AI onboarding policy" loading="lazy">
+  <div class="x-body"><div class="row between"><b>56 · Tenant admin: AI onboarding policy</b><span class="tag">MVP</span></div>
+  <div class="small muted">Tenant admin page for the onboarding AI: consent and processing, masking, what happens to uploaded files, quotas and spend cap, the setup tool switch for external clients, security events, the assurance evidence of the current release, and the onboarding metrics of the tenant's own sessions.</div>
+  <div class="x-reqs"><span class="tag">ONB-07</span> <span class="tag">ONB-22</span> <span class="tag">ONB-23</span> <span class="tag">ONB-24</span> <span class="tag">ONB-25</span> <span class="tag">ONB-26</span> <span class="tag">TEN-04</span> <span class="tag">MCP-11</span> <span class="tag">BR-49</span> <span class="tag">BR-50</span></div></div></a>
+<a class="card x-card" href="screens/57-provider-onboarding.html">
+  <img src="png/57-provider-onboarding.png" alt="Provider console: tenant pre-fill and onboarding metrics" loading="lazy">
+  <div class="x-body"><div class="row between"><b>57 · Provider console: tenant pre-fill and onboarding metrics</b><span class="tag">MVP</span></div>
+  <div class="small muted">Provider console: onboarding metrics per tenant without any business data, and the create-tenant dialog extended with the facts and answers recorded from the sales discovery.</div>
+  <div class="x-reqs"><span class="tag">ONB-02</span> <span class="tag">ONB-26</span> <span class="tag">TEN-01</span> <span class="tag">TEN-08</span></div></div></a></div>
+<div class="h2">Onboarding</div><div class="x-grid"><a class="card x-card" href="screens/46-onboarding-frame.html">
+  <img src="png/46-onboarding-frame.png" alt="Onboarding: frame" loading="lazy">
+  <div class="x-body"><div class="row between"><b>46 · Onboarding: frame</b><span class="tag">MVP</span></div>
+  <div class="small muted">First onboarding screen for a new client's executive: four pre-filled facts collapsed to chips, three outside-in questions with only the governance one expanded, a one-sentence override, the drop zone as the primary action, and the AI processing authorization that opens when the first file is ready to send.</div>
+  <div class="x-reqs"><span class="tag">ONB-01</span> <span class="tag">ONB-02</span> <span class="tag">ONB-03</span> <span class="tag">ONB-04</span> <span class="tag">ONB-09</span> <span class="tag">ONB-22</span> <span class="tag">ONB-27</span></div></div></a>
+<a class="card x-card" href="screens/47-onboarding-reading.html">
+  <img src="png/47-onboarding-reading.png" alt="Onboarding: reading" loading="lazy">
+  <div class="x-body"><div class="row between"><b>47 · Onboarding: reading</b><span class="tag">MVP</span></div>
+  <div class="small muted">Metis reads the dropped files: a live feed per file of what was found and how, running totals, provenance on every value, cards that stream in while reading, items already sent to owners, and the resumable session.</div>
+  <div class="x-reqs"><span class="tag">ONB-01</span> <span class="tag">ONB-04</span> <span class="tag">ONB-05</span> <span class="tag">ONB-06</span> <span class="tag">ONB-07</span> <span class="tag">ONB-08</span> <span class="tag">ONB-09</span> <span class="tag">ONB-11</span> <span class="tag">ONB-12</span></div></div></a>
+<a class="card x-card" href="screens/48-onboarding-draft-cockpit.html">
+  <img src="png/48-onboarding-draft-cockpit.png" alt="Onboarding: draft cockpit" loading="lazy">
+  <div class="x-body"><div class="row between"><b>48 · Onboarding: draft cockpit</b><span class="tag">MVP</span></div>
+  <div class="small muted">The executive cockpit of the Draft workspace, built from the client's own files: Draft banner, figures with source badges and as-of time, the projects that may slip first, the business units, the Portfolio X-ray with owners, and the to-confirm rail.</div>
+  <div class="x-reqs"><span class="tag">ONB-03</span> <span class="tag">ONB-08</span> <span class="tag">ONB-09</span> <span class="tag">ONB-11</span> <span class="tag">ONB-13</span> <span class="tag">EXE-01</span> <span class="tag">EXE-02</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/49-onboarding-approval-flow.html">
+  <img src="png/49-onboarding-approval-flow.png" alt="Onboarding: approval flow" loading="lazy">
+  <div class="x-body"><div class="row between"><b>49 · Onboarding: approval flow</b><span class="tag">MVP</span></div>
+  <div class="small muted">How a project gets approved, in business words for the executive: the lifecycle read from the PMO handbook and matched to the Capital projects pack, the big-or-strategic boundary computed from the client's data, the differences from the pack, and the dry run on three real projects.</div>
+  <div class="x-reqs"><span class="tag">ONB-03</span> <span class="tag">ONB-14</span> <span class="tag">ONB-27</span> <span class="tag">GOV-03</span> <span class="tag">GOV-05</span> <span class="tag">GOV-06</span> <span class="tag">GOV-21</span> <span class="tag">CHG-10</span></div></div></a>
+<a class="card x-card" href="screens/50-onboarding-questions.html">
+  <img src="png/50-onboarding-questions.png" alt="Onboarding: questions and conversation" loading="lazy">
+  <div class="x-body"><div class="row between"><b>50 · Onboarding: questions and conversation</b><span class="tag">MVP</span></div>
+  <div class="small muted">The cards an executive answers in the 30-minute path: a single card with its sourced best guess, a bulk card, a contradiction card sent to its owner, the cap, the conversation panel, and the same card on a phone.</div>
+  <div class="x-reqs"><span class="tag">ONB-11</span> <span class="tag">ONB-12</span> <span class="tag">ONB-17</span> <span class="tag">ONB-28</span></div></div></a>
+<a class="card x-card" href="screens/51-onboarding-adoption.html">
+  <img src="png/51-onboarding-adoption.png" alt="Onboarding: projects to adopt" loading="lazy">
+  <div class="x-body"><div class="row between"><b>51 · Onboarding: projects to adopt</b><span class="tag">MVP</span></div>
+  <div class="small muted">Bringing 34 running projects into Metis, reviewed by exception: four counts, then the 7 projects whose source authority, sponsor or stage needs the executive, each with its action; the 27 ready ones sit behind a tab, and one project panel shows the stages completed before Metis and what the imported baseline will lock.</div>
+  <div class="x-reqs"><span class="tag">ONB-10</span> <span class="tag">ONB-08</span> <span class="tag">BR-46</span> <span class="tag">BR-47</span> <span class="tag">CHG-06</span> <span class="tag">CHR-16</span></div></div></a>
+<a class="card x-card" href="screens/52-onboarding-launch.html">
+  <img src="png/52-onboarding-launch.png" alt="Onboarding: launch" loading="lazy">
+  <div class="x-body"><div class="row between"><b>52 · Onboarding: launch</b><span class="tag">MVP</span></div>
+  <div class="small muted">Launch summary that leads with the four outcomes reached, then the exceptions: access changes with privileged roles approved by name and their access difference, unconfirmed values grouped by risk class with two blocking the launch, the load per owner, the readiness results, and what an undo would not remove.</div>
+  <div class="x-reqs"><span class="tag">ONB-15</span> <span class="tag">ONB-16</span> <span class="tag">WSP-14</span> <span class="tag">GOV-21</span> <span class="tag">BR-44</span> <span class="tag">PLT-03</span></div></div></a>
+<a class="card x-card" href="screens/53-onboarding-owner-tasks.html">
+  <img src="png/53-onboarding-owner-tasks.png" alt="Onboarding: owner tasks" loading="lazy">
+  <div class="x-body"><div class="row between"><b>53 · Onboarding: owner tasks</b><span class="tag">MVP</span></div>
+  <div class="small muted">After launch: the finisher's task list with pre-filled values and sources, the completeness bar the executive sees, the rule that keeps launch values by default at the due date, a suggestion from a new document waiting for a person, and a task raised at the moment of need.</div>
+  <div class="x-reqs"><span class="tag">ONB-08</span> <span class="tag">ONB-17</span> <span class="tag">ONB-18</span> <span class="tag">ONB-19</span> <span class="tag">BR-48</span> <span class="tag">PLT-09</span></div></div></a>
+<a class="card x-card" href="screens/54-onboarding-rule-based.html">
+  <img src="png/54-onboarding-rule-based.png" alt="Onboarding: rule-based import" loading="lazy">
+  <div class="x-body"><div class="row between"><b>54 · Onboarding: rule-based import</b><span class="tag">MVP</span></div>
+  <div class="small muted">Setup with the Metis onboarding AI switched off: columns of a project list mapped by header rules, status colours read as health, an MS Project plan read exactly, and the kept-and-dropped report before anything is written.</div>
+  <div class="x-reqs"><span class="tag">ONB-05</span> <span class="tag">ONB-20</span></div></div></a></div>
+<div class="h2">Workspace & governance</div><div class="x-grid"><a class="card x-card" href="screens/09-workspace-fields-options.html">
+  <img src="png/09-workspace-fields-options.png" alt="Workspace settings: fields and options" loading="lazy">
+  <div class="x-body"><div class="row between"><b>09 · Workspace settings: fields and options</b><span class="tag">MVP</span></div>
+  <div class="small muted">Workspace-managed lists for Category, Type, Label, Phase, Status and Priority with usage counts, system meanings, propagating renames and delete with replacement.</div>
+  <div class="x-reqs"><span class="tag">WSP-07</span> <span class="tag">WSP-08</span> <span class="tag">WSP-09</span> <span class="tag">BR-25</span></div></div></a>
+<a class="card x-card" href="screens/10-workspace-team-roles.html">
+  <img src="png/10-workspace-team-roles.png" alt="Workspace settings: team and roles" loading="lazy">
+  <div class="x-body"><div class="row between"><b>10 · Workspace settings: team and roles</b><span class="tag">MVP</span></div>
+  <div class="small muted">Workspace members with their workspace role, project overrides and open assignments; invitations; removal keeps names on history and flags open items for reassignment.</div>
+  <div class="x-reqs"><span class="tag">WSP-10</span> <span class="tag">WSP-11</span> <span class="tag">PLT-03</span> <span class="tag">BR-26</span></div></div></a>
+<a class="card x-card" href="screens/11-lifecycle-framework-designer.html">
+  <img src="png/11-lifecycle-framework-designer.png" alt="Lifecycle framework designer" loading="lazy">
+  <div class="x-body"><div class="row between"><b>11 · Lifecycle framework designer</b><span class="tag">MVP</span></div>
+  <div class="small muted">Edit a draft version of the workspace lifecycle: stages, gates, criteria, mandatory artifacts, role mapping and conditional rules, then submit it for review and publish.</div>
+  <div class="x-reqs"><span class="tag">GOV-01</span> <span class="tag">GOV-02</span> <span class="tag">GOV-03</span> <span class="tag">GOV-04</span> <span class="tag">GOV-05</span> <span class="tag">GOV-06</span> <span class="tag">GOV-12</span> <span class="tag">GOV-19</span> <span class="tag">GOV-20</span> <span class="tag">GOV-21</span> <span class="tag">GOV-22</span> <span class="tag">BR-15</span> <span class="tag">BR-16</span></div></div></a>
+<a class="card x-card" href="screens/12-gate-review.html">
+  <img src="png/12-gate-review.png" alt="Gate review" loading="lazy">
+  <div class="x-body"><div class="row between"><b>12 · Gate review</b><span class="tag">MVP</span></div>
+  <div class="small muted">Formal stage-exit review: readiness evidence, risks, dependencies and impact, approver votes against quorum, a decision with rationale and actions, Pass options locked with the reason while mandatory artifacts are missing, waivers, and a decision draft prepared through MCP.</div>
+  <div class="x-reqs"><span class="tag">GOV-08</span> <span class="tag">GOV-09</span> <span class="tag">GOV-13</span> <span class="tag">GOV-14</span> <span class="tag">GOV-15</span> <span class="tag">CHG-11</span> <span class="tag">MCP-08</span> <span class="tag">BR-17</span> <span class="tag">BR-18</span> <span class="tag">BR-30</span> <span class="tag">BR-42</span></div></div></a>
+<a class="card x-card" href="screens/13-template-library.html">
+  <img src="png/13-template-library.png" alt="Template library" loading="lazy">
+  <div class="x-body"><div class="row between"><b>13 · Template library</b><span class="tag">MVP</span></div>
+  <div class="small muted">Catalog of lifecycle and process frameworks at global, tenant and workspace level with version, owner, status, usage and provenance; clone is the POC's Edit a copy; a process framework draft opens in its editor and the Workspace Owner publishes it once its check passes; review, deprecation with a replacement template, compare and migrate arrive in V2.</div>
+  <div class="x-reqs"><span class="tag">GOV-17</span> <span class="tag">GOV-18</span> <span class="tag">GOV-23</span> <span class="tag">GOV-24</span> <span class="tag">GOV-25</span> <span class="tag">GOV-26</span> <span class="tag">GOV-28</span> <span class="tag">BLD-09</span> <span class="tag">BLD-11</span> <span class="tag">BLD-13</span> <span class="tag">BLD-16</span></div></div></a>
+<a class="card x-card" href="screens/36-workspace-setup.html">
+  <img src="png/36-workspace-setup.png" alt="Workspace setup" loading="lazy">
+  <div class="x-body"><div class="row between"><b>36 · Workspace setup</b><span class="tag">MVP</span></div>
+  <div class="small muted">Guided setup of a new workspace in Draft: six steps with progress, the profile form that drives durations and reporting periods, the four WSP-14 readiness rules checked before activation, the workspace lifecycle and the navigation tree.</div>
+  <div class="x-reqs"><span class="tag">WSP-01</span> <span class="tag">WSP-03</span> <span class="tag">WSP-04</span> <span class="tag">WSP-05</span> <span class="tag">WSP-06</span> <span class="tag">WSP-14</span> <span class="tag">BR-14</span> <span class="tag">PLT-20</span> <span class="tag">BLD-13</span></div></div></a>
+<a class="card x-card" href="screens/44-data-export-delete.html">
+  <img src="png/44-data-export-delete.png" alt="Workspace settings: export, import and delete" loading="lazy">
+  <div class="x-body"><div class="row between"><b>44 · Workspace settings: export, import and delete</b><span class="tag">MVP</span></div>
+  <div class="small muted">Workspace Data settings: export a project or the whole workspace with job status, import a project file as a new project after a validation report, delete a project with typed confirmation, and restore it from Recently deleted before the retention period ends.</div>
+  <div class="x-reqs"><span class="tag">PLT-14</span> <span class="tag">PLT-15</span> <span class="tag">TEN-07</span> <span class="tag">BR-27</span></div></div></a>
+<a class="card x-card" href="screens/58-process-framework-editor.html">
+  <img src="png/58-process-framework-editor.png" alt="Process framework editor" loading="lazy">
+  <div class="x-body"><div class="row between"><b>58 · Process framework editor</b><span class="tag">MVP</span></div>
+  <div class="small muted">Author a process framework outside any project: lanes with their label and type, node templates on a relative day axis with offsets, durations and roles, typed connections with lag, a sub-item and a connection point, a check that keeps Publish disabled while a dependency cycle remains, and a list view for the keyboard.</div>
+  <div class="x-reqs"><span class="tag">BLD-09</span> <span class="tag">BLD-12</span> <span class="tag">BLD-13</span> <span class="tag">BLD-14</span> <span class="tag">BLD-15</span> <span class="tag">BLD-16</span> <span class="tag">BR-41</span> <span class="tag">PLT-05</span></div></div></a></div>
+<div class="h2">Personal & collaboration</div><div class="x-grid"><a class="card x-card" href="screens/38-my-approvals.html">
+  <img src="png/38-my-approvals.png" alt="My approvals" loading="lazy">
+  <div class="x-body"><div class="row between"><b>38 · My approvals</b><span class="tag">MVP</span></div>
+  <div class="small muted">One queue of everything waiting for the signed-in approver: CR decisions, gate votes, waivers and charter sign-offs, with requester, due date, blocker and a deep link; drafts prepared through MCP are marked as not decided.</div>
+  <div class="x-reqs"><span class="tag">OVW-09</span> <span class="tag">CHG-04</span> <span class="tag">GOV-08</span> <span class="tag">GOV-13</span> <span class="tag">CHR-08</span> <span class="tag">MCP-08</span> <span class="tag">PLT-09</span> <span class="tag">BR-35</span> <span class="tag">BR-42</span></div></div></a>
+<a class="card x-card" href="screens/39-notifications-preferences.html">
+  <img src="png/39-notifications-preferences.png" alt="Notifications and preferences" loading="lazy">
+  <div class="x-body"><div class="row between"><b>39 · Notifications and preferences</b><span class="tag">MVP</span></div>
+  <div class="small muted">Notification drawer with unread markers and deep links for each trigger, and the personal preferences page: channels per trigger with approval requests locked on, digest and chat channels planned for V2, display name, default landing tab, default WBS view and language.</div>
+  <div class="x-reqs"><span class="tag">PLT-09</span> <span class="tag">PLT-10</span> <span class="tag">PLT-18</span></div></div></a>
+<a class="card x-card" href="screens/40-search-results.html">
+  <img src="png/40-search-results.png" alt="Search results" loading="lazy">
+  <div class="x-body"><div class="row between"><b>40 · Search results</b><span class="tag">MVP</span></div>
+  <div class="small muted">Search by project name and WBS code or name, grouped into projects and WBS items with status, keyboard navigation, results limited to records the user can open, full-text search planned for V2 and an empty state that explains what is searched.</div>
+  <div class="x-reqs"><span class="tag">PLT-12</span> <span class="tag">PLT-13</span> <span class="tag">PLT-04</span></div></div></a></div>
+<div class="h2">Portfolio</div><div class="x-grid"><a class="card x-card" href="screens/14-executive-cockpit.html">
+  <img src="png/14-executive-cockpit.png" alt="Executive portfolio cockpit" loading="lazy">
+  <div class="x-body"><div class="row between"><b>14 · Executive portfolio cockpit</b><span class="tag">MVP</span></div>
+  <div class="small muted">CEO-first control tower for one workspace: investment, health and capacity tiles with their data freshness, the attention queue with the kind of action each item needs, and (in V2) recommended decisions.</div>
+  <div class="x-reqs"><span class="tag">EXE-01</span> <span class="tag">EXE-02</span> <span class="tag">EXE-03</span> <span class="tag">EXE-04</span> <span class="tag">EXE-06</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/15-workspace-dashboard.html">
+  <img src="png/15-workspace-dashboard.png" alt="Workspace dashboard" loading="lazy">
+  <div class="x-body"><div class="row between"><b>15 · Workspace dashboard</b><span class="tag">MVP</span></div>
+  <div class="small muted">Governance view of one workspace: portfolio KPIs, the delivery pipeline by lifecycle stage with overdue and blocked gates, and the governance attention list.</div>
+  <div class="x-reqs"><span class="tag">EXE-05</span> <span class="tag">GOV-10</span> <span class="tag">GOV-12</span> <span class="tag">GOV-14</span> <span class="tag">BR-14</span> <span class="tag">BR-15</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/16-portfolio-registry.html">
+  <img src="png/16-portfolio-registry.png" alt="Portfolio and project registry" loading="lazy">
+  <div class="x-body"><div class="row between"><b>16 · Portfolio and project registry</b><span class="tag">MVP</span></div>
+  <div class="small muted">Single list of every project in the workspace, searchable and filterable, grouped by portfolio, with stage, health, budget and framework version.</div>
+  <div class="x-reqs"><span class="tag">REG-01</span> <span class="tag">REG-02</span> <span class="tag">REG-03</span> <span class="tag">CHR-15</span> <span class="tag">RSK-04</span> <span class="tag">BR-02</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/17-portfolio-roadmap.html">
+  <img src="png/17-portfolio-roadmap.png" alt="Portfolio roadmap" loading="lazy">
+  <div class="x-body"><div class="row between"><b>17 · Portfolio roadmap</b><span class="tag">MVP</span></div>
+  <div class="small muted">Eighteen-month roadmap of projects, MVP milestones and gates grouped by portfolio and program, with the cross-project dependency overlay and its conflicts.</div>
+  <div class="x-reqs"><span class="tag">RMP-01</span> <span class="tag">RMP-02</span> <span class="tag">RMP-03</span> <span class="tag">RMP-04</span> <span class="tag">WBS-14</span> <span class="tag">BR-23</span></div></div></a>
+<a class="card x-card" href="screens/18-capacity.html">
+  <img src="png/18-capacity.png" alt="Capacity control tower" loading="lazy">
+  <div class="x-body"><div class="row between"><b>18 · Capacity control tower</b><span class="tag">MVP</span></div>
+  <div class="small muted">Capacity, demand, utilization and gap by capability for the workspace, with monthly heat and the projects behind each bottleneck; the allocation editor that feeds demand opens in a side drawer from Edit allocations.</div>
+  <div class="x-reqs"><span class="tag">RES-01</span> <span class="tag">RES-02</span> <span class="tag">RES-03</span> <span class="tag">RES-04</span> <span class="tag">BR-07</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/19-risk-dependency.html">
+  <img src="png/19-risk-dependency.png" alt="Risk and dependency control tower" loading="lazy">
+  <div class="x-body"><div class="row between"><b>19 · Risk and dependency control tower</b><span class="tag">MVP</span></div>
+  <div class="small muted">Portfolio view of risks and cross-project dependencies: severity counts, systemic risk chains, green-but-risky projects, the portfolio risk register and the dependency map with downstream impact.</div>
+  <div class="x-reqs"><span class="tag">RSK-01</span> <span class="tag">RSK-02</span> <span class="tag">RSK-03</span> <span class="tag">RSK-04</span> <span class="tag">WBS-14</span> <span class="tag">BR-08</span> <span class="tag">BR-23</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/20-investment-benefits.html">
+  <img src="png/20-investment-benefits.png" alt="Investment and benefits" loading="lazy">
+  <div class="x-body"><div class="row between"><b>20 · Investment and benefits</b><span class="tag">V2</span></div>
+  <div class="small muted">Portfolio investment by portfolio and program (approved, actual, forecast, CapEx and OpEx), the project value map, the benefits register and value at risk with its method.</div>
+  <div class="x-reqs"><span class="tag">INV-01</span> <span class="tag">INV-02</span> <span class="tag">INV-03</span> <span class="tag">INV-04</span> <span class="tag">CHR-13</span></div></div></a>
+<a class="card x-card" href="screens/21-scenario-planner.html">
+  <img src="png/21-scenario-planner.png" alt="Scenario planner" loading="lazy">
+  <div class="x-body"><div class="row between"><b>21 · Scenario planner</b><span class="tag">V2</span></div>
+  <div class="small muted">What-if planning on a copy of the portfolio: budget and capacity levers, baseline versus scenario, recommended stop, delay, protect and reallocate actions, applied only as a proposal.</div>
+  <div class="x-reqs"><span class="tag">STR-02</span> <span class="tag">STR-03</span> <span class="tag">STR-04</span> <span class="tag">STR-05</span> <span class="tag">BR-10</span> <span class="tag">BR-11</span></div></div></a>
+<a class="card x-card" href="screens/22-steerco-report.html">
+  <img src="png/22-steerco-report.png" alt="SteerCo report" loading="lazy">
+  <div class="x-body"><div class="row between"><b>22 · SteerCo report</b><span class="tag">V2</span></div>
+  <div class="small muted">Report builder and preview for the executive portfolio review: health, investment, movements, decisions required and appendices, generated from live data for a period and portfolio.</div>
+  <div class="x-reqs"><span class="tag">ANL-01</span> <span class="tag">ANL-02</span> <span class="tag">ANL-03</span> <span class="tag">ANL-04</span> <span class="tag">AIC-06</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/23-ai-copilot.html">
+  <img src="png/23-ai-copilot.png" alt="AI portfolio copilot" loading="lazy">
+  <div class="x-body"><div class="row between"><b>23 · AI portfolio copilot</b><span class="tag">V3</span></div>
+  <div class="small muted">In-app copilot that answers portfolio questions with cited records, evidence, assumptions and confidence, and turns recommendations into a scenario or a prepared decision, never an executed one.</div>
+  <div class="x-reqs"><span class="tag">AIC-01</span> <span class="tag">AIC-02</span> <span class="tag">AIC-03</span> <span class="tag">MCP-04</span> <span class="tag">MCP-08</span> <span class="tag">MCP-10</span> <span class="tag">BR-10</span></div></div></a></div>
+<div class="h2">Project execution</div><div class="x-grid"><a class="card x-card" href="screens/24-project-overview.html">
+  <img src="png/24-project-overview.png" alt="Project overview" loading="lazy">
+  <div class="x-body"><div class="row between"><b>24 · Project overview</b><span class="tag">MVP</span></div>
+  <div class="small muted">Read-only project dashboard computed from the WBS with the BRD Section 12 metric definitions; every tile drills down.</div>
+  <div class="x-reqs"><span class="tag">OVW-01</span> <span class="tag">OVW-02</span> <span class="tag">OVW-03</span> <span class="tag">OVW-04</span> <span class="tag">OVW-05</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/25-project-charter.html">
+  <img src="png/25-project-charter.png" alt="Project charter and business case" loading="lazy">
+  <div class="x-body"><div class="row between"><b>25 · Project charter and business case</b><span class="tag">MVP</span></div>
+  <div class="small muted">Nine-section charter that is a live slice of project data, with a sticky section navigator showing completion and what is required before commitment: sections V and VI are derived from the WBS and collapsed, VII reads from the risk register, sign-off freezes a revision and a PDF pins a data snapshot.</div>
+  <div class="x-reqs"><span class="tag">CHR-01</span> <span class="tag">CHR-02</span> <span class="tag">CHR-03</span> <span class="tag">CHR-04</span> <span class="tag">CHR-05</span> <span class="tag">CHR-06</span> <span class="tag">CHR-07</span> <span class="tag">CHR-08</span> <span class="tag">CHR-09</span> <span class="tag">CHR-10</span> <span class="tag">CHR-11</span> <span class="tag">CHR-12</span> <span class="tag">CHR-13</span> <span class="tag">CHR-14</span> <span class="tag">CHR-15</span> <span class="tag">CHR-16</span> <span class="tag">BR-01</span> <span class="tag">BR-02</span> <span class="tag">BR-03</span> <span class="tag">BR-22</span> <span class="tag">BR-39</span> <span class="tag">PLT-16</span> <span class="tag">PLT-20</span></div></div></a>
+<a class="card x-card" href="screens/26-wbs-table.html">
+  <img src="png/26-wbs-table.png" alt="WBS Master: table view" loading="lazy">
+  <div class="x-body"><div class="row between"><b>26 · WBS Master: table view</b><span class="tag">MVP</span></div>
+  <div class="small muted">Single source of truth for project work: tree table with category rows, saved views and column presets, instant filters, bulk actions, inline edits and baseline locks.</div>
+  <div class="x-reqs"><span class="tag">WBS-01</span> <span class="tag">WBS-02</span> <span class="tag">WBS-03</span> <span class="tag">WBS-04</span> <span class="tag">WBS-05</span> <span class="tag">WBS-06</span> <span class="tag">WBS-18</span> <span class="tag">WBS-19</span> <span class="tag">WBS-20</span> <span class="tag">BR-04</span> <span class="tag">BR-24</span></div></div></a>
+<a class="card x-card" href="screens/27-wbs-tree.html">
+  <img src="png/27-wbs-tree.png" alt="WBS Master: tree diagram and blueprint" loading="lazy">
+  <div class="x-body"><div class="row between"><b>27 · WBS Master: tree diagram and blueprint</b><span class="tag">MVP</span></div>
+  <div class="small muted">Hierarchy canvas of the same WBS with automatic layouts, zoom, keyboard navigation and dependency arrows that flag conflicts only when both dates exist; Blueprint shows the Builder canvas per deliverable.</div>
+  <div class="x-reqs"><span class="tag">WBS-08</span> <span class="tag">WBS-09</span> <span class="tag">WBS-10</span> <span class="tag">WBS-13</span> <span class="tag">BR-23</span> <span class="tag">BR-40</span> <span class="tag">BR-41</span></div></div></a>
+<a class="card x-card" href="screens/28-wbs-item.html">
+  <img src="png/28-wbs-item.png" alt="WBS item form and activity" loading="lazy">
+  <div class="x-body"><div class="row between"><b>28 · WBS item form and activity</b><span class="tag">MVP</span></div>
+  <div class="small muted">Item form for 1.1.2 split into General, Schedule, Dependencies and Activity tabs: derived level, generated code, assignments from the team, dependencies that flag but never move dates, and an activity feed that marks actions made through MCP.</div>
+  <div class="x-reqs"><span class="tag">WBS-11</span> <span class="tag">WBS-12</span> <span class="tag">WBS-13</span> <span class="tag">WBS-15</span> <span class="tag">WBS-16</span> <span class="tag">WBS-17</span> <span class="tag">MCP-06</span> <span class="tag">MCP-11</span> <span class="tag">BR-23</span> <span class="tag">BR-40</span></div></div></a>
+<a class="card x-card" href="screens/29-deliverable-builder.html">
+  <img src="png/29-deliverable-builder.png" alt="Deliverable Builder" loading="lazy">
+  <div class="x-body"><div class="row between"><b>29 · Deliverable Builder</b><span class="tag">MVP</span></div>
+  <div class="small muted">Pick a target deliverable and a process framework, adjust the swimlane canvas or its keyboard list view, preview the result, then build 16 pre-wired WBS items with labels, dependencies and a saved Blueprint.</div>
+  <div class="x-reqs"><span class="tag">BLD-01</span> <span class="tag">BLD-02</span> <span class="tag">BLD-03</span> <span class="tag">BLD-04</span> <span class="tag">BLD-05</span> <span class="tag">BLD-06</span> <span class="tag">BLD-07</span> <span class="tag">BLD-08</span> <span class="tag">BLD-10</span> <span class="tag">BLD-12</span> <span class="tag">BR-31</span> <span class="tag">BR-41</span></div></div></a>
+<a class="card x-card" href="screens/30-plan-timeline.html">
+  <img src="png/30-plan-timeline.png" alt="Project plan: timeline" loading="lazy">
+  <div class="x-body"><div class="row between"><b>30 · Project plan: timeline</b><span class="tag">MVP</span></div>
+  <div class="small muted">Point-based timeline of dated work items with days relative to today, OVERDUE tags, a today line and dependency conflicts flagged with the WBS rules; stage overlay and Gantt come in V2.</div>
+  <div class="x-reqs"><span class="tag">PLN-01</span> <span class="tag">PLN-02</span> <span class="tag">PLN-03</span> <span class="tag">PLN-04</span> <span class="tag">WBS-13</span> <span class="tag">BR-23</span> <span class="tag">BR-40</span></div></div></a>
+<a class="card x-card" href="screens/31-plan-board.html">
+  <img src="png/31-plan-board.png" alt="Project plan: board" loading="lazy">
+  <div class="x-body"><div class="row between"><b>31 · Project plan: board</b><span class="tag">MVP</span></div>
+  <div class="small muted">Kanban of work items by status from the workspace Status list; dragging a card or choosing a column in its Move to… menu changes status and is logged; Done is a collapsed column of recent completions.</div>
+  <div class="x-reqs"><span class="tag">PLN-05</span> <span class="tag">WBS-01</span> <span class="tag">WBS-16</span> <span class="tag">BR-41</span></div></div></a>
+<a class="card x-card" href="screens/32-change-requests.html">
+  <img src="png/32-change-requests.png" alt="Change requests and baseline" loading="lazy">
+  <div class="x-body"><div class="row between"><b>32 · Change requests and baseline</b><span class="tag">MVP</span></div>
+  <div class="small muted">Change register for a baselined project: CR detail with impact analysis, actions that depend on the viewer's role, a decision that needs a different approver and a rationale, and an approved CR whose baseline changes are reviewed before the PM applies them as baseline v2.</div>
+  <div class="x-reqs"><span class="tag">CHG-01</span> <span class="tag">CHG-02</span> <span class="tag">CHG-03</span> <span class="tag">CHG-04</span> <span class="tag">CHG-05</span> <span class="tag">CHG-06</span> <span class="tag">CHG-07</span> <span class="tag">CHG-09</span> <span class="tag">CHG-12</span> <span class="tag">BR-05</span> <span class="tag">BR-28</span> <span class="tag">BR-29</span></div></div></a>
+<a class="card x-card" href="screens/33-journal-reports.html">
+  <img src="png/33-journal-reports.png" alt="Journal and project reporting" loading="lazy">
+  <div class="x-body"><div class="row between"><b>33 · Journal and project reporting</b><span class="tag">MVP</span></div>
+  <div class="small muted">Reports area with three mutually exclusive tabs: the everyday journal, the report builder whose generated Weekly Status is a snapshot with as-of time and metric version and is published as the weekly status submission, and the saved snapshots.</div>
+  <div class="x-reqs"><span class="tag">RPT-01</span> <span class="tag">RPT-02</span> <span class="tag">RPT-03</span> <span class="tag">RPT-04</span> <span class="tag">CHG-11</span> <span class="tag">MCP-06</span> <span class="tag">PLT-16</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/34-focus.html">
+  <img src="png/34-focus.png" alt="Focus: today and this week" loading="lazy">
+  <div class="x-body"><div class="row between"><b>34 · Focus: today and this week</b><span class="tag">MVP</span></div>
+  <div class="small muted">Personal start-of-day view: overdue, due in the next 7 days and starting in the next 7 days, with Only mine, a scope switch from this project to all my projects, and status changes or Done straight from each row; counts follow Section 12.</div>
+  <div class="x-reqs"><span class="tag">OVW-06</span> <span class="tag">OVW-07</span> <span class="tag">OVW-08</span></div></div></a>
+<a class="card x-card" href="screens/35-mvp-detail.html">
+  <img src="png/35-mvp-detail.png" alt="MVP detail" loading="lazy">
+  <div class="x-body"><div class="row between"><b>35 · MVP detail</b><span class="tag">MVP</span></div>
+  <div class="small muted">Outcome container for MVP 1 Omni Payment: customer problem, outcome KPIs, release criteria, linked features and milestones, dependencies, and MVP progress and health with their formulas and as-of time, compared with the project.</div>
+  <div class="x-reqs"><span class="tag">MVP-01</span> <span class="tag">MVP-02</span> <span class="tag">MVP-03</span> <span class="tag">MVP-04</span> <span class="tag">BR-06</span> <span class="tag">BR-39</span></div></div></a>
+<a class="card x-card" href="screens/37-project-create.html">
+  <img src="png/37-project-create.png" alt="Create project" loading="lazy">
+  <div class="x-body"><div class="row between"><b>37 · Create project</b><span class="tag">MVP</span></div>
+  <div class="small muted">New project dialog over the registry: placement in workspace, portfolio and an optional program, master record fields, a lifecycle framework version pinned at creation, and the checklist the Draft project must complete before commitment.</div>
+  <div class="x-reqs"><span class="tag">CHR-17</span> <span class="tag">REG-01</span> <span class="tag">GOV-12</span> <span class="tag">CHR-14</span> <span class="tag">CHR-15</span> <span class="tag">BR-01</span> <span class="tag">BR-13</span> <span class="tag">BR-15</span> <span class="tag">PLT-20</span></div></div></a>
+<a class="card x-card" href="screens/41-docs-links.html">
+  <img src="png/41-docs-links.png" alt="Project Docs &amp; Links" loading="lazy">
+  <div class="x-body"><div class="row between"><b>41 · Project Docs &amp; Links</b><span class="tag">MVP</span></div>
+  <div class="small muted">Links, notes and files of one project, opened from the project node in the navigation tree: upload states (scanning, uploaded, blocked type, too large) against the workspace limits, access-controlled downloads and an audited removal.</div>
+  <div class="x-reqs"><span class="tag">PLT-08</span> <span class="tag">PLT-07</span> <span class="tag">PLT-11</span></div></div></a>
+<a class="card x-card" href="screens/42-editor-states.html">
+  <img src="png/42-editor-states.png" alt="Editor states: save failed and edit conflict" loading="lazy">
+  <div class="x-body"><div class="row between"><b>42 · Editor states: save failed and edit conflict</b><span class="tag">MVP</span></div>
+  <div class="small muted">WBS item 1.1.2 editor after a failed save and a retry that found newer versions: the save state, the conflicting field marked in place, a compare table (yours, theirs, current) with Reload, Keep mine and Merge, a change made through MCP with Undo, and the one version and idempotency rule shared by the application, MCP and the API.</div>
+  <div class="x-reqs"><span class="tag">PLT-05</span> <span class="tag">PLT-06</span> <span class="tag">MCP-07</span> <span class="tag">MCP-14</span> <span class="tag">MCP-19</span> <span class="tag">WBS-11</span> <span class="tag">BR-34</span> <span class="tag">BR-04</span></div></div></a></div>
+</div></body></html>

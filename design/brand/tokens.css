@@ -1,0 +1,138 @@
+/* Metis design tokens, version 0.4, matching brand/style-guide.md 0.4.
+   Single source of truth for the style guide (brand/style-guide.html) and the wireframes (wireframes/).
+   Ink, paper, neutrals and type families: see brand/style-guide.md. */
+:root {
+  /* brand: one ink, one accent, one paper */
+  --ink: #111827;
+  --violet: #6D3BEF;
+  --paper: #FAF7F2;
+  --white: #FFFFFF;
+
+  /* app surfaces and text */
+  --canvas: #FFFFFF;          /* page background */
+  --rail: #FAFAFB;            /* sidebar */
+  --surface: #FFFFFF;         /* cards, tables */
+  --surface-sunk: #F6F6F8;    /* table header, wells */
+  --text: #111827;            /* primary text, 17.7:1 on white */
+  --muted: #676773;           /* secondary text, meta, and input placeholders. Measured 5.58:1 on
+                                 white, 4.76:1 on accent-soft, 5.17:1 on surface-sunk, 5.35:1 on rail:
+                                 it must clear 4.5:1 on every app surface, not only on white, because
+                                 secondary text also sits on the selected-row fill. The former #6C6C78
+                                 was 4.42:1 on accent-soft, which axe-core reported on four screens. */
+  --faint: #A0A0AC;           /* disabled controls and decorative detail only, 2.6:1: never text that carries meaning, placeholders included (WCAG 2.2 AA 1.4.3) */
+  --line: #E6E6EB;            /* hairline borders */
+  --line-strong: #D4D4DB;     /* inputs, secondary buttons */
+  --accent: #6D3BEF;          /* links, selection (with accent-soft fill), focus ring, primary emphasis, 6.0:1 */
+  --accent-soft: #F0EAFE;     /* selected rows, person avatars */
+  --focus-ring: 0 0 0 2px #FFFFFF, 0 0 0 4px #6D3BEF; /* keyboard focus only: white gap + 2px violet ring (6.0:1 on white); never used to show selection */
+
+  /* status: dot or fill / text (>= 4.5:1 on its bg) / soft background */
+  --good: #1A9A55;      --good-text: #187B4A;      --good-bg: #E4F5EB;
+  --waiting: #C27A0E;   --waiting-text: #946115;   --waiting-bg: #FBF0D9;
+  --serious: #C2531A;   --serious-text: #B04D1B;   --serious-bg: #FDEBDD;
+  --critical: #D6402C;  --critical-text: #BA3A2B;  --critical-bg: #FCE6E2;
+  --running: #2563EB;   --running-text: #2460E3;   --running-bg: #E6EEFD;
+  --review: #6D3BEF;    --review-text: #6D3BEF;    --review-bg: #F0EAFE;
+  --neutral: #6C6C78;   --neutral-text: #6A6A76;   --neutral-bg: #EEEEF1;
+
+  /* charts: categorical order validated with the dataviz checker on #FFFFFF
+     (adjacent CVD dE 9.1, normal-vision dE 19.6; slots 3-5 need visible labels or a table view) */
+  --series-1: #6D3BEF; --series-2: #EB6834; --series-3: #1BAF7A; --series-4: #EDA100;
+  --series-5: #E87BA4; --series-6: #008300; --series-7: #2A78D6; --series-8: #E34948;
+  --seq-100: #CDE2FB; --seq-250: #86B6EF; --seq-400: #3987E5; --seq-550: #1C5CAB; --seq-700: #0D366B;
+  --div-neg: #E34948; --div-mid: #F0EFEC; --div-pos: #2A78D6;
+  --grid: #EDEDF1;
+  --axis: #D4D4DB;
+
+  /* type */
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-ui: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-control: "Manrope", "Inter", -apple-system, "Segoe UI", sans-serif;
+  --fs-display: 30px;   /* page title, greeting: Newsreader 500 */
+  --fs-h2: 18px;        /* section title: Inter 600 */
+  --fs-body: 14px;      /* UI text */
+  --fs-table: 13px;     /* dense tables (WBS, registry) */
+  --fs-small: 12.5px;   /* meta, captions */
+  --fs-label: 11px;     /* uppercase section labels only, letter-spacing 0.08em; never for actions, values or messages */
+  --fs-figure: 28px;    /* stat tile values: Inter 600, proportional figures */
+
+  /* shape and space */
+  --radius: 6px;
+  --radius-lg: 8px;
+  --sidebar-w: 232px;
+  --topbar-h: 52px;
+  --row-list: 44px;
+  --row-table: 36px;          /* comfortable density (default) */
+  --row-list-compact: 36px;   /* compact density, chosen per user */
+  --row-table-compact: 32px;
+  --gap: 14px;
+  --gap-lg: 20px;
+  --page-pad: 24px;
+
+  /* App shell and project overview, measured in wireframes/assets/wireframe.css at 1440px wide.
+     React Native takes pixels and the token rule forbids arithmetic on tokens, so every size the
+     app draws is a token of its own. */
+  --neutral-fill: #C9C9D2;    /* Not Started bar and legend fill; the neutral dot is darker */
+  --scrim-opacity: 0.32;      /* ink scrim behind the session dialog and the sidebar drawer */
+  --dialog-shadow: 0 18px 48px rgba(17, 24, 39, 0.22); /* the wireframe's .modal shadow, in ink */
+  --dialog-elevation: 16px;   /* Android before 9 draws no box shadow; 16 is the system dialog's */
+  --space-2: 2px;  --space-3: 3px;  --space-4: 4px;   --space-5: 5px;   --space-6: 6px;
+  --space-7: 7px;  --space-8: 8px;  --space-9: 9px;   --space-10: 10px; --space-11: 11px;
+  --space-12: 12px; --space-16: 16px; --space-18: 18px;
+  --badge-offset: -5px;       /* count badge on the bell, from its top right corner */
+  --radius-xs: 2px;           /* legend swatch */
+  --radius-sm: 4px;           /* tags, Planned label, bar ends */
+  --radius-pill: 999px;       /* chips, counts, meters, avatars, dots */
+  --dot: 6px;                 /* chip dot */
+  --meter-h: 8px;
+  --swatch: 10px;             /* legend swatch */
+  --bar-h: 14px;              /* stacked bar and bar rows */
+  --glyph-w: 16px;            /* sidebar glyph column */
+  --tag-h: 20px;
+  --chip-h: 22px;
+  --avatar: 24px;
+  --logo-h: 24px;             /* sidebar wordmark height; the style guide asks 96px width at least */
+  --logo-ratio: 248.65 / 87;  /* wordmark width / height, the viewBox of brand/logo/metis-wordmark.svg */
+  --icon-btn: 30px;           /* help and notification buttons */
+  --avatar-lg: 32px;
+  --bar-label-w: 120px;       /* label column of bar rows */
+  --bar-value-w: 56px;        /* value column of bar rows */
+  --list-name-min: 88px;      /* list row name on iOS and Android, which lay out no min-content: the
+                                 demo's longest name word, Walkthrough, is 83.45px in fs-body */
+  --search-w: 300px;          /* top bar search */
+  --tab-border: 2px;          /* underline of the active tab */
+  --fs-project-title: 26px;   /* project header title: Newsreader 500; the style guide page title is 30 */
+  --fs-nav: 13.5px;           /* sidebar items, workspace switch, sidebar search, tabs: Manrope */
+  --fs-crumbs: 13px;          /* breadcrumbs, top bar search, banners */
+  --fs-caption: 12px;         /* chips, tile deltas, legends, save state, sidebar glyphs */
+  --fs-tag: 11.5px;           /* tags, freshness, large avatar, WBS label glyphs */
+  --fs-badge: 11px;           /* sidebar counts and Planned labels, tenant name, health glyph */
+  --fs-eyebrow: 10.5px;       /* uppercase sidebar group labels */
+  --fs-micro: 10px;           /* avatar initials, bell count */
+  --fs-dot: 9px;              /* freshness dot */
+  --lh-body: 20.3px;          /* fs-body x 1.45 */
+  --lh-small: 18.125px;       /* fs-small x 1.45 */
+  --lh-caption: 17.4px;       /* fs-caption x 1.45 */
+  --lh-crumbs: 18.85px;       /* fs-crumbs x 1.45 */
+  --lh-nav: 16.2px;           /* fs-nav x 1.2 */
+  --lh-sidebar: 19.575px;     /* fs-nav x 1.45: workspace name, sidebar search */
+  --lh-tenant: 15.95px;       /* fs-badge x 1.45 */
+  --lh-fresh: 16.675px;       /* fs-tag x 1.45 */
+  --lh-h2: 23.4px;            /* fs-h2 x 1.3 */
+  --lh-h3: 18.2px;            /* fs-body x 1.3, card titles */
+  --lh-figure: 32.2px;        /* fs-figure x 1.15 */
+  --lh-percent: 34px;         /* fs-figure at normal line height, the big progress percent */
+  --lh-project-title: 31.2px; /* fs-project-title x 1.2 */
+  --lh-glyph: 14.4px;         /* fs-caption x 1.2 */
+  --lh-eyebrow: 15.75px;      /* fs-eyebrow x 1.5, for Android, which clips glyphs to their line: two
+                                 marks stacked over a Vietnamese capital reach 1.105 em */
+  --ls-eyebrow: 0.84px;       /* 0.08em of fs-eyebrow */
+  --ls-project-title: -0.26px; /* -0.01em of fs-project-title */
+
+  /* Layout tiers: the full shell from bp-desktop, an icon rail from bp-tablet, one column below. */
+  --bp-tablet: 768px;
+  --bp-desktop: 1280px;
+  --touch: 44px;              /* minimum touch target on phones */
+  --rail-w: 64px;             /* icon rail: one touch target plus 10px each side */
+  --header-title-min: 240px;  /* project header title block; narrower and the actions wrap below */
+}

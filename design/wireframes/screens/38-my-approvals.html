@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My approvals · Metis wireframe</title>
+<meta name="wf:id" content="my-approvals">
+<meta name="wf:title" content="My approvals">
+<meta name="wf:area" content="Personal & collaboration">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="OVW-09 CHG-04 GOV-08 GOV-13 CHR-08 MCP-08 PLT-09 BR-35 BR-42">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="One queue of everything waiting for the signed-in approver: CR decisions, gate votes, waivers and charter sign-offs, with requester, due date, blocker and a deep link; drafts prepared through MCP are marked as not decided.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-q td { vertical-align: top; padding-top: 10px; padding-bottom: 10px; height: auto; }
+  .x-q td.wrap { white-space: normal; }
+  .x-mcp { display: flex; gap: 8px; align-items: flex-start; margin-top: 8px; padding: 7px 9px; border-radius: var(--radius); background: var(--surface-sunk); font-size: 12px; white-space: normal; }
+  .x-who { display: flex; gap: 7px; align-items: center; }
+</style>
+</head>
+<body data-shell="app" data-nav="approvals" data-workspace="Creative Studio" data-crumbs="Creative Studio / My approvals" data-user="HL">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">My approvals · H. Le</div>
+      <div class="muted small" style="margin-top:4px">Requests waiting for your decision or signature · 3 ready, 2 blocked · sorted by due date</div>
+    </div>
+    <div class="seg"><span class="on">Waiting (5)</span><span>Decided by me</span></div>
+  </section>
+
+  <section class="filters" data-req="OVW-09">
+    <div class="field"><label>Type</label><div class="select">All types</div></div>
+    <div class="field"><label>Project</label><div class="select">All projects</div></div>
+    <div class="field"><label>Due</label><div class="select">Any time</div></div>
+    <div class="field"><label>Sort</label><div class="select">Oldest waiting first</div></div>
+    <div class="field"><label>Saved views</label><div class="select">My daily round: gates and major change requests</div></div>
+    <span class="toggle on" style="margin-bottom:8px">Show blocked items</span>
+    <span class="small muted" style="margin-bottom:8px">J and K, or the arrow keys, move to the next and previous request without leaving the keyboard.</span>
+  </section>
+
+  <section class="card" data-req="OVW-09 CHG-04 GOV-08 GOV-13 CHR-08">
+    <div class="head"><span class="h3">Waiting for you <span class="anno" data-n="1"></span></span><span class="small muted">The sidebar count shows the 3 you can act on now</span></div>
+    <table class="table x-q">
+      <thead><tr><th>Type</th><th>Item</th><th>Project</th><th>Requested by</th><th>Due</th><th>Blocker</th><th></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="chip running">Waiver</span></td>
+          <td class="wrap" style="width:300px"><div><b>W-02</b> · waive "Client brief sign-off" until 2 Oct</div><div class="small muted">Reason: Contoso signs the brief at the 29 Sep kickoff. When it expires the criterion blocks the gate again. <span class="anno" data-n="3"></span></div></td>
+          <td class="wrap">Spring Catalogue Renders</td>
+          <td><div class="x-who"><span class="av">NR</span><div>Nadia R.<div class="small muted">21 Sep</div></div></div></td>
+          <td><b>24 Sep</b><div class="small muted">in 2 days</div></td>
+          <td class="wrap small muted">None</td>
+          <td><span class="btn primary sm">Review waiver</span></td>
+        </tr>
+        <tr>
+          <td><span class="chip review">Gate vote</span></td>
+          <td class="wrap"><div><b>Planning gate</b> · Creative Production v1.2</div><div class="small muted">Votes 1/3 · quorum 2/3 · Sasha W. voted Rework</div></td>
+          <td class="wrap">Spring Catalogue Renders</td>
+          <td><div class="x-who"><span class="av">NR</span><div>Nadia R.<div class="small muted">18 Sep</div></div></div></td>
+          <td><b>25 Sep</b><div class="small muted">in 3 days</div></td>
+          <td class="wrap" style="width:270px"><span class="chip critical">Not eligible</span> <span class="anno" data-n="2"></span><div class="small" style="margin-top:4px">2 of 4 mandatory artifacts missing: Shot list, Client brief sign-off. Pass and Pass with conditions are unavailable; Rework, Hold and Reject stay open.</div></td>
+          <td><span class="btn secondary sm">Open gate review</span></td>
+        </tr>
+        <tr>
+          <td><span class="chip waiting">CR decision</span></td>
+          <td class="wrap"><div><b>CR-001</b> · Add a 4th hero render angle</div><div class="small muted">Scope · 3 days schedule impact · affects 1.1 (baseline v1)</div>
+            <div class="x-mcp"><span class="av ai">AI</span><div><b>Prepared via MCP, not decided.</b> Draft "Approve" from your assistant (token Studio assistant) at 08:50. It counts only when you confirm it here. <span class="anno" data-n="4"></span></div></div></td>
+          <td class="wrap">Meridian CGI Campaign</td>
+          <td><div class="x-who"><span class="av">NR</span><div>Nadia R.<div class="small muted">2 Jul</div></div></div></td>
+          <td><span class="muted">No due date</span><div class="small" style="color:var(--waiting-text)">Waiting 82 days</div></td>
+          <td class="wrap small muted">None</td>
+          <td><span class="btn primary sm">Decide</span></td>
+        </tr>
+        <tr>
+          <td><span class="chip">Charter sign-off</span></td>
+          <td class="wrap"><div><b>Charter Rev 2</b> · adds the 4th hero angle</div><div class="small muted">You sign as Project Owner, with J. Park and Nadia R.</div></td>
+          <td class="wrap">Meridian CGI Campaign</td>
+          <td><div class="x-who"><span class="av">NR</span><div>Nadia R.</div></div></td>
+          <td class="muted">After CR-001</td>
+          <td class="wrap"><span class="chip waiting">Waiting on CR-001</span><div class="small" style="margin-top:4px">Rev 2 is issued for signature once CR-001 is decided.</div></td>
+          <td><span class="btn secondary sm">Open charter</span></td>
+        </tr>
+            <tr>
+              <td><span class="chip">Deliverable approval</span></td>
+              <td class="wrap"><div><b>1.3 Walkthrough Script</b> · Approval Gate</div><div class="small muted">You are the item's Approver; the Reviewer signs off first</div></td>
+              <td class="wrap">Northwind Showroom VR</td>
+              <td><div class="x-who"><span class="av">SW</span><div>Sasha W.</div></div></td>
+              <td class="muted">After review</td>
+              <td class="wrap"><span class="chip waiting">Waiting on review</span><div class="small muted">Nadia R. reviews first</div></td>
+              <td><span class="btn secondary sm">Open item</span></td>
+            </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="grid c3">
+    <div class="card" data-req="BR-42 GOV-08">
+      <div class="head"><span class="h3">Why Pass is unavailable <span class="anno" data-n="5"></span></span></div>
+      <div class="body stack s small">
+        <div>A gate is eligible for Pass only when every mandatory artifact is complete or covered by an approved waiver that has not expired.</div>
+        <div>Metis checks this on the server, so a Pass sent from the API or an AI client is rejected the same way.</div>
+        <div class="muted">Approving W-02 leaves 1 artifact missing: the Planning gate stays not eligible until the shot list is attached.</div>
+      </div>
+    </div>
+    <div class="card" data-req="CHG-04">
+      <div class="head"><span class="h3">Decided by you, last 7 days</span></div>
+      <div class="list-row"><span class="chip good">Approved</span><div class="grow"><div class="title-line">CR-002 · Move render farm to overnight queue</div><div class="sub">22 Sep 08:40 · "overnight queue frees the farm"</div></div></div>
+      <div class="body small muted">Every decision keeps its rationale, actor and time in the item history.</div>
+    </div>
+    <div class="card" data-req="OVW-09 PLT-09">
+      <div class="head"><span class="h3">Empty state <span class="anno" data-n="6"></span></span></div>
+      <div class="body"><div class="empty"><b>Nothing waits for you.</b><br>New requests appear here and in your notifications. Requests from projects you cannot open never show.</div></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">OVW-09</span> One queue for CR decisions, gate votes, waivers, charter sign-offs and deliverable approvals (items labelled Approval Gate where the person is Approver) assigned to the signed-in person, with requester, due date, blocker and a link that opens the item where the decision is taken; filters by type, project and due date.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">GOV-08, BR-42</span> An ineligible gate still shows in the queue with the reason; Pass and Pass with conditions are unavailable while Rework, Hold and Reject stay possible.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">GOV-13</span> A waiver request shows the rule, reason and expiry; an expired waiver re-blocks the criterion and raises an attention item.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">MCP-08, BR-35</span> An AI client can prepare a decision but never take it: the draft is marked "Prepared via MCP, not decided" with the square AI avatar and the token name until the approver confirms it in the app.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">BR-42, CHG-04, CHR-08</span> Eligibility is enforced on the server. CR decisions need a rationale and the requester cannot approve their own CR (BR-28); a charter sign-off records signer, time and revision.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">PLT-09</span> Every request also arrives as a notification that cannot be muted; the empty state says where new requests will appear.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

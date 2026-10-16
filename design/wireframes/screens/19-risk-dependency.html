@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Risk and dependencies · Metis wireframe</title>
+<meta name="wf:id" content="risk-dependency">
+<meta name="wf:title" content="Risk and dependency control tower">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="RSK-01 RSK-02 RSK-03 RSK-04 WBS-14 BR-08 BR-23 BR-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Portfolio view of risks and cross-project dependencies: severity counts, systemic risk chains, green-but-risky projects, the portfolio risk register and the dependency map with downstream impact.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-chain { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .x-chain .x-node { border: 1.5px solid var(--line-strong); border-radius: var(--radius); padding: 8px 10px; background: var(--surface); font-size: 12.5px; }
+  .x-chain .x-node.bad { border-color: var(--critical); }
+  .x-chain .x-node.warn { border-color: var(--waiting); }
+  .x-chain .x-node b { display: block; font-size: 13px; }
+  .x-chain .x-arrow { color: var(--critical); font-size: 16px; }
+  .x-risk td:nth-child(2), .x-risk td:nth-child(8) { white-space: normal; padding-top: 6px; padding-bottom: 6px; }
+  .x-map text { font: 500 12px var(--font-ui); fill: var(--text); }
+  .x-map text.x-sub { font-size: 11px; fill: var(--muted); }
+  .x-map text.x-elabel { font-size: 11px; fill: var(--muted); }
+</style>
+</head>
+<body data-shell="app" data-nav="risk" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / Risk &amp; dependencies">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Risk &amp; dependencies</div>
+      <div class="muted small" style="margin-top:4px">84 open risks across 128 projects · <span class="fresh">As of 22 Sep 2026, 09:40 · metrics v1</span></div>
+    </div>
+    <div class="filters">
+      <div class="field"><label>Portfolio</label><div class="select">All</div></div>
+      <div class="field"><label>Severity</label><div class="select">All</div></div>
+      <div class="field"><label>Owner</label><div class="select">All</div></div>
+      <span class="btn secondary">Export</span>
+    </div>
+  </section>
+
+  <section class="grid c4" data-req="RSK-02">
+    <div class="card kpi alert"><div class="k-label">Critical <span class="anno" data-n="1"></span></div><div class="k-value">13</div><div class="k-delta"><span class="up-bad">+2</span> since last week</div></div>
+    <div class="card kpi"><div class="k-label">High</div><div class="k-value">30</div><div class="k-delta">8 without mitigation</div></div>
+    <div class="card kpi"><div class="k-label">Medium</div><div class="k-value">41</div></div>
+    <div class="card kpi"><div class="k-label">Systemic</div><div class="k-value">4</div><div class="k-delta">same cause in 2 or more projects</div></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 1.4fr 1fr; align-items: start">
+    <div class="card" data-req="RSK-02 RSK-03">
+      <div class="head"><span class="h3">Systemic risks <span class="anno" data-n="2"></span></span><span class="chip critical">4</span></div>
+      <div class="body stack">
+        <div>
+          <div class="row between"><b>Core API delay</b><span class="chip critical">Critical</span></div>
+          <div class="x-chain" style="margin-top:8px">
+            <div class="x-node bad"><b>Core Platform</b>Core API v2 · 12 days late</div><span class="x-arrow">→</span>
+            <div class="x-node bad"><b>MSME Payment</b>MVP2 · 8 days late</div><span class="x-arrow">→</span>
+            <div class="x-node warn"><b>MSME Launch</b>program milestone · 8 days at risk</div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Data engineer shortage</div><div class="sub">Data capability at 118% in Q4 · Data Platform, MSME Payment, Core Platform, Digital Sales</div></div><span class="chip critical">Critical</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">AML rule change in 2027</div><div class="sub">AML Upgrade, KYC Automation</div></div><span class="chip serious">High</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Payment partner certification</div><div class="sub">MSME Payment, Merchant Onboarding</div></div><span class="chip waiting">Medium</span></div>
+      </div>
+    </div>
+
+    <div class="card" data-req="RSK-04 BR-08">
+      <div class="head"><span class="h3">Green-but-risky <span class="anno" data-n="3"></span></span><span class="chip critical">1</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line">Core Platform</div><div class="sub">Declared <span class="rag g">On track</span> · computed <span class="rag r">Off track</span></div><div class="sub">3 milestones overdue, 2 critical risks · no override recorded</div></div><span class="btn secondary sm">Ask owner</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line">AML Upgrade</div><div class="sub">Declared <span class="rag g">On track</span> · computed <span class="rag a">At risk</span></div><div class="sub">Override by A. Wong on 18 Sep: "contingency approved for the +20% forecast"</div></div><span class="chip neutral">Override</span></div>
+      <div class="list-row"><span class="muted small">Overrides need a rationale, stay visible here and are audited.</span></div>
+    </div>
+  </section>
+
+  <section class="card" data-req="RSK-01">
+    <div class="head"><span class="h3">Portfolio risk register <span class="anno" data-n="4"></span></span><span class="muted small">Score = probability band (1 to 5) × impact (1 to 5) × 4 · Critical from 64, High from 36</span><span class="btn ghost sm">Table view</span></div>
+    <table class="table x-risk">
+      <thead><tr><th>ID</th><th>Risk</th><th>Project</th><th class="num">Prob.</th><th>Impact</th><th class="num">Score</th><th>Owner</th><th>Mitigation</th><th>Due</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="code">R-101</td><td>Core API v2 slips past MVP2 need</td><td>Core Platform</td><td class="num">70%</td><td>Critical</td><td class="num"><span class="chip critical">80</span></td><td>L. Wang</td><td>Fallback with a mock gateway</td><td>15 Oct 2026</td><td><span class="chip running">Mitigating</span></td></tr>
+        <tr><td class="code">R-102</td><td>Data engineer shortage in Q4</td><td>Data Platform</td><td class="num">80%</td><td>High</td><td class="num"><span class="chip critical">64</span></td><td>Resource Manager</td><td>Contractor pool, defer CRM data work</td><td>30 Sep 2026</td><td><span class="chip neutral">Open</span></td></tr>
+        <tr><td class="code">R-103</td><td>iOS scope (CR-016) overloads Engineering</td><td>Mobile App</td><td class="num">50%</td><td>High</td><td class="num"><span class="chip serious">48</span></td><td>A. Wong</td><td>Decide CR-016 with the capacity view</td><td>29 Sep 2026</td><td><span class="chip neutral">Open</span></td></tr>
+        <tr><td class="code">R-105</td><td>AML rule change in 2027</td><td>AML Upgrade</td><td class="num">30%</td><td>Critical</td><td class="num"><span class="chip serious">40</span></td><td>A. Wong</td><td>Parameterise screening rules</td><td>31 Dec 2026</td><td><span class="chip running">Mitigating</span></td></tr>
+        <tr><td class="code">R-104</td><td>KYC rules rework at Solution gate</td><td>Merchant Onboarding</td><td class="num">40%</td><td>High</td><td class="num"><span class="chip waiting">32</span></td><td>M. Johnson</td><td>Early Risk review before the gate</td><td>10 Oct 2026</td><td><span class="chip running">Mitigating</span></td></tr>
+        <tr><td class="code">R-106</td><td>Payment partner certification delay</td><td>MSME Payment</td><td class="num">35%</td><td>High</td><td class="num"><span class="chip waiting">32</span></td><td>A. Wong</td><td>Start certification in Q4</td><td>30 Nov 2026</td><td><span class="chip neutral">Open</span></td></tr>
+        <tr><td class="code">R-107</td><td>KYC vendor contract renewal</td><td>KYC Automation</td><td class="num">25%</td><td>Medium</td><td class="num"><span class="chip waiting">24</span></td><td>A. Wong</td><td>Negotiate a 12-month extension</td><td>15 Nov 2026</td><td><span class="chip neutral">Open</span></td></tr>
+      </tbody>
+    </table>
+    <div class="list-row"><span class="muted small grow">Showing 7 of 84 · sorted by score</span><span class="btn secondary sm">Load more</span></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 1.7fr 1fr" data-req="RSK-03 WBS-14 BR-23">
+    <div class="card">
+      <div class="head"><span class="h3">Dependency map <span class="anno" data-n="5"></span></span>
+        <div class="legend"><span><i class="f-critical"></i>Late or conflict</span><span><i class="f-waiting"></i>At risk</span><span><i class="f-neutral"></i>On track</span></div>
+      </div>
+      <div class="body">
+        <svg class="x-map" viewBox="0 0 780 250" width="100%" role="img" aria-label="Cross-project dependency map">
+          <defs>
+            <marker id="x-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#6C6C78"/></marker>
+            <marker id="x-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#D6402C"/></marker>
+            <marker id="x-ara" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#C27A0E"/></marker>
+          </defs>
+          <path d="M210 98 C 250 98, 250 52, 288 52" fill="none" stroke="#D6402C" stroke-width="2" marker-end="url(#x-arr)"/>
+          <path d="M490 52 L 568 52" fill="none" stroke="#D6402C" stroke-width="2" marker-end="url(#x-arr)"/>
+          <path d="M210 112 C 250 112, 250 132, 288 132" fill="none" stroke="#A0A0AC" stroke-width="2" marker-end="url(#x-ar)"/>
+          <path d="M210 212 L 288 212" fill="none" stroke="#C27A0E" stroke-width="2" marker-end="url(#x-ara)"/>
+          <text class="x-elabel" x="222" y="62">FS +12d</text>
+          <text class="x-elabel" x="500" y="44">FS +8d</text>
+          <text class="x-elabel" x="214" y="160">FS buffer 10d</text>
+          <text class="x-elabel" x="222" y="204">SS +3d</text>
+          <rect x="10" y="84" width="200" height="42" rx="6" fill="#fff" stroke="#D6402C" stroke-width="1.5"/>
+          <text x="22" y="101">Core Platform</text><text class="x-sub" x="22" y="117">Core API v2 · forecast 27 Jun</text>
+          <rect x="290" y="31" width="200" height="42" rx="6" fill="#fff" stroke="#D6402C" stroke-width="1.5"/>
+          <text x="302" y="48">MSME Payment</text><text class="x-sub" x="302" y="64">MVP2 · forecast 8 Jul</text>
+          <rect x="570" y="31" width="200" height="42" rx="6" fill="#fff" stroke="#C27A0E" stroke-width="1.5"/>
+          <text x="582" y="48">MSME Launch</text><text class="x-sub" x="582" y="64">program milestone</text>
+          <rect x="290" y="111" width="200" height="42" rx="6" fill="#fff" stroke="#D4D4DB" stroke-width="1.5"/>
+          <text x="302" y="128">Merchant Onboarding</text><text class="x-sub" x="302" y="144">pilot · buffer absorbs</text>
+          <rect x="10" y="191" width="200" height="42" rx="6" fill="#fff" stroke="#C27A0E" stroke-width="1.5"/>
+          <text x="22" y="208">Data Platform</text><text class="x-sub" x="22" y="224">Customer 360 feed</text>
+          <rect x="290" y="191" width="200" height="42" rx="6" fill="#fff" stroke="#C27A0E" stroke-width="1.5"/>
+          <text x="302" y="208">Digital Sales</text><text class="x-sub" x="302" y="224">personalisation release</text>
+        </svg>
+      </div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="h3">Downstream impact</span><span class="muted small">selected: Core Platform · Core API v2</span></div>
+      <div class="list-row"><span class="chip critical">+8 days</span><div class="grow"><div class="title-line">MSME Payment · MVP2</div><div class="sub">after the baseline end 30 Jun 2027</div></div></div>
+      <div class="list-row"><span class="chip waiting">+8 days</span><div class="grow"><div class="title-line">MSME Launch</div><div class="sub">program milestone at risk</div></div></div>
+      <div class="list-row"><span class="chip good">0 days</span><div class="grow"><div class="title-line">Merchant Onboarding · pilot</div><div class="sub">10-day buffer absorbs the slip</div></div></div>
+      <div class="list-row"><span class="muted small grow">Impacts are flags only; owners decide whether to re-plan or raise a change request.</span><span class="btn primary sm">Notify owners</span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">RSK-02, BR-39</span> Severity counts aggregate every project risk register in the workspace with one scoring method and state their as-of time and metric version; each tile opens the filtered register.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">RSK-02, RSK-03</span> A risk is systemic when the same cause hits two or more projects; the chain shows how the slip travels downstream, in days.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">RSK-04, BR-08</span> A project declared Green while the rules compute Amber or Red stays flagged until an override with rationale is recorded; overrides remain visible and audited.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">RSK-01</span> Register fields: risk, project, probability, impact, score, owner, mitigation, due date and status; the scoring rule is shown so every score can be checked by hand.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">RSK-03, WBS-14, BR-23</span> Cross-project dependencies with type and slip; selecting a node lists the impacted downstream items. Nothing is rescheduled automatically.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

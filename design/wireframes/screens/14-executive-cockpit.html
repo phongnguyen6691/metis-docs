@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executive cockpit · Metis wireframe</title>
+<meta name="wf:id" content="executive-cockpit">
+<meta name="wf:title" content="Executive portfolio cockpit">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="EXE-01 EXE-02 EXE-03 EXE-04 EXE-06 BR-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="CEO-first control tower for one workspace: investment, health and capacity tiles with their data freshness, the attention queue with the kind of action each item needs, and (in V2) recommended decisions.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-nav="cockpit" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / Executive cockpit">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Good morning, Linh. 6 items need attention.</div>
+      <div class="muted small" style="margin-top:4px">Digital Products workspace · FY2027 · <span class="fresh">As of 22 Sep 2026, 09:40 · metrics v1</span></div>
+    </div>
+    <div class="filters">
+      <div class="field"><label>Portfolio</label><div class="select">All portfolios</div></div>
+      <div class="field"><label>Period</label><div class="select">Q3 2026</div></div>
+      <div class="field"><label>Scope <span class="anno" data-n="5"></span></label><div class="select ph">This workspace</div></div>
+      <span class="btn secondary">Export pack</span>
+    </div>
+  </section>
+
+  <section class="grid c5" data-req="EXE-01 BR-39">
+    <div class="card kpi"><div class="k-label">Portfolio investment</div><div class="k-value">$50.2M</div><div class="k-delta">approved budget · forecast $51.9M</div><div class="fresh">as of 22 Sep 09:40</div></div>
+    <div class="card kpi"><div class="k-label">Active projects</div><div class="k-value">128</div><div class="k-delta">96 committed · 32 proposed</div><div class="fresh">as of 22 Sep 09:40</div></div>
+    <div class="card kpi"><div class="k-label">FTE demand <span class="anno" data-n="6"></span></div><div class="k-value">474</div><div class="k-delta"><span class="up-bad">+22</span> over capacity 452</div><div class="fresh stale" style="white-space:normal">capacity last confirmed 12 days ago</div></div>
+    <div class="card kpi"><div class="k-label">Expected value <span class="anno" data-n="1"></span></div><div class="k-value muted">Not tracked</div><div class="k-delta">Benefits arrive in V2</div><div class="fresh unknown">no data source yet</div></div>
+    <div class="card kpi"><div class="k-label">Value at risk</div><div class="k-value muted">Not tracked</div><div class="k-delta">Benefits arrive in V2</div><div class="fresh unknown">no data source yet</div></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 1.6fr 1fr">
+    <div class="card" data-req="EXE-02">
+      <div class="head"><span class="h3">Requires attention <span class="anno" data-n="2"></span></span><span class="chip critical">6</span><span class="btn ghost sm">All exceptions</span></div>
+      <div class="list-row"><span class="chip critical">Critical</span><span class="tag">Review</span><div class="grow"><div class="title-line">Core Platform declared Green, computed Off track</div><div class="sub">Green-but-risky · 3 milestones overdue, 2 critical risks · Owner L. Wang</div></div><span class="btn secondary sm">Review</span></div>
+      <div class="list-row"><span class="chip critical">Critical</span><span class="tag">Rebalance</span><div class="grow"><div class="title-line">Data capability at 118% for Q4</div><div class="sub">Capacity overload · driven by Data Platform and MSME Payment · Owner Resource Manager</div></div><span class="btn secondary sm">Rebalance</span></div>
+      <div class="list-row"><span class="chip serious">High</span><span class="tag">Decide</span><div class="grow"><div class="title-line">CR-016 Add iOS support, pending 6 days</div><div class="sub">+$300K, +4 weeks, +6 FTE · Mobile App · Approver you</div></div><span class="btn accent sm">Decide</span></div>
+      <div class="list-row"><span class="chip serious">High</span><span class="tag">Review</span><div class="grow"><div class="title-line">Solution gate overdue 5 days</div><div class="sub">Merchant Onboarding · 2 of 5 mandatory artifacts missing · Owner A. Wong</div></div><span class="btn secondary sm">Open gate</span></div>
+      <div class="list-row"><span class="chip waiting">Medium</span><span class="tag">Review</span><div class="grow"><div class="title-line">3 projects above 20% budget variance</div><div class="sub">Core Platform +24%, Digital Sales +21%, AML Upgrade +20%</div></div><span class="btn secondary sm">View</span></div>
+      <div class="list-row"><span class="chip waiting">Medium</span><span class="tag">Remind</span><div class="grow"><div class="title-line">4 weekly status reports missing</div><div class="sub">Reporting period 15 to 21 Sep · reminders sent</div></div><span class="btn secondary sm">Remind</span></div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="EXE-03">
+        <div class="head"><span class="h3">Portfolio health <span class="anno" data-n="3"></span></span><span style="font:600 20px var(--font-ui)">73</span><span class="muted small">/ 100</span></div>
+        <div class="body stack s">
+          <div class="row between small"><span>Delivery</span><span class="num">81</span></div><div class="meter"><span style="width:81%"></span></div>
+          <div class="row between small"><span>Financial</span><span class="num">76</span></div><div class="meter"><span style="width:76%"></span></div>
+          <div class="row between small"><span>Resource</span><span class="num">72</span></div><div class="meter warn"><span style="width:72%"></span></div>
+          <div class="row between small"><span>Risk</span><span class="num">64</span></div><div class="meter warn"><span style="width:64%"></span></div>
+          <div class="row between small muted"><span>Strategic</span><span class="tag future">Planned V2</span></div>
+        </div>
+      </div>
+      <div class="card" data-req="EXE-04" style="opacity:.6">
+        <div class="head"><span class="h3">Decision center <span class="anno" data-n="4"></span></span><span class="tag future">Planned V2</span></div>
+        <div class="body grid c4 center small">
+          <div><b style="font-size:18px">5</b><div class="muted">Stop</div></div>
+          <div><b style="font-size:18px">8</b><div class="muted">Review</div></div>
+          <div><b style="font-size:18px">3</b><div class="muted">Accelerate</div></div>
+          <div><b style="font-size:18px">4</b><div class="muted">Fund</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid c3">
+    <div class="card">
+      <div class="head"><span class="h3">Projects by health</span><span class="btn ghost sm">Table view</span></div>
+      <div class="body stack s">
+        <div class="stackbar"><span class="f-good" style="width:63%"></span><span class="f-waiting" style="width:24%"></span><span class="f-critical" style="width:13%"></span></div>
+        <div class="legend"><span><i class="f-good"></i>On track 81</span><span><i class="f-waiting"></i>At risk 30</span><span><i class="f-critical"></i>Off track 17</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="h3">Investment by portfolio</span><span class="muted small">approved, $M</span></div>
+      <div class="body hbars">
+        <span>Growth</span><span class="track"><span class="s1" style="width:54%"></span></span><span class="val">27.1</span>
+        <span>Technology & Reg.</span><span class="track"><span class="s1" style="width:46%"></span></span><span class="val">23.1</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="h3">Capacity hot spots</span><span class="fresh stale">confirmed 10 Sep</span></div>
+      <div class="list-row small muted" style="justify-content:space-between"><span>Q4 demand / capacity</span><span class="btn ghost sm">Ask managers to confirm</span></div>
+      <div class="list-row"><span class="grow">Data</span><span class="num">118%</span><span class="chip critical">Over</span></div>
+      <div class="list-row"><span class="grow">Engineering</span><span class="num">112%</span><span class="chip critical">Over</span></div>
+      <div class="list-row"><span class="grow">UX</span><span class="num">84%</span><span class="chip good">OK</span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">EXE-01</span> Investment, projects and FTE aggregate from approved project records. Value tiles say "Not tracked" until benefits are captured (INV-02, V2) instead of showing invented numbers.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">EXE-02</span> Every exception has severity, the kind of action it needs (Decide, Review, Rebalance or Remind), reason, owner and one next action; the headline counts items that need attention, not only decisions. Sources: green-but-risky (RSK-04), capacity (RES-02), pending and approved-not-applied CRs (CHG-07), overdue gates (GOV-10), budget variance (CHR-13), missing status (RPT-04).</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">EXE-03</span> Four health dimensions in the MVP; the strategic dimension needs the strategy model (STR-01, V2). Each score drills to the projects behind it (BR-32).</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">EXE-04, BR-10</span> Decision center is V2: recommendations are advisory until an authorized executive approves them; decisions go to the Decision Log.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">EXE-06</span> The MVP cockpit covers one workspace; "All workspaces" appears with the cross-workspace view in V2 and respects record-level permissions (BR-20).</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">BR-39</span> Every tile states how fresh its data is: a dot with "as of" time when current, a warning triangle with words when a source is stale (capacity not confirmed for 12 days), a question mark when there is no source. Figures carry the metric version of Section 12.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

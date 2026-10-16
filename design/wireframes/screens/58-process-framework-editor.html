@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Process framework editor · Metis wireframe</title>
+<meta name="wf:id" content="process-framework-editor">
+<meta name="wf:title" content="Process framework editor">
+<meta name="wf:area" content="Workspace & governance">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="BLD-09 BLD-12 BLD-13 BLD-14 BLD-15 BLD-16 BR-41 PLT-05">
+<meta name="wf:poc" content="35">
+<meta name="wf:summary" content="Author a process framework outside any project: lanes with their label and type, node templates on a relative day axis with offsets, durations and roles, typed connections with lag, a sub-item and a connection point, a check that keeps Publish disabled while a dependency cycle remains, and a list view for the keyboard.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-axis { position: relative; height: 24px; background: var(--surface); }
+  .x-axis span { position: absolute; top: 7px; font: 500 10.5px/1 var(--font-ui); color: var(--muted); }
+  .canvas .lane.x-tall { height: 100px; }
+  .canvas .lane.x-tall::after { top: 32px; }
+  .x-ed .node.x-sub { top: 58px; }
+  .x-lt { position: absolute; z-index: 3; font: 600 10px/1 var(--font-ui); padding: 3px 5px; border-radius: 4px; background: var(--surface); border: 1px solid var(--line-strong); color: var(--muted); }
+  .x-lt.x-bad { color: var(--critical-text); border-color: var(--critical); background: var(--critical-bg); }
+  .x-cols { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 16px; align-items: start; }
+</style>
+</head>
+<body data-shell="app" data-nav="templates" data-workspace="Creative Studio" data-crumbs="Creative Studio / Workspace / Templates / CGI Still Renders, 5 angles" data-user="HL">
+<main>
+
+  <section class="card" data-req="BLD-13 BLD-16 PLT-05">
+    <div class="body row between">
+      <div class="stack s">
+        <div class="row"><span class="tag">Process framework</span><span class="title" style="font-size:24px">CGI Still Renders, 5 angles</span><span class="chip">Draft v0.1</span><span class="anno" data-n="1"></span></div>
+        <div class="small muted">Copy of CGI Still Renders v1.1 · drafted by Nadia R. (Project Manager) on 21 Sep 2026 · used by 0 projects · workspace Creative Studio</div>
+      </div>
+      <div class="row">
+        <span class="save">All changes saved · 10:12</span>
+        <span class="btn ghost sm">Delete draft</span>
+        <span class="btn secondary">Submit for review <span class="tag future">Planned V2</span></span>
+        <span class="btn accent disabled">Publish v1.0</span>
+      </div>
+    </div>
+    <div class="body stack s" style="padding-top:0" data-req="BLD-16">
+      <div class="banner warn small"><span><b>Check: 4 of 5 pass.</b> A dependency cycle runs Prefinal Approval → Final Quality Check → Prefinal Approval. Publish v1.0 stays disabled until every check passes. <span class="anno" data-n="2"></span></span></div>
+      <div class="row small">
+        <span class="check on">At least one node (17)</span>
+        <span class="check on">Every node named and in a lane</span>
+        <span class="check on">Offsets and durations of zero or more</span>
+        <span class="chip critical">No dependency cycle: 1 found</span>
+        <span class="check on">Sub-items within the WBS depth</span>
+      </div>
+      <div class="banner small">Project Managers draft process frameworks; the Workspace Owner publishes them. Publishing creates v1.0 with its effective date; Blueprints and items already built from other versions never change.</div>
+    </div>
+  </section>
+
+  <section class="stack s" data-req="BLD-13 BLD-14 BLD-15 BR-41">
+    <div class="row between">
+      <div class="row"><span class="h3">Canvas</span><span class="seg"><span class="on">Canvas</span><span>List</span></span><span class="small muted">Day 0 is the Start Date chosen in the Deliverable Builder · this workspace counts working days <span class="anno" data-n="4"></span></span></div>
+      <div class="small muted">17 nodes · 17 connections · 1 connection point</div>
+    </div>
+    <div class="canvas x-ed" style="height:445px">
+      <div class="x-axis">
+        <span style="left:12px">Working days</span>
+        <span style="left:150px">Day 0</span><span style="left:300px">Day 5</span><span style="left:450px">Day 10</span><span style="left:600px">Day 15</span><span style="left:750px">Day 20</span><span style="left:900px">Day 25</span>
+      </div>
+      <svg class="links" viewBox="0 0 1090 445" width="1090" height="445" aria-hidden="true">
+        <defs>
+          <marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8B8B96"/></marker>
+          <marker id="c" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#D6402C"/></marker>
+        </defs>
+        <g fill="none" stroke="#8B8B96" stroke-width="1.5" marker-end="url(#a)">
+          <path d="M220 205V73"/><path d="M160 397V252H340V188H232V73"/><path d="M326 56H340V139"/><path d="M315 112V139"/>
+          <path d="M400 141V73"/><path d="M430 171V331"/><path d="M430 56H462V252H530V267"/><path d="M658 284H690V188H620V173"/>
+          <path d="M560 205V173"/><path d="M650 141V73"/><path d="M730 397V126H690V73"/><path d="M701 56H760V267"/>
+          <path d="M800 269V173"/><path d="M941 156H1030V331"/><path d="M900 141V73"/><path d="M980 205V126H930V73"/>
+        </g>
+        <path d="M822 171V267" fill="none" stroke="#D6402C" stroke-width="2.5" marker-end="url(#c)"/>
+        <path d="M250 71V82" fill="none" stroke="#B4B4BE" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <circle cx="462" cy="220" r="5" fill="#FFFFFF" stroke="#6C6C78" stroke-width="1.5"/>
+      </svg>
+      <div class="lane x-tall"><span class="lname">Deliverables</span>
+        <div class="node" style="left:210px">Camera Angle <span class="code">3d</span></div>
+        <div class="node x-sub" style="left:240px">Angle 5 <span class="code">2d</span> <span class="anno" data-n="5"></span></div>
+        <div class="node" style="left:360px">Draft <span class="code">5d</span></div>
+        <div class="node" style="left:600px">Pre-Finals <span class="code">5d</span></div>
+        <div class="node" style="left:870px">Final <span class="code">3d</span></div>
+      </div>
+      <div class="lane"><span class="lname">Approval</span>
+        <div class="node" style="left:300px"><span class="lbl gate"></span> C.A. Approval <span class="code">1d</span></div>
+        <div class="node sel" style="left:540px"><span class="lbl gate"></span> Draft Approval <span class="code">2d</span></div>
+        <div class="node" style="left:780px"><span class="lbl gate"></span> Prefinal Approval <span class="code">2d</span></div>
+      </div>
+      <div class="lane"><span class="lname">Input required</span>
+        <div class="node" style="left:150px"><span class="lbl inreq"></span> Confirmed Modeling <span class="code">2d</span></div>
+        <div class="node" style="left:480px"><span class="lbl inreq"></span> Payment Deposit 1 <span class="code">1d</span></div>
+        <div class="node" style="left:840px"><span class="lbl inreq"></span> Payment Deposit 2 <span class="code">1d</span></div>
+      </div>
+      <div class="lane"><span class="lname">Quality gate</span>
+        <div class="node" style="left:510px"><span class="lbl cp"></span> Quality Check 1 <span class="code">1d</span></div>
+        <div class="node" style="left:750px"><span class="lbl cp"></span> Final Quality Check <span class="code">1d</span></div>
+      </div>
+      <div class="lane"><span class="lname">Milestones</span>
+        <div class="node" style="left:330px"><span class="lbl ms"></span> Milestone 1: Angles locked</div>
+        <div class="node" style="left:840px"><span class="lbl ms"></span> Milestone 2: Prefinal locked</div>
+      </div>
+      <div class="lane"><span class="lname">Risk</span>
+        <div class="node" style="left:150px"><span class="lbl risk"></span> Risk Mitigation #1 <span class="code">1d</span></div>
+        <div class="node" style="left:600px"><span class="lbl risk"></span> Communication <span class="code">1d</span></div>
+      </div>
+      <span class="x-lt" style="left:1036px;top:250px">FF</span>
+      <span class="x-lt x-bad" style="left:830px;top:241px">Cycle <span class="anno" data-n="6"></span></span>
+    </div>
+    <div class="small muted">Mouse: drag a node along its lane to change its offset, drag its right edge to change its duration, click to edit, drag the link handle onto another node to connect, double-click a lane line to add a connection point, select an arrow to change its type, lag or route, Delete removes, + adds a node or a sub-item. Every action has a keyboard equivalent and the List view.</div>
+  </section>
+
+  <section class="x-cols">
+    <div class="card" data-req="BLD-13">
+      <div class="head"><span class="h3">Lanes <span class="anno" data-n="3"></span></span><span class="btn ghost sm">+ Add lane</span></div>
+      <table class="table">
+        <thead><tr><th>Lane</th><th>Label</th><th>Type</th><th class="num">Nodes</th></tr></thead>
+        <tbody>
+          <tr><td><span class="muted">⋮⋮</span> Deliverables</td><td class="muted">None</td><td class="wrap">Work Package</td><td class="num">5</td></tr>
+          <tr class="sel"><td><span class="muted">⋮⋮</span> Approval</td><td><span class="lbl gate">Approval Gate</span></td><td>Task</td><td class="num">3</td></tr>
+          <tr><td class="wrap"><span class="muted">⋮⋮</span> Input required</td><td><span class="lbl inreq">Input Required</span></td><td>Task</td><td class="num">3</td></tr>
+          <tr><td><span class="muted">⋮⋮</span> Quality gate</td><td><span class="lbl cp">Checkpoint</span></td><td>Task</td><td class="num">2</td></tr>
+          <tr><td><span class="muted">⋮⋮</span> Milestones</td><td><span class="lbl ms">Milestone</span></td><td>Task</td><td class="num">2</td></tr>
+          <tr><td><span class="muted">⋮⋮</span> Risk</td><td><span class="lbl risk">Risk Related</span></td><td>Task</td><td class="num">2</td></tr>
+        </tbody>
+      </table>
+      <div class="body small muted">Rename in place, drag to reorder. A lane can be removed only when it has no nodes.</div>
+    </div>
+
+    <div class="card" data-req="BLD-14">
+      <div class="head"><span class="h3">Node template · Draft Approval <span class="anno" data-n="7"></span></span><span class="btn ghost sm">Remove node</span></div>
+      <div class="body grid c2">
+        <div class="field"><label>Name *</label><div class="input">Draft Approval</div></div>
+        <div class="field"><label>Lane</label><div class="select">Approval</div></div>
+        <div class="field"><label>Parent node</label><div class="select">None (top level)</div></div>
+        <div class="field"><label>Type</label><div class="select">Task</div></div>
+        <div class="field span2"><label>Labels</label><div class="row"><span class="lbl gate">Approval Gate</span><span class="small muted">from the lane · + add a label</span></div></div>
+        <div class="field"><label>Offset</label><div class="input">Day 13</div></div>
+        <div class="field"><label>Duration</label><div class="input">2 working days</div></div>
+        <div class="field"><label>PIC: workspace role or member title</label><div class="select">Role: Project Manager</div><div class="small muted">Matches 1 member in this workspace</div></div>
+        <div class="field"><label>Approver: workspace role or member title</label><div class="select">Title: Client</div><div class="small muted">No matching member yet; the build will leave it empty and list it</div></div>
+        <div class="field"><label>Reviewer: workspace role or member title</label><div class="select">Title: Art Director</div><div class="small muted"><span class="src conflict">3 members hold this title</span> the project manager chooses at build time</div></div>
+        <div class="field"><label>Planned effort</label><div class="input">2h</div></div>
+        <div class="field span2"><label>Description</label><div class="textarea">Client approves the draft renders of all five angles.</div></div>
+        <div class="field"><label>Input required (list)</label><div class="input">Draft renders</div></div>
+        <div class="field"><label>Output produced (list)</label><div class="input">Approved draft</div></div>
+        <div class="field"><label>Priority</label><div class="select">High</div></div>
+        <div class="field"><label>Risk level</label><div class="select">Medium</div></div>
+      </div>
+      <div class="body small muted" style="padding-top:0">Status, dates, named people, effort spent and files are set on the WBS items a build creates, never in the framework.</div>
+    </div>
+
+    <div class="card" data-req="BLD-15">
+      <div class="head"><span class="h3">Connection <span class="anno" data-n="8"></span></span><span class="small muted">Arrow selected</span></div>
+      <div class="body stack s">
+        <div class="small"><b>Prefinal Approval</b> → <b>Final Quality Check</b></div>
+        <div class="field"><label>Dependency type</label><span class="seg"><span class="on">FS</span><span>SS</span><span>FF</span><span>SF</span></span></div>
+        <div class="field"><label>Lag</label><div class="input">0 days</div></div>
+        <div class="field"><label>Route</label><div class="small">1 bend · connection points only route arrows</div></div>
+        <div class="banner warn small"><span>This connection closes a cycle with Final Quality Check → Prefinal Approval. Reverse it or delete it to pass the check.</span></div>
+        <div class="row"><span class="btn secondary sm">Reverse</span><span class="btn ghost sm">Delete</span></div>
+        <div class="small muted">A connection always joins two nodes of this framework; project items cannot be chosen.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-req="BLD-13 BR-41">
+    <div class="head"><span class="h3">Canvas, keyboard and list: one row per operation <span class="anno" data-n="10"></span></span><span class="small muted">The matrix the build tests; every row works in the list view with the keyboard alone</span></div>
+    <table class="table">
+      <thead><tr><th>Operation</th><th>Canvas gesture</th><th>Keyboard</th><th>List view</th></tr></thead>
+      <tbody>
+        <tr><td>Create a node</td><td>"+" on a lane</td><td>Alt+N on the focused lane</td><td>Add row, lane preselected</td></tr>
+        <tr><td>Edit a node</td><td>Click the node</td><td>Enter on the focused row or node</td><td>Edit in the row, or open the full form</td></tr>
+        <tr><td>Move a node between lanes</td><td>Drag along or across lanes</td><td>Alt plus arrow up or down</td><td>Change the Lane cell</td></tr>
+        <tr><td>Change the offset or duration</td><td>Drag the node or its right edge</td><td>Arrow keys in the cell</td><td>Change the Offset or Duration cell</td></tr>
+        <tr><td>Set or clear a parent</td><td>Drop onto a node</td><td>Alt+P, then choose</td><td>Change the Parent cell</td></tr>
+        <tr><td>Add, rename, reorder or remove a lane</td><td>Lane header menu and drag</td><td>Alt+L, F2, Alt plus arrow</td><td>Lane list above the table</td></tr>
+        <tr><td>Create a connection</td><td>Drag the link handle</td><td>C on the source, then choose the target</td><td>Add in the Connected from cell</td></tr>
+        <tr><td>Set the type and the lag</td><td>Select the arrow, edit its label</td><td>Enter on the connection, then Tab</td><td>Edit the type and lag in the cell</td></tr>
+        <tr><td>Delete a connection</td><td>Select the arrow, Delete</td><td>Delete on the connection</td><td>Remove from the Connected from cell</td></tr>
+        <tr><td>Add, move or delete a route point</td><td>Double-click a lane line and drag</td><td>Alt+R, arrows, Delete</td><td>Route points list per connection; geometry only, no dependency</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card" data-req="BLD-14 BLD-12">
+    <div class="head"><span class="h3">What the build preview will say about the roles on this framework <span class="anno" data-n="11"></span></span></div>
+    <div class="list-row"><span class="chip good">Resolved</span><div class="grow">PIC, role Project Manager, in Harbour Rebrand: <b>A. Nguyen</b></div></div>
+    <div class="list-row"><span class="chip waiting">Missing</span><div class="grow">Approver, title Client: no member holds it, so the generated item is left unassigned and listed here</div></div>
+    <div class="list-row"><span class="chip critical">Ambiguous</span><div class="grow">Reviewer, title Art Director: <b>3 members</b> hold it (M. Rossi, T. Berger, S. Ito). The project manager chooses one before the build runs; Metis never picks the first match</div><span class="btn secondary sm">Choose</span></div>
+  </section>
+
+  <section class="card" data-req="BLD-12 BLD-14 BLD-15 BR-41">
+    <div class="head"><span class="h3">List view of the same framework <span class="anno" data-n="9"></span></span><span class="small muted">Shown after Canvas / List is switched to List; both views edit one model</span></div>
+    <table class="table">
+      <thead><tr><th>Lane</th><th>Node</th><th>Parent</th><th class="num">Offset</th><th class="num">Duration</th><th>Label</th><th>Connected from</th></tr></thead>
+      <tbody>
+        <tr><td>Input required</td><td>Confirmed Modeling</td><td class="muted">None</td><td class="num">Day 0</td><td class="num">2d</td><td><span class="lbl inreq">Input Required</span></td><td class="muted">Start of flow</td></tr>
+        <tr><td>Risk</td><td>Risk Mitigation #1</td><td class="muted">None</td><td class="num">Day 0</td><td class="num">1d</td><td><span class="lbl risk">Risk Related</span></td><td class="muted">Start of flow</td></tr>
+        <tr><td>Deliverables</td><td>Camera Angle</td><td class="muted">None</td><td class="num">Day 2</td><td class="num">3d</td><td class="muted">None</td><td>Confirmed Modeling FS 0, Risk Mitigation #1 FS 0</td></tr>
+        <tr><td>Deliverables</td><td>Angle 5</td><td>Camera Angle</td><td class="num">Day 3</td><td class="num">2d</td><td class="muted">None</td><td class="muted">Start of flow</td></tr>
+        <tr class="sel"><td>Approval</td><td><span class="kbd-focus" style="padding:2px 5px;border-radius:4px">Draft Approval</span></td><td class="muted">None</td><td class="num">Day 13</td><td class="num">2d</td><td><span class="lbl gate">Approval Gate</span></td><td>Quality Check 1 FS 0, Payment Deposit 1 FS 0</td></tr>
+        <tr><td>Milestones</td><td>Milestone 2: Prefinal locked</td><td class="muted">None</td><td class="num">Day 23</td><td class="num">0d</td><td><span class="lbl ms">Milestone</span></td><td>Prefinal Approval FF 0</td></tr>
+        <tr><td colspan="7" class="muted">11 more nodes and 12 more connections</td></tr>
+      </tbody>
+    </table>
+    <div class="body small muted">Keyboard: Tab moves through nodes lane by lane · arrow keys move the selected node by one day or one lane · Shift with arrow keys changes the duration · Enter edits · C connects · T changes the type of the selected connection · Delete removes · ? lists every shortcut.</div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">BLD-13, BLD-16, BLD-09</span> The editor opens from the template library with New framework, Edit a copy or Open, never inside a project. A Project Manager drafted this copy; the Workspace Owner, signed in here, publishes it as v1.0 once the check passes. Review before publishing is Planned V2 (BLD-11). A draft that was never published can be deleted; a published framework is deprecated instead, so the items built from it keep their provenance. Drafts autosave and show their save state (PLT-05).</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">BLD-16</span> Publishing runs the check: at least one node, every node named and in a lane, offsets and durations of zero or more, no dependency cycle, sub-items within the WBS depth. A cycle fails here, so Publish v1.0 stays disabled and the banner names the reason; the server runs the same check when Publish is pressed. Publishing creates an immutable version; Blueprints and items already built never change.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">BLD-13</span> Lanes belong to the framework: add, rename and reorder them, and remove a lane only when it is empty. Each lane maps to one label or none and optionally a type, which its nodes take by default (BLD-06). A new framework starts with the six default lanes.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">BLD-13, BLD-14</span> The canvas uses a relative day axis: day 0 is the Start Date chosen in the Deliverable Builder, and the workspace counts working days (its duration setting). A node sits at its offset and shows its duration; no calendar date and no named person appears in a framework, unlike the POC, which stored both.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">BLD-14</span> Angle 5 is a sub-item of Camera Angle: the build creates it as a child of the Camera Angle item. The dashed line is the hierarchy, not a dependency.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">BLD-15</span> Arrows are connections between two nodes of this framework, each with a dependency type and a lag; types other than FS are written on the arrow (FF here). The circle on the Input required lane is a connection point: it only routes the arrow from Draft and creates no item and no dependency. The red arrow closes the cycle that the check reports.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">BLD-14</span> A node keeps its name, lane, parent, type, labels, offset, duration, planned effort, description, input and output lists, priority, risk level, and its PIC, Reviewer and Approver as a team role or title. When the framework is built, a role or title resolves to the one project member who holds it; when nobody or several people hold it, the build preview lists the item for the PM.</span></li>
+    <li><span class="anno" data-n="8"></span><span><span class="req">BLD-15, BLD-16</span> Selecting an arrow shows its type and lag. The selected arrow closes the cycle that blocks publishing; Reverse or Delete fixes it. A connection can never end on a project item.</span></li>
+    <li><span class="anno" data-n="9"></span><span><span class="req">BLD-12, BR-41</span> The List view edits the same framework without a pointer: offsets, durations, parents, labels and connections with their type and lag. Switching between Canvas and List never loses work. The focused row shows the focus ring; the selected row uses the selection fill.</span></li>
+    <li><span class="anno" data-n="10"></span><span><span class="req">BLD-13, BR-41</span> "Every editor action can be done in the list view" is one sentence that cannot be tested, so it is decomposed into a parity matrix: one row per operation, with its canvas gesture, its keyboard command, its list action and the server command all three call. The matrix is the artifact the keyboard tests are generated from, and an operation that is not in it does not exist in the canvas either.</span></li>
+    <li><span class="anno" data-n="11"></span><span><span class="req">BLD-14, BLD-12</span> A node names a workspace role or a member title, not a person, so a build has three possible outcomes and the preview says which: resolved to one member, missing when nobody holds it, and ambiguous when several do. The previous wording, "resolves to the one project member holding it; otherwise it stays empty", collapsed nobody and several into the same empty field, which left the project manager unable to tell a vacancy from a choice. Metis never picks the first match, and renaming a title keeps the selector working through an alias or lists it as missing.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

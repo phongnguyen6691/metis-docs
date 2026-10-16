@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: frame · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-frame">
+<meta name="wf:title" content="Onboarding: frame">
+<meta name="wf:area" content="Onboarding">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-01 ONB-02 ONB-03 ONB-04 ONB-09 ONB-22 ONB-27">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="First onboarding screen for a new client's executive: four pre-filled facts collapsed to chips, three outside-in questions with only the governance one expanded, a one-sentence override, the drop zone as the primary action, and the AI processing authorization that opens when the first file is ready to send.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-opt { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }
+  .x-list { margin: 0; padding-left: 18px; font-size: 13px; }
+  .x-list li { margin: 4px 0; }
+  .x-consent { margin: 0; grid-template-columns: 80px minmax(0, 1fr); column-gap: 10px; }
+  .ob-choice, .dropzone, .banner, .small.muted { text-wrap: balance; }
+</style>
+</head>
+<body data-shell="none" data-tenant="Nova Energy" data-user="RO">
+<main>
+
+  <header class="ob-head">
+    <img src="../../brand/logo/metis-wordmark.svg" alt="Metis">
+    <div class="ob-steps"><span class="ob-step cur" aria-current="step">Frame</span><span class="ob-step">Drop</span><span class="ob-step">Draft</span><span class="ob-step">Launch</span></div>
+    <span class="ob-clock">Step 1 of 4 · Saved · resume any time</span>
+  </header>
+
+  <div class="wf-page">
+
+    <section class="row between">
+      <div>
+        <h1 class="title">Welcome, Rosa. Let's set up Nova Energy.</h1>
+        <div class="muted" style="margin-top:4px">Metis already knows a few things from your conversations with our team. Confirm them, change anything, then drop what you have.</div>
+      </div>
+      <span class="btn ghost sm">Resume later</span>
+    </section>
+
+    <section class="grid" style="grid-template-columns: minmax(0, 1fr) 420px; align-items: start">
+
+      <div class="stack">
+
+        <div class="card" data-req="ONB-02 ONB-27">
+          <div class="head"><span class="h3">We already filled in 4 details from your discovery call <span class="anno" data-n="1"></span></span><span class="btn ghost sm">Review 4 details</span></div>
+          <div class="body stack s">
+            <div class="row" style="flex-wrap:wrap; gap:6px">
+              <span class="chip">Scope: all of Nova Energy</span>
+              <span class="chip">Work: engineering, construction and capital projects</span>
+              <span class="chip">Currency: EUR</span>
+              <span class="chip">Fiscal year: January to December</span>
+            </div>
+            <div class="small muted">From the Metis team, D. Lindqvist, 1 Oct 2026. Starting pack: Capital projects (Identify to Close).</div>
+            <div class="banner warn small">Currency and fiscal year cannot change once budgets are imported. Confirm them before you drop files.</div>
+          </div>
+        </div>
+
+        <div class="card" data-req="ONB-03">
+          <div class="head"><span class="h3">Three questions about how you lead <span class="anno" data-n="2"></span></span></div>
+          <div class="body stack">
+
+            <div class="list-row">
+              <div class="grow">
+                <div class="label">When you review the portfolio, what grouping helps you make decisions fastest?</div>
+                <div class="title-line">By business unit or subsidiary</div>
+                <div class="sub">Pre-selected from your conversations · 6 other answers</div>
+              </div>
+              <span class="btn ghost sm">Change</span>
+            </div>
+            <div class="ob-preview">Your home: Generation · Grid · Retail &amp; Digital · Corporate (from your documents after reading)</div>
+
+            <div class="hr"></div>
+
+            <div class="stack s">
+              <div class="list-row">
+                <div class="grow">
+                  <div class="label">Which project decisions should come to you personally?</div>
+                  <div class="title-line">Only the big or strategic projects; my team handles the rest</div>
+                  <div class="sub">Pre-selected from your conversations · expanded, because this answer sets your governance</div>
+                </div>
+              </div>
+              <div class="grid c2" style="gap:8px">
+                <div class="ob-choice">Every project before it starts, and any major change</div>
+                <div class="ob-choice on"><div class="x-opt"><span>Only the big or strategic projects; my team handles the rest</span><span class="tag">Pre-selected</span></div></div>
+                <div class="ob-choice">Our executive committee decides together; I am one member</div>
+                <div class="ob-choice">Only the exceptions that need me</div>
+                <div class="ob-choice">Use the rules in our governance documents</div>
+                <div class="ob-choice">Let Metis work it out</div>
+              </div>
+              <div class="ob-preview">This means: projects above the boundary Metis computes from your data will wait for your approval. You see the boundary before launch and can change it.</div>
+            </div>
+
+            <div class="hr"></div>
+
+            <div class="list-row">
+              <div class="grow">
+                <div class="label">When you open Metis, what should you see first?</div>
+                <div class="title-line">Which projects may slip or overrun</div>
+                <div class="sub">Pre-selected from your conversations · 4 other answers</div>
+              </div>
+              <span class="btn ghost sm">Change</span>
+            </div>
+            <div class="ob-preview">Your home opens on projects that may slip or overrun, dates and budgets first.</div>
+
+            <div class="hr"></div>
+
+            <div class="field">
+              <label>Or describe it in your own words <span class="anno" data-n="3"></span></label>
+              <div class="input ph">I want to see it by subsidiary, I only decide the big bets, and I want to know what is about to slip.</div>
+            </div>
+            <div class="small muted">Saved as you choose. You can change all three before you launch.</div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="stack">
+
+        <div class="card" data-req="ONB-04">
+          <div class="head"><span class="h3">Drop what you have <span class="anno" data-n="4"></span></span></div>
+          <div class="body stack">
+            <div class="dropzone">Drop your project list and governance documents here · or paste a table or text</div>
+            <div class="small muted">This is the step that produces your portfolio. Metis starts reading at once and shows the first findings while it reads.</div>
+            <div class="stack s">
+              <div class="label">Helps most for your answers</div>
+              <ul class="x-list">
+                <li>Your project list or portfolio tracker</li>
+                <li>Budgets or a Capex plan</li>
+                <li>Status reports from the last two months</li>
+                <li>Your PMO or governance handbook</li>
+                <li>Your org chart</li>
+              </ul>
+            </div>
+            <div class="small muted">Read: Excel, CSV, Word, PDF, PowerPoint, MS Project and Project Online exports, images, saved emails. Limits follow your plan.</div>
+            <div class="row"><span class="tag future">Forward to Metis: Planned V2</span><span class="tag future">Voice note: Planned V2</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-req="ONB-22">
+          <div class="head"><span class="h3">Enable AI processing for this tenant <span class="anno" data-n="5"></span></span><span class="tag">Opens when your first file is ready to send</span></div>
+          <div class="body stack">
+            <div class="banner accent small">Nothing is sent until you enable this. Your files are already being read by the exact parsers, which never leave Metis. You are Nova Energy's first admin.</div>
+            <dl class="kv x-consent">
+              <dt>Provider</dt><dd>LLM provider named here once chosen (D-33)</dd>
+              <dt>Region</dt><dd>EU</dd>
+              <dt>What is sent</dt><dd>Only the passages each step needs; never other companies' data</dd>
+              <dt>Training</dt><dd>Not used for training, as a term of our agreement with the provider. Open the agreement</dd>
+              <dt>Provider retention</dt><dd>As agreed in the data processing agreement</dd>
+              <dt>Metis keeps</dt><dd>Your files, in your own tenant storage. After launch you can delete the files, or the files and the quoted passages</dd>
+              <dt>Switch off</dt><dd>Any time, in Admin: AI onboarding policy</dd>
+              <dt>Legal basis</dt><dd>This switch is a product setting. Your lawful basis, privacy notice and data processing agreement sit outside it. Open your agreement</dd>
+            </dl>
+            <span class="toggle on">Mask salaries, bank details, credentials and private phone numbers, in columns and in text</span>
+            <div class="stack s">
+              <span class="btn primary" style="justify-content:center">Enable and let Metis read</span>
+            </div>
+            <div class="row small"><span class="btn ghost sm">Continue without AI</span><span class="btn ghost sm">Use our own AI</span></div>
+          </div>
+        </div>
+
+        <div class="card" data-req="ONB-01 ONB-09">
+          <div class="head"><span class="h3">Your session <span class="anno" data-n="6"></span></span><span class="btn ghost sm">Start over</span></div>
+          <div class="body small muted">Saved as you go · resume from any device until launch · reading continues even if you close this tab · started 5 Oct 2026, 10:00</div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-02, ONB-27</span> The Metis team records these facts at tenant creation (TEN-01) from the sales discovery; the executive only confirms or changes them. They are collapsed into four chips with one Review action, because the executive has nothing to decide here unless something is wrong. Each chip names where the value came from, so a pre-filled answer cannot anchor the executive without showing its origin. Currency and fiscal year are flagged before the drop because they cannot change once budgets are imported. The main kind of work selects the starting pack.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-03</span> Three questions asked outside-in. Only one is expanded: the question that sets who approves what, because it is the one with governance consequences, and its selected answer states that consequence in a line. The other two show the selected answer with Change, so the screen holds one visible decision instead of seventeen choices before the executive has seen any value. Answers are pre-selected from the sales discovery, autosaved as they are chosen, and no question presets a number or a cadence; the wording avoids "look at", "how involved" and "every morning" for the reasons in the design section.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-03</span> One sentence can replace the three questions and sets the same values. It is an override offered below them, not a fourth option of equal weight.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-04</span> The drop zone is the primary action of the screen: it accepts many files, folders and zip archives, or pasted text, and the list of what helps most follows the executive's answers. Caps on size, pages, archive expansion and nesting apply (ONB-24). Forwarding and voice notes come after Release 1 (ONB-29, ONB-28).</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">ONB-22</span> Nothing is sent to the LLM provider before the tenant enables AI processing. The panel opens when the first file is ready to send, not before the executive has any reason to read it, and the exact parsers run meanwhile. It is called enabling AI processing rather than consent, because it is a product setting: the lawful basis, the privacy notice and the data processing agreement sit outside it and are linked from it. Masking covers named fields and content a scanner finds in text. The two alternatives stay secondary: continue without AI leads to the rule-based path (ONB-20), use our own AI to the bring-your-own-AI path (ONB-21).</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">ONB-01, ONB-09</span> The onboarding session saves every step and resumes from any device until launch, with reading continuing on the server while the session is closed, so leaving the tab neither loses work nor flatters the clock. The header therefore shows the step and the saved state, not a stopwatch: the five clocks run in telemetry (ONB-26). Start over deletes every record the session's batch created in the Draft workspace; the audit log and the session's inputs remain.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

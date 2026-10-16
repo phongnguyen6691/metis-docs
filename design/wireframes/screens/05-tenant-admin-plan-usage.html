@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tenant admin: plan and usage · Metis wireframe</title>
+<meta name="wf:id" content="tenant-admin-plan-usage">
+<meta name="wf:title" content="Tenant admin: plan and usage">
+<meta name="wf:area" content="Access & tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="TEN-05 TEN-10 MCP-12 TEN-14">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="The tenant's plan, enabled modules, usage against each limit and what happens at a limit; self-serve billing arrives in V2.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="admin" data-nav="admin-plan" data-crumbs="Tenant admin / Plan & usage">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Plan &amp; usage</div>
+      <div class="muted small" style="margin-top:4px">Acme Holdings · usage as of 22 Sep 2026, 09:40 · monthly counters reset on 1 Oct</div>
+    </div>
+    <span class="btn secondary">Request plan change</span>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1fr) minmax(0, 2fr)">
+    <div class="card" data-req="TEN-05">
+      <div class="head"><span class="h3">Current plan <span class="anno" data-n="1"></span></span><span class="chip good">Active</span></div>
+      <div class="body stack s">
+        <div style="font:600 28px var(--font-ui)">Business</div>
+        <dl class="kv">
+          <dt>Billing</dt><dd>Annual contract, invoiced by the Metis account team</dd>
+          <dt>Renews</dt><dd>1 Apr 2027</dd>
+          <dt>Region</dt><dd>APAC</dd>
+          <dt>Account contact</dt><dd>Q. Tran</dd>
+        </dl>
+        <div class="label" style="margin-top:6px">Modules</div>
+        <div class="list-row" style="padding:0"><div class="grow">Project execution</div><span class="chip good">Included</span></div>
+        <div class="list-row" style="padding:0"><div class="grow">Lifecycle governance</div><span class="chip good">Included</span></div>
+        <div class="list-row" style="padding:0"><div class="grow">Portfolio cockpit, registry, roadmap, capacity</div><span class="chip good">Included</span></div>
+        <div class="list-row" style="padding:0"><div class="grow">AI access (MCP)</div><span class="chip good">Included</span></div>
+        <div class="list-row" style="padding:0;opacity:.6"><div class="grow">Investment, scenarios, SteerCo reports</div><span class="tag future">Planned V2</span></div>
+        <div class="list-row" style="padding:0;opacity:.6"><div class="grow">In-app AI copilot</div><span class="tag future">Planned V3</span></div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="TEN-05 MCP-12">
+        <div class="head"><span class="h3">Usage against limits <span class="anno" data-n="2"></span></span><span class="muted small">Email to admins at 80% and 100%</span></div>
+        <div class="body grid c2" style="gap:18px 28px">
+          <div class="stack s"><div class="row between small"><span>Seats</span><span class="num">180 of 250</span></div><div class="meter acc"><span style="width:72%"></span></div><div class="small muted">2 invitations pending</div></div>
+          <div class="stack s"><div class="row between small"><span>Workspaces</span><span class="num">3 of 5</span></div><div class="meter acc"><span style="width:60%"></span></div><div class="small muted">Creative Studio, Digital Products, Corporate PMO</div></div>
+          <div class="stack s"><div class="row between small"><span>File storage</span><span class="num">62 of 200 GB</span></div><div class="meter acc"><span style="width:31%"></span></div><div class="small muted">Largest: Creative Studio, 41 GB</div></div>
+          <div class="stack s"><div class="row between small"><span>MCP calls this month <span class="anno" data-n="4"></span></span><span class="num">41,200 of 100,000</span></div><div class="meter acc"><span style="width:41%"></span></div><div class="small muted">Per-token limits are set in AI access (MCP)</div></div>
+          <div class="stack s"><div class="row between small"><span>Data exports this month</span><span class="num">14</span></div><div class="meter"><span style="width:0%"></span></div><div class="small muted">No limit: export is never blocked</div></div>
+          <div class="stack s"><div class="row between small"><span>Report generations today</span><span class="num">38 of 500</span></div><div class="meter acc"><span style="width:8%"></span></div><div class="small muted">Fair-use limit per tenant</div></div>
+        </div>
+      </div>
+
+      <div class="card" data-req="TEN-10">
+        <div class="head"><span class="h3">What happens at a limit <span class="anno" data-n="3"></span></span></div>
+        <div class="body grid c2">
+          <div class="banner ok small">Reading, editing existing work and exporting data are never blocked by a limit.</div>
+          <div class="banner warn small">Only the limited action stops, for example inviting a 251st member or uploading past 200 GB.</div>
+          <div class="banner small">MCP calls past the monthly limit get a retry-after error; people using the web app are not affected.</div>
+          <div class="banner small">Fair-use limits (calls a minute, parallel exports) protect other tenants and reset on their own.</div>
+        </div>
+      </div>
+
+      <div class="card" style="opacity:.6" data-req="TEN-14">
+        <div class="head"><span class="h3">Billing and plan changes <span class="anno" data-n="5"></span></span><span class="tag future">Planned V2</span></div>
+        <div class="body row between">
+          <div class="small muted">Self-serve plan upgrade, payment method and invoices. Until then the account team changes plans on request.</div>
+          <span class="small muted">Billing will be managed from this card once it is available.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">TEN-05</span> The plan decides which modules are on and every limit; V2 and V3 modules show as locked rather than hidden.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">TEN-05</span> Each limit shows current use, the limit and when it resets, so admins act before a block happens.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">TEN-10</span> A limit never blocks access to existing data or export; it only stops the action that would exceed it.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">MCP-12</span> MCP calls count against the tenant quota; per-token rate limits are a separate control in the AI access policy.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">TEN-14</span> Self-serve billing is P1; in the MVP the provider sets plans and invoices outside the product, pending the commercial-model decision.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

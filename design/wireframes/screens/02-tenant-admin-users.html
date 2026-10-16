@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tenant admin: users and roles · Metis wireframe</title>
+<meta name="wf:id" content="tenant-admin-users">
+<meta name="wf:title" content="Tenant admin: users and roles">
+<meta name="wf:area" content="Access & tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="TEN-04 PLT-03 PLT-04 WSP-11 TEN-11 BR-26">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Tenant admin manages every user of the organization: invitations, workspace and project roles, deactivation that keeps history, and SCIM provisioning later.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="admin" data-nav="admin-users" data-crumbs="Tenant admin / Users & roles">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Users &amp; roles</div>
+      <div class="muted small" style="margin-top:4px">Acme Holdings · 180 of 250 seats used · 3 workspaces</div>
+    </div>
+    <div class="row">
+      <span class="btn secondary">Import CSV</span>
+      <span class="btn primary">Invite users <span class="anno" data-n="1"></span></span>
+    </div>
+  </section>
+
+  <section class="filters">
+    <div class="field" style="min-width:260px"><label>Search</label><div class="input ph">Name or email</div></div>
+    <div class="field"><label>Type</label><div class="select">All</div></div>
+    <div class="field"><label>Status</label><div class="select">All</div></div>
+    <div class="field"><label>Workspace</label><div class="select">All workspaces</div></div>
+    <div class="field"><label>Role</label><div class="select">Any role</div></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr)">
+    <div class="card" data-req="TEN-04 WSP-11 BR-26">
+      <div class="head"><span class="h3">Users</span><span class="muted small">Showing 11 of 182</span></div>
+      <table class="table">
+        <thead><tr><th>Name</th><th>Roles <span class="anno" data-n="2"></span></th><th>Status</th><th>Last active</th></tr></thead>
+        <tbody>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">QT</span><div><div>Q. Tran</div><div class="small muted">q.tran@acme.example · Member</div></div></div></td><td class="wrap"><span class="tag accent">Tenant admin</span></td><td><span class="chip good">Active</span></td><td>Today 09:12</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">LT</span><div><div>Linh T.</div><div class="small muted">linh.t@acme.example · Member</div></div></div></td><td class="wrap"><span class="tag">Digital Products · Executive</span></td><td><span class="chip good">Active</span></td><td>Today 08:40</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">AW</span><div><div>A. Wong</div><div class="small muted">a.wong@acme.example · Member</div></div></div></td><td class="wrap"><span class="tag">Digital Products · Product Director</span> <span class="tag">+1</span></td><td><span class="chip good">Active</span></td><td>Today 08:55</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">MJ</span><div><div>M. Johnson</div><div class="small muted">m.johnson@acme.example · Member</div></div></div></td><td class="wrap"><span class="tag">Digital Products · Portfolio Manager</span></td><td><span class="chip good">Active</span></td><td>Yesterday</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">LW</span><div><div>L. Wang</div><div class="small muted">l.wang@acme.example · Member</div></div></div></td><td class="wrap"><span class="tag">Digital Products · Project Manager</span> <span class="tag">+1</span></td><td><span class="chip good">Active</span></td><td>Today 07:58</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">HL</span><div><div>H. Le</div><div class="small muted">h.le@acme.example · Member</div></div></div></td><td class="wrap"><span class="tag">Creative Studio · Workspace Owner</span></td><td><span class="chip good">Active</span></td><td>Today 09:05</td></tr>
+          <tr class="sel"><td><div class="row" style="flex-wrap:nowrap"><span class="av">NR</span><div><div>Nadia R.</div><div class="small muted">nadia.r@acme.example · Member</div></div></div></td><td class="wrap"><span class="tag">Creative Studio · Project Manager</span> <span class="tag">+1</span></td><td><span class="chip good">Active</span></td><td>Today 09:31</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">DK</span><div><div>Denny K.</div><div class="small muted">denny.k@acme.example · Member</div></div></div></td><td class="wrap"><span class="tag">Creative Studio · Team member</span></td><td><span class="chip good">Active</span></td><td>Yesterday</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av client">JP</span><div><div>J. Park</div><div class="small muted">j.park@northwind.example · External</div></div></div></td><td class="wrap"><span class="tag">Creative Studio · Client · 1 project</span></td><td><span class="chip good">Active</span></td><td>18 Sep</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">?</span><div><div class="muted">Pending invitation</div><div class="small muted">new.analyst@acme.example · Member</div></div></div></td><td class="wrap"><span class="tag">Corporate PMO · Viewer</span></td><td><span class="chip running">Invited</span></td><td>Sent 20 Sep</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">AL</span><div><div>Art Lead</div><div class="small muted">art.lead@acme.example · Member</div></div></div></td><td class="wrap"><span class="muted">None · history kept</span></td><td><span class="chip">Deactivated</span> <span class="anno" data-n="4"></span></td><td>12 Aug</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="WSP-11 PLT-04">
+        <div class="head"><span class="av lg">NR</span><div style="flex:1"><div class="h3">Nadia R.</div><div class="small muted">nadia.r@acme.example · Member · MFA on</div></div><span class="chip good">Active</span></div>
+        <div class="body stack s">
+          <div class="row between"><span class="label">Workspace roles</span><span class="anno" data-n="3"></span></div>
+          <table class="table">
+            <thead><tr><th>Workspace</th><th>Role</th></tr></thead>
+            <tbody>
+              <tr><td>Creative Studio</td><td><div class="select">Project Manager</div></td></tr>
+              <tr><td>Digital Products</td><td><div class="select ph">No access</div></td></tr>
+              <tr><td>Corporate PMO</td><td><div class="select">Viewer</div></td></tr>
+            </tbody>
+          </table>
+          <div class="label" style="margin-top:6px">Project overrides</div>
+          <div class="list-row" style="padding:0"><div class="grow"><div class="title-line">Meridian CGI Campaign</div><div class="sub">Creative Studio · Client Delivery</div></div><div class="select" style="min-width:150px">Project Manager</div></div>
+          <div class="list-row" style="padding:0"><div class="grow"><div class="title-line">Northwind Showroom VR</div><div class="sub">Creative Studio · Client Delivery</div></div><div class="select" style="min-width:150px">Team member</div></div>
+          <span class="btn ghost sm" style="align-self:flex-start">+ Add project override</span>
+          <div class="banner small">Effective access: Creative Studio projects as Project Manager, Corporate PMO read-only. Checked on the server for the app, MCP and API alike.</div>
+          <div class="row between">
+            <span class="btn danger sm">Deactivate user</span>
+            <span class="btn primary sm">Save changes</span>
+          </div>
+          <div class="small muted">Deactivating revokes access at once, revokes her MCP tokens and keeps her name on items, comments and history.</div>
+        </div>
+      </div>
+
+      <div class="card" style="opacity:.6" data-req="TEN-11">
+        <div class="head"><span class="h3">Automatic provisioning (SCIM) <span class="anno" data-n="5"></span></span><span class="tag future">Planned V2</span></div>
+        <div class="body stack s">
+          <div class="small muted">Create, update and deactivate users and group-based roles from your identity provider.</div>
+          <span class="small muted">SCIM setup will open from this card once it is available.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLT-03, TEN-04</span> Invite one or many people by email with a workspace role; they join on acceptance. Seats come from the plan, so an invite beyond 250 seats is blocked with a clear message.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">WSP-11</span> Roles are assigned per workspace; "+1" opens the other roles of that person (for example A. Wong is also a Gate Approver).</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">WSP-11, PLT-04</span> Workspace role plus optional project overrides give the effective permission; the server enforces it for the web app, MCP clients and the API.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">BR-26</span> A deactivated member loses access immediately but stays on existing items and history, as the POC already did for "Art Lead".</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">TEN-11</span> SCIM provisioning is P1; until then the admin invites, imports from CSV, or relies on just-in-time provisioning from SSO.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

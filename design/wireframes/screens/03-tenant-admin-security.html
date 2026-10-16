@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tenant admin: sign-in and security · Metis wireframe</title>
+<meta name="wf:id" content="tenant-admin-security">
+<meta name="wf:title" content="Tenant admin: sign-in and security">
+<meta name="wf:area" content="Access & tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="TEN-03 TEN-04 TEN-09 PLT-01">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Tenant-level identity: SSO with SAML 2.0 or OIDC and verified domains, MFA and password policy, session lifetime, and time-limited support access grants for provider staff.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="admin" data-nav="admin-security" data-crumbs="Tenant admin / Sign-in & security">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Sign-in &amp; security</div>
+      <div class="muted small" style="margin-top:4px">Applies to every workspace in Acme Holdings · last changed by Q. Tran on 2 Sep 2026</div>
+    </div>
+    <span class="btn primary">Save changes <span class="anno" data-n="5"></span></span>
+  </section>
+
+  <section class="grid c2">
+    <div class="card" data-req="TEN-03">
+      <div class="head"><span class="h3">Single sign-on <span class="anno" data-n="1"></span></span><span class="chip good">Connected</span></div>
+      <div class="body stack s">
+        <div class="row between"><span class="small muted">Protocol</span><span class="seg"><span class="on">SAML 2.0</span><span>OIDC</span></span></div>
+        <div class="field"><label>Identity provider metadata URL</label><div class="input">https://idp.acme.example/saml/metadata</div></div>
+        <div class="grid c2">
+          <div class="field"><label>Signing certificate</label><div class="input">Valid until 14 Mar 2027</div></div>
+          <div class="field"><label>Default workspace role on first sign-in</label><div class="select">No workspace access</div></div>
+        </div>
+        <div class="label" style="margin-top:4px">Verified domains</div>
+        <div class="list-row" style="padding:0"><div class="grow">acme.example</div><span class="chip good">Verified</span></div>
+        <div class="list-row" style="padding:0"><div class="grow">studio.acme.example</div><span class="chip waiting">Pending DNS record</span><span class="btn ghost sm">Verify</span></div>
+        <span class="toggle on">Create users on first SSO sign-in (just-in-time)</span>
+        <span class="toggle on">Members of verified domains must use SSO</span>
+        <div class="small muted">Tenant admins keep a password and MFA sign-in as a break-glass route.</div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="TEN-03">
+        <div class="head"><span class="h3">Passwords and MFA <span class="anno" data-n="2"></span></span></div>
+        <div class="body stack s">
+          <span class="toggle on">Require MFA for every member</span>
+          <div class="row"><span class="check on">Authenticator app</span><span class="check on">Security key</span><span class="check">Text message</span></div>
+          <div class="grid c2">
+            <div class="field"><label>Minimum password length</label><div class="select">12 characters</div></div>
+            <div class="field"><label>External users</label><div class="select">Magic link only</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-req="PLT-01">
+        <div class="head"><span class="h3">Sessions <span class="anno" data-n="3"></span></span></div>
+        <div class="body stack s">
+          <div class="grid c2">
+            <div class="field"><label>Session lifetime</label><div class="select">12 hours</div></div>
+            <div class="field"><label>Sign out after inactivity</label><div class="select">60 minutes</div></div>
+          </div>
+          <div class="row between"><span class="toggle on">Remember trusted devices for 30 days</span><span class="btn secondary sm">Sign out all users</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="opacity:.6">
+        <div class="head"><span class="h3">IP allowlist</span><span class="tag future">Planned V2</span></div>
+        <div class="body small muted">Limit sign-in to company networks for members; external users are exempt.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-req="TEN-09">
+    <div class="head"><span class="h3">Support access <span class="anno" data-n="4"></span></span><span class="muted small">Provider staff never see your business data without a grant</span><span class="btn primary sm">Grant access</span></div>
+    <table class="table">
+      <thead><tr><th>Provider staff</th><th>Reason</th><th>Scope</th><th>Granted by</th><th>Expires</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">MS</span>Metis support engineer</div></td><td>Ticket #2291 · report export fails</td><td><span class="tag">Read-only · Digital Products</span></td><td>Q. Tran</td><td>24 Sep 2026, 18:00</td><td><span class="chip good">Active</span></td><td><span class="btn danger sm">Revoke</span></td></tr>
+        <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">MS</span>Metis support engineer</div></td><td>Ticket #2204 · SSO set-up</td><td><span class="tag">Read-only · Tenant settings</span></td><td>Q. Tran</td><td>12 Sep 2026, 17:00</td><td><span class="chip">Expired</span></td><td><span class="btn ghost sm">View log</span></td></tr>
+      </tbody>
+    </table>
+    <div class="body">
+      <div class="card sunk pad grid c4">
+        <div class="field"><label>Ticket or reason</label><div class="input ph">Required</div></div>
+        <div class="field"><label>Scope</label><div class="select">Read-only · one workspace</div></div>
+        <div class="field"><label>Duration</label><div class="select">72 hours</div></div>
+        <div class="field"><label>&nbsp;</label><span class="btn secondary" style="align-self:flex-start">Create grant</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">TEN-03</span> Each tenant connects its own identity provider (SAML 2.0 or OIDC). Verified domains route sign-in; just-in-time users start with no workspace access until an admin assigns a role.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">TEN-03</span> MFA is a tenant policy for members; external client users sign in with magic links only.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLT-01</span> Session lifetime and inactivity time-out are configurable; "Sign out all users" ends every session at once.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">TEN-09</span> Support access is granted by the tenant admin, scoped, time-limited and visible in the audit log; it expires on its own.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">TEN-04</span> These settings belong to the tenant admin console; every change is recorded with actor, before and after values (BR-19).</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

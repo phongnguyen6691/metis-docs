@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sign in · Metis wireframe</title>
+<meta name="wf:id" content="sign-in">
+<meta name="wf:title" content="Sign in">
+<meta name="wf:area" content="Access & tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLT-01 PLT-02 PLT-03 TEN-03">
+<meta name="wf:poc" content="01">
+<meta name="wf:summary" content="Tenant-aware sign-in: SSO by work email, email and password with MFA, magic link for invited external users, invitation acceptance, no public demo.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="none">
+<main>
+<div class="wf-auth">
+
+  <section class="brand-side">
+    <img src="../../brand/logo/metis-wordmark.svg" alt="Metis" style="height:44px; align-self:flex-start">
+    <div class="label">Enterprise portfolio intelligence &amp; governance</div>
+    <div class="title" style="font-size:36px; max-width:460px">From strategy to closeout, one governed workspace.</div>
+    <p class="muted" style="max-width:460px">See what the company invests in, run every project on one WBS, and let your own AI assistant work with the data under the same permissions.</p>
+    <div class="stack s" style="max-width:460px">
+      <div class="row top"><span class="chip review nodot">1</span><div style="flex:1;min-width:0"><div class="h3">Portfolio cockpit for executives</div><div class="small muted">Investment, health, capacity and the decisions that need you.</div></div></div>
+      <div class="row top"><span class="chip review nodot">2</span><div style="flex:1;min-width:0"><div class="h3">Charter to closeout for project teams</div><div class="small muted">Charter, WBS, plan, change control and reports on one source of truth.</div></div></div>
+      <div class="row top"><span class="chip review nodot">3</span><div style="flex:1;min-width:0"><div class="h3">Your LLM client, through MCP</div><div class="small muted">Any client that implements the MCP specification can read and log work in natural language, with the same permissions and audit as the app.</div></div></div>
+    </div>
+    <div style="flex:1"></div>
+    <div class="small muted">Acme Holdings sign-in · there is no public demo; ask your admin for the sandbox workspace <span class="anno" data-n="5"></span></div>
+  </section>
+
+  <section class="form-side">
+    <div class="stack" style="width:420px" data-req="TEN-03 PLT-01 PLT-02 PLT-03">
+
+      <div class="banner accent" data-req="PLT-03">
+        <span class="anno" data-n="4"></span>
+        <div class="grow"><div class="h3">You are invited to Acme Holdings</div><div class="small">Q. Tran invited you to the Creative Studio workspace as a Team member. Sign in or create your account to accept.</div></div>
+      </div>
+
+      <div class="card pad stack s">
+        <div class="h2">Sign in</div>
+        <div class="small muted">Use your work email. We send you to your company's sign-in page.</div>
+        <div class="field"><label>Work email</label><div class="input">nadia.r@acme.example</div></div>
+        <span class="btn primary" style="justify-content:center">Continue with SSO <span class="anno" data-n="1"></span></span>
+        <div class="small muted center">acme.example signs in with your company identity provider</div>
+      </div>
+
+      <div class="row" style="gap:12px"><div class="hr" style="flex:1"></div><span class="small muted">or use a password</span><div class="hr" style="flex:1"></div></div>
+
+      <div class="card pad stack s">
+        <div class="field"><label>Email</label><div class="input ph">name@company.example</div></div>
+        <div class="field"><label>Password</label><div class="input">••••••••••••</div></div>
+        <span class="btn secondary" style="justify-content:center">Sign in</span>
+        <div class="card sunk pad stack s">
+          <div class="row between"><span class="h3">Step 2 of 2 · verification code</span><span class="anno" data-n="2"></span></div>
+          <div class="small muted">Enter the 6-digit code from your authenticator app. Your admin requires MFA for every member.</div>
+          <div class="row" style="gap:6px">
+            <div class="input center" style="width:40px">4</div><div class="input center" style="width:40px">1</div><div class="input center" style="width:40px">9</div>
+            <div class="input center ph" style="width:40px">·</div><div class="input center ph" style="width:40px">·</div><div class="input center ph" style="width:40px">·</div>
+            <span class="btn primary sm right">Verify</span>
+          </div>
+          <div class="row between small"><span class="check on">Keep me signed in on this device</span><a>Use a recovery code</a></div>
+        </div>
+      </div>
+
+      <div class="card pad stack s" data-req="PLT-02">
+        <div class="row between"><span class="h3">Invited as an external user?</span><span class="anno" data-n="3"></span></div>
+        <div class="small muted">Clients and partners get a one-time sign-in link by email. You only see the projects you were invited to.</div>
+        <div class="row"><div class="input ph" style="flex:1">j.park@northwind.example</div><span class="btn secondary">Send magic link</span></div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">TEN-03</span> The email domain decides the tenant and its identity provider (SAML 2.0 or OIDC); members of an SSO tenant never see a password form unless the admin allows it.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">TEN-03, PLT-01</span> Password sign-in always ends with MFA when the tenant requires it. The session persists across browser restarts until it expires or the user signs out.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLT-02</span> External users (for example the client contact J. Park) sign in with a magic link and see only the projects they are invited to; this path exists only if client access is approved (decision D-02).</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">PLT-03</span> An invitation link opens this page with the banner; accepting creates the membership with the role chosen by the inviter.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">PLT-01</span> Unlike the POC there is no "Explore the demo workspace" button: demos run in a resettable sandbox workspace inside each tenant (PLT-19, decision D-21).</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+# Every pull request, every push to main and a run by hand run the checks of metis-docs: the tests of
+# tools/, every page check of tools/check.mjs, and a secret scan.
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# The free minutes go to the newest commit: a newer run on the same ref cancels the older one.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# The least GITHUB_TOKEN access: read the documents, write nothing.
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      # Each action is pinned to the commit its v7 tag points to, because a tag can be moved and a commit
+      # cannot, and this job reads a private repository. The job never pushes, so checkout does not keep
+      # the token.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+      # The checks prove themselves first, every line and branch of tools/ covered.
+      - run: node --test --experimental-test-coverage --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100 --test-coverage-exclude='**/*.test.*' 'tools/*.test.mjs'
+      # build.py writes the Markdown edition of the BRD with Python 3 and its standard library only.
+      - run: python3 --version
+      - run: node tools/check.mjs
+      # A pinned gitleaks release, verified by its sha256, scans every file for secrets.
+      - name: secret scan
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/gitleaks.tar.gz" https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          echo "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  $RUNNER_TEMP/gitleaks.tar.gz" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/gitleaks.tar.gz" -C "$RUNNER_TEMP" gitleaks
+          "$RUNNER_TEMP/gitleaks" dir . --no-banner --redact

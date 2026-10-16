@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Workspace settings: data · Metis wireframe</title>
+<meta name="wf:id" content="data-export-delete">
+<meta name="wf:title" content="Workspace settings: export, import and delete">
+<meta name="wf:area" content="Workspace &amp; governance">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLT-14 PLT-15 TEN-07 BR-27">
+<meta name="wf:poc" content="36">
+<meta name="wf:summary" content="Workspace Data settings: export a project or the whole workspace with job status, import a project file as a new project after a validation report, delete a project with typed confirmation, and restore it from Recently deleted before the retention period ends.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-danger { border-color: var(--critical); }
+  .x-danger > .head { background: var(--critical-bg); }
+  .x-opt { display: flex; align-items: flex-end; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .x-opt .field { flex: 1; }
+  .x-warn .list-row { align-items: flex-start; padding-top: 9px; padding-bottom: 9px; }
+</style>
+</head>
+<body data-shell="app" data-nav="settings" data-workspace="Creative Studio" data-crumbs="Creative Studio / Settings / Data" data-user="HL">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Data</div>
+      <div class="muted small" style="margin-top:4px">Export, import and delete for the 3 projects of Creative Studio. Every action here is recorded in the audit log.</div>
+    </div>
+    <div class="seg"><span>General</span><span>Fields &amp; options</span><span>Team &amp; roles</span><span>Frameworks</span><span class="on">Data</span></div>
+  </section>
+
+  <section class="banner accent">
+    <div class="grow"><b>Owner view, signed in as H. Le.</b> Delete, Clear workspace and Recently deleted appear only for Workspace Owners. Project members see Export for their projects; people who can create projects also see Import.</div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr)">
+
+    <div class="stack">
+      <div class="card" data-req="PLT-14 TEN-07">
+        <div class="head"><span class="h3">Export <span class="anno" data-n="1"></span></span><span class="small muted">JSON data plus files, as one ZIP</span></div>
+        <div class="x-opt">
+          <div class="field"><label>A project</label><div class="select">Meridian CGI Campaign</div></div>
+          <span class="btn secondary">Export project</span>
+        </div>
+        <div class="x-opt">
+          <div class="field"><label>The whole workspace</label><div class="input locked" style="min-height:34px">3 projects, configuration, frameworks and files</div></div>
+          <span class="btn secondary">Export workspace</span>
+        </div>
+        <table class="table">
+          <thead><tr><th>Job</th><th>Status</th><th class="num">Size</th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="wrap"><div>Workspace · Creative Studio</div><div class="small muted">H. Le · 22 Sep 09:12</div></td><td><span class="chip good">Ready</span></td><td class="num">3.1 GB</td><td><span class="btn ghost sm">Download</span><div class="small muted">link until 29 Sep</div></td></tr>
+            <tr><td class="wrap"><div>Project · Meridian CGI Campaign</div><div class="small muted">Nadia R. · 22 Sep 09:35</div></td><td><div class="row" style="flex-wrap:nowrap;gap:8px"><span class="chip running">Running · 64%</span><div class="meter acc" style="width:60px"><span style="width:64%"></span></div></div></td><td class="num muted">Pending</td><td></td></tr>
+            <tr><td class="wrap"><div>Project · Spring Catalogue Renders</div><div class="small muted">Nadia R. · 21 Sep 17:02</div></td><td class="wrap"><span class="chip critical">Failed</span><div class="small muted">File store timed out</div></td><td class="num muted">None</td><td><span class="btn ghost sm">Retry</span></td></tr>
+          </tbody>
+        </table>
+        <div class="body small muted" style="border-top:1px solid var(--line)">An export holds work items, dependencies, charter and revisions, change requests, journal, activity and files. Leaving the platform? Tenant admins export the whole organization from Tenant admin › Data export.</div>
+      </div>
+
+      <div class="card x-warn" data-req="PLT-14 BR-27">
+        <div class="head"><span class="h3">Import a project file <span class="anno" data-n="2"></span></span><span class="small muted">always creates a new project</span></div>
+        <div class="body stack s">
+          <div class="row"><span class="tag">northwind-showroom-vr-export.zip</span><span class="small muted">412 MB · uploaded and scanned</span><span class="right chip good">0 errors</span><span class="chip waiting">2 warnings</span></div>
+          <div class="small">Contents found: 64 work items, 58 dependencies, charter Rev 2, 2 change requests, 31 journal entries, 18 files.</div>
+        </div>
+        <div class="list-row"><span class="chip waiting">Warning</span><div class="grow"><div class="title-line">A. Wong is not a member of Creative Studio</div><div class="sub">3 items import without a PIC. Invite A. Wong or assign them after import.</div></div></div>
+        <div class="list-row"><span class="chip waiting">Warning</span><div class="grow"><div class="title-line">Phase "Post-production" is not a stage of Creative Production v1.2</div><div class="sub">5 items import with an empty Phase; pick a stage for them later.</div></div></div>
+        <div class="x-opt" style="border-bottom:0;border-top:1px solid var(--line)">
+          <div class="field"><label>New project name</label><div class="input">Northwind Showroom VR (imported 22 Sep)</div></div>
+          <div class="field"><label>Program</label><div class="select">Northwind Furniture Co.</div></div>
+        </div>
+        <div class="row" style="padding:0 14px 14px"><span class="small muted" style="flex:1">The existing Northwind Showroom VR project is not touched.</span><span class="btn ghost">Cancel</span><span class="btn primary">Import as new project</span></div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card x-danger" data-req="PLT-15">
+        <div class="head"><span class="h3">Delete a project <span class="anno" data-n="3"></span></span><span class="tag">Workspace Owner only</span></div>
+        <div class="body stack s">
+          <div class="field"><label>Project</label><div class="select">Spring Catalogue Renders</div></div>
+          <div class="small">The project disappears for everyone at once and moves to Recently deleted for 30 days, where it can be restored with its items, files and history. After that it is purged.</div>
+          <div class="field"><label>Type the project name to confirm</label><div class="input kbd-focus">Spring Catalogue Renders</div><div class="small" style="color:var(--good-text)">✓ Name matches</div></div>
+          <div class="row"><span class="btn ghost sm">Cancel</span><span class="btn danger sm right">Delete project</span></div>
+        </div>
+        <div class="list-row" style="border-top:1px solid var(--line);padding-top:10px;padding-bottom:12px"><div class="grow"><div class="title-line">Clear workspace</div><div class="sub">Deletes all 3 projects together; needs "clear Creative Studio" typed; restorable for 30 days</div></div><span class="btn danger sm">Clear workspace…</span></div>
+      </div>
+
+      <div class="card" data-req="PLT-15">
+        <div class="head"><span class="h3">Recently deleted <span class="anno" data-n="4"></span></span><span class="small muted">restore before the date shown</span></div>
+        <table class="table">
+          <thead><tr><th>Project</th><th>Restore until</th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="wrap"><div>Contoso Lookbook Test</div><div class="small muted">Deleted by H. Le · 15 Sep</div></td><td>15 Oct 2026</td><td><span class="btn secondary sm">Restore</span></td></tr>
+            <tr><td class="wrap"><div>Northwind Teaser Draft</div><div class="small muted">Deleted by H. Le · 2 Sep</div></td><td class="wrap"><span style="color:var(--waiting-text)">2 Oct 2026</span><div class="small" style="color:var(--waiting-text)">10 days left</div></td><td><span class="btn secondary sm">Restore</span></td></tr>
+          </tbody>
+        </table>
+        <div class="body small muted" style="border-top:1px solid var(--line)">Purging leaves only a deletion record in the audit log. The retention period is a tenant setting.</div>
+      </div>
+
+      <div class="card pad stack s" data-req="TEN-07">
+        <div class="h3">Leaving or moving the organization <span class="anno" data-n="5"></span></div>
+        <div class="small muted">A tenant admin exports all workspaces, files and history in one package from Tenant admin › Data export. The same package restores into a new tenant.</div>
+        <span class="btn secondary sm" style="align-self:flex-start">Open tenant data export</span>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLT-14</span> Export a project or the whole workspace as JSON data plus files. Exports run as jobs with a visible status, a failed job can be retried, and the download link expires. Export then import reproduces items, dependencies, charter, change requests and journal.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">PLT-14, BR-27</span> Import never overwrites: it always creates a new project. A validation report comes first; errors block the import, warnings say what will happen to the affected items.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLT-15</span> Only Workspace Owners can delete a project or clear the workspace. Both need the name typed and both go to Recently deleted, so a mistake can be undone. The POC cleared the whole workspace with one click.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">PLT-15</span> Restore brings back the project with items, files and history until the retention period ends. The 30 days shown are sample values until the retention periods are decided.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">TEN-07</span> Offboarding is a tenant admin task: the full export of the organization restores into a new tenant with the same projects, files and history.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

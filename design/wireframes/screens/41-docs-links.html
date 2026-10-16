@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Docs &amp; Links · Metis wireframe</title>
+<meta name="wf:id" content="docs-links">
+<meta name="wf:title" content="Project Docs &amp; Links">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLT-08 PLT-07 PLT-11">
+<meta name="wf:poc" content="30">
+<meta name="wf:summary" content="Links, notes and files of one project, opened from the project node in the navigation tree: upload states (scanning, uploaded, blocked type, too large) against the workspace limits, access-controlled downloads and an audited removal.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-up .list-row { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
+  .x-confirm td { background: var(--critical-bg); }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign / Docs &amp; Links" data-project="Meridian CGI Campaign" data-tab="overview">
+<main>
+
+  <section class="row between" data-req="PLT-08">
+    <div>
+      <div class="row"><span class="h2">Docs &amp; Links</span><span class="anno" data-n="1"></span></div>
+      <div class="muted small" style="margin-top:4px">7 entries · links, notes and files for everyone on Meridian CGI Campaign · also under the project in the sidebar tree</div>
+    </div>
+    <div class="row"><span class="btn secondary sm">+ Add link</span><span class="btn secondary sm">+ Add note</span><span class="btn primary sm">Upload files</span></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr)">
+
+    <div class="stack">
+      <div class="card" data-req="PLT-08 PLT-07 PLT-11">
+        <div class="head"><span class="h3">Entries</span><div class="seg"><span class="on">All 7</span><span>Files 4</span><span>Links 2</span><span>Notes 1</span></div><span class="input ph" style="min-height:30px;padding:5px 9px;width:180px">Filter by name</span></div>
+        <table class="table">
+          <thead><tr><th>Name</th><th>Kind</th><th>Owner</th><th>Added</th><th class="num">Size</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr><td class="wrap"><div>Client brief: Northwind spring campaign</div><div class="small muted">northwind.example/briefs/spring-2026</div></td><td><span class="tag">Link</span></td><td><span class="row" style="flex-wrap:nowrap"><span class="av">NR</span>Nadia R.</span></td><td>2 Jul 2026</td><td class="num muted">Link</td><td><span class="btn ghost sm">Open</span><span class="btn ghost sm" title="Rename, Remove">⋯</span></td></tr>
+            <tr><td class="wrap"><div>Meridian charter Rev 1, signed.pdf</div><div class="small muted">Download link valid 15 minutes <span class="anno" data-n="2"></span></div></td><td><span class="tag">File</span></td><td><span class="row" style="flex-wrap:nowrap"><span class="av">NR</span>Nadia R.</span></td><td>26 Jun 2026</td><td class="num">1.2 MB</td><td><span class="btn ghost sm">Download</span><span class="btn ghost sm" title="Rename, Remove">⋯</span></td></tr>
+            <tr><td class="wrap"><div>Lighting direction notes</div><div class="small muted">Warm key light for living room set, no blue cast</div></td><td><span class="tag">Note</span></td><td><span class="row" style="flex-wrap:nowrap"><span class="av">AL</span>Art Lead</span></td><td>14 Jul 2026</td><td class="num muted">Note</td><td><span class="btn ghost sm">Open</span><span class="btn ghost sm" title="Rename, Remove">⋯</span></td></tr>
+            <tr><td class="wrap"><div>CAD package v3.zip</div><div class="small muted">Input for 2.1 CAD / Design Files</div></td><td><span class="tag">File</span></td><td><span class="row" style="flex-wrap:nowrap"><span class="av client">JP</span>J. Park (client)</span></td><td>3 Jul 2026</td><td class="num">186 MB</td><td><span class="btn ghost sm">Download</span><span class="btn ghost sm" title="Rename, Remove">⋯</span></td></tr>
+            <tr><td class="wrap"><div>Final render delivery folder</div><div class="small muted">Shared drive link <span class="tag future">Planned V2</span></div></td><td><span class="tag">Link</span></td><td><span class="row" style="flex-wrap:nowrap"><span class="av">DK</span>Denny K.</span></td><td>18 Aug 2026</td><td class="num muted">Link</td><td><span class="btn ghost sm">Open</span><span class="btn ghost sm" title="Rename, Remove">⋯</span></td></tr>
+            <tr><td class="wrap"><div>Phase 1 contact sheet.pdf</div><div class="small muted">25 renders, review copy</div></td><td><span class="tag">File</span></td><td><span class="row" style="flex-wrap:nowrap"><span class="av">DK</span>Denny K.</span></td><td>24 Jul 2026</td><td class="num">24.6 MB</td><td><span class="btn ghost sm">Download</span><span class="btn ghost sm" title="Rename, Remove">⋯</span></td></tr>
+            <tr class="x-confirm"><td class="wrap"><div>Render farm schedule.xlsx</div><div class="small muted">Superseded by CR-002</div></td><td><span class="tag">File</span></td><td><span class="row" style="flex-wrap:nowrap"><span class="av">SW</span>Sasha W.</span></td><td>30 Jun 2026</td><td class="num">0.4 MB</td><td><span class="small" style="color:var(--critical-text)">Remove?</span> <span class="anno" data-n="4"></span></td></tr>
+          </tbody>
+        </table>
+        <div class="banner bad" style="margin:0 14px 14px">
+          <div class="grow"><div class="h3">Remove "Render farm schedule.xlsx" for everyone on this project?</div><div class="small">The file leaves Docs &amp; Links at once. The removal is recorded in the audit log with your name, the time and the file name.</div></div>
+          <span class="btn secondary sm">Cancel</span><span class="btn danger sm">Remove</span>
+        </div>
+      </div>
+
+      <div class="card" data-req="PLT-11">
+        <div class="head"><span class="h3">Recent changes</span><span class="small muted">from the audit log, read-only</span><span class="btn ghost sm">Open audit log</span></div>
+        <div class="list-row"><span class="av">NR</span><div class="grow"><div class="title-line">Nadia R. removed "Old scope draft.docx"</div><div class="sub">21 Sep 2026, 16:05 · file kept in storage for the retention period, then deleted</div></div></div>
+        <div class="list-row"><span class="av">DK</span><div class="grow"><div class="title-line">Denny K. renamed "contact sheet v1" to "Phase 1 contact sheet.pdf"</div><div class="sub">25 Jul 2026, 10:12</div></div></div>
+        <div class="list-row"><span class="av client">JP</span><div class="grow"><div class="title-line">J. Park uploaded "CAD package v3.zip"</div><div class="sub">3 Jul 2026, 08:47 · malware scan passed</div></div></div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card x-up" data-req="PLT-07">
+        <div class="head"><span class="h3">Upload <span class="anno" data-n="3"></span></span><span class="small muted">4 files</span></div>
+        <div style="padding:14px 14px 4px"><div class="empty" style="padding:16px">Drop files here or <a>browse</a><div class="small">Up to 250 MB per file · PDF, Office, images, ZIP, MP4</div></div></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Phase 2 render previews.zip</div><div class="sub">182 MB · uploaded, checking for malware</div><div class="meter acc" style="margin-top:6px"><span style="width:100%"></span></div></div><span class="chip running">Scanning</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Lighting moodboard.pdf</div><div class="sub">6.4 MB · scan passed · added to Entries</div></div><span class="chip good">Uploaded</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">render setup.exe</div><div class="sub">Program files (EXE) are not allowed in Creative Studio. Nothing was stored.</div></div><span class="chip critical">Blocked type</span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">3D film master v2.mp4</div><div class="sub">3.8 GB is over the 250 MB limit. Share it as a link to your drive instead.</div><div style="margin-top:6px"><span class="btn secondary sm">Add as link</span></div></div><span class="chip critical">Too large</span></div>
+      </div>
+
+      <div class="card" data-req="PLT-07">
+        <div class="head"><span class="h3">Upload rules</span><span class="small muted">set by the Workspace Owner</span></div>
+        <div class="body">
+          <dl class="kv" style="grid-template-columns:130px 1fr">
+            <dt>Workspace</dt><dd>Creative Studio</dd>
+            <dt>Largest file</dt><dd>250 MB</dd>
+            <dt>Allowed types</dt><dd>PDF, Office documents, images (JPG, PNG, TIFF), ZIP, MP4</dd>
+            <dt>Always blocked</dt><dd>Programs and scripts (EXE, BAT, CMD, JS)</dd>
+            <dt>Malware scan</dt><dd>Every upload, before anyone can open it</dd>
+            <dt>Download links</dt><dd>Personal, valid 15 minutes</dd>
+            <dt>Tenant storage</dt><dd>62 of 200 GB used (plan)</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="card pad stack s" data-req="PLT-07">
+        <div class="h3">Who can open these files <span class="anno" data-n="5"></span></div>
+        <div class="small muted">Everyone with access to Meridian CGI Campaign, including J. Park as invited client. A copied download link does not work for anyone else, and it expires.</div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLT-08</span> Docs &amp; Links is opened from the project node in the navigation tree, as in the POC sidebar. Links, notes and files can be added, opened, renamed and removed by project members.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">PLT-07</span> Files live in managed storage, not in the browser as in the POC. Each download uses a personal link that expires; the server checks project access on every request.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLT-07</span> Every upload shows its state in words and a chip: scanning, uploaded, blocked type, too large. Each failure says what happened and what to do next; the limits are a workspace setting shown on the same page.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">PLT-08, PLT-11</span> Removal asks for confirmation in place and names the file. The audit entry records actor, time and file name and cannot be edited or deleted.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">PLT-07</span> A user without access to the project cannot download its files even with a copied link. Large media is shared as a plain link in the MVP; the cloud storage integration is planned for V2.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

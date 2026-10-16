@@ -1,0 +1,16 @@
+== P0 baseline (no edit)
+Test Suites: 84 passed, 84 total
+Tests:       704 passed, 704 total
+P1 edit applied lines: 1
+== P1 alert from change
+Test Suites: 84 passed, 84 total
+Tests:       704 passed, 704 total
+P1b edit applied lines: 1
+== P1b value from change
+Test Suites: 84 passed, 84 total
+Tests:       704 passed, 704 total
+P2 edit applied lines: 1
+== P2 risk count from highRisk
+Test Suites: 84 passed, 84 total
+Tests:       704 passed, 704 total
+restored OK

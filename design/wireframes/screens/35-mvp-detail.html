@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MVP detail · Metis wireframe</title>
+<meta name="wf:id" content="mvp-detail">
+<meta name="wf:title" content="MVP detail">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="MVP-01 MVP-02 MVP-03 MVP-04 BR-06 BR-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Outcome container for MVP 1 Omni Payment: customer problem, outcome KPIs, release criteria, linked features and milestones, dependencies, and MVP progress and health with their formulas and as-of time, compared with the project.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-nt { display: inline-flex; align-items: center; height: 30px; padding: 0 10px; border: 1.5px dashed var(--line-strong); border-radius: var(--radius); font: 500 15px/1 var(--font-ui); color: var(--muted); }
+  .x-f { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body data-shell="app" data-workspace="Digital Products" data-crumbs="Digital Products / Growth / MSME Transformation / MSME Payment" data-project="MSME Payment" data-tab="overview" data-client="Internal · MSME Transformation" data-pm="A. Wong" data-stage="Development · stage 4 of 7" data-rag="g" data-rag-label="On track" data-framework="Company A Digital Delivery v2.1" data-baseline="Baseline v2 · 14 Apr 2026">
+<main>
+
+  <section class="row between" data-req="MVP-01 MVP-03">
+    <div class="row">
+      <span class="h2">MVP 1 · Omni Payment</span>
+      <span class="rag a">At risk</span>
+      <span class="small muted">Project MSME Payment is On track; this MVP is At risk <span class="anno" data-n="3"></span></span>
+      <span class="fresh">As of 22 Sep 2026 09:40 · metrics v1</span><span class="anno" data-n="6"></span>
+    </div>
+    <div class="row"><span class="seg"><span class="on">MVP 1 Omni Payment</span><span>MVP 2</span></span><span class="btn secondary sm">Edit MVP</span></div>
+  </section>
+
+  <section class="grid c4" data-req="MVP-01">
+    <div class="card kpi"><div class="k-label">Release date</div><div class="k-value">30 Mar 2027</div><div class="k-delta">189 days from today</div></div>
+    <div class="card kpi"><div class="k-label">Budget</div><div class="k-value">$650K</div><div class="k-delta">Owner: Product Owner</div></div>
+    <div class="card kpi"><div class="k-label">Progress</div><div class="k-value">62%</div><div class="k-delta">13 of 21 linked work items done</div><div class="meter" style="margin-top:8px"><span style="width:62%"></span></div><div class="x-f" style="margin-top:6px">Done linked work items ÷ linked work items</div></div>
+    <div class="card kpi"><div class="k-label">Expected benefit <span class="anno" data-n="1"></span></div><div class="k-value"><span class="x-nt">Not tracked</span></div><div class="k-delta">No benefit record yet, so no value is shown; $0 would mean measured and zero. Benefits arrive in V2</div></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start">
+    <div class="stack">
+      <div class="card" data-req="MVP-01 BR-06">
+        <div class="head"><span class="h3">Customer problem and outcome</span></div>
+        <div class="body stack s">
+          <p>MSME customers use multiple channels and manually reconcile transactions.</p>
+          <div class="small muted">Objective: raise payment adoption from 42% to 57% and cut reconciliation time from 3 h to 1 h.</div>
+          <table class="table">
+            <thead><tr><th>Outcome KPI <span class="anno" data-n="4"></span></th><th>Baseline</th><th>Target</th><th>Current</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Payment adoption</td><td>42%</td><td>57%</td><td>49%</td><td><span class="rag a">At risk</span></td></tr>
+              <tr><td>Reconciliation time</td><td>3 h</td><td>1 h</td><td>1.5 h</td><td><span class="rag a">At risk</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" data-req="MVP-02">
+        <div class="head"><span class="h3">Features and milestones <span class="anno" data-n="2"></span></span><span class="btn ghost sm">+ Link WBS item</span></div>
+        <table class="table">
+          <thead><tr><th>Feature (WBS item)</th><th>Status</th><th>Linked in WBS</th></tr></thead>
+          <tbody>
+            <tr><td>Multi-bank payment</td><td><span class="chip running">In Progress</span></td><td class="muted small">Yes</td></tr>
+            <tr><td>Auto reconciliation</td><td><span class="chip running">In Progress</span></td><td class="muted small">Yes</td></tr>
+            <tr><td>Virtual account</td><td><span class="chip running">In Progress</span></td><td class="muted small">Yes</td></tr>
+          </tbody>
+        </table>
+        <div class="body">
+          <div class="pipeline">
+            <div class="st done">Design<b>Done</b></div><div class="gate"></div>
+            <div class="st cur">Build<b>62%</b></div><div class="gate"></div>
+            <div class="st">Test<b>Not started</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="MVP-03">
+        <div class="head"><span class="h3">MVP health</span><span class="x-f">Worst of the four dimensions</span><span class="rag a">At risk</span></div>
+        <div class="list-row"><div class="grow">Scope</div><span class="rag g">On track</span></div>
+        <div class="list-row"><div class="grow">Schedule</div><span class="rag a">At risk</span></div>
+        <div class="list-row"><div class="grow">Resource</div><span class="rag g">On track</span></div>
+        <div class="list-row"><div class="grow">Dependency</div><span class="rag a">At risk</span></div>
+        <div class="list-row"><div class="grow small muted">Health takes the worst of scope, schedule, resource and dependency; a dimension without data shows Unknown and never counts as On track.</div></div>
+      </div>
+
+      <div class="card" data-req="MVP-02">
+        <div class="head"><span class="h3">Dependencies</span></div>
+        <div class="list-row"><span class="tag">FS</span><div class="grow"><div class="title-line">Core API</div><div class="sub">From Core Platform (PRJ-005), computed Off track</div></div><span class="chip waiting">At risk</span></div>
+        <div class="list-row"><span class="tag">FS</span><div class="grow"><div class="title-line">Risk approval</div><div class="sub">Control function review</div></div><span class="chip">Pending</span></div>
+      </div>
+
+      <div class="card" data-req="BR-06">
+        <div class="head"><span class="h3">Release criteria</span></div>
+        <div class="list-row"><span class="check on">Outcome KPIs have baseline and target</span></div>
+        <div class="list-row"><span class="check">All linked features Done</span></div>
+        <div class="list-row"><span class="check">Dependencies resolved: Core API, Risk approval</span></div>
+        <div class="list-row"><span class="check">Test stage passed</span></div>
+      </div>
+
+      <div class="banner small" data-req="MVP-04"><span class="anno" data-n="5"></span><span>MVP objects are enabled for the Digital Products workspace. Creative Studio has them switched off and works with deliverables only.</span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">MVP-01, BR-39</span> Objective, customer problem, scope, release date, KPIs, owner and budget. Expected benefit shows "Not tracked" in an empty outline until benefits arrive in V2: a missing value is never displayed as $0, which would mean a measured zero.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">MVP-02</span> Features are WBS items linked to the MVP and its milestones; a committed MVP cannot keep an unlinked feature.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">MVP-03</span> Computed as in BRD Section 12.1. Progress = done work items linked to the MVP ÷ work items linked to it ("no linked work" when none). Health = the worst of scope, schedule, resource and dependency; a dimension without data shows Unknown. It is shown next to the project's status, so a healthy project with an at-risk MVP is visible.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">BR-06</span> Every MVP needs at least one measurable outcome KPI with baseline and target, plus release criteria.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">MVP-04</span> MVPs are a workspace option: on for product delivery, off for creative production, where deliverables are the unit of outcome.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">BR-39</span> Progress and health state the time of the newest data they include and the metric version, the same as on dashboards, reports and MCP answers.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Change requests · Metis wireframe</title>
+<meta name="wf:id" content="change-requests">
+<meta name="wf:title" content="Change requests and baseline">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="CHG-01 CHG-02 CHG-03 CHG-04 CHG-05 CHG-06 CHG-07 CHG-09 CHG-12 BR-05 BR-28 BR-29">
+<meta name="wf:poc" content="24 25">
+<meta name="wf:summary" content="Change register for a baselined project: CR detail with impact analysis, actions that depend on the viewer's role, a decision that needs a different approver and a rationale, and an approved CR whose baseline changes are reviewed before the PM applies them as baseline v2.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-pill { display: inline-flex; align-items: center; height: 26px; padding: 0 11px; border: 1px solid var(--line-strong); border-radius: 999px; font: 500 12.5px/1 var(--font-control); color: var(--muted); }
+  .x-pill.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .x-acts { display: flex; flex-wrap: wrap; gap: 6px; }
+  .x-new { color: var(--running-text); font-weight: 600; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="plan">
+<main>
+
+  <section class="row between">
+    <span class="seg"><span>Timeline</span><span>Board</span><span class="on">Changes</span><span>Reports</span></span>
+    <span class="btn primary">+ New change request</span>
+  </section>
+
+  <section class="banner accent row" data-req="CHG-06">
+    <b>Project baselined: CRs are enforced.</b>
+    <span>Baseline v1 captured 25 Jun 2026. Locked scope, dates, budget and critical dependencies change only through approved change requests.</span>
+    <span class="anno" data-n="1"></span>
+  </section>
+
+  <section class="stack" data-req="CHG-01 CHG-07">
+    <div class="row between">
+      <div class="row"><span class="x-pill on">All (2)</span><span class="x-pill">Open (1)</span><span class="x-pill">Approved (1)</span><span class="x-pill">Rejected (0)</span><span class="x-pill">Deferred (0)</span><span class="x-pill">Closed (0)</span></div>
+      <div class="row small"><span class="tag">Open 1</span><span class="tag">Approved 1 · 1 pending application</span><span class="tag">Rejected 0</span><span class="tag">Total logged 2</span></div>
+    </div>
+    <div class="card">
+      <table class="table">
+        <thead><tr><th>Ref</th><th>Change</th><th>Type</th><th>Priority</th><th>Status</th><th>Requester</th><th>Logged</th><th>Impacts</th><th></th></tr></thead>
+        <tbody>
+          <tr class="sel"><td class="code">CR-001</td><td>Add a 4th hero render angle</td><td>Scope</td><td><span class="chip waiting">Medium</span></td><td><span class="chip review">Under review</span></td><td>Nadia R.</td><td>2 Jul</td><td>1 item</td><td class="muted small">Open below</td></tr>
+          <tr><td class="code">CR-002</td><td>Move render farm to overnight queue</td><td>Schedule</td><td><span class="chip serious">High</span></td><td><span class="chip running">Approved, pending application</span></td><td>Denny K.</td><td>30 Jun</td><td>1 item</td><td><span class="btn secondary sm">Review changes</span> <span class="anno" data-n="5"></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" data-req="CHG-07 BR-05">
+    <div class="head"><span class="code">CR-002</span><span class="h3">Move render farm to overnight queue</span><span class="chip running">Approved, pending application</span></div>
+    <div class="body stack s">
+      <div class="banner warn"><b>Approved, not yet applied.</b><span>H. Le approved this change on 22 Sep 2026, 08:40: "overnight queue frees the farm". The baseline keeps the old value until the PM applies it.</span><span class="anno" data-n="8"></span></div>
+      <div class="label">Review baseline changes</div>
+      <table class="table">
+        <thead><tr><th>Field</th><th>Baseline v1 · 25 Jun 2026</th><th>After applying (baseline v2)</th><th>Difference</th></tr></thead>
+        <tbody>
+          <tr><td>1.1.2 Phase 2 Render Delivery · target date</td><td>10 Aug 2026</td><td class="x-new">12 Aug 2026</td><td>+2 days</td></tr>
+          <tr><td class="muted">Project target completion</td><td class="muted">2 Sep 2026</td><td class="muted">2 Sep 2026</td><td class="muted">No change</td></tr>
+          <tr><td class="muted">Scope (deliverables), budget, critical dependencies</td><td class="muted">As in baseline v1</td><td class="muted">As in baseline v1</td><td class="muted">No change</td></tr>
+        </tbody>
+      </table>
+      <div class="row"><span class="small muted">CR-002 unlocked only the field it changes. Applying records baseline v2 with a reference to CR-002; baseline v1 stays viewable.</span><span class="right btn secondary sm">Not now</span><span class="btn accent sm">Apply to baseline</span></div>
+      <div class="small muted">Shown to Nadia R. as PM. H. Le, the approver, sees the decision record; Denny K., the requester, sees the status only.</div>
+    </div>
+  </section>
+
+  <section class="card" data-req="CHG-02 CHG-03 CHG-04 CHG-05 CHG-09 CHG-12">
+    <div class="head"><span class="code">CR-001</span><span class="h3">Add a 4th hero render angle</span><span class="chip review">Under review</span></div>
+    <div class="grid" style="grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0">
+
+      <div class="stack" style="padding:14px;border-right:1px solid var(--line)">
+        <div class="grid c3">
+          <div class="field"><label>Requester</label><div class="input">Nadia R.</div></div>
+          <div class="field"><label>Type</label><div class="select">Scope</div></div>
+          <div class="field"><label>Priority</label><div class="select">Medium</div></div>
+        </div>
+        <div class="field"><label>What is changing? <span class="req">*</span> <span class="anno" data-n="2"></span></label><div class="textarea" style="min-height:40px">Client asked for one additional hero product angle beyond the agreed 51-render set.</div></div>
+        <div class="field"><label>Why? (justification) <span class="req">*</span></label><div class="textarea" style="min-height:40px">Northwind's marketing team wants a top-down angle for the campaign's social cut-downs.</div></div>
+        <div class="field"><label>Affected WBS items</label><div class="row"><span class="tag">1.1 51 Render Images ×</span><span class="btn ghost sm">+ Add item</span></div></div>
+        <div class="grid c3">
+          <div class="field"><label>Schedule impact (days)</label><div class="input">3</div></div>
+          <div class="field"><label>Budget impact</label><div class="input ph">Not entered</div></div>
+          <div class="field"><label>Resource impact (FTE)</label><div class="input ph">Not entered</div></div>
+        </div>
+        <div class="field"><label>Impact notes (cost, risk, quality)</label><div class="input">Adds about 3 days of render and review time.</div></div>
+        <div class="field"><label>Proposed action</label><div class="textarea" style="min-height:40px">Add a new sub-deliverable under 51 Render Images and re-baseline the Phase 2 dates.</div></div>
+        <div class="field"><label>Effective date</label><div class="input ph">Not set</div></div>
+      </div>
+
+      <div class="stack" style="padding:14px">
+        <div class="card sunk pad stack s">
+          <div class="label">Impact analysis <span class="anno" data-n="3"></span></div>
+          <div class="small"><b>What matters here:</b> the Phase 2 target date is baselined, so approving this re-baselines it. Everything else is a 3-day shift inside one deliverable.</div>
+          <div class="row"><b>1</b><span>item directly affected</span><span class="muted">·</span><b>0</b><span>downstream items could shift</span><span class="btn ghost sm">Open the full graph</span></div>
+          <div class="small">Locked field affected: 1.1 target date (baseline v1).</div>
+          <div class="small muted">Based on dependency links. Advisory only: nothing is rescheduled automatically.</div>
+        </div>
+        <div class="card pad stack s">
+          <div class="label">Review and decision <span class="anno" data-n="4"></span></div>
+          <div class="grid c2">
+            <div class="field"><label>Approver</label><div class="select"><span class="row"><span class="av">HL</span>H. Le</span></div></div>
+            <div class="field"><label>Status</label><div class="input">Under review</div></div>
+          </div>
+          <div class="banner warn small">Nadia R. requested this change, so she cannot approve it. A different approver decides.</div>
+          <div class="field"><label>Decision notes <span class="req">*</span></label><div class="textarea ph" style="min-height:40px">H. Le adds the rationale here; a decision without it is blocked</div></div>
+        </div>
+        <div class="card">
+          <div class="head"><span class="h3">Actions by role <span class="anno" data-n="7"></span></span><span class="small muted">Each viewer sees only their row</span></div>
+          <table class="table">
+            <thead><tr><th>Role</th><th>Who</th><th>Actions on this CR</th></tr></thead>
+            <tbody>
+              <tr class="sel"><td>Requester</td><td>Nadia R. (you)</td><td class="wrap"><div class="x-acts"><span class="btn secondary sm">Edit</span><span class="btn danger sm">Withdraw request</span></div></td></tr>
+              <tr><td>Approver</td><td>H. Le</td><td class="wrap"><div class="x-acts"><span class="btn accent sm">Approve</span><span class="btn danger sm">Reject</span><span class="btn secondary sm">Defer</span><span class="btn secondary sm">Request information</span></div></td></tr>
+              <tr><td>PM</td><td>Nadia R. (you)</td><td class="wrap small muted">Apply to baseline appears only after approval, as on CR-002 above</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="stack s">
+          <div class="label">History <span class="anno" data-n="6"></span></div>
+          <div class="list-row" style="padding:0;min-height:30px"><span class="av">NR</span><div class="grow small">Nadia R. submitted this change request · 2 Jul 2026, 9:20 PM</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">CHG-01, CHG-06</span> The register says whether the project is baselined. Before commitment it stays advisory as in the POC; after baseline v1 locked fields change only through approved CRs.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">CHG-02</span> POC fields plus budget impact, resource impact and effective date. What, Why, Type and at least one affected item or baseline field are mandatory.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">CHG-03</span> The material impact is stated in one line first, with the counts and the full dependency graph behind it, because an impact view grows with the plan and a long list buries the one thing that needs the decision. Impact analysis counts directly affected items and downstream items that could shift through dependency links, and names the locked fields involved. It never reschedules.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">CHG-04, CHG-09, BR-28</span> Approve, Reject, Defer and Request information, each with a required rationale. The requester cannot be the approver; the POC set Nadia R. as both requester and approver of CR-001.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">CHG-07</span> An approved CR stays "pending application" until the PM applies it. The register offers Review changes, not a direct Apply: Apply becomes available only after the baseline difference has been shown. Approved CRs left unapplied past the workspace threshold raise an attention item.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">CHG-05, CHG-12, BR-29</span> History cannot be edited. A submitted CR can be withdrawn with a reason but not deleted; the POC offered "Delete request" at any time.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">CHG-04, CHG-07, CHG-09</span> Actions follow the viewer's role: the requester edits or withdraws, the approver decides, the PM applies approved changes. A person never sees buttons they may not use; the table shows all three rows only to explain the rule, and the signed-in user's row is highlighted.</span></li>
+    <li><span class="anno" data-n="8"></span><span><span class="req">CHG-07, BR-05</span> Before Apply, the PM sees each unlocked field with its baseline v1 value and the value it will have in baseline v2; unchanged locked fields are listed as unchanged. Applying creates baseline v2 referencing CR-002 and closes the pending application.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

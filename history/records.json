@@ -1,0 +1,439 @@
+{
+  "history/brd/addendum-onboarding/2026-10-02-onboarding-design.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md",
+      "business/modules/M23-onboarding-and-data-intake.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/addendum-onboarding/2026-10-03-execution-rulings.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md",
+      "business/modules/M23-onboarding-and-data-intake.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/addendum-onboarding/2026-10-03-onboarding-addendum-plan.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md",
+      "business/modules/M23-onboarding-and-data-intake.md"
+    ],
+    "translation": "passages"
+  },
+  "history/brd/addendum-onboarding/option-catalogue.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md",
+      "business/modules/M23-onboarding-and-data-intake.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/addendum-onboarding/research/research-ai-onboarding.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md",
+      "business/modules/M23-onboarding-and-data-intake.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/addendum-onboarding/research/research-competitors.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md",
+      "business/modules/M23-onboarding-and-data-intake.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/addendum-onboarding/research/research-onboarding-patterns.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md",
+      "business/modules/M23-onboarding-and-data-intake.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/archive/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.0.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/archive/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.1.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/archive/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.2.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/archive/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.3.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/archive/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.4.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "none"
+  },
+  "history/brd/legacy/brd_v2_v3_converted.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "none"
+  },
+  "history/code-review/audits/round1-architecture-reviewer.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/audits/round1-code-reviewer-core-shell.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/audits/round1-code-reviewer-design-screens.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/audits/round1-testability-reviewer-core-shell.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/audits/round1-testability-reviewer-design-screens.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/audits/round1-testability-reviewer-e2e-gates.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/audits/round2-architecture-reviewer.md": {
+    "written": "2026-10-10",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "none"
+  },
+  "history/code-review/audits/round2-code-reviewer-core-shell.md": {
+    "written": "2026-10-10",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/audits/round2-code-reviewer-design-screens.md": {
+    "written": "2026-10-10",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/audits/round2-testability-reviewer-core-shell.md": {
+    "written": "2026-10-10",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "none"
+  },
+  "history/code-review/audits/round2-testability-reviewer-design-screens.md": {
+    "written": "2026-10-10",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "none"
+  },
+  "history/code-review/audits/round2-testability-reviewer-e2e-gates.md": {
+    "written": "2026-10-10",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "none"
+  },
+  "history/code-review/brief-round2.md": {
+    "written": "2026-10-10",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/brief.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "passages"
+  },
+  "history/code-review/evidences/probes.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "whole"
+  },
+  "history/code-review/report.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/develop.md",
+      "architecture/decisions/code-language-and-single-source.md"
+    ],
+    "translation": "whole"
+  },
+  "history/plans/2026-10-05-frontend-foundation.md": {
+    "written": "2026-10-08",
+    "replacedBy": [
+      "components/app/README.md",
+      "components/app/develop.md"
+    ],
+    "translation": "whole"
+  },
+  "history/plans/2026-10-06-frontend-overview-screen.md": {
+    "written": "2026-10-08",
+    "replacedBy": [
+      "components/app/README.md",
+      "components/app/develop.md"
+    ],
+    "translation": "whole"
+  },
+  "history/plans/2026-10-09-frontend-narrow-widths.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/README.md",
+      "components/app/develop.md"
+    ],
+    "translation": "whole"
+  },
+  "history/plans/2026-10-09-frontend-trace-and-gaps.md": {
+    "written": "2026-10-09",
+    "replacedBy": [
+      "components/app/README.md",
+      "components/app/develop.md"
+    ],
+    "translation": "whole"
+  },
+  "history/plans/2026-10-10-frontend-code-cleanup.md": {
+    "written": "2026-10-11",
+    "replacedBy": [
+      "components/app/README.md",
+      "components/app/develop.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/brd-findings-backend.md": {
+    "written": "2026-10-03",
+    "replacedBy": [],
+    "translation": "whole"
+  },
+  "history/reviews/gpt-review-prompt-frontend-stack.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "architecture/decisions/react-native-expo-single-codebase.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/gpt-review-prompt-round2.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/gpt-review-prompt-round3.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md",
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/gpt-review-prompt.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/metis-review-frontend-stack.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "architecture/decisions/react-native-expo-single-codebase.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/metis-review-tien-kha-thi.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/metis-review-vong-2.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/metis-review-vong-3.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md",
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/poc-frameworks-coverage.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/modules/M08-deliverable-builder-and-process-frameworks.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/review-disposition-frontend-stack.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "architecture/decisions/react-native-expo-single-codebase.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/review-disposition-round2.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/review-disposition-round3.md": {
+    "written": "2026-10-03",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md",
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_Addendum_Onboarding_v1.1.md"
+    ],
+    "translation": "whole"
+  },
+  "history/reviews/review-disposition.md": {
+    "written": "2026-10-02",
+    "replacedBy": [
+      "business/requirements/Enterprise_Portfolio_Intelligence_Governance_Platform_BRD_v4.5.md"
+    ],
+    "translation": "whole"
+  },
+  "history/specs/2026-10-05-cross-platform-research.md": {
+    "written": "2026-10-05",
+    "replacedBy": [
+      "architecture/decisions/react-native-expo-single-codebase.md"
+    ],
+    "translation": "whole"
+  },
+  "history/specs/2026-10-05-frontend-foundation-spec.md": {
+    "written": "2026-10-10",
+    "replacedBy": [
+      "components/app/README.md",
+      "components/app/interfaces.md",
+      "architecture/decisions/react-native-expo-single-codebase.md"
+    ],
+    "translation": "whole"
+  },
+  "history/specs/frontend-brainstorm-log.md": {
+    "written": "2026-10-10",
+    "replacedBy": [
+      "architecture/decisions/react-native-expo-single-codebase.md"
+    ],
+    "translation": "whole"
+  },
+  "history/plans/2026-10-11-repos-and-moves.md": {
+    "written": "2026-10-12",
+    "replacedBy": [
+      "README.md",
+      "AGENTS.md"
+    ],
+    "translation": "none"
+  },
+  "history/specs/2026-10-14-backend-skeleton-design.md": {
+    "written": "2026-10-15",
+    "replacedBy": [
+      "components/core/README.md",
+      "components/core/interfaces.md",
+      "architecture/contract.md"
+    ],
+    "translation": "none"
+  },
+  "history/plans/2026-10-14-backend-foundation-plan.md": {
+    "written": "2026-10-14",
+    "replacedBy": [
+      "components/core/develop.md",
+      "components/core/troubleshoot.md"
+    ],
+    "translation": "none"
+  },
+  "history/plans/2026-10-14-backend-platform-plan.md": {
+    "written": "2026-10-15",
+    "replacedBy": [
+      "components/core/develop.md",
+      "components/core/troubleshoot.md"
+    ],
+    "translation": "none"
+  },
+  "history/plans/2026-10-14-backend-overview-plan.md": {
+    "written": "2026-10-16",
+    "replacedBy": [
+      "components/core/develop.md",
+      "components/core/troubleshoot.md"
+    ],
+    "translation": "none"
+  },
+  "history/plans/2026-10-14-backend-delivery-plan.md": {
+    "written": "2026-10-16",
+    "replacedBy": [
+      "components/core/develop.md",
+      "components/core/troubleshoot.md"
+    ],
+    "translation": "none"
+  }
+}

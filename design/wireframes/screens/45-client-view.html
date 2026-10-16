@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Client view of an invited project · Metis wireframe</title>
+<meta name="wf:id" content="client-view">
+<meta name="wf:title" content="Client view of an invited project">
+<meta name="wf:area" content="Access &amp; tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLT-02 PLT-04 PLT-07 CHR-06 CHR-08 WBS-12 WBS-16 WBS-17 RPT-05">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="What an invited client representative sees after signing in: only the invited project, the inputs they owe, the approvals waiting for them, charter sign-off, comments on their items, reports shared with them (planned), and a plain list of what stays internal.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-head { display: flex; align-items: center; gap: 16px; padding: 14px 28px; border-bottom: 1px solid var(--line); background: var(--canvas); }
+  .x-head img { height: 28px; }
+  .x-head .x-sep { width: 1px; height: 28px; background: var(--line); }
+  .x-body { padding: 24px 28px 32px; display: flex; flex-direction: column; gap: var(--gap-lg); background: var(--surface-sunk); }
+  .x-item .list-row { align-items: flex-start; padding-top: 12px; padding-bottom: 12px; }
+  .x-file { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--canvas); margin-top: 8px; }
+  .x-decide { border-top: 1px solid var(--line); padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+  .x-thread .list-row { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
+  .x-never li { margin: 4px 0; }
+  .x-never ul { margin: 0; padding-left: 18px; }
+  .x-planned { opacity: .6; }
+</style>
+</head>
+<body data-shell="none">
+<main>
+
+  <header class="x-head">
+    <img src="../../brand/logo/metis-wordmark.svg" alt="Metis">
+    <span class="x-sep"></span>
+    <div style="flex:1;min-width:0">
+      <div class="h3">Meridian CGI Campaign <span class="anno" data-n="1"></span></div>
+      <div class="small muted">Northwind Furniture Co. · invited to Meridian CGI Campaign</div>
+    </div>
+    <div class="row" style="flex-wrap:nowrap;gap:8px">
+      <span class="av lg client">JP</span>
+      <div><div class="small"><b>J. Park</b></div><div class="small muted">Client · j.park@northwind.example</div></div>
+    </div>
+    <span class="btn ghost sm">Sign out</span>
+  </header>
+
+  <div class="x-body">
+
+    <section class="row between">
+      <div>
+        <div class="title">Hello, J. Park</div>
+        <div class="muted small" style="margin-top:4px">Your project with Acme Holdings, run by project manager Nadia R. You see this project only.</div>
+      </div>
+      <div class="row"><span class="chip good">Nothing due from you</span><span class="chip waiting">1 approval not ready yet</span></div>
+    </section>
+
+    <section class="grid" style="grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr)">
+
+      <div class="stack">
+
+        <div class="card x-item" data-req="CHR-06 WBS-12 WBS-17 PLT-07">
+          <div class="head"><span class="h3">What we need from you <span class="anno" data-n="2"></span></span><span class="chip good">All delivered</span></div>
+          <div class="list-row">
+            <div class="grow">
+              <div class="row" style="gap:8px"><span class="code">2.1</span><span class="lbl inreq">Input Required</span><span class="title-line">CAD / Design Files</span></div>
+              <div class="sub">Product CAD geometry from the client · target 3 Jul 2026 · you are the person in charge</div>
+              <div class="x-file">
+                <span class="tag">ZIP</span>
+                <div class="grow" style="min-width:0"><div class="small"><b>CAD package v3.zip</b> · 186 MB</div><div class="small muted">Uploaded by you, 3 Jul 2026, 08:47 · malware scan passed</div></div>
+                <span class="btn ghost sm">Download</span>
+              </div>
+            </div>
+            <span class="chip good">Done</span>
+          </div>
+          <div style="padding:0 14px 14px">
+            <div class="empty" style="padding:14px">Add a revised file: drop it here or <a>browse</a><div class="small">Up to 250 MB per file · PDF, Office documents, images, ZIP, MP4 · scanned before anyone can open it</div></div>
+            <div class="small muted" style="margin-top:8px">Nothing else is due from you. New requests from the project team appear here with a target date, and you get an email.</div>
+          </div>
+        </div>
+
+        <div class="card x-item" data-req="WBS-12">
+          <div class="head"><span class="h3">Waiting for your approval <span class="anno" data-n="3"></span></span><span class="chip waiting">Not ready for review</span></div>
+          <div class="list-row">
+            <div class="grow">
+              <div class="row" style="gap:8px"><span class="code">3.2</span><span class="lbl gate">Approval Gate</span><span class="title-line">Client Approval Gate</span></div>
+              <div class="sub">Client approval of final set · requested by Nadia R. · you are the approver · planned 20 Aug to 28 Aug 2026</div>
+              <div class="sub">Opens when the final set is ready: 1.1 51 Render Images and 1.2 3D Film (2 to 3 minutes) are not delivered yet.</div>
+            </div>
+          </div>
+          <div class="x-decide">
+            <div class="row"><span class="btn accent sm disabled">Approve</span><span class="btn secondary sm disabled">Request changes</span><span class="small muted">Available once the final set is ready for your review</span></div>
+            <div class="field"><label>Comment for the project team</label><div class="textarea ph" style="min-height:52px">Add a comment, for example what you expect in the final set</div></div>
+            <div class="row"><span class="btn primary sm">Post comment</span><span class="small muted">The project team sees it on item 3.2</span></div>
+          </div>
+        </div>
+
+        <div class="card x-thread" data-req="WBS-16">
+          <div class="head"><span class="h3">Comments on your items <span class="anno" data-n="4"></span></span><span class="small muted">3.2 Client Approval Gate</span></div>
+          <div class="list-row"><span class="av client">JP</span><div class="grow"><div class="title-line">J. Park (you)</div><div class="small">Please include the top-down angle we discussed today.</div><div class="sub">18 Sep 2026</div></div></div>
+          <div class="list-row"><span class="av">NR</span><div class="grow"><div class="title-line">Nadia R. · Project Manager</div><div class="small">Noted. We are confirming the impact of a 4th angle and hold the Phase 2 renders until it is decided. The final set comes to you for approval after that.</div><div class="sub">19 Sep 2026</div></div></div>
+          <div style="padding:12px 14px"><div class="input ph">Reply to Nadia R.; @mention someone on the project team</div></div>
+        </div>
+
+      </div>
+
+      <div class="stack">
+
+        <div class="card" data-req="CHR-08">
+          <div class="head"><span class="h3">Charter sign-off <span class="anno" data-n="5"></span></span></div>
+          <div class="list-row" style="align-items:flex-start;padding-top:12px;padding-bottom:12px">
+            <div class="grow">
+              <div class="row" style="gap:8px"><span class="title-line">Rev 1</span><span class="chip good">Signed by you</span></div>
+              <div class="sub">25 Jun 2026 · in-app sign-off, with H. Le (Project Owner) and Nadia R. (Project Manager) · frozen</div>
+              <div class="x-file"><span class="tag">PDF</span><div class="grow small"><b>Meridian charter Rev 1, signed.pdf</b> · 1.2 MB</div><span class="btn ghost sm">Open</span></div>
+            </div>
+          </div>
+          <div class="list-row" style="align-items:flex-start;padding-top:12px;padding-bottom:12px">
+            <div class="grow">
+              <div class="row" style="gap:8px"><span class="title-line">Rev 2</span><span class="chip waiting">Not issued yet</span></div>
+              <div class="sub">Adds a 4th hero render angle. It waits for the decision on the angle you asked for on 18 Sep; once Nadia R. issues it, you sign it here.</div>
+              <div class="row" style="margin-top:8px"><span class="btn accent sm disabled">Sign Rev 2</span><span class="small muted">Available when Rev 2 is issued</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-req="RPT-05">
+          <div class="head"><span class="h3">Reports shared with you <span class="anno" data-n="6"></span></span><span class="tag future">Planned V2</span></div>
+          <div class="list-row x-planned" style="align-items:flex-start;padding-top:12px;padding-bottom:12px">
+            <div class="grow">
+              <div class="title-line">Weekly Status: 15 Sep to 22 Sep 2026 · client copy</div>
+              <div class="sub">Health summary, Coming up and Milestones · data as of 22 Sep 2026 09:40 · metrics v1 · read-only</div>
+            </div>
+            <span class="btn ghost sm">Open</span><span class="btn ghost sm">PDF</span>
+          </div>
+          <div class="body small muted" style="padding-top:10px">Until report sharing is available, Nadia R. sends reports to you as PDF.</div>
+        </div>
+
+        <div class="card sunk pad x-never" data-req="PLT-02 PLT-04">
+          <div class="row" style="margin-bottom:6px"><span class="h3">What you never see here <span class="anno" data-n="7"></span></span></div>
+          <ul class="small">
+            <li>Other projects and workspaces of Acme Holdings</li>
+            <li>Budget, contract value and invoices</li>
+            <li>Internal risks and the risk register</li>
+            <li>Team workload and internal assignments</li>
+            <li>Change requests and the internal journal</li>
+            <li>Workspace settings, members and the audit log</li>
+          </ul>
+          <div class="small muted" style="margin-top:8px">Your access: role Client · Meridian CGI Campaign only · managed by the project team.</div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLT-02</span> This view exists only if decision D-02 approves client access, at Release 1 milestone 1B. An external user signs in with a magic link or a local account (01-sign-in) and lands here: one invited project, no sidebar, no workspace switcher, no search across the tenant. The dashed round avatar marks an external person everywhere in the product.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">CHR-06, WBS-12, WBS-17, PLT-07</span> The client's commitments are the WBS items labelled Input Required where the client is the person in charge, the same list as charter section VI. The client can attach files to these items only; uploads follow the workspace rules (250 MB per file, allowed types, malware scan before anyone can open them) and downloads use time-limited links.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">WBS-12</span> Approval items are WBS items labelled Approval Gate where the client is named approver. Approve and Request changes stay disabled with the reason until the work is ready for review; a disabled button means "not allowed yet". Both decisions need a comment and are recorded in the item's activity with the signer and time.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">WBS-16</span> The client reads and writes comments only on items they are involved in, posted as the signed-in user; @mentions reach people on the project team, who are notified as usual.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">CHR-08</span> Sign-off is recorded per authenticated signer, date and revision. A signed revision is frozen; a new revision is signed here once the project manager issues it.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">RPT-05</span> Sharing saved reports with external users is a later-phase feature (decision D-02). A shared report would be a read-only client copy made from selected sections, with its as-of time and metric version; it never includes the internal journal, item notes or change requests.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">PLT-04, PLT-02</span> What stays internal is enforced by the server, not only hidden in this view: a request for anything outside the invited project is rejected, and the project team can revoke the client's access at once.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

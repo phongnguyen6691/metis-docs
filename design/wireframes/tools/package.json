@@ -1,0 +1,11 @@
+{
+  "name": "metis-wireframe-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Renders wireframe HTML to PNG with the locally installed Google Chrome and builds manifest.json and index.html.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}

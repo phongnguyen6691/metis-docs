@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gate review · Metis wireframe</title>
+<meta name="wf:id" content="gate-review">
+<meta name="wf:title" content="Gate review">
+<meta name="wf:area" content="Workspace & governance">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="GOV-08 GOV-09 GOV-13 GOV-14 GOV-15 CHG-11 MCP-08 BR-17 BR-18 BR-30 BR-42">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Formal stage-exit review: readiness evidence, risks, dependencies and impact, approver votes against quorum, a decision with rationale and actions, Pass options locked with the reason while mandatory artifacts are missing, waivers, and a decision draft prepared through MCP.">
+<style>
+  .seg span.x-off { opacity: .45; text-decoration: line-through; }
+</style>
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-workspace="Digital Products" data-crumbs="Digital Products / Growth / MSME Transformation / Merchant Onboarding" data-project="Merchant Onboarding" data-tab="governance" data-client="Internal · MSME Transformation" data-pm="M. Johnson" data-stage="Solution · stage 3 of 7" data-rag="a" data-rag-label="At risk" data-framework="Company A Digital Delivery v2.1" data-baseline="Not baselined">
+<main>
+
+  <div class="banner accent" data-req="MCP-08">
+    <span class="av ai">AI</span>
+    <div style="flex:1">A decision draft was prepared via MCP by A. Wong's assistant (token Gate prep) at 08:55: "Pass with conditions". It cannot be confirmed while 2 mandatory artifacts are missing; nothing is decided until an approver submits a decision here. <span class="anno" data-n="1"></span></div>
+    <span class="btn secondary sm">Review draft</span>
+  </div>
+
+  <section class="card" data-req="GOV-14">
+    <div class="body stack s">
+      <div class="row between"><span class="h3">Lifecycle · Company A Digital Delivery v2.1</span><span class="small muted">Stage 3 of 7 · started 26 Aug 2026</span></div>
+      <div class="pipeline">
+        <div class="st done">Discovery<div class="small muted">passed 12 Jun</div></div><span class="gate"></span>
+        <div class="st done">Design<div class="small muted">passed with conditions 21 Aug</div></div><span class="gate"></span>
+        <div class="st cur">Solution<div class="small muted">gate due 17 Sep · 5 days late</div></div><span class="gate"></span>
+        <div class="st">Development</div><span class="gate"></span>
+        <div class="st">Test</div><span class="gate"></span>
+        <div class="st">GTM</div><span class="gate"></span>
+        <div class="st">Retro</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr)">
+    <div class="stack">
+      <div class="card" data-req="GOV-14 GOV-09">
+        <div class="head"><span class="h3">Solution gate readiness <span class="anno" data-n="2"></span></span><span class="chip critical">Overdue 5 days</span></div>
+        <div class="body grid c4">
+          <div class="card kpi alert"><div class="k-label">Mandatory artifacts</div><div class="k-value">3 of 5</div><div class="k-delta"><span class="up-bad">2 missing</span></div></div>
+          <div class="card kpi"><div class="k-label">Open risks</div><div class="k-value">2</div><div class="k-delta">1 high</div></div>
+          <div class="card kpi"><div class="k-label">Dependencies at risk</div><div class="k-value">1</div></div>
+          <div class="card kpi"><div class="k-label">Budget impact</div><div class="k-value">+$90K</div><div class="k-delta">+7.5% on $1.2M</div></div>
+        </div>
+        <table class="table">
+          <thead><tr><th>Mandatory artifact <span class="anno" data-n="3"></span></th><th>Owner</th><th>Status</th><th>Evidence</th></tr></thead>
+          <tbody>
+            <tr><td class="wrap">Architecture document</td><td class="wrap">L. Wang</td><td><span class="chip good">Attached</span></td><td class="wrap small">architecture-v3.pdf · 10 Sep</td></tr>
+            <tr><td class="wrap">NFR list</td><td class="wrap">L. Wang</td><td><span class="chip critical">Sign-off missing</span></td><td class="wrap small muted">14 NFRs listed · sign-off not recorded</td></tr>
+            <tr><td class="wrap">Integration list</td><td class="wrap">L. Wang</td><td><span class="chip good">Complete</span></td><td class="wrap small">6 integrations</td></tr>
+            <tr><td class="wrap">Security and risk assessment</td><td class="wrap">Security</td><td><span class="chip critical">Missing</span></td><td class="wrap small muted">Requested 15 Sep</td></tr>
+            <tr><td class="wrap">Estimate</td><td class="wrap">M. Johnson</td><td><span class="chip waiting">Waived to 2 Oct</span></td><td class="wrap small muted">Waiver W-04</td></tr>
+          </tbody>
+        </table>
+        <div class="body grid c2">
+          <div class="stack s">
+            <div class="label">Open risks</div>
+            <div class="list-row" style="padding:0"><div class="grow">Payment partner API rate limits</div><span class="chip serious">High</span></div>
+            <div class="list-row" style="padding:0"><div class="grow">KYC vendor contract not signed</div><span class="chip waiting">Medium</span></div>
+          </div>
+          <div class="stack s">
+            <div class="label">Dependencies</div>
+            <div class="list-row" style="padding:0"><div class="grow">Core API v3 from Core Platform</div><span class="chip critical">12 days late</span></div>
+            <div class="label" style="margin-top:6px">Resource impact</div>
+            <div class="small">Development needs 6.5 FTE: Engineering 4, QA 1.5, UX 1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-req="GOV-15 CHG-11">
+        <div class="head"><span class="h3">Decision history <span class="anno" data-n="5"></span></span><span class="btn ghost sm">Decision Log</span></div>
+        <div class="list-row"><span class="chip good">Pass</span><div class="grow"><div class="title-line">Discovery gate · 12 Jun 2026</div><div class="sub">A. Wong, L. Wang · rationale: strong MSME demand evidence</div></div></div>
+        <div class="list-row"><span class="chip waiting">Pass with conditions</span><div class="grow"><div class="title-line">Design gate · 21 Aug 2026</div><div class="sub">Condition: accessibility review before Development · owner UX lead · due 30 Sep · open</div></div></div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="GOV-08">
+        <div class="head"><span class="h3">Approvers</span><span class="chip">Votes 1/3 · quorum 2/3</span></div>
+        <div class="list-row"><span class="av">LW</span><div class="grow"><div class="title-line">L. Wang · Engineering lead</div><div class="sub">"Security assessment must exist before build starts."</div></div><span class="chip serious">Rework</span></div>
+        <div class="list-row"><span class="av">AW</span><div class="grow"><div class="title-line">A. Wong · Product Director</div><div class="sub">Draft prepared via MCP, not confirmed</div></div><span class="chip review">Draft</span></div>
+        <div class="list-row"><span class="av">SC</span><div class="grow"><div class="title-line">Control function: Security</div><div class="sub">Not voted</div></div><span class="chip">Pending</span></div>
+      </div>
+
+      <div class="card" data-req="GOV-08 BR-30">
+        <div class="head"><span class="h3">Your decision <span class="anno" data-n="4"></span></span><span class="muted small">as A. Wong</span></div>
+        <div class="body stack s">
+          <div class="seg"><span class="x-off">Pass</span><span class="x-off">Pass with conditions</span><span class="on">Rework</span><span>Hold</span><span>Reject</span></div>
+          <div class="banner warn small" data-req="BR-42 GOV-09"><span>🔒</span><div style="flex:1"><b>2 blockers before you can decide</b> <span class="anno" data-n="7"></span><div class="small" style="margin-top:4px">1. Security and risk assessment: not attached. Owner L. Wang. <span class="btn ghost sm">Open the artifact</span> <span class="btn ghost sm">Remind L. Wang</span></div><div class="small" style="margin-top:3px">2. NFR list: attached, sign-off not recorded. Owner L. Wang. <span class="btn ghost sm">Open the artifact</span> <span class="btn ghost sm">Request sign-off</span></div></div><span class="btn secondary sm">Request waiver</span></div>
+          <div class="field"><label>Rationale <span class="req">*</span></label><div class="textarea">The security and risk assessment and the NFR sign-off must exist before Development starts; resubmit the gate when both are attached.</div></div>
+          <div class="label">Rework actions</div>
+          <table class="table">
+            <thead><tr><th>Action</th><th>Owner</th><th>Due</th></tr></thead>
+            <tbody>
+              <tr><td class="wrap">Attach security and risk assessment</td><td>Security lead</td><td>29 Sep</td></tr>
+              <tr><td class="wrap">Record the NFR list sign-off</td><td>L. Wang</td><td>26 Sep</td></tr>
+            </tbody>
+          </table>
+          <div class="row between"><span class="btn secondary sm">Request information</span><span class="btn accent">Submit decision</span></div>
+          <div class="small muted">After approval a gate decision cannot be edited; corrections go through a correction workflow and both entries stay in the Decision Log.</div>
+        </div>
+      </div>
+
+      <div class="card" data-req="GOV-13">
+        <div class="head"><span class="h3">Waiver W-04 <span class="anno" data-n="6"></span></span><span class="chip waiting">Active</span></div>
+        <div class="body">
+          <dl class="kv">
+            <dt>Rule waived</dt><dd>Mandatory artifact: Estimate</dd>
+            <dt>Reason</dt><dd>Vendor quote arrives 30 Sep</dd>
+            <dt>Approved by</dt><dd>Linh T., 18 Sep 2026</dd>
+            <dt>Expires</dt><dd>2 Oct 2026, then the criterion blocks again</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">MCP-08</span> An AI client can prepare a decision, never make it; the draft waits for a person to confirm it in the app.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">GOV-14</span> Readiness shows evidence, open risks, dependencies, budget and resource impact and decision history before the meeting.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">GOV-09, BR-17</span> The project cannot leave Solution while a mandatory artifact is missing, unless an approved waiver that has not expired covers it; here the estimate is covered by waiver W-04 and two artifacts are missing.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">GOV-08, BR-30, BR-18</span> Five decision options and a required rationale; votes always read "Votes 1/3 · quorum 2/3" (votes cast of approvers, votes needed of approvers). An approved decision is immutable except through a correction workflow.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">GOV-15, CHG-11</span> Conditions become tracked actions with owner and due date; every gate decision is linked to evidence and stored in the Decision Log.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">GOV-13</span> A waiver names the rule, reason, approver and expiry; when it expires the criterion blocks again and an attention item is raised.</span></li>
+    <li><span class="anno" data-n="7"></span><span> A disabled decision is not an explanation: the banner lists each blocker by name with its owner and a link to the artifact, so the approver can clear it or request a waiver from here rather than leaving to find out why. <span class="req">BR-42, GOV-09, BR-17</span> The server decides which options are eligible: Pass and Pass with conditions stay disabled, with the missing artifacts named, until every mandatory artifact exists or is covered by a waiver. "Request waiver" starts a waiver request; Rework, Hold and Reject remain available. The server rejects an ineligible decision from any channel, including a confirmed MCP draft.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project overview · Metis wireframe</title>
+<meta name="wf:id" content="project-overview">
+<meta name="wf:title" content="Project overview">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="OVW-01 OVW-02 OVW-03 OVW-04 OVW-05 BR-39">
+<meta name="wf:poc" content="02 03">
+<meta name="wf:summary" content="Read-only project dashboard computed from the WBS with the BRD Section 12 metric definitions; every tile drills down.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="overview">
+<main>
+
+  <section class="row between">
+    <div class="row"><span class="h2">Overview</span><span class="fresh">As of 22 Sep 2026, 09:40 · metrics v1</span><span class="muted small">12 work items · Category rows excluded</span></div>
+    <div class="row"><span class="seg"><span class="on">This project</span><span>My items</span></span><span class="btn secondary sm">Export</span></div>
+  </section>
+
+  <section class="grid c8" data-req="OVW-01 OVW-04">
+    <div class="card kpi"><div class="k-label">Work items <span class="anno" data-n="1"></span></div><div class="k-value">12</div><div class="k-delta">6 category rows not counted</div></div>
+    <div class="card kpi"><div class="k-label">Deliverables</div><div class="k-value">3</div><div class="k-delta">Type = Deliverable</div></div>
+    <div class="card kpi"><div class="k-label">Work packages</div><div class="k-value">2</div></div>
+    <div class="card kpi"><div class="k-label">Milestones</div><div class="k-value">3</div><div class="k-delta">3 overdue</div></div>
+    <div class="card kpi"><div class="k-label">Approval gates</div><div class="k-value">2</div><div class="k-delta">2 overdue</div></div>
+    <div class="card kpi"><div class="k-label">Blocked</div><div class="k-value">0</div></div>
+    <div class="card kpi alert"><div class="k-label">Delayed vs baseline <span class="anno" data-n="2"></span></div><div class="k-value">2</div><div class="k-delta"><span class="up-bad">+2</span> since baseline v1</div></div>
+    <div class="card kpi alert"><div class="k-label">High risk</div><div class="k-value">4</div><div class="k-delta">1 critical</div></div>
+  </section>
+
+  <section class="grid c3">
+    <div class="card" data-req="OVW-02">
+      <div class="head"><span class="h3">Overall progress <span class="anno" data-n="3"></span></span></div>
+      <div class="body stack s">
+        <div class="row"><span style="font:600 28px var(--font-ui)">25%</span><span class="muted">3 of 12 work items done</span></div>
+        <div class="meter"><span style="width:25%"></span></div>
+        <div class="small muted">Same value as the Weekly Status report for the same date.</div>
+      </div>
+    </div>
+    <div class="card" data-req="OVW-02">
+      <div class="head"><span class="h3">Status breakdown</span><span class="btn ghost sm">Table view</span></div>
+      <div class="body stack s">
+        <div class="stackbar"><span class="f-good" style="width:25%"></span><span class="f-running" style="width:25%"></span><span class="f-waiting" style="width:8.3%"></span><span class="f-neutral" style="width:41.7%"></span></div>
+        <div class="legend"><span><i class="f-good"></i>Done 3</span><span><i class="f-running"></i>In Progress 3</span><span><i class="f-waiting"></i>Waiting 1</span><span><i class="f-critical"></i>Blocked 0</span><span><i class="f-neutral"></i>Not Started 5</span></div>
+      </div>
+    </div>
+    <div class="card" data-req="OVW-05">
+      <div class="head"><span class="h3">Health <span class="anno" data-n="4"></span></span></div>
+      <div class="body stack s">
+        <div class="row between"><span class="muted small">Declared by PM</span><span class="rag a">At risk</span></div>
+        <div class="row between"><span class="muted small">Computed</span><span class="rag r">Off track</span></div>
+        <div class="banner warn small">Declared health is better than computed. Delivery: 9 overdue items including 3 milestones. Risk: 1 critical risk without mitigation.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid c2">
+    <div class="card" data-req="OVW-02">
+      <div class="head"><span class="h3">Progress by category</span><span class="muted small">done / work items</span></div>
+      <div class="body hbars">
+        <span>Deliverables</span><span class="track"><span class="f-good" style="width:0%"></span><span class="f-neutral" style="width:100%"></span></span><span class="val">0 / 5</span>
+        <span>Technical</span><span class="track"><span class="f-good" style="width:100%"></span></span><span class="val">2 / 2</span>
+        <span>Quality</span><span class="track"><span class="f-neutral" style="width:100%"></span></span><span class="val">0 / 2</span>
+        <span>Timeline</span><span class="track"><span class="f-neutral" style="width:100%"></span></span><span class="val">0 / 1</span>
+        <span>Resource</span><span class="track"><span class="f-good" style="width:100%"></span></span><span class="val">1 / 1</span>
+        <span>Risk</span><span class="track"><span class="f-neutral" style="width:100%"></span></span><span class="val">0 / 1</span>
+      </div>
+    </div>
+    <div class="card" data-req="OVW-03">
+      <div class="head"><span class="h3">Workload by PIC</span><span class="muted small">open items only</span></div>
+      <div class="body hbars">
+        <span class="row"><span class="av">DK</span>Denny K.</span><span class="track"><span class="s1" style="width:64%"></span></span><span class="val">4</span>
+        <span class="row"><span class="av">NR</span>Nadia R.</span><span class="track"><span class="s1" style="width:48%"></span></span><span class="val">3</span>
+        <span class="row"><span class="av">SW</span>Sasha W.</span><span class="track"><span class="s1" style="width:16%"></span></span><span class="val">1</span>
+        <span class="row"><span class="av">AL</span>Art Lead</span><span class="track"><span class="s1" style="width:16%"></span></span><span class="val">1</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid c3" data-req="OVW-03 OVW-04">
+    <div class="card">
+      <div class="head"><span class="h3">Upcoming milestones & gates <span class="anno" data-n="5"></span></span><span class="btn ghost sm">View in WBS</span></div>
+      <div class="list-row"><span class="grow muted small">None due from today. 3 milestones and 2 gates are overdue (see Overdue).</span></div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="h3">Overdue</span><span class="chip critical">9</span></div>
+      <div class="list-row"><span class="code">1.1.1</span><span class="grow"><span class="lbl ms"></span> Phase 1 Render Delivery</span><span class="small" style="color:var(--critical-text)">60d</span></div>
+      <div class="list-row"><span class="code">3.1</span><span class="grow"><span class="lbl gate"></span> Visual Quality Approval</span><span class="small" style="color:var(--critical-text)">59d</span></div>
+      <div class="list-row"><span class="code">1.1</span><span class="grow">51 Render Images</span><span class="small" style="color:var(--critical-text)">43d</span></div>
+      <div class="list-row"><span class="code">1.1.2</span><span class="grow"><span class="lbl ms"></span> Phase 2 Render Delivery</span><span class="small" style="color:var(--critical-text)">43d</span></div>
+      <div class="list-row"><span class="muted small">+ 5 more · open in Focus</span></div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="h3">High & critical risk items</span><span class="chip serious">4</span></div>
+      <div class="list-row"><span class="code">6.1</span><span class="grow">Client Feedback Risk</span><span class="chip critical">Critical</span></div>
+      <div class="list-row"><span class="code">1.2</span><span class="grow">3D Film (2 to 3 minutes)</span><span class="chip serious">High</span></div>
+      <div class="list-row"><span class="code">3.2</span><span class="grow"><span class="lbl gate"></span> Client Approval Gate</span><span class="chip serious">High</span></div>
+      <div class="list-row"><span class="code">4.1</span><span class="grow"><span class="lbl risk"></span> Timeline Risk</span><span class="chip serious">High</span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">OVW-01, BR-24, BR-39</span> Counts follow BRD Section 12 and state their as-of time and metric version: Category rows are grouping nodes and are never counted. The POC showed 18 items and 22% here because it counted them.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">OVW-01</span> Delayed compares current target dates with the baseline; Overdue compares with today. Before a baseline exists the tile shows "Not baselined".</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">OVW-02</span> A meter replaces the POC donut (dataviz rule: progress is one number). Status breakdown is a stacked bar with a legend and a table view.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">OVW-05, BR-08</span> Declared versus computed health. A declared Green with a computed Red is flagged as green-but-risky in the executive attention queue.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">OVW-03, OVW-04</span> "Upcoming" only lists items with a target date from today; every tile, segment and row opens the filtered WBS or the item.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

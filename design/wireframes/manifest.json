@@ -1,0 +1,1304 @@
+{
+  "name": "Metis wireframes",
+  "generated": "2026-10-03",
+  "conventions": "Open screens/*.html in a browser. Meta tags wf:* carry id, area, phase, requirement IDs (BRD v4.3 and its onboarding addendum) and POC screenshot numbers; data-req attributes mark sections; .wf-notes holds numbered annotations. Shared chrome comes from assets/shell.js, components from assets/wireframe.css, tokens from ../brand/tokens.css.",
+  "areas": [
+    "Access & tenancy",
+    "Onboarding",
+    "Workspace & governance",
+    "Personal & collaboration",
+    "Portfolio",
+    "Project execution"
+  ],
+  "screens": [
+    {
+      "order": 1,
+      "id": "sign-in",
+      "title": "Sign in",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "PLT-01",
+        "PLT-02",
+        "PLT-03",
+        "TEN-03"
+      ],
+      "poc": [
+        "01"
+      ],
+      "summary": "Tenant-aware sign-in: SSO by work email, email and password with MFA, magic link for invited external users, invitation acceptance, no public demo.",
+      "file": "01-sign-in",
+      "html": "screens/01-sign-in.html",
+      "png": "png/01-sign-in.png"
+    },
+    {
+      "order": 2,
+      "id": "tenant-admin-users",
+      "title": "Tenant admin: users and roles",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "TEN-04",
+        "PLT-03",
+        "PLT-04",
+        "WSP-11",
+        "TEN-11",
+        "BR-26"
+      ],
+      "poc": [],
+      "summary": "Tenant admin manages every user of the organization: invitations, workspace and project roles, deactivation that keeps history, and SCIM provisioning later.",
+      "file": "02-tenant-admin-users",
+      "html": "screens/02-tenant-admin-users.html",
+      "png": "png/02-tenant-admin-users.png"
+    },
+    {
+      "order": 3,
+      "id": "tenant-admin-security",
+      "title": "Tenant admin: sign-in and security",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "TEN-03",
+        "TEN-04",
+        "TEN-09",
+        "PLT-01"
+      ],
+      "poc": [],
+      "summary": "Tenant-level identity: SSO with SAML 2.0 or OIDC and verified domains, MFA and password policy, session lifetime, and time-limited support access grants for provider staff.",
+      "file": "03-tenant-admin-security",
+      "html": "screens/03-tenant-admin-security.html",
+      "png": "png/03-tenant-admin-security.png"
+    },
+    {
+      "order": 4,
+      "id": "tenant-admin-ai-access",
+      "title": "Tenant admin: AI access (MCP)",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "MCP-01",
+        "MCP-02",
+        "MCP-03",
+        "MCP-04",
+        "MCP-08",
+        "MCP-12",
+        "MCP-13",
+        "MCP-14",
+        "MCP-16",
+        "MCP-19",
+        "MCP-20",
+        "TEN-04"
+      ],
+      "poc": [],
+      "summary": "Tenant policy for the MCP server: endpoint, how clients sign in, scopes by role, action classes and their policy, client allowlist and workspace restrictions, data protection, rate limits, and every active token with revoke.",
+      "file": "04-tenant-admin-ai-access",
+      "html": "screens/04-tenant-admin-ai-access.html",
+      "png": "png/04-tenant-admin-ai-access.png"
+    },
+    {
+      "order": 5,
+      "id": "tenant-admin-plan-usage",
+      "title": "Tenant admin: plan and usage",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "TEN-05",
+        "TEN-10",
+        "MCP-12",
+        "TEN-14"
+      ],
+      "poc": [],
+      "summary": "The tenant's plan, enabled modules, usage against each limit and what happens at a limit; self-serve billing arrives in V2.",
+      "file": "05-tenant-admin-plan-usage",
+      "html": "screens/05-tenant-admin-plan-usage.html",
+      "png": "png/05-tenant-admin-plan-usage.png"
+    },
+    {
+      "order": 6,
+      "id": "tenant-admin-audit",
+      "title": "Tenant admin: audit log",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "PLT-11",
+        "MCP-11",
+        "BR-12",
+        "BR-19"
+      ],
+      "poc": [],
+      "summary": "Immutable, filterable log of configuration, governance and MCP actions with actor, channel, before and after values and reason, plus the detail of one MCP call.",
+      "file": "06-tenant-admin-audit",
+      "html": "screens/06-tenant-admin-audit.html",
+      "png": "png/06-tenant-admin-audit.png"
+    },
+    {
+      "order": 7,
+      "id": "provider-tenants",
+      "title": "Provider console: tenants",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "TEN-01",
+        "TEN-06",
+        "TEN-07",
+        "TEN-08",
+        "TEN-09",
+        "TEN-13",
+        "TEN-15"
+      ],
+      "poc": [],
+      "summary": "Provider operations console: list and create tenants, move them through their lifecycle, with metadata and usage only and no access to business data without a support grant.",
+      "file": "07-provider-tenants",
+      "html": "screens/07-provider-tenants.html",
+      "png": "png/07-provider-tenants.png"
+    },
+    {
+      "order": 8,
+      "id": "profile-ai-access",
+      "title": "My profile: AI access (MCP)",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "MCP-01",
+        "MCP-02",
+        "MCP-03",
+        "MCP-05",
+        "MCP-06",
+        "MCP-08",
+        "MCP-09",
+        "MCP-10",
+        "MCP-15",
+        "MCP-19",
+        "MCP-20",
+        "BR-39"
+      ],
+      "poc": [],
+      "summary": "A user connects an LLM client that implements the MCP specification (verified clients listed) with OAuth or a personal access token, tests the connection, reads what each failure means and what to do, and sees the versioned tool list and what the client may do.",
+      "file": "08-profile-ai-access",
+      "html": "screens/08-profile-ai-access.html",
+      "png": "png/08-profile-ai-access.png"
+    },
+    {
+      "order": 9,
+      "id": "workspace-fields-options",
+      "title": "Workspace settings: fields and options",
+      "area": "Workspace & governance",
+      "phase": "MVP",
+      "requirements": [
+        "WSP-07",
+        "WSP-08",
+        "WSP-09",
+        "BR-25"
+      ],
+      "poc": [
+        "32",
+        "33"
+      ],
+      "summary": "Workspace-managed lists for Category, Type, Label, Phase, Status and Priority with usage counts, system meanings, propagating renames and delete with replacement.",
+      "file": "09-workspace-fields-options",
+      "html": "screens/09-workspace-fields-options.html",
+      "png": "png/09-workspace-fields-options.png"
+    },
+    {
+      "order": 10,
+      "id": "workspace-team-roles",
+      "title": "Workspace settings: team and roles",
+      "area": "Workspace & governance",
+      "phase": "MVP",
+      "requirements": [
+        "WSP-10",
+        "WSP-11",
+        "PLT-03",
+        "BR-26"
+      ],
+      "poc": [
+        "34"
+      ],
+      "summary": "Workspace members with their workspace role, project overrides and open assignments; invitations; removal keeps names on history and flags open items for reassignment.",
+      "file": "10-workspace-team-roles",
+      "html": "screens/10-workspace-team-roles.html",
+      "png": "png/10-workspace-team-roles.png"
+    },
+    {
+      "order": 11,
+      "id": "lifecycle-framework-designer",
+      "title": "Lifecycle framework designer",
+      "area": "Workspace & governance",
+      "phase": "MVP",
+      "requirements": [
+        "GOV-01",
+        "GOV-02",
+        "GOV-03",
+        "GOV-04",
+        "GOV-05",
+        "GOV-06",
+        "GOV-12",
+        "GOV-19",
+        "GOV-20",
+        "GOV-21",
+        "GOV-22",
+        "BR-15",
+        "BR-16"
+      ],
+      "poc": [],
+      "summary": "Edit a draft version of the workspace lifecycle: stages, gates, criteria, mandatory artifacts, role mapping and conditional rules, then submit it for review and publish.",
+      "file": "11-lifecycle-framework-designer",
+      "html": "screens/11-lifecycle-framework-designer.html",
+      "png": "png/11-lifecycle-framework-designer.png"
+    },
+    {
+      "order": 12,
+      "id": "gate-review",
+      "title": "Gate review",
+      "area": "Workspace & governance",
+      "phase": "MVP",
+      "requirements": [
+        "GOV-08",
+        "GOV-09",
+        "GOV-13",
+        "GOV-14",
+        "GOV-15",
+        "CHG-11",
+        "MCP-08",
+        "BR-17",
+        "BR-18",
+        "BR-30",
+        "BR-42"
+      ],
+      "poc": [],
+      "summary": "Formal stage-exit review: readiness evidence, risks, dependencies and impact, approver votes against quorum, a decision with rationale and actions, Pass options locked with the reason while mandatory artifacts are missing, waivers, and a decision draft prepared through MCP.",
+      "file": "12-gate-review",
+      "html": "screens/12-gate-review.html",
+      "png": "png/12-gate-review.png"
+    },
+    {
+      "order": 13,
+      "id": "template-library",
+      "title": "Template library",
+      "area": "Workspace & governance",
+      "phase": "MVP",
+      "requirements": [
+        "GOV-17",
+        "GOV-18",
+        "GOV-23",
+        "GOV-24",
+        "GOV-25",
+        "GOV-26",
+        "GOV-28",
+        "BLD-09",
+        "BLD-11",
+        "BLD-13",
+        "BLD-16"
+      ],
+      "poc": [
+        "35"
+      ],
+      "summary": "Catalog of lifecycle and process frameworks at global, tenant and workspace level with version, owner, status, usage and provenance; clone is the POC's Edit a copy; a process framework draft opens in its editor and the Workspace Owner publishes it once its check passes; review, deprecation with a replacement template, compare and migrate arrive in V2.",
+      "file": "13-template-library",
+      "html": "screens/13-template-library.html",
+      "png": "png/13-template-library.png"
+    },
+    {
+      "order": 14,
+      "id": "executive-cockpit",
+      "title": "Executive portfolio cockpit",
+      "area": "Portfolio",
+      "phase": "MVP",
+      "requirements": [
+        "EXE-01",
+        "EXE-02",
+        "EXE-03",
+        "EXE-04",
+        "EXE-06",
+        "BR-39"
+      ],
+      "poc": [],
+      "summary": "CEO-first control tower for one workspace: investment, health and capacity tiles with their data freshness, the attention queue with the kind of action each item needs, and (in V2) recommended decisions.",
+      "file": "14-executive-cockpit",
+      "html": "screens/14-executive-cockpit.html",
+      "png": "png/14-executive-cockpit.png"
+    },
+    {
+      "order": 15,
+      "id": "workspace-dashboard",
+      "title": "Workspace dashboard",
+      "area": "Portfolio",
+      "phase": "MVP",
+      "requirements": [
+        "EXE-05",
+        "GOV-10",
+        "GOV-12",
+        "GOV-14",
+        "BR-14",
+        "BR-15",
+        "BR-39"
+      ],
+      "poc": [],
+      "summary": "Governance view of one workspace: portfolio KPIs, the delivery pipeline by lifecycle stage with overdue and blocked gates, and the governance attention list.",
+      "file": "15-workspace-dashboard",
+      "html": "screens/15-workspace-dashboard.html",
+      "png": "png/15-workspace-dashboard.png"
+    },
+    {
+      "order": 16,
+      "id": "portfolio-registry",
+      "title": "Portfolio and project registry",
+      "area": "Portfolio",
+      "phase": "MVP",
+      "requirements": [
+        "REG-01",
+        "REG-02",
+        "REG-03",
+        "CHR-15",
+        "RSK-04",
+        "BR-02",
+        "BR-39"
+      ],
+      "poc": [],
+      "summary": "Single list of every project in the workspace, searchable and filterable, grouped by portfolio, with stage, health, budget and framework version.",
+      "file": "16-portfolio-registry",
+      "html": "screens/16-portfolio-registry.html",
+      "png": "png/16-portfolio-registry.png"
+    },
+    {
+      "order": 17,
+      "id": "portfolio-roadmap",
+      "title": "Portfolio roadmap",
+      "area": "Portfolio",
+      "phase": "MVP",
+      "requirements": [
+        "RMP-01",
+        "RMP-02",
+        "RMP-03",
+        "RMP-04",
+        "WBS-14",
+        "BR-23"
+      ],
+      "poc": [],
+      "summary": "Eighteen-month roadmap of projects, MVP milestones and gates grouped by portfolio and program, with the cross-project dependency overlay and its conflicts.",
+      "file": "17-portfolio-roadmap",
+      "html": "screens/17-portfolio-roadmap.html",
+      "png": "png/17-portfolio-roadmap.png"
+    },
+    {
+      "order": 18,
+      "id": "capacity",
+      "title": "Capacity control tower",
+      "area": "Portfolio",
+      "phase": "MVP",
+      "requirements": [
+        "RES-01",
+        "RES-02",
+        "RES-03",
+        "RES-04",
+        "BR-07",
+        "BR-39"
+      ],
+      "poc": [],
+      "summary": "Capacity, demand, utilization and gap by capability for the workspace, with monthly heat and the projects behind each bottleneck; the allocation editor that feeds demand opens in a side drawer from Edit allocations.",
+      "file": "18-capacity",
+      "html": "screens/18-capacity.html",
+      "png": "png/18-capacity.png"
+    },
+    {
+      "order": 19,
+      "id": "risk-dependency",
+      "title": "Risk and dependency control tower",
+      "area": "Portfolio",
+      "phase": "MVP",
+      "requirements": [
+        "RSK-01",
+        "RSK-02",
+        "RSK-03",
+        "RSK-04",
+        "WBS-14",
+        "BR-08",
+        "BR-23",
+        "BR-39"
+      ],
+      "poc": [],
+      "summary": "Portfolio view of risks and cross-project dependencies: severity counts, systemic risk chains, green-but-risky projects, the portfolio risk register and the dependency map with downstream impact.",
+      "file": "19-risk-dependency",
+      "html": "screens/19-risk-dependency.html",
+      "png": "png/19-risk-dependency.png"
+    },
+    {
+      "order": 20,
+      "id": "investment-benefits",
+      "title": "Investment and benefits",
+      "area": "Portfolio",
+      "phase": "V2",
+      "requirements": [
+        "INV-01",
+        "INV-02",
+        "INV-03",
+        "INV-04",
+        "CHR-13"
+      ],
+      "poc": [],
+      "summary": "Portfolio investment by portfolio and program (approved, actual, forecast, CapEx and OpEx), the project value map, the benefits register and value at risk with its method.",
+      "file": "20-investment-benefits",
+      "html": "screens/20-investment-benefits.html",
+      "png": "png/20-investment-benefits.png"
+    },
+    {
+      "order": 21,
+      "id": "scenario-planner",
+      "title": "Scenario planner",
+      "area": "Portfolio",
+      "phase": "V2",
+      "requirements": [
+        "STR-02",
+        "STR-03",
+        "STR-04",
+        "STR-05",
+        "BR-10",
+        "BR-11"
+      ],
+      "poc": [],
+      "summary": "What-if planning on a copy of the portfolio: budget and capacity levers, baseline versus scenario, recommended stop, delay, protect and reallocate actions, applied only as a proposal.",
+      "file": "21-scenario-planner",
+      "html": "screens/21-scenario-planner.html",
+      "png": "png/21-scenario-planner.png"
+    },
+    {
+      "order": 22,
+      "id": "steerco-report",
+      "title": "SteerCo report",
+      "area": "Portfolio",
+      "phase": "V2",
+      "requirements": [
+        "ANL-01",
+        "ANL-02",
+        "ANL-03",
+        "ANL-04",
+        "AIC-06",
+        "BR-39"
+      ],
+      "poc": [],
+      "summary": "Report builder and preview for the executive portfolio review: health, investment, movements, decisions required and appendices, generated from live data for a period and portfolio.",
+      "file": "22-steerco-report",
+      "html": "screens/22-steerco-report.html",
+      "png": "png/22-steerco-report.png"
+    },
+    {
+      "order": 23,
+      "id": "ai-copilot",
+      "title": "AI portfolio copilot",
+      "area": "Portfolio",
+      "phase": "V3",
+      "requirements": [
+        "AIC-01",
+        "AIC-02",
+        "AIC-03",
+        "MCP-04",
+        "MCP-08",
+        "MCP-10",
+        "BR-10"
+      ],
+      "poc": [],
+      "summary": "In-app copilot that answers portfolio questions with cited records, evidence, assumptions and confidence, and turns recommendations into a scenario or a prepared decision, never an executed one.",
+      "file": "23-ai-copilot",
+      "html": "screens/23-ai-copilot.html",
+      "png": "png/23-ai-copilot.png"
+    },
+    {
+      "order": 24,
+      "id": "project-overview",
+      "title": "Project overview",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "OVW-01",
+        "OVW-02",
+        "OVW-03",
+        "OVW-04",
+        "OVW-05",
+        "BR-39"
+      ],
+      "poc": [
+        "02",
+        "03"
+      ],
+      "summary": "Read-only project dashboard computed from the WBS with the BRD Section 12 metric definitions; every tile drills down.",
+      "file": "24-project-overview",
+      "html": "screens/24-project-overview.html",
+      "png": "png/24-project-overview.png"
+    },
+    {
+      "order": 25,
+      "id": "project-charter",
+      "title": "Project charter and business case",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "CHR-01",
+        "CHR-02",
+        "CHR-03",
+        "CHR-04",
+        "CHR-05",
+        "CHR-06",
+        "CHR-07",
+        "CHR-08",
+        "CHR-09",
+        "CHR-10",
+        "CHR-11",
+        "CHR-12",
+        "CHR-13",
+        "CHR-14",
+        "CHR-15",
+        "CHR-16",
+        "BR-01",
+        "BR-02",
+        "BR-03",
+        "BR-22",
+        "BR-39",
+        "PLT-16",
+        "PLT-20"
+      ],
+      "poc": [
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "summary": "Nine-section charter that is a live slice of project data, with a sticky section navigator showing completion and what is required before commitment: sections V and VI are derived from the WBS and collapsed, VII reads from the risk register, sign-off freezes a revision and a PDF pins a data snapshot.",
+      "file": "25-project-charter",
+      "html": "screens/25-project-charter.html",
+      "png": "png/25-project-charter.png"
+    },
+    {
+      "order": 26,
+      "id": "wbs-table",
+      "title": "WBS Master: table view",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "WBS-01",
+        "WBS-02",
+        "WBS-03",
+        "WBS-04",
+        "WBS-05",
+        "WBS-06",
+        "WBS-18",
+        "WBS-19",
+        "WBS-20",
+        "BR-04",
+        "BR-24"
+      ],
+      "poc": [
+        "09",
+        "10",
+        "11"
+      ],
+      "summary": "Single source of truth for project work: tree table with category rows, saved views and column presets, instant filters, bulk actions, inline edits and baseline locks.",
+      "file": "26-wbs-table",
+      "html": "screens/26-wbs-table.html",
+      "png": "png/26-wbs-table.png"
+    },
+    {
+      "order": 27,
+      "id": "wbs-tree",
+      "title": "WBS Master: tree diagram and blueprint",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "WBS-08",
+        "WBS-09",
+        "WBS-10",
+        "WBS-13",
+        "BR-23",
+        "BR-40",
+        "BR-41"
+      ],
+      "poc": [
+        "12",
+        "13",
+        "14"
+      ],
+      "summary": "Hierarchy canvas of the same WBS with automatic layouts, zoom, keyboard navigation and dependency arrows that flag conflicts only when both dates exist; Blueprint shows the Builder canvas per deliverable.",
+      "file": "27-wbs-tree",
+      "html": "screens/27-wbs-tree.html",
+      "png": "png/27-wbs-tree.png"
+    },
+    {
+      "order": 28,
+      "id": "wbs-item",
+      "title": "WBS item form and activity",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "WBS-11",
+        "WBS-12",
+        "WBS-13",
+        "WBS-15",
+        "WBS-16",
+        "WBS-17",
+        "MCP-06",
+        "MCP-11",
+        "BR-23",
+        "BR-40"
+      ],
+      "poc": [
+        "19",
+        "20",
+        "21"
+      ],
+      "summary": "Item form for 1.1.2 split into General, Schedule, Dependencies and Activity tabs: derived level, generated code, assignments from the team, dependencies that flag but never move dates, and an activity feed that marks actions made through MCP.",
+      "file": "28-wbs-item",
+      "html": "screens/28-wbs-item.html",
+      "png": "png/28-wbs-item.png"
+    },
+    {
+      "order": 29,
+      "id": "deliverable-builder",
+      "title": "Deliverable Builder",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "BLD-01",
+        "BLD-02",
+        "BLD-03",
+        "BLD-04",
+        "BLD-05",
+        "BLD-06",
+        "BLD-07",
+        "BLD-08",
+        "BLD-10",
+        "BLD-12",
+        "BR-31",
+        "BR-41"
+      ],
+      "poc": [
+        "15",
+        "16",
+        "17",
+        "18"
+      ],
+      "summary": "Pick a target deliverable and a process framework, adjust the swimlane canvas or its keyboard list view, preview the result, then build 16 pre-wired WBS items with labels, dependencies and a saved Blueprint.",
+      "file": "29-deliverable-builder",
+      "html": "screens/29-deliverable-builder.html",
+      "png": "png/29-deliverable-builder.png"
+    },
+    {
+      "order": 30,
+      "id": "plan-timeline",
+      "title": "Project plan: timeline",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "PLN-01",
+        "PLN-02",
+        "PLN-03",
+        "PLN-04",
+        "WBS-13",
+        "BR-23",
+        "BR-40"
+      ],
+      "poc": [
+        "22"
+      ],
+      "summary": "Point-based timeline of dated work items with days relative to today, OVERDUE tags, a today line and dependency conflicts flagged with the WBS rules; stage overlay and Gantt come in V2.",
+      "file": "30-plan-timeline",
+      "html": "screens/30-plan-timeline.html",
+      "png": "png/30-plan-timeline.png"
+    },
+    {
+      "order": 31,
+      "id": "plan-board",
+      "title": "Project plan: board",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "PLN-05",
+        "WBS-01",
+        "WBS-16",
+        "BR-41"
+      ],
+      "poc": [
+        "23"
+      ],
+      "summary": "Kanban of work items by status from the workspace Status list; dragging a card or choosing a column in its Move to… menu changes status and is logged; Done is a collapsed column of recent completions.",
+      "file": "31-plan-board",
+      "html": "screens/31-plan-board.html",
+      "png": "png/31-plan-board.png"
+    },
+    {
+      "order": 32,
+      "id": "change-requests",
+      "title": "Change requests and baseline",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "CHG-01",
+        "CHG-02",
+        "CHG-03",
+        "CHG-04",
+        "CHG-05",
+        "CHG-06",
+        "CHG-07",
+        "CHG-09",
+        "CHG-12",
+        "BR-05",
+        "BR-28",
+        "BR-29"
+      ],
+      "poc": [
+        "24",
+        "25"
+      ],
+      "summary": "Change register for a baselined project: CR detail with impact analysis, actions that depend on the viewer's role, a decision that needs a different approver and a rationale, and an approved CR whose baseline changes are reviewed before the PM applies them as baseline v2.",
+      "file": "32-change-requests",
+      "html": "screens/32-change-requests.html",
+      "png": "png/32-change-requests.png"
+    },
+    {
+      "order": 33,
+      "id": "journal-reports",
+      "title": "Journal and project reporting",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "RPT-01",
+        "RPT-02",
+        "RPT-03",
+        "RPT-04",
+        "CHG-11",
+        "MCP-06",
+        "PLT-16",
+        "BR-39"
+      ],
+      "poc": [
+        "26",
+        "27",
+        "28"
+      ],
+      "summary": "Reports area with three mutually exclusive tabs: the everyday journal, the report builder whose generated Weekly Status is a snapshot with as-of time and metric version and is published as the weekly status submission, and the saved snapshots.",
+      "file": "33-journal-reports",
+      "html": "screens/33-journal-reports.html",
+      "png": "png/33-journal-reports.png"
+    },
+    {
+      "order": 34,
+      "id": "focus",
+      "title": "Focus: today and this week",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "OVW-06",
+        "OVW-07",
+        "OVW-08"
+      ],
+      "poc": [
+        "29"
+      ],
+      "summary": "Personal start-of-day view: overdue, due in the next 7 days and starting in the next 7 days, with Only mine, a scope switch from this project to all my projects, and status changes or Done straight from each row; counts follow Section 12.",
+      "file": "34-focus",
+      "html": "screens/34-focus.html",
+      "png": "png/34-focus.png"
+    },
+    {
+      "order": 35,
+      "id": "mvp-detail",
+      "title": "MVP detail",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "MVP-01",
+        "MVP-02",
+        "MVP-03",
+        "MVP-04",
+        "BR-06",
+        "BR-39"
+      ],
+      "poc": [],
+      "summary": "Outcome container for MVP 1 Omni Payment: customer problem, outcome KPIs, release criteria, linked features and milestones, dependencies, and MVP progress and health with their formulas and as-of time, compared with the project.",
+      "file": "35-mvp-detail",
+      "html": "screens/35-mvp-detail.html",
+      "png": "png/35-mvp-detail.png"
+    },
+    {
+      "order": 36,
+      "id": "workspace-setup",
+      "title": "Workspace setup",
+      "area": "Workspace & governance",
+      "phase": "MVP",
+      "requirements": [
+        "WSP-01",
+        "WSP-03",
+        "WSP-04",
+        "WSP-05",
+        "WSP-06",
+        "WSP-14",
+        "BR-14",
+        "PLT-20",
+        "BLD-13"
+      ],
+      "poc": [],
+      "summary": "Guided setup of a new workspace in Draft: six steps with progress, the profile form that drives durations and reporting periods, the four WSP-14 readiness rules checked before activation, the workspace lifecycle and the navigation tree.",
+      "file": "36-workspace-setup",
+      "html": "screens/36-workspace-setup.html",
+      "png": "png/36-workspace-setup.png"
+    },
+    {
+      "order": 37,
+      "id": "project-create",
+      "title": "Create project",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "CHR-17",
+        "REG-01",
+        "GOV-12",
+        "CHR-14",
+        "CHR-15",
+        "BR-01",
+        "BR-13",
+        "BR-15",
+        "PLT-20"
+      ],
+      "poc": [],
+      "summary": "New project dialog over the registry: placement in workspace, portfolio and an optional program, master record fields, a lifecycle framework version pinned at creation, and the checklist the Draft project must complete before commitment.",
+      "file": "37-project-create",
+      "html": "screens/37-project-create.html",
+      "png": "png/37-project-create.png"
+    },
+    {
+      "order": 38,
+      "id": "my-approvals",
+      "title": "My approvals",
+      "area": "Personal & collaboration",
+      "phase": "MVP",
+      "requirements": [
+        "OVW-09",
+        "CHG-04",
+        "GOV-08",
+        "GOV-13",
+        "CHR-08",
+        "MCP-08",
+        "PLT-09",
+        "BR-35",
+        "BR-42"
+      ],
+      "poc": [],
+      "summary": "One queue of everything waiting for the signed-in approver: CR decisions, gate votes, waivers and charter sign-offs, with requester, due date, blocker and a deep link; drafts prepared through MCP are marked as not decided.",
+      "file": "38-my-approvals",
+      "html": "screens/38-my-approvals.html",
+      "png": "png/38-my-approvals.png"
+    },
+    {
+      "order": 39,
+      "id": "notifications-preferences",
+      "title": "Notifications and preferences",
+      "area": "Personal & collaboration",
+      "phase": "MVP",
+      "requirements": [
+        "PLT-09",
+        "PLT-10",
+        "PLT-18"
+      ],
+      "poc": [
+        "31"
+      ],
+      "summary": "Notification drawer with unread markers and deep links for each trigger, and the personal preferences page: channels per trigger with approval requests locked on, digest and chat channels planned for V2, display name, default landing tab, default WBS view and language.",
+      "file": "39-notifications-preferences",
+      "html": "screens/39-notifications-preferences.html",
+      "png": "png/39-notifications-preferences.png"
+    },
+    {
+      "order": 40,
+      "id": "search-results",
+      "title": "Search results",
+      "area": "Personal & collaboration",
+      "phase": "MVP",
+      "requirements": [
+        "PLT-12",
+        "PLT-13",
+        "PLT-04"
+      ],
+      "poc": [
+        "02",
+        "30"
+      ],
+      "summary": "Search by project name and WBS code or name, grouped into projects and WBS items with status, keyboard navigation, results limited to records the user can open, full-text search planned for V2 and an empty state that explains what is searched.",
+      "file": "40-search-results",
+      "html": "screens/40-search-results.html",
+      "png": "png/40-search-results.png"
+    },
+    {
+      "order": 41,
+      "id": "docs-links",
+      "title": "Project Docs & Links",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "PLT-08",
+        "PLT-07",
+        "PLT-11"
+      ],
+      "poc": [
+        "30"
+      ],
+      "summary": "Links, notes and files of one project, opened from the project node in the navigation tree: upload states (scanning, uploaded, blocked type, too large) against the workspace limits, access-controlled downloads and an audited removal.",
+      "file": "41-docs-links",
+      "html": "screens/41-docs-links.html",
+      "png": "png/41-docs-links.png"
+    },
+    {
+      "order": 42,
+      "id": "editor-states",
+      "title": "Editor states: save failed and edit conflict",
+      "area": "Project execution",
+      "phase": "MVP",
+      "requirements": [
+        "PLT-05",
+        "PLT-06",
+        "MCP-07",
+        "MCP-14",
+        "MCP-19",
+        "WBS-11",
+        "BR-34",
+        "BR-04"
+      ],
+      "poc": [],
+      "summary": "WBS item 1.1.2 editor after a failed save and a retry that found newer versions: the save state, the conflicting field marked in place, a compare table (yours, theirs, current) with Reload, Keep mine and Merge, a change made through MCP with Undo, and the one version and idempotency rule shared by the application, MCP and the API.",
+      "file": "42-editor-states",
+      "html": "screens/42-editor-states.html",
+      "png": "png/42-editor-states.png"
+    },
+    {
+      "order": 43,
+      "id": "access-states",
+      "title": "Access and session states",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "PLT-04",
+        "TEN-02",
+        "WSP-02",
+        "WSP-05",
+        "TEN-06",
+        "PLT-01",
+        "BR-38",
+        "PLT-03",
+        "TEN-03"
+      ],
+      "poc": [],
+      "summary": "Seven states people meet when access is missing, limited or interrupted, each with its reason and next step: no permission for a project, an archived workspace that is read-only, an expired session that keeps unsaved input, a suspended tenant that can still read and export, a forgotten password, a failed single sign-on and an expired invitation.",
+      "file": "43-access-states",
+      "html": "screens/43-access-states.html",
+      "png": "png/43-access-states.png"
+    },
+    {
+      "order": 44,
+      "id": "data-export-delete",
+      "title": "Workspace settings: export, import and delete",
+      "area": "Workspace & governance",
+      "phase": "MVP",
+      "requirements": [
+        "PLT-14",
+        "PLT-15",
+        "TEN-07",
+        "BR-27"
+      ],
+      "poc": [
+        "36"
+      ],
+      "summary": "Workspace Data settings: export a project or the whole workspace with job status, import a project file as a new project after a validation report, delete a project with typed confirmation, and restore it from Recently deleted before the retention period ends.",
+      "file": "44-data-export-delete",
+      "html": "screens/44-data-export-delete.html",
+      "png": "png/44-data-export-delete.png"
+    },
+    {
+      "order": 45,
+      "id": "client-view",
+      "title": "Client view of an invited project",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "PLT-02",
+        "PLT-04",
+        "PLT-07",
+        "CHR-06",
+        "CHR-08",
+        "WBS-12",
+        "WBS-16",
+        "WBS-17",
+        "RPT-05"
+      ],
+      "poc": [],
+      "summary": "What an invited client representative sees after signing in: only the invited project, the inputs they owe, the approvals waiting for them, charter sign-off, comments on their items, reports shared with them (planned), and a plain list of what stays internal.",
+      "file": "45-client-view",
+      "html": "screens/45-client-view.html",
+      "png": "png/45-client-view.png"
+    },
+    {
+      "order": 46,
+      "id": "onboarding-frame",
+      "title": "Onboarding: frame",
+      "area": "Onboarding",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-01",
+        "ONB-02",
+        "ONB-03",
+        "ONB-04",
+        "ONB-09",
+        "ONB-22",
+        "ONB-27"
+      ],
+      "poc": [],
+      "summary": "First onboarding screen for a new client's executive: four pre-filled facts collapsed to chips, three outside-in questions with only the governance one expanded, a one-sentence override, the drop zone as the primary action, and the AI processing authorization that opens when the first file is ready to send.",
+      "file": "46-onboarding-frame",
+      "html": "screens/46-onboarding-frame.html",
+      "png": "png/46-onboarding-frame.png"
+    },
+    {
+      "order": 47,
+      "id": "onboarding-reading",
+      "title": "Onboarding: reading",
+      "area": "Onboarding",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-01",
+        "ONB-04",
+        "ONB-05",
+        "ONB-06",
+        "ONB-07",
+        "ONB-08",
+        "ONB-09",
+        "ONB-11",
+        "ONB-12"
+      ],
+      "poc": [],
+      "summary": "Metis reads the dropped files: a live feed per file of what was found and how, running totals, provenance on every value, cards that stream in while reading, items already sent to owners, and the resumable session.",
+      "file": "47-onboarding-reading",
+      "html": "screens/47-onboarding-reading.html",
+      "png": "png/47-onboarding-reading.png"
+    },
+    {
+      "order": 48,
+      "id": "onboarding-draft-cockpit",
+      "title": "Onboarding: draft cockpit",
+      "area": "Onboarding",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-03",
+        "ONB-08",
+        "ONB-09",
+        "ONB-11",
+        "ONB-13",
+        "EXE-01",
+        "EXE-02",
+        "BR-39"
+      ],
+      "poc": [],
+      "summary": "The executive cockpit of the Draft workspace, built from the client's own files: Draft banner, figures with source badges and as-of time, the projects that may slip first, the business units, the Portfolio X-ray with owners, and the to-confirm rail.",
+      "file": "48-onboarding-draft-cockpit",
+      "html": "screens/48-onboarding-draft-cockpit.html",
+      "png": "png/48-onboarding-draft-cockpit.png"
+    },
+    {
+      "order": 49,
+      "id": "onboarding-approval-flow",
+      "title": "Onboarding: approval flow",
+      "area": "Onboarding",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-03",
+        "ONB-14",
+        "ONB-27",
+        "GOV-03",
+        "GOV-05",
+        "GOV-06",
+        "GOV-21",
+        "CHG-10"
+      ],
+      "poc": [],
+      "summary": "How a project gets approved, in business words for the executive: the lifecycle read from the PMO handbook and matched to the Capital projects pack, the big-or-strategic boundary computed from the client's data, the differences from the pack, and the dry run on three real projects.",
+      "file": "49-onboarding-approval-flow",
+      "html": "screens/49-onboarding-approval-flow.html",
+      "png": "png/49-onboarding-approval-flow.png"
+    },
+    {
+      "order": 50,
+      "id": "onboarding-questions",
+      "title": "Onboarding: questions and conversation",
+      "area": "Onboarding",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-11",
+        "ONB-12",
+        "ONB-17",
+        "ONB-28"
+      ],
+      "poc": [],
+      "summary": "The cards an executive answers in the 30-minute path: a single card with its sourced best guess, a bulk card, a contradiction card sent to its owner, the cap, the conversation panel, and the same card on a phone.",
+      "file": "50-onboarding-questions",
+      "html": "screens/50-onboarding-questions.html",
+      "png": "png/50-onboarding-questions.png"
+    },
+    {
+      "order": 51,
+      "id": "onboarding-adoption",
+      "title": "Onboarding: projects to adopt",
+      "area": "Onboarding",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-10",
+        "ONB-08",
+        "BR-46",
+        "BR-47",
+        "CHG-06",
+        "CHR-16"
+      ],
+      "poc": [],
+      "summary": "Bringing 34 running projects into Metis, reviewed by exception: four counts, then the 7 projects whose source authority, sponsor or stage needs the executive, each with its action; the 27 ready ones sit behind a tab, and one project panel shows the stages completed before Metis and what the imported baseline will lock.",
+      "file": "51-onboarding-adoption",
+      "html": "screens/51-onboarding-adoption.html",
+      "png": "png/51-onboarding-adoption.png"
+    },
+    {
+      "order": 52,
+      "id": "onboarding-launch",
+      "title": "Onboarding: launch",
+      "area": "Onboarding",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-15",
+        "ONB-16",
+        "WSP-14",
+        "GOV-21",
+        "BR-44",
+        "PLT-03"
+      ],
+      "poc": [],
+      "summary": "Launch summary that leads with the four outcomes reached, then the exceptions: access changes with privileged roles approved by name and their access difference, unconfirmed values grouped by risk class with two blocking the launch, the load per owner, the readiness results, and what an undo would not remove.",
+      "file": "52-onboarding-launch",
+      "html": "screens/52-onboarding-launch.html",
+      "png": "png/52-onboarding-launch.png"
+    },
+    {
+      "order": 53,
+      "id": "onboarding-owner-tasks",
+      "title": "Onboarding: owner tasks",
+      "area": "Onboarding",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-08",
+        "ONB-17",
+        "ONB-18",
+        "ONB-19",
+        "BR-48",
+        "PLT-09"
+      ],
+      "poc": [],
+      "summary": "After launch: the finisher's task list with pre-filled values and sources, the completeness bar the executive sees, the rule that keeps launch values by default at the due date, a suggestion from a new document waiting for a person, and a task raised at the moment of need.",
+      "file": "53-onboarding-owner-tasks",
+      "html": "screens/53-onboarding-owner-tasks.html",
+      "png": "png/53-onboarding-owner-tasks.png"
+    },
+    {
+      "order": 54,
+      "id": "onboarding-rule-based",
+      "title": "Onboarding: rule-based import",
+      "area": "Onboarding",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-05",
+        "ONB-20"
+      ],
+      "poc": [],
+      "summary": "Setup with the Metis onboarding AI switched off: columns of a project list mapped by header rules, status colours read as health, an MS Project plan read exactly, and the kept-and-dropped report before anything is written.",
+      "file": "54-onboarding-rule-based",
+      "html": "screens/54-onboarding-rule-based.html",
+      "png": "png/54-onboarding-rule-based.png"
+    },
+    {
+      "order": 55,
+      "id": "onboarding-own-ai",
+      "title": "Set up with your own AI",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-07",
+        "ONB-21",
+        "MCP-15",
+        "MCP-20",
+        "ONB-39"
+      ],
+      "poc": [],
+      "summary": "The bring-your-own-AI path: the admin switch for the setup tool group, an onboarding token limited to the setup tools and the Draft workspace, the connection test, the copy-ready prompt pack and a live feed of what the client's AI proposes; launch stays in Metis.",
+      "file": "55-onboarding-own-ai",
+      "html": "screens/55-onboarding-own-ai.html",
+      "png": "png/55-onboarding-own-ai.png"
+    },
+    {
+      "order": 56,
+      "id": "tenant-admin-ai-onboarding",
+      "title": "Tenant admin: AI onboarding policy",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-07",
+        "ONB-22",
+        "ONB-23",
+        "ONB-24",
+        "ONB-25",
+        "ONB-26",
+        "TEN-04",
+        "MCP-11",
+        "BR-49",
+        "BR-50"
+      ],
+      "poc": [],
+      "summary": "Tenant admin page for the onboarding AI: consent and processing, masking, what happens to uploaded files, quotas and spend cap, the setup tool switch for external clients, security events, the assurance evidence of the current release, and the onboarding metrics of the tenant's own sessions.",
+      "file": "56-tenant-admin-ai-onboarding",
+      "html": "screens/56-tenant-admin-ai-onboarding.html",
+      "png": "png/56-tenant-admin-ai-onboarding.png"
+    },
+    {
+      "order": 57,
+      "id": "provider-onboarding",
+      "title": "Provider console: tenant pre-fill and onboarding metrics",
+      "area": "Access & tenancy",
+      "phase": "MVP",
+      "requirements": [
+        "ONB-02",
+        "ONB-26",
+        "TEN-01",
+        "TEN-08"
+      ],
+      "poc": [],
+      "summary": "Provider console: onboarding metrics per tenant without any business data, and the create-tenant dialog extended with the facts and answers recorded from the sales discovery.",
+      "file": "57-provider-onboarding",
+      "html": "screens/57-provider-onboarding.html",
+      "png": "png/57-provider-onboarding.png"
+    },
+    {
+      "order": 58,
+      "id": "process-framework-editor",
+      "title": "Process framework editor",
+      "area": "Workspace & governance",
+      "phase": "MVP",
+      "requirements": [
+        "BLD-09",
+        "BLD-12",
+        "BLD-13",
+        "BLD-14",
+        "BLD-15",
+        "BLD-16",
+        "BR-41",
+        "PLT-05"
+      ],
+      "poc": [
+        "35"
+      ],
+      "summary": "Author a process framework outside any project: lanes with their label and type, node templates on a relative day axis with offsets, durations and roles, typed connections with lag, a sub-item and a connection point, a check that keeps Publish disabled while a dependency cycle remains, and a list view for the keyboard.",
+      "file": "58-process-framework-editor",
+      "html": "screens/58-process-framework-editor.html",
+      "png": "png/58-process-framework-editor.png"
+    }
+  ]
+}

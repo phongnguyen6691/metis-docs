@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My profile: AI access (MCP) · Metis wireframe</title>
+<meta name="wf:id" content="profile-ai-access">
+<meta name="wf:title" content="My profile: AI access (MCP)">
+<meta name="wf:area" content="Access & tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="MCP-01 MCP-02 MCP-03 MCP-05 MCP-06 MCP-08 MCP-09 MCP-10 MCP-15 MCP-19 MCP-20 BR-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="A user connects an LLM client that implements the MCP specification (verified clients listed) with OAuth or a personal access token, tests the connection, reads what each failure means and what to do, and sees the versioned tool list and what the client may do.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="My profile / AI access (MCP)">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">AI access (MCP)</div>
+      <div class="muted small" style="margin-top:4px">Connect an LLM client that implements the MCP specification; verified clients are listed below. It sees only what you can see and every action is recorded as yours.</div>
+    </div>
+    <div class="seg"><span>Profile</span><span>Notifications</span><span class="on">AI access</span></div>
+  </section>
+
+  <section class="grid c2">
+    <div class="stack">
+      <div class="card" data-req="MCP-01">
+        <div class="head"><span class="h3">1 · Endpoint <span class="anno" data-n="1"></span></span><span class="chip good">Enabled by your admin</span></div>
+        <div class="body stack s">
+          <div class="row" style="flex-wrap:nowrap"><div class="input mono" style="flex:1;min-width:0">https://acme.mcp.metis.example/mcp</div><span class="btn secondary sm">Copy</span></div>
+          <div class="small muted">Streamable HTTP · one endpoint for Acme Holdings · data filtered to your permissions</div>
+        </div>
+      </div>
+
+      <div class="card" data-req="MCP-15">
+        <div class="head"><span class="h3">Verified clients <span class="anno" data-n="6"></span></span><span class="muted small">Tested against protocol 2026-07-28</span></div>
+        <table class="table">
+          <thead><tr><th>Client</th><th>Sign-in</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Desktop LLM app</td><td>Personal token</td><td><span class="chip good">Verified</span></td></tr>
+            <tr><td>Chat assistant (OAuth)</td><td>OAuth</td><td><span class="chip good">Verified</span></td></tr>
+            <tr><td>Code editor</td><td>Personal token</td><td><span class="chip good">Verified</span></td></tr>
+            <tr><td>Internal agent</td><td>Personal token</td><td><span class="chip waiting">Not yet verified</span></td></tr>
+          </tbody>
+        </table>
+        <div class="body small muted">Other clients that implement the MCP specification may work; they are not on the verified list.</div>
+      </div>
+
+      <div class="card" data-req="MCP-03">
+        <div class="head"><span class="h3">2a · Connect with OAuth <span class="anno" data-n="2"></span></span><span class="tag">Recommended when your client supports it</span></div>
+        <div class="body stack s">
+          <div class="list-row" style="padding:0"><span class="chip review nodot">1</span><div class="grow">Add the endpoint URL as a remote MCP server in your client.</div></div>
+          <div class="list-row" style="padding:0"><span class="chip review nodot">2</span><div class="grow">Your client opens the Metis sign-in page; sign in as usual.</div></div>
+          <div class="list-row" style="padding:0"><span class="chip review nodot">3</span><div class="grow">Approve the scopes the client asks for. You can approve fewer.</div></div>
+          <div class="list-row" style="padding:0"><span class="chip review nodot">4</span><div class="grow">Done. The connection appears under My connections; revoke it any time.</div></div>
+        </div>
+      </div>
+
+      <div class="card" data-req="MCP-02 MCP-15">
+        <div class="head"><span class="h3">2b · Or use a personal access token <span class="anno" data-n="3"></span></span><span class="btn secondary sm">Create token</span></div>
+        <div class="body stack s">
+          <div class="label">Example; check your MCP client's documentation <span class="anno" data-n="4"></span></div>
+          <div class="code-block">{
+  "mcpServers": {
+    "metis": {
+      "url": "https://acme.mcp.metis.example/mcp",
+      "headers": { "Authorization": "Bearer mts_pat_••••3f9a" }
+    }
+  }
+}</div>
+          <div class="row between"><span class="btn primary sm">Test connection</span><span class="chip good">Connected as Nadia R. · 6 of 13 tools allowed by this token</span></div>
+        </div>
+      </div>
+
+      <div class="card" data-req="MCP-15">
+        <div class="head"><span class="h3">If the test or a call fails <span class="anno" data-n="7"></span></span></div>
+        <table class="table">
+          <thead><tr><th>What the client reports</th><th>What to do</th></tr></thead>
+          <tbody>
+            <tr><td><span class="chip critical">Invalid or expired token</span></td><td class="wrap small">Create a new token and paste it into your client; tell your admin if a token you did not revoke stopped working</td></tr>
+            <tr><td><span class="chip serious">Missing scope</span></td><td class="wrap small">Add the scope to the token, or approve it again when your client asks</td></tr>
+            <tr><td><span class="chip serious">Workspace restriction</span></td><td class="wrap small">The token or your tenant excludes this workspace; use a token for an allowed workspace or ask your admin</td></tr>
+            <tr><td><span class="chip serious">Client not allowed by tenant policy</span></td><td class="wrap small">Use a client on your tenant's list, or ask your admin to add this one</td></tr>
+            <tr><td><span class="chip waiting">Rate limit</span></td><td class="wrap small">Wait for the retry time in the message, then try again</td></tr>
+            <tr><td><span class="chip serious">Protocol version mismatch</span></td><td class="wrap small">Update the client to a version that supports protocol 2026-07-28</td></tr>
+            <tr><td><span class="chip critical">Server unavailable</span></td><td class="wrap small">Try again in a few minutes; if it keeps failing, tell your admin</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="overlay card" style="padding:28px">
+        <div class="modal" data-req="MCP-02">
+          <div class="head"><span class="h3" style="flex:1">Create personal access token</span><span class="btn ghost sm">Close</span></div>
+          <div class="body stack s">
+            <div class="field"><label>Name <span class="req">*</span></label><div class="input">Nadia's assistant</div></div>
+            <div class="field"><label>Scopes</label>
+              <div class="grid c2" style="gap:6px 14px">
+                <span class="check on">projects:read</span><span class="check on">wbs:read</span>
+                <span class="check on">journal:write</span><span class="check on">comments:write</span>
+                <span class="check">reports:read</span><span class="check">risks:read</span>
+                <span class="check disabled muted">wbs:write · second increment</span><span class="check disabled muted">changes:draft · second increment</span>
+              </div>
+            </div>
+            <div class="grid c2">
+              <div class="field"><label>Workspaces</label><div class="select">Creative Studio only</div></div>
+              <div class="field"><label>Expires</label><div class="select">In 90 days (maximum)</div></div>
+            </div>
+            <div class="banner warn small">Copy the token now; it is shown once. Metis stores only a hash: mts_pat_7Hq2••••••••3f9a</div>
+          </div>
+          <div class="foot"><span class="btn ghost">Cancel</span><span class="btn primary">Create token</span></div>
+        </div>
+      </div>
+
+      <div class="card" data-req="MCP-05 MCP-06 MCP-08 MCP-19">
+        <div class="head"><span class="h3">What an AI client can do as you <span class="anno" data-n="5"></span></span></div>
+        <table class="table">
+          <thead><tr><th>Kind</th><th>Examples</th><th>Allowed</th></tr></thead>
+          <tbody>
+            <tr><td>Read</td><td class="wrap small">Projects, WBS items, my focus, changes, risks, charter, reports</td><td><span class="chip good">Yes, within your permissions</span></td></tr>
+            <tr><td>Append-only</td><td class="wrap small">Journal entries, comments</td><td><span class="chip good">Yes</span></td></tr>
+            <tr><td>Reversible write</td><td class="wrap small">WBS item status and dates, draft change requests, risks, report drafts</td><td><span class="chip running">Second increment</span></td></tr>
+            <tr><td>Prepare-only</td><td class="wrap small">Approvals, gate decisions, baseline changes, deletions, permissions</td><td><span class="chip review">Prepare only, you confirm</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" data-req="MCP-09 MCP-10 BR-39">
+        <div class="head"><span class="h3">Tools <span class="anno" data-n="8"></span></span><span class="muted small">13 tools · tool set 1.2</span></div>
+        <table class="table">
+          <thead><tr><th>Tool</th><th>Class</th><th>Version</th><th>This token</th></tr></thead>
+          <tbody>
+            <tr><td class="mono small">list_projects</td><td>Read</td><td class="num">1.0</td><td><span class="chip good">Allowed</span></td></tr>
+            <tr><td class="wrap"><div class="mono small">get_project_overview</div><div class="small muted">Figures computed by Metis, with as-of time and metric version <span class="anno" data-n="9"></span></div></td><td>Read</td><td class="num">1.1</td><td><span class="chip good">Allowed</span></td></tr>
+            <tr><td class="mono small">get_my_focus</td><td>Read</td><td class="num">1.0</td><td><span class="chip good">Allowed</span></td></tr>
+            <tr><td class="mono small">get_report</td><td>Read</td><td class="num">1.0</td><td><span class="chip">Needs reports:read</span></td></tr>
+            <tr><td class="mono small">add_journal_entry</td><td>Append-only</td><td class="num">1.0</td><td><span class="chip good">Allowed</span></td></tr>
+            <tr><td class="mono small">update_wbs_item</td><td>Reversible write</td><td class="num">1.0</td><td><span class="chip running">Second increment</span></td></tr>
+          </tbody>
+        </table>
+        <div class="body row between small"><span class="muted">Changes stay backward compatible within a major version</span><span class="btn ghost sm">All 13 tools</span></div>
+      </div>
+
+      <div class="card" data-req="MCP-02">
+        <div class="head"><span class="h3">My connections</span></div>
+        <div class="list-row"><span class="av ai">AI</span><div class="grow"><div class="title-line">Nadia's assistant</div><div class="sub">Token · projects:read, wbs:read, journal:write, comments:write · expires 1 Dec 2026 · last used today 09:31</div></div><span class="btn danger sm">Revoke</span></div>
+        <div class="list-row"><span class="av ai">AI</span><div class="grow"><div class="title-line">Old laptop</div><div class="sub">Token · expired 30 Aug 2026</div></div><span class="chip">Expired</span></div>
+      </div>
+
+      <div class="card">
+        <div class="head"><span class="h3">Recent activity through MCP</span><span class="btn ghost sm">All</span></div>
+        <div class="list-row"><span class="av ai">AI</span><div class="grow"><div class="title-line">add_journal_entry · Meridian CGI Campaign</div><div class="sub">via MCP · token Nadia's assistant · today 09:31</div></div><span class="chip good">Done</span></div>
+        <div class="list-row"><span class="av ai">AI</span><div class="grow"><div class="title-line">get_my_focus</div><div class="sub">via MCP · token Nadia's assistant · today 09:30</div></div><span class="chip good">Done</span></div>
+        <div class="list-row"><span class="av ai">AI</span><div class="grow"><div class="title-line">update_wbs_item · 1.1.2</div><div class="sub">via MCP · token Nadia's assistant · yesterday 17:12</div></div><span class="chip serious">Denied: missing scope</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">MCP-01</span> One tenant-specific HTTPS endpoint over Streamable HTTP [Source: modelcontextprotocol.io/specification/2026-07-28, transports].</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">MCP-03</span> Clients that implement the MCP authorization flow sign the user in through Metis and ask for scopes; no token is copied [Source: modelcontextprotocol.io/specification/2026-07-28/basic/authorization].</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">MCP-02</span> A personal access token works with clients that can send an Authorization: Bearer header. It is shown once, stored as a hash, limited by scopes, workspaces and expiry, and revocable.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">MCP-15</span> The setup guide gives the endpoint, an example configuration and a "Test connection" check. Configuration formats differ by client [Unverified - confirm before applying], so the example is labelled.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">MCP-05, MCP-06, MCP-08, MCP-19</span> The kinds are the four action classes set by the tenant admin: read and append-only tools work in the first increment, reversible writes come in the second, and prepare-only governance actions are drafted for the user to confirm in the app.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">MCP-15</span> Metis promises support for clients that implement the MCP specification and lists the clients it has tested, with their sign-in method; which clients must be verified is open question Q-08.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">MCP-15, MCP-20</span> A failed test or call names its category and the fix: invalid or expired token, missing scope, workspace restriction, client not allowed by tenant policy, rate limit, protocol version mismatch, plus server unavailable. The test call and the activity list use the same wording.</span></li>
+    <li><span class="anno" data-n="8"></span><span><span class="req">MCP-09</span> The tool list shows each tool's version and whether this token allows it; changes stay backward compatible within a major version.</span></li>
+    <li><span class="anno" data-n="9"></span><span><span class="req">MCP-10, BR-39</span> Tools return figures computed by the platform with the Section 12 definitions, stamped with the as-of time and metric version, so the AI client never aggregates raw rows itself.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

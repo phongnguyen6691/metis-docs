@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Provider console: tenant pre-fill and onboarding metrics · Metis wireframe</title>
+<meta name="wf:id" content="provider-onboarding">
+<meta name="wf:title" content="Provider console: tenant pre-fill and onboarding metrics">
+<meta name="wf:area" content="Access &amp; tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-02 ONB-26 TEN-01 TEN-08">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Provider console: onboarding metrics per tenant without any business data, and the create-tenant dialog extended with the facts and answers recorded from the sales discovery.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-metrics th:first-child, .x-metrics td:first-child { padding-left: 14px; }
+  .x-stage { padding: 28px 36px; }
+  .x-modal { max-width: 1020px; margin: 0 auto; }
+  .x-cols { gap: 0; }
+  .x-pad { padding: 18px; }
+  .x-pair .field > label { display: flex; align-items: center; gap: 6px; min-height: 20px; }
+  .x-set { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 4px; }
+  .x-set .toggle { flex: 1; min-width: 0; }
+  .banner, .small.muted { text-wrap: balance; }
+</style>
+</head>
+<body data-shell="provider" data-nav="provider-tenants" data-user="DL" data-crumbs="Provider operations / Tenants / Onboarding">
+<main>
+
+  <section>
+    <h1 class="title">Onboarding</h1>
+    <div class="muted" style="margin-top:4px">Provider operations · data as of 7 Oct 2026, 09:00</div>
+  </section>
+
+  <section class="card" data-req="ONB-26 TEN-08">
+    <div class="head"><span class="h3">Onboarding per tenant <span class="anno" data-n="1"></span></span></div>
+    <table class="table x-metrics">
+      <thead><tr><th>Tenant</th><th>Path</th><th>To draft</th><th>To launch</th><th>Cards</th><th>Read / assumed / asked</th><th>Delegated closed</th><th>Abandoned at</th></tr></thead>
+      <tbody>
+        <tr><td>Nova Energy</td><td>Metis AI</td><td>14 min</td><td>27 min</td><td>6</td><td>92% / 6% / 2%</td><td>12 of 31</td><td>none</td></tr>
+        <tr><td>Kite Logistics</td><td>Rule-based and own AI</td><td>22 min</td><td>41 min</td><td>9</td><td>81% / 14% / 5%</td><td>5 of 18</td><td>none</td></tr>
+        <tr><td>Sable Foods (trial)</td><td>Metis AI</td><td>19 min</td><td>not launched</td><td>4</td><td>88% / 9% / 3%</td><td>none</td><td>Draft step</td></tr>
+      </tbody>
+    </table>
+    <div class="body"><div class="banner small">Metrics only: no project names, figures or documents. Eligible sessions this month: 2 of 2 activated. Active open time to launch: median 34 min, 75th percentile 41 min, 90th percentile 41 min, 50% within 30 minutes. The trial tenant waiting for single sign-on is not eligible and is reported separately, not against the target.</div></div>
+  </section>
+
+  <section class="overlay card x-stage" data-req="TEN-01 ONB-02">
+    <div class="modal x-modal">
+      <div class="head"><span class="h3">Create tenant <span class="anno" data-n="2"></span></span></div>
+      <div class="grid c2 x-cols">
+
+        <div class="x-pad stack s" data-req="TEN-01">
+          <div class="field"><label>Organization name <span class="req">*</span></label><div class="input">Nova Energy</div></div>
+          <div class="field"><label>Email domains</label><div class="input">nova.example</div></div>
+          <div class="field"><label>First tenant admin <span class="req">*</span></label><div class="input">r.okafor@nova.example (Rosa Okafor, COO)</div></div>
+          <div class="field"><label>IT contact for sign-in setup</label><div class="input">it.admin@nova.example</div></div>
+          <div class="grid c2">
+            <div class="field"><label>Plan</label><div class="select">Business</div></div>
+            <div class="field"><label>Start as</label><span class="seg"><span class="on">Trial</span><span>Active</span></span></div>
+          </div>
+          <div class="grid c2 x-pair">
+            <div class="field"><label>Trial length</label><div class="select">30 days</div></div>
+            <div class="field"><label>Region <span class="tag future">Region choice: Planned V2</span></label><div class="select">EU</div></div>
+          </div>
+        </div>
+
+        <div class="panel x-pad stack s" data-req="ONB-02">
+          <div class="row between"><span class="h3">From the sales discovery <span class="anno" data-n="3"></span></span><span class="tag accent">Recorded by D. Lindqvist, 1 Oct 2026</span></div>
+          <div class="field"><label>Scope</label><div class="select">All of Nova Energy</div></div>
+          <div class="field"><label>Main kind of work</label><div class="select">Engineering, construction and capital projects</div><div class="small muted">Starting pack: Capital projects</div></div>
+          <div class="grid c2">
+            <div class="field"><label>Currency</label><div class="select">EUR</div></div>
+            <div class="field"><label>Fiscal year</label><div class="select">January to December</div></div>
+          </div>
+          <div class="label" style="margin-top:4px">Answers, only where the customer said them</div>
+          <div class="field"><div class="select">Reviews the portfolio by business unit or subsidiary</div><div class="small muted">Source: discovery call of 28 Sep, Rosa Okafor</div></div>
+          <div class="field"><div class="select">Decides only the big or strategic projects</div><div class="small muted">Source: discovery call of 28 Sep, Rosa Okafor</div></div>
+          <div class="field"><div class="select">Not asked</div><div class="small muted">Leave unanswered rather than guess: the executive answers it on the framing screen</div></div>
+          <div class="banner small">Record only what the customer actually said. A guessed answer arrives pre-selected and becomes the answer the executive confirms without thinking.</div>
+          <div class="x-set"><span class="toggle on">Propose AI processing (the customer's admin still enables it)</span><span class="small muted">On</span></div>
+        </div>
+
+      </div>
+      <div class="foot"><span class="btn ghost">Cancel</span><span class="btn primary">Create tenant</span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-26, TEN-08</span> Onboarding metrics per tenant for provider operators, with no tenant business data. The table separates what the measure needs: whether the session was eligible, whether it activated, the active open time, and the elapsed time beside it, so a session that waited three days for single sign-on is visible as a dependency rather than as a slow executive. Distribution figures replace a single median, and ineligible sessions are reported separately instead of being counted against the target.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">TEN-01</span> The create-tenant dialog of wireframe 07, extended with the IT contact; the first tenant admin is the executive who will onboard, and the IT administrator named in wireframe 07 becomes the IT contact.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-02</span> Each pre-filled value names who recorded it and when, and a question the customer did not answer is left unanswered rather than guessed, because a pre-selected guess anchors the executive to it. Facts and, when known, answers from the sales discovery are recorded here, so the executive only confirms them; the onboarding AI can be proposed, but the customer's admin accepts it.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

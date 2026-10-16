@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Focus · Metis wireframe</title>
+<meta name="wf:id" content="focus">
+<meta name="wf:title" content="Focus: today and this week">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="OVW-06 OVW-07 OVW-08">
+<meta name="wf:poc" content="29">
+<meta name="wf:summary" content="Personal start-of-day view: overdue, due in the next 7 days and starting in the next 7 days, with Only mine, a scope switch from this project to all my projects, and status changes or Done straight from each row; counts follow Section 12.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-late { color: var(--critical-text); font-weight: 600; white-space: nowrap; }
+  .x-od .grow { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .x-st { display: inline-flex; align-items: center; gap: 4px; }
+  .x-st::after { content: "▾"; color: var(--muted); font-size: 11px; }
+  .x-done { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--good-text); font-weight: 700; background: var(--surface); }
+  .x-pick { flex-wrap: wrap; gap: 6px; background: var(--surface-sunk); }
+  .x-pick .chip { cursor: default; }
+  .x-pick .chip.cur { box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .x-proj { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .x-open { box-shadow: inset 0 0 0 1.5px var(--line-strong); }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="focus">
+<main>
+
+  <section class="card pad row between" data-req="OVW-06 OVW-08">
+    <div class="stack s">
+      <div class="title">Today and this week</div>
+      <div class="small muted">Tuesday, 22 September 2026</div>
+      <div>9 items are overdue, worth clearing first.</div>
+    </div>
+    <div class="stack s" style="align-items:flex-end">
+      <div class="row"><span class="chip critical">9 overdue</span><span class="chip">0 due today</span><span class="chip">0 due in next 7 days</span><span class="chip running">3 in progress</span><span class="anno" data-n="1"></span></div>
+      <div class="row"><span class="seg"><span class="on">This project</span><span>All my projects</span></span><span class="anno" data-n="4"></span><span class="toggle">Only mine · Nadia R.</span><span class="anno" data-n="2"></span></div>
+    </div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr) minmax(0, 1fr); align-items: start" data-req="OVW-06 OVW-07">
+    <div class="card x-od">
+      <div class="head" style="background:var(--critical-bg)"><span class="h3" style="color:var(--critical-text)">Overdue</span><span class="small muted">Status ▾ changes it here · ✓ marks done <span class="anno" data-n="3"></span></span><span class="chip critical">9</span></div>
+      <div class="list-row"><span class="code">1.1.1</span><div class="grow">Phase 1 Render Delivery</div><span class="small muted">Denny K.</span><span class="chip running x-st">In Progress</span><span class="x-late">60 days</span><span class="x-done" title="Mark done">✓</span></div>
+      <div class="list-row"><span class="code">3.1</span><div class="grow">Visual Quality Approval</div><span class="small muted">Art Lead</span><span class="chip waiting x-st">Waiting</span><span class="x-late">59 days</span><span class="x-done" title="Mark done">✓</span></div>
+      <div class="list-row"><span class="code">1.1</span><div class="grow">51 Render Images</div><span class="small muted">Denny K.</span><span class="chip running x-st">In Progress</span><span class="x-late">43 days</span><span class="x-done" title="Mark done">✓</span></div>
+      <div class="list-row"><span class="code">1.1.2</span><div class="grow">Phase 2 Render Delivery</div><span class="small muted">Denny K.</span><span class="chip x-st">Not Started</span><span class="x-late">43 days</span><span class="x-done" title="Mark done">✓</span></div>
+      <div class="list-row"><span class="code">4.1</span><div class="grow">Timeline Risk</div><span class="small muted">Denny K.</span><span class="chip running x-st">In Progress</span><span class="x-late">43 days</span><span class="x-done" title="Mark done">✓</span></div>
+      <div class="list-row"><span class="code">1.2</span><div class="grow">3D Film (2 to 3 minutes)</div><span class="small muted">Sasha W.</span><span class="chip x-st">Not Started</span><span class="x-late">25 days</span><span class="x-done" title="Mark done">✓</span></div>
+      <div class="list-row"><span class="code">3.2</span><div class="grow">Client Approval Gate</div><span class="small muted">Nadia R.</span><span class="chip x-st x-open">Not Started</span><span class="x-late">25 days</span><span class="x-done" title="Mark done">✓</span></div>
+      <div class="list-row x-pick"><span class="small muted">Set status of 3.2:</span><span class="chip cur">Not Started</span><span class="chip running">In Progress</span><span class="chip waiting kbd-focus">Waiting</span><span class="chip critical">Blocked</span><span class="chip good">Done</span><span class="small muted">Arrow keys move, Enter sets, Esc closes; the change is logged in the item's activity</span></div>
+      <div class="list-row"><span class="code">6.1</span><div class="grow">Client Feedback Risk</div><span class="small muted">Nadia R.</span><span class="chip x-st">Not Started</span><span class="x-late">25 days</span><span class="x-done" title="Mark done">✓</span></div>
+      <div class="list-row"><span class="code">1.3</span><div class="grow">Final Delivery</div><span class="small muted">Nadia R.</span><span class="chip x-st">Not Started</span><span class="x-late">20 days</span><span class="x-done" title="Mark done">✓</span></div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="h3">Due this week</span><span class="chip">0</span></div>
+      <div class="body"><div class="empty">Nothing due in the next 7 days. <span class="anno" data-n="5"></span></div></div>
+    </div>
+    <div class="card">
+      <div class="head"><span class="h3">Starting this week</span><span class="chip">0</span></div>
+      <div class="body"><div class="empty">Nothing starts in the next 7 days.</div></div>
+    </div>
+  </section>
+
+  <section class="card x-od" data-req="OVW-08 OVW-07">
+    <div class="head"><span class="h3">All my projects, as the switch shows it</span><span class="small muted">Creative Studio · Only mine on · Nadia R.</span><span class="chip critical">3 overdue</span><span class="chip">1 due this week</span></div>
+    <div class="list-row"><span class="x-proj">Meridian CGI Campaign</span><span class="code">3.2</span><div class="grow">Client Approval Gate</div><span class="chip x-st">Not Started</span><span class="x-late">25 days</span><span class="x-done" title="Mark done">✓</span></div>
+    <div class="list-row"><span class="x-proj">Meridian CGI Campaign</span><span class="code">6.1</span><div class="grow">Client Feedback Risk</div><span class="chip x-st">Not Started</span><span class="x-late">25 days</span><span class="x-done" title="Mark done">✓</span></div>
+    <div class="list-row"><span class="x-proj">Meridian CGI Campaign</span><span class="code">1.3</span><div class="grow">Final Delivery</div><span class="chip x-st">Not Started</span><span class="x-late">20 days</span><span class="x-done" title="Mark done">✓</span></div>
+    <div class="list-row"><span class="x-proj">Northwind Showroom VR</span><span class="code">2.3</span><div class="grow">VR Asset Export</div><span class="chip running x-st">In Progress</span><span class="small muted" style="white-space:nowrap">Due Thu 24 Sep</span><span class="x-done" title="Mark done">✓</span></div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">OVW-06</span> Counts follow Section 12: overdue means not Done and target before today, days overdue is today minus target, and "this week" is the next 7 days, rolling.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">OVW-06</span> Only mine filters to the signed-in user; for Nadia R. the overdue list drops to 3.2, 6.1 and 1.3.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">OVW-07</span> Quick update without opening the item: the status chip opens a picker (shown open for 3.2, with the keyboard focus ring on Waiting) and ✓ marks the item Done. Each change is saved like an edit in the item form and logged in the item's activity; an item marked Done leaves the list.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">OVW-08</span> The scope switch shows the same three lists across every project of the workspace that the user belongs to, with the project name on each row; the card at the bottom shows the result for Nadia R. with Only mine on. Counts in the header follow the chosen scope.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">OVW-06</span> Each empty column says why it is empty, as the POC did, instead of showing a blank card.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

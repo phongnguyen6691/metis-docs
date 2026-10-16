@@ -1,0 +1,11 @@
+# Dependencies the wireframe and brand tools install
+node_modules/
+
+# Word editions of the BRD, built on demand by business/requirements/source/build.py, in any folder under it
+business/requirements/**/*.docx
+
+# macOS
+.DS_Store
+
+# Personal Claude Code settings stay on each machine
+.claude/settings.local.json

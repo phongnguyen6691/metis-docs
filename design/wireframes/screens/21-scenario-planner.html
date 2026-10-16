@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scenario planner · Metis wireframe</title>
+<meta name="wf:id" content="scenario-planner">
+<meta name="wf:title" content="Scenario planner">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="V2">
+<meta name="wf:requirements" content="STR-02 STR-03 STR-04 STR-05 BR-10 BR-11">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="What-if planning on a copy of the portfolio: budget and capacity levers, baseline versus scenario, recommended stop, delay, protect and reallocate actions, applied only as a proposal.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-cmp.hbars { grid-template-columns: 100px 1fr 96px; }
+  .x-act { display: grid; grid-template-columns: 110px 1fr auto; gap: 8px 12px; align-items: center; font-size: 13px; }
+  .x-act b { font-size: 12px; letter-spacing: .06em; }
+</style>
+</head>
+<body data-shell="app" data-nav="scenario" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / Scenarios">
+<main>
+
+  <div class="banner accent small"><b>Planned for V2.</b> <span>Scenarios run on a copy of the portfolio; the approved baseline never changes from this screen.</span></div>
+
+  <section class="row between">
+    <div>
+      <div class="title">Scenario: budget minus 15%</div>
+      <div class="muted small" style="margin-top:4px">Draft by Linh T. · 21 Sep 2026 · baseline FY2027 approved portfolio</div>
+    </div>
+    <div class="row">
+      <span class="btn secondary">Compare scenarios</span>
+      <span class="btn secondary">Save</span>
+      <span class="btn primary">Apply as proposal <span class="anno" data-n="4"></span></span>
+    </div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 300px 1fr; align-items: start">
+    <div class="card" data-req="STR-02 STR-05">
+      <div class="head"><span class="h3">Levers</span></div>
+      <div class="body stack">
+        <div class="field"><label>Budget change</label><div class="row"><div class="meter acc" style="flex:1"><span style="width:85%"></span></div><b class="num">-15%</b></div><span class="small muted">$50.2M to $42.7M</span></div>
+        <div class="field"><label>Minimum portfolio score <span class="anno" data-n="2"></span></label><div class="input">50</div><span class="small muted">weights: strategic 30, customer 20, financial 20, risk 10, urgency 10, feasibility 10</span></div>
+        <span class="toggle on">Protect regulatory projects</span>
+        <span class="toggle on">Protect committed MVP releases</span>
+        <span class="toggle on">Protect projects past Test <span class="anno" data-n="5"></span></span>
+        <div class="field"><label>Capacity ceiling</label><div class="select">100% per capability</div></div>
+        <span class="btn secondary sm">Recalculate</span>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="STR-03">
+        <div class="head"><span class="h3">Baseline vs scenario <span class="anno" data-n="1"></span></span><span class="btn ghost sm">Table view</span></div>
+        <table class="table">
+          <thead><tr><th>Measure</th><th class="num">Baseline</th><th class="num">Scenario</th><th class="num">Change</th></tr></thead>
+          <tbody>
+            <tr><td>Budget</td><td class="num">$50.2M</td><td class="num">$42.7M</td><td class="num">-$7.5M</td></tr>
+            <tr><td>Active projects</td><td class="num">128</td><td class="num">109</td><td class="num">-19</td></tr>
+            <tr><td>FTE demand</td><td class="num">474</td><td class="num">431</td><td class="num">-43</td></tr>
+            <tr><td>Utilization (capacity 452)</td><td class="num" style="color:var(--critical-text)">105%</td><td class="num">95%</td><td class="num">-10 pts</td></tr>
+            <tr><td>Expected value</td><td class="num">$83.0M</td><td class="num">$77.0M</td><td class="num" style="color:var(--critical-text)">-$6.0M</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid c2">
+        <div class="card" data-req="STR-03 BR-10">
+          <div class="head"><span class="h3">Recommended actions</span><span class="muted small">advisory</span></div>
+          <div class="body x-act">
+            <b>STOP 9</b><span>lowest-score initiatives, 6 of them proposals</span><span class="num muted">-$3.4M · 20 FTE</span>
+            <b>DELAY 10</b><span>low-urgency initiatives moved to FY2028</span><span class="num muted">-$4.1M · 23 FTE</span>
+            <b>PROTECT 8</b><span>regulatory and committed MVP releases</span><span class="num muted">no change</span>
+            <b>REALLOCATE 12</b><span>released Engineering FTE to Core Platform and Data Platform</span><span class="num muted">0 net</span>
+          </div>
+        </div>
+        <div class="card" data-req="STR-04">
+          <div class="head"><span class="h3">Capacity impact <span class="anno" data-n="3"></span></span></div>
+          <div class="body stack s">
+            <div class="legend"><span><i class="s1"></i>Baseline</span><span><i class="s2"></i>Scenario</span></div>
+            <div class="hbars x-cmp">
+              <span>Data</span><div class="stack s" style="gap:3px"><div class="track"><span class="s1" style="width:94%"></span></div><div class="track"><span class="s2" style="width:83%"></span></div></div><span class="val">118% · 104%</span>
+              <span>Engineering</span><div class="stack s" style="gap:3px"><div class="track"><span class="s1" style="width:89%"></span></div><div class="track"><span class="s2" style="width:79%"></span></div></div><span class="val">112% · 99%</span>
+              <span>Product</span><div class="stack s" style="gap:3px"><div class="track"><span class="s1" style="width:85%"></span></div><div class="track"><span class="s2" style="width:77%"></span></div></div><span class="val">107% · 97%</span>
+              <span>QA</span><div class="stack s" style="gap:3px"><div class="track"><span class="s1" style="width:82%"></span></div><div class="track"><span class="s2" style="width:74%"></span></div></div><span class="val">103% · 93%</span>
+            </div>
+            <div class="small muted">Bars share one axis, 0 to 125%.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-req="STR-02 STR-03 STR-05">
+    <div class="head"><span class="h3">Impact on projects</span><span class="muted small">19 changed · 6 shown</span><span class="btn ghost sm">All projects</span></div>
+    <table class="table">
+      <thead><tr><th>Project</th><th class="num">Score</th><th>Stage</th><th>Action</th><th class="num">Budget</th><th class="num">FTE</th><th class="num">Value</th><th>Reason</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">PRJ-009</span> Branch Kiosk</td><td class="num">38</td><td>Discovery</td><td><span class="chip critical">Stop</span></td><td class="num">-$0.8M</td><td class="num">-4</td><td class="num">-$0.6M</td><td class="muted">score below 50, proposal only</td></tr>
+        <tr><td><span class="code">PRJ-008</span> CRM Refresh</td><td class="num">44</td><td>Discovery</td><td><span class="chip waiting">Delay</span></td><td class="num">-$0.9M</td><td class="num">-5</td><td class="num">-$0.4M</td><td class="muted">low urgency, Data capability over 100%</td></tr>
+        <tr><td><span class="code">PRJ-004</span> Mobile App</td><td class="num">52</td><td>Development</td><td><span class="chip waiting">Delay</span></td><td class="num">-$0.5M</td><td class="num">-6</td><td class="num">-$0.3M</td><td class="muted">iOS scope (CR-016) moved to FY2028</td></tr>
+        <tr><td><span class="code">PRJ-001</span> MSME Payment</td><td class="num">86</td><td>Development</td><td><span class="chip good">Protect</span></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="muted">committed MVP1 release 30 Mar 2027</td></tr>
+        <tr><td><span class="code">PRJ-007</span> AML Upgrade</td><td class="num">71</td><td>Test</td><td><span class="chip good">Protect</span></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="muted">regulatory, past Test</td></tr>
+        <tr><td><span class="code">PRJ-005</span> Core Platform</td><td class="num">78</td><td>Development</td><td><span class="chip running">Reallocate</span></td><td class="num">0</td><td class="num">+8</td><td class="num">0</td><td class="muted">receives released Engineering FTE</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">STR-03</span> Baseline against scenario for budget, projects, FTE, utilization and expected value, computed on a copy of the portfolio.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">STR-02</span> Recommendations follow the portfolio score; the weights are visible and changes to them are audited, so every stop or delay can be explained.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">STR-04</span> Capacity impact by capability shows which bottlenecks the scenario relieves; both series share one axis.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">BR-10, BR-11</span> "Apply as proposal" creates a decision proposal for an authorized executive; the approved baseline and project data stay unchanged.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">STR-05</span> Lifecycle stage and governance readiness feed the evaluation; projects past Test are protected by default.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

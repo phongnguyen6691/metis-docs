@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Workspace dashboard · Metis wireframe</title>
+<meta name="wf:id" content="workspace-dashboard">
+<meta name="wf:title" content="Workspace dashboard">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="EXE-05 GOV-10 GOV-12 GOV-14 BR-14 BR-15 BR-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Governance view of one workspace: portfolio KPIs, the delivery pipeline by lifecycle stage with overdue and blocked gates, and the governance attention list.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-nav="workspace-dashboard" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / Workspace dashboard">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Digital Products workspace</div>
+      <div class="muted small" style="margin-top:4px">Framework Company A Digital Delivery v2.1 · FY2027 · <span class="fresh">As of 22 Sep 2026, 09:40 · metrics v1</span></div>
+    </div>
+    <div class="filters">
+      <div class="field"><label>Portfolio</label><div class="select">All portfolios</div></div>
+      <div class="field"><label>Period</label><div class="select">Q3 2026</div></div>
+      <span class="btn secondary">Open cockpit</span>
+    </div>
+  </section>
+
+  <section class="grid c5" data-req="EXE-05">
+    <div class="card kpi"><div class="k-label">Portfolio investment <span class="anno" data-n="1"></span></div><div class="k-value">$50.2M</div><div class="k-delta">approved · forecast $51.9M</div></div>
+    <div class="card kpi"><div class="k-label">Active projects</div><div class="k-value">128</div><div class="k-delta">96 committed · 32 proposed</div></div>
+    <div class="card kpi"><div class="k-label">FTE demand</div><div class="k-value">474</div><div class="k-delta"><span class="up-bad">+22</span> over capacity 452</div></div>
+    <div class="card kpi"><div class="k-label">Open risks</div><div class="k-value">84</div><div class="k-delta">13 critical · 4 systemic</div></div>
+    <div class="card kpi alert"><div class="k-label">Gates due this month</div><div class="k-value">9</div><div class="k-delta"><span class="up-bad">1</span> overdue · Merchant Onboarding</div></div>
+  </section>
+
+  <section class="card" data-req="EXE-05 GOV-10 GOV-12 BR-14 BR-15">
+    <div class="head"><span class="h3">Delivery pipeline <span class="anno" data-n="2"></span></span><span class="muted small">projects by current stage · framework v2.1</span><span class="btn ghost sm">Table view</span></div>
+    <div class="body stack s">
+      <div class="pipeline">
+        <div class="st"><span class="muted">Discovery</span><b>6</b><span class="small muted">0 overdue</span></div>
+        <span class="gate"></span>
+        <div class="st"><span class="muted">Design</span><b>8</b><span class="small muted">0 overdue</span></div>
+        <span class="gate"></span>
+        <div class="st"><span class="muted">Solution</span><b>5</b><span class="small" style="color:var(--critical-text)">1 gate overdue</span></div>
+        <span class="gate"></span>
+        <div class="st"><span class="muted">Development</span><b>14</b><span class="small" style="color:var(--critical-text)">1 blocked</span></div>
+        <span class="gate"></span>
+        <div class="st"><span class="muted">Test</span><b>5</b><span class="small muted">0 overdue</span></div>
+        <span class="gate"></span>
+        <div class="st"><span class="muted">GTM</span><b>4</b><span class="small muted">0 overdue</span></div>
+        <span class="gate"></span>
+        <div class="st"><span class="muted">Retro</span><b>2</b><span class="small muted">0 overdue</span></div>
+      </div>
+      <div class="row small">
+        <span class="chip critical">Merchant Onboarding · Solution gate overdue 5 days <span class="anno" data-n="3"></span></span>
+        <span class="chip critical">Data Platform · blocked by Core Platform dependency</span>
+        <span class="muted">44 projects on v2.1 · 52 committed projects stay on v1.9 until migrated · 32 proposals not yet in Discovery</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 1.6fr 1fr">
+    <div class="card" data-req="GOV-14 GOV-10">
+      <div class="head"><span class="h3">Governance attention <span class="anno" data-n="4"></span></span><span class="chip critical">6</span><span class="btn ghost sm">All exceptions</span></div>
+      <div class="list-row"><span class="chip critical">Critical</span><div class="grow"><div class="title-line">Solution gate overdue: Merchant Onboarding</div><div class="sub">2 of 5 mandatory artifacts missing · approvers L. Wang, A. Wong, Security · Votes 1/3 · quorum 2/3</div></div><span class="btn secondary sm">Open gate</span></div>
+      <div class="list-row"><span class="chip serious">High</span><div class="grow"><div class="title-line">3 projects missing mandatory Discovery evidence</div><div class="sub">Digital Sales, CRM Refresh, Branch Kiosk · problem statement or KPI baseline not attached</div></div><span class="btn secondary sm">Request evidence</span></div>
+      <div class="list-row"><span class="chip serious">High</span><div class="grow"><div class="title-line">Budget change needs a CR: Mobile App</div><div class="sub">CR-016 add iOS · +$300K, +4 weeks, +6 FTE · pending 6 days</div></div><span class="btn secondary sm">View CR</span></div>
+      <div class="list-row"><span class="chip waiting">Medium</span><div class="grow"><div class="title-line">Stage SLA breached: Core Platform in Development</div><div class="sub">34 days over planned stage duration · computed health Off track</div></div><span class="btn secondary sm">Review</span></div>
+      <div class="list-row"><span class="chip waiting">Medium</span><div class="grow"><div class="title-line">2 waivers expire this week</div><div class="sub">KYC Automation security review (25 Sep) · Card Rewards UAT evidence (27 Sep)</div></div><span class="btn secondary sm">Renew or close</span></div>
+      <div class="list-row"><span class="chip waiting">Medium</span><div class="grow"><div class="title-line">Solution gate due 26 Sep: Treasury API</div><div class="sub">All 5 artifacts attached · readiness check passed</div></div><span class="btn secondary sm">Schedule</span></div>
+    </div>
+
+    <div class="stack" data-req="EXE-05">
+      <div class="card">
+        <div class="head"><span class="h3">Health <span class="anno" data-n="5"></span></span><span class="btn ghost sm">Open</span></div>
+        <div class="body stack s">
+          <div class="stackbar"><span class="f-good" style="width:63%"></span><span class="f-waiting" style="width:24%"></span><span class="f-critical" style="width:13%"></span></div>
+          <div class="legend"><span><i class="f-good"></i>On track 81</span><span><i class="f-waiting"></i>At risk 30</span><span><i class="f-critical"></i>Off track 17</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="head"><span class="h3">Capacity</span><span class="btn ghost sm">Open</span></div>
+        <div class="list-row"><span class="grow">Data</span><span class="num">118%</span><span class="chip critical">Over</span></div>
+        <div class="list-row"><span class="grow">Engineering</span><span class="num">112%</span><span class="chip critical">Over</span></div>
+      </div>
+      <div class="grid c2">
+        <div class="card kpi"><div class="k-label">Critical risks</div><div class="k-value">13</div><div class="k-delta">4 systemic · open Risk</div></div>
+        <div class="card kpi"><div class="k-label">Next MVP release</div><div class="k-value" style="font-size:20px">30 Mar 2027</div><div class="k-delta">MSME Payment MVP1 · open Roadmap</div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">EXE-05, BR-39</span> The dashboard covers one workspace; KPIs aggregate approved project records with the BRD Section 12 definitions, state their as-of time and metric version, and every figure opens the projects behind it.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">GOV-12, BR-14, BR-15</span> Counts are stage instances of the workspace default framework. Projects keep the framework version they started with, so projects still on v1.9 are counted apart until an approved migration.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">GOV-10</span> A gate past its planned date or a stage past its SLA is flagged in the pipeline and in the attention list; blocked means an unmet dependency.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">GOV-14</span> Each governance item has severity, reason and one next action that opens gate readiness: evidence, open risks, dependencies, budget and resource impact.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">EXE-05</span> Compact tiles link to the cockpit, capacity, risk and roadmap screens instead of repeating them.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

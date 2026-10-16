@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Workspace settings: fields and options · Metis wireframe</title>
+<meta name="wf:id" content="workspace-fields-options">
+<meta name="wf:title" content="Workspace settings: fields and options">
+<meta name="wf:area" content="Workspace & governance">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="WSP-07 WSP-08 WSP-09 BR-25">
+<meta name="wf:poc" content="32 33">
+<meta name="wf:summary" content="Workspace-managed lists for Category, Type, Label, Phase, Status and Priority with usage counts, system meanings, propagating renames and delete with replacement.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-nav="settings" data-workspace="Creative Studio" data-crumbs="Creative Studio / Settings / Fields & options">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Fields &amp; options</div>
+      <div class="muted small" style="margin-top:4px">Lists behind every dropdown, Board column and filter in the 3 Creative Studio projects. Renames update all items; counts show usage.</div>
+    </div>
+    <div class="seg"><span>General</span><span class="on">Fields &amp; options</span><span>Team &amp; roles</span><span>Frameworks</span><span>Data</span></div>
+  </section>
+
+  <section class="grid c3" data-req="WSP-07 WSP-08 WSP-09">
+    <div class="card">
+      <div class="head"><span class="h3">Category <span class="anno" data-n="1"></span></span><span class="muted small">PM control areas</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Deliverables</div><span class="small muted num">14 items</span><span class="btn ghost sm">Rename</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Technical</div><span class="small muted num">6 items</span><span class="btn ghost sm">Rename</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Quality</div><span class="small muted num">5 items</span><span class="btn ghost sm">Rename</span></div>
+      <div class="list-row" style="background:var(--accent-soft)"><span class="muted">⋮⋮</span><div class="grow">Timeline</div><span class="small muted num">3 items</span><span class="btn ghost sm">Delete</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Resource</div><span class="small muted num">3 items</span><span class="btn ghost sm">Rename</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Risk</div><span class="small muted num">4 items</span><span class="btn ghost sm">Rename</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Communication</div><span class="small muted num">0 items</span><span class="btn ghost sm">Delete</span></div>
+      <div class="list-row"><div class="input ph" style="flex:1">Add a category</div><span class="btn primary sm">Add</span></div>
+    </div>
+
+    <div class="card">
+      <div class="head"><span class="h3">Type</span><span class="muted small">Work object level</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Deliverable <span class="tag">Feeds charter V</span></div><span class="small muted num">9 items</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Work Package</div><span class="small muted num">6 items</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Task</div><span class="small muted num">20 items</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow">Subtask</div><span class="small muted num">0 items</span></div>
+      <div class="list-row"><div class="input ph" style="flex:1">Add a type</div><span class="btn primary sm">Add</span></div>
+      <div class="body small muted">Category rows group work; they are not a Type and are never counted as work items.</div>
+    </div>
+
+    <div class="card">
+      <div class="head"><span class="h3">Label</span><span class="muted small">Pick any that apply</span></div>
+      <div class="list-row"><span class="lbl ms">Milestone</span><div class="grow"></div><span class="small muted num">6 items</span><span class="tag">System</span></div>
+      <div class="list-row"><span class="lbl cp">Checkpoint</span><div class="grow"></div><span class="small muted num">0 items</span><span class="tag">System</span></div>
+      <div class="list-row"><span class="lbl gate">Approval Gate</span><div class="grow"></div><span class="small muted num">4 items</span><span class="tag">System</span></div>
+      <div class="list-row"><span class="lbl"><span style="color:var(--waiting)">↘</span> Input Required</span><div class="grow"></div><span class="small muted num">4 items</span><span class="tag">System</span></div>
+      <div class="list-row"><span class="lbl risk">Risk Related</span><div class="grow"></div><span class="small muted num">3 items</span><span class="tag">System</span></div>
+      <div class="list-row"><div class="input ph" style="flex:1">Add a label</div><span class="btn primary sm">Add</span></div>
+    </div>
+
+    <div class="card">
+      <div class="head"><span class="h3">Phase <span class="anno" data-n="3"></span></span><span class="tag accent">From lifecycle framework</span></div>
+      <div class="body small muted" style="padding-bottom:4px">Creative Production v1.2 · edit in Lifecycle framework</div>
+      <div class="list-row"><div class="grow">Initiation</div><span class="small muted num">7 items</span></div>
+      <div class="list-row"><div class="grow">Planning</div><span class="small muted num">5 items</span></div>
+      <div class="list-row"><div class="grow">Production</div><span class="small muted num">12 items</span></div>
+      <div class="list-row"><div class="grow">Review</div><span class="small muted num">6 items</span></div>
+      <div class="list-row"><div class="grow">Delivery</div><span class="small muted num">4 items</span></div>
+      <div class="list-row"><div class="grow">Closing</div><span class="small muted num">1 item</span></div>
+    </div>
+
+    <div class="card">
+      <div class="head"><span class="h3">Status <span class="anno" data-n="2"></span></span><span class="muted small">Board columns</span></div>
+      <table class="table">
+        <thead><tr><th>Value</th><th>System state</th><th class="num">Used</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip">Not Started</span></td><td><div class="select">Not started</div></td><td class="num">12</td></tr>
+          <tr><td><span class="chip running">In Progress</span></td><td><div class="select">In progress</div></td><td class="num">9</td></tr>
+          <tr><td><span class="chip waiting">Waiting</span></td><td><div class="select">Waiting</div></td><td class="num">2</td></tr>
+          <tr><td><span class="chip critical">Blocked</span></td><td><div class="select">Blocked</div></td><td class="num">0</td></tr>
+          <tr><td><span class="chip good">Done</span></td><td><div class="select">Done</div></td><td class="num">12</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="head"><span class="h3">Priority</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow"><span class="chip">Low</span></div><span class="small muted num">3 items</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow"><span class="chip waiting">Medium</span></div><span class="small muted num">10 items</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow"><span class="chip serious">High</span></div><span class="small muted num">14 items</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><div class="grow"><span class="chip critical">Critical</span></div><span class="small muted num">8 items</span></div>
+      <div class="list-row"><div class="input ph" style="flex:1">Add a priority</div><span class="btn primary sm">Add</span></div>
+    </div>
+  </section>
+
+  <section class="overlay card" style="padding:36px; display:flex; justify-content:center" data-req="BR-25">
+    <div class="modal" style="width:520px">
+      <div class="head"><span class="h3" style="flex:1">Delete category "Timeline"? <span class="anno" data-n="4"></span></span><span class="btn ghost sm">Close</span></div>
+      <div class="body stack s">
+        <div>3 work items in 2 projects use this category. Choose where they move before it is deleted.</div>
+        <div class="field"><label>Move items to <span class="req">*</span></label><div class="select">Deliverables</div></div>
+        <div class="small muted">Item history keeps the old value; the change is recorded in the audit log. Values with a system meaning, such as the Done status or the Milestone label, cannot be deleted.</div>
+      </div>
+      <div class="foot"><span class="btn ghost">Cancel</span><span class="btn danger">Move 3 items and delete</span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">WSP-07</span> Values can be added, renamed (every item using them updates), reordered by drag and deleted; counts show usage across the workspace.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">WSP-08</span> Each status maps to a system state, so renaming "Done" to "Completed" keeps progress, Board columns and charter sections correct.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">WSP-09</span> Phase values are the stages of the published lifecycle framework; they are read-only here and change only by publishing a new framework version.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">BR-25</span> Deleting a value in use requires a replacement; the POC left this undefined. Built-in labels and system statuses cannot be deleted.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

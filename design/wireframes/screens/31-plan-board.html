@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project plan, board · Metis wireframe</title>
+<meta name="wf:id" content="plan-board">
+<meta name="wf:title" content="Project plan: board">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLN-05 WBS-01 WBS-16 BR-41">
+<meta name="wf:poc" content="23">
+<meta name="wf:summary" content="Kanban of work items by status from the workspace Status list; dragging a card or choosing a column in its Move to… menu changes status and is logged; Done is a collapsed column of recent completions.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-late { color: var(--critical-text); font-weight: 500; }
+  .x-meta { display: flex; align-items: center; gap: 5px; color: var(--muted); white-space: nowrap; font-size: 11.5px; }
+  .x-meta .chip { margin-left: auto; height: 19px; font-size: 10.5px; padding: 0 7px; gap: 4px; }
+  .x-meta .av { width: 20px; height: 20px; font-size: 9px; }
+  .x-mv { position: relative; }
+  .x-menu { position: absolute; left: 30px; top: calc(100% + 6px); z-index: 5; width: 210px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(17, 24, 39, .16); padding: 4px; display: flex; flex-direction: column; font-size: 13px; }
+  .x-mh { display: flex; align-items: center; gap: 6px; padding: 6px 8px; font-weight: 600; font-size: 12px; color: var(--muted); }
+  .x-mi { display: flex; justify-content: space-between; padding: 7px 8px; border-radius: 4px; }
+  .x-mi.x-hi { background: var(--accent-soft); font-weight: 500; }
+  .x-mi.x-cur { color: var(--muted); }
+  .x-mf { border-top: 1px solid var(--line); margin-top: 4px; padding: 6px 8px 4px; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="plan">
+<main>
+
+  <section class="row between">
+    <span class="seg"><span>Timeline</span><span class="on">Board</span><span>Changes</span><span>Reports</span></span>
+    <div class="row">
+      <div class="select" style="min-width:160px">Filter: all work items</div>
+      <span class="check">Only mine</span>
+      <span class="small muted">9 open · 3 done · category rows are not cards</span>
+    </div>
+  </section>
+
+  <section class="board" style="grid-template-columns: repeat(4, minmax(0, 1fr)) 170px" data-req="PLN-05 WBS-01 WBS-16">
+    <div class="col">
+      <div class="chead"><span class="chip">Not Started</span>5 <span class="anno" data-n="1"></span></div>
+      <div class="kcard"><div class="row between"><span class="code">1.1.2</span><span class="lbl ms">Milestone</span></div><div class="t">Phase 2 Render Delivery</div><div class="x-meta"><span class="av">DK</span><span class="x-late">10 Aug · 43d late</span><span class="chip serious">High</span></div></div>
+      <div class="kcard"><div class="row between"><span class="code">1.2</span></div><div class="t">3D Film (2 to 3 minutes)</div><div class="x-meta"><span class="av">SW</span><span class="x-late">28 Aug · 25d late</span><span class="chip critical">Critical</span></div></div>
+      <div class="kcard"><div class="row between"><span class="code">1.3</span><span class="lbl ms">Milestone</span></div><div class="t">Final Delivery</div><div class="x-meta"><span class="av">NR</span><span class="x-late">2 Sep · 20d late</span><span class="chip critical">Critical</span></div></div>
+      <div class="kcard"><div class="row between"><span class="code">3.2</span><span class="lbl gate">Approval Gate</span></div><div class="t">Client Approval Gate</div><div class="x-meta"><span class="av">NR</span><span class="x-late">28 Aug · 25d late</span><span class="chip critical">Critical</span></div></div>
+      <div class="kcard"><div class="row between"><span class="code">6.1</span><span class="lbl risk">Risk Related</span></div><div class="t">Client Feedback Risk</div><div class="x-meta"><span class="av">NR</span><span class="x-late">28 Aug · 25d late</span><span class="chip critical">Critical</span></div></div>
+      <span class="btn ghost sm">+ Add task <span class="anno" data-n="3"></span></span>
+    </div>
+
+    <div class="col">
+      <div class="chead"><span class="chip running">In Progress</span>3</div>
+      <div class="kcard"><div class="row between"><span class="code">1.1</span></div><div class="t">51 Render Images</div><div class="x-meta"><span class="av">DK</span><span class="x-late">10 Aug · 43d late</span><span class="chip serious">High</span></div></div>
+      <div class="kcard"><div class="row between"><span class="code">1.1.1</span><span class="lbl ms">Milestone</span></div><div class="t">Phase 1 Render Delivery</div><div class="x-meta"><span class="av">DK</span><span class="x-late">24 Jul · 60d late</span><span class="chip serious">High</span></div></div>
+      <div class="kcard kbd-focus x-mv" data-req="PLN-05 BR-41"><div class="row between"><span class="code">4.1</span><span class="lbl risk">Risk Related</span></div><div class="t">Timeline Risk</div><div class="x-meta"><span class="av">DK</span><span class="x-late">10 Aug · 43d late</span><span class="chip serious">High</span></div>
+        <div class="x-menu"><div class="x-mh">Move to… <span class="anno" data-n="5"></span></div>
+          <div class="x-mi">Not Started</div>
+          <div class="x-mi x-cur">In Progress <span>current</span></div>
+          <div class="x-mi">Waiting</div>
+          <div class="x-mi x-hi">Blocked <span class="muted">Enter</span></div>
+          <div class="x-mi">Done</div>
+          <div class="x-mf">Shift+M opens · ↑ ↓ choose · Enter moves · Esc closes</div>
+        </div>
+      </div>
+      <span class="btn ghost sm">+ Add task</span>
+    </div>
+
+    <div class="col">
+      <div class="chead"><span class="chip waiting">Waiting</span>1</div>
+      <div class="kcard"><div class="row between"><span class="code">3.1</span><span class="lbl gate">Approval Gate</span></div><div class="t">Visual Quality Approval</div><div class="x-meta"><span class="av">AL</span><span class="x-late">25 Jul · 59d late</span><span class="chip serious">High</span></div></div>
+      <span class="btn ghost sm">+ Add task</span>
+    </div>
+
+    <div class="col">
+      <div class="chead"><span class="chip critical">Blocked</span>0 <span class="anno" data-n="2"></span></div>
+      <div class="drop">Drop items here</div>
+      <div class="banner accent small">Moving 4.1 here, by dragging or with Move to…, sets Status = Blocked and logs "Nadia R. changed Status from In Progress to Blocked" on the item.</div>
+      <span class="btn ghost sm">+ Add task</span>
+    </div>
+
+    <div class="col collapsed">
+      <div class="chead"><span class="chip good">Done</span>3 <span class="anno" data-n="4"></span></div>
+      <div class="small muted">Collapsed. Shows items completed in the last 14 days.</div>
+      <span class="btn secondary sm">Expand</span>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLN-05</span> Columns come from the workspace Status list and show counts. Cards show code, label, name, PIC, target with days late (Section 12) and priority; category rows never become cards.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">PLN-05, WBS-16</span> Dragging a card, or choosing a column in its Move to… menu, changes the item's Status and writes the change to its activity, so the board never holds its own copy of status.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">WBS-01</span> "+ Add task" creates a WBS item with that column's status; it appears in the table and tree at once.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">PLN-05</span> The POC board had no Done column. Here Done is a collapsed column limited to recent completions, so work can be finished by drag and drop without crowding the board.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">BR-41, PLN-05</span> Every card has a Move to… menu, the keyboard and touch equivalent of dragging: Shift+M on the focused card (or the card menu on touch) lists the Status columns; the choice moves the card, is logged like a drag and is announced to screen readers. The focused card shows the keyboard focus ring; the highlighted option uses the selection fill.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

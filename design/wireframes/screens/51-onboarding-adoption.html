@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: projects to adopt · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-adoption">
+<meta name="wf:title" content="Onboarding: projects to adopt">
+<meta name="wf:area" content="Onboarding">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-10 ONB-08 BR-46 BR-47 CHG-06 CHR-16">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Bringing 34 running projects into Metis, reviewed by exception: four counts, then the 7 projects whose source authority, sponsor or stage needs the executive, each with its action; the 27 ready ones sit behind a tab, and one project panel shows the stages completed before Metis and what the imported baseline will lock.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-adopt { font-size: 12px; table-layout: fixed; }
+  .x-adopt th { white-space: normal; padding: 8px 5px; letter-spacing: .04em; vertical-align: bottom; }
+  .x-adopt td { white-space: normal; height: auto; padding: 8px 5px; vertical-align: top; line-height: 1.35; }
+  .x-adopt th:first-child, .x-adopt td:first-child { padding-left: 12px; }
+  .x-adopt th:last-child, .x-adopt td:last-child { padding-right: 12px; }
+  .x-adopt .x-nb { white-space: nowrap; }
+  .x-adopt .src { display: flex; width: fit-content; font-size: 10px; }
+  .x-adopt .src:not(:first-child) { margin-top: 3px; }
+  .x-adopt .src.x-wrapbadge { height: auto; padding: 2px 6px; white-space: normal; line-height: 1.25; align-items: flex-start; }
+  .x-adopt .rag { font-size: 12px; white-space: normal; align-items: flex-start; text-wrap: balance; }
+  .x-adopt .fresh { display: flex; font-size: 11.5px; margin-top: 3px; }
+  .x-stage { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
+  .x-stage .grow { font-size: 13px; line-height: 1.5; }
+  .x-block { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-sunk); padding: 10px 12px; font-size: 13px; line-height: 1.5; }
+  .x-unknown { white-space: normal; align-items: flex-start; }
+</style>
+</head>
+<body data-shell="app" data-nav="registry" data-workspace="Nova Energy Portfolio" data-tenant="Nova Energy" data-user="RO" data-crumbs="Nova Energy Portfolio / Projects to adopt (draft)">
+<main>
+
+  <section class="stack s" data-req="ONB-10 CHR-16 BR-47">
+    <div class="row"><h1 class="title">Bring 34 running projects into Metis</h1><span class="anno" data-n="1"></span></div>
+    <div class="grid c4">
+      <div class="card kpi"><div class="k-label">Ready, with an approved source</div><div class="k-value">21</div><div class="k-delta"><span class="src read">board or investment decision</span></div></div>
+      <div class="card kpi"><div class="k-label">Not committed yet</div><div class="k-value">6</div><div class="k-delta"><span class="src read">advisory change control</span></div></div>
+      <div class="card kpi"><div class="k-label">Need a sponsor</div><div class="k-value">4</div><div class="k-delta"><span class="src verify">to Sam Varga</span></div></div>
+      <div class="card kpi"><div class="k-label">Budget or date in conflict</div><div class="k-value">3</div><div class="k-delta"><span class="src conflict">two sources disagree</span></div></div>
+    </div>
+    <div class="banner small">Stages before the current one are recorded as <b>completed before Metis</b>, never as passed: no gate decision is invented. A budget or a date becomes a locked baseline only where a named authority approved it <span class="anno" data-n="5"></span></div>
+  </section>
+
+  <div class="tabs">
+    <span class="tab on">Needs your attention (7)</span>
+    <span class="tab">Ready to bring in (27)</span>
+    <span class="tab">All 34</span>
+  </div>
+
+  <div class="filters">
+    <div class="field"><label>Business unit</label><div class="select">All</div></div>
+    <div class="field"><label>Exception</label><div class="select">All</div></div>
+    <div class="field"><label>Committed</label><div class="select">All</div></div>
+    <div class="field"><label>Badge</label><div class="select">All</div></div>
+  </div>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1fr) 360px; align-items: start">
+
+    <div class="card" data-req="ONB-10 ONB-08 BR-47">
+      <table class="table x-adopt">
+        <colgroup><col style="width:120px"><col style="width:72px"><col style="width:80px"><col style="width:62px"><col style="width:150px"><col style="width:190px"><col style="width:110px"></colgroup>
+        <thead>
+          <tr><th>Project <span class="anno" data-n="2"></span></th><th>Unit</th><th>Current stage</th><th>Committed</th><th>Approved by (source authority)</th><th>What needs you</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr class="sel"><td><b>North Grid Substation Upgrade</b></td><td>Grid</td><td>Define<span class="src read">Read</span></td><td>Yes</td><td>Investment committee pack, 4 Feb 2026<span class="src conflict">budget disagrees with the Capex plan</span></td><td>Tracker says EUR 12.4M, Capex plan says EUR 13.1M. Which locks the baseline?</td><td><span class="btn secondary sm">Use 12.4M</span> <span class="btn secondary sm">Use 13.1M</span></td></tr>
+          <tr><td><b>Almeria Solar Phase 2</b></td><td>Generation</td><td>Execute<span class="src assumed">Assumed</span></td><td>Yes</td><td>Final investment decision, 12 Mar 2026</td><td>Current stage was inferred from a status report, not stated anywhere</td><td><span class="btn secondary sm">Confirm Execute</span></td></tr>
+          <tr><td><b>Harbour Substation Rebuild</b></td><td>Grid</td><td>Execute</td><td>Yes<span class="src verify">evidence unclear</span></td><td>Capex plan 2026 only<span class="src verify">no approval marker</span></td><td>No board or committee approval found, so a locked baseline would rest on a planning sheet</td><td><span class="btn secondary sm">Adopt uncommitted</span> <span class="btn ghost sm">Delegate</span></td></tr>
+          <tr><td><b>Smart Meter Rollout Wave 3</b></td><td>Retail &amp; Digital</td><td>Execute</td><td>Yes</td><td>Board minutes, 18 Dec 2025</td><td>Sponsor named on one slide only: Lucia Ferrer</td><td><span class="btn secondary sm">Confirm sponsor</span></td></tr>
+          <tr><td><b>Wind Repowering Study</b></td><td>Generation</td><td>Identify</td><td>No</td><td>none</td><td>No sponsor found anywhere</td><td><span class="btn ghost sm">Delegate to Sam</span></td></tr>
+          <tr><td><b>ERP Finance Migration</b></td><td>Corporate</td><td>Execute<span class="src assumed">Assumed</span></td><td>Yes</td><td>Board minutes, 6 Nov 2025</td><td>Last status is 7 weeks old, so the stage may have moved</td><td><span class="btn secondary sm">Confirm</span> <span class="btn ghost sm">Ask the PM</span></td></tr>
+          <tr><td><b>Coastal Wind Tie-in</b></td><td>Generation</td><td>Assess</td><td>Yes<span class="src conflict">two dates</span></td><td>Investment committee pack, 9 Jan 2026<span class="src conflict">finish date disagrees</span></td><td>Finish 31 Mar 2027 in the pack, 30 Sep 2027 in the tracker</td><td><span class="btn secondary sm">Use the pack</span> <span class="btn ghost sm">Leave flagged</span></td></tr>
+        </tbody>
+      </table>
+      <div class="list-row" style="border-top:1px solid var(--line)"><span class="small muted grow">7 exceptions of 34 projects. The other 27 have an approved source, a sponsor and no conflict; open "Ready to bring in" to scan or bulk confirm them.</span><span class="btn primary sm">Review 7 exceptions</span><span class="btn ghost sm">Open all 34</span></div>
+    </div>
+
+    <div class="card" data-req="BR-46 BR-47 CHG-06 CHR-16">
+      <div class="head"><span class="h3">Almeria Solar Phase 2 at adoption <span class="anno" data-n="3"></span></span></div>
+      <div class="list-row x-stage"><div class="grow"><b>Identify</b> · completed before Metis · source: ExCo pack slide 9</div><span class="chip good">Before Metis</span></div>
+      <div class="list-row x-stage"><div class="grow"><b>Assess</b> · completed before Metis · source: ExCo pack slide 9</div><span class="chip good">Before Metis</span></div>
+      <div class="list-row x-stage"><div class="grow"><b>Define</b> · completed before Metis · final investment decision of 12 Mar 2026, ExCo pack slide 9</div><span class="chip good">Before Metis</span></div>
+      <div class="list-row x-stage"><div class="grow"><b>Execute</b> · current since 14 Jul 2026 · source: status report September · assumed until someone confirms it</div><span class="chip running">Current</span></div>
+      <div class="list-row x-stage"><div class="grow"><b>Commission</b></div></div>
+      <div class="list-row x-stage"><div class="grow"><b>Close</b></div></div>
+      <div class="body stack" style="border-top:1px solid var(--line)">
+        <div class="banner small">No gate decision is created for the stages before Metis. The Decision Log gets one entry: Adopted at Execute at launch, approved by Rosa Okafor.</div>
+        <div class="x-block"><b>Lock the approved budget and dates from this source as the starting baseline</b> <span class="anno" data-n="4"></span> · budget EUR 18.0M · finish 30 Jun 2027 · source authority: final investment decision of 12 Mar 2026 · after launch these two values change only through a change request. <span class="btn ghost sm">What will be locked?</span></div>
+        <div class="stack s">
+          <span class="fresh unknown x-unknown">Progress and health computed by Metis: not available yet</span>
+          <div><span class="btn secondary sm">Import the plan now (412 tasks ready)</span></div>
+        </div>
+        <div class="small">Declared status: <span class="rag a">Amber, as of 30 Sep 2026</span></div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-10, CHR-16</span> Each running project is adopted at its current stage, read from the documents or asked; the stages come from the drafted lifecycle and the project shows its lifecycle position from launch. The screen opens on the exceptions, not on all 34 rows: four counts say what the set looks like, and the executive is asked to decide only where a source disagrees, an approval is missing or a value was inferred. The 27 projects with an approved source, a sponsor and no conflict sit behind their own tab with a bulk action. The label says bringing projects into Metis, because "adopt" reads like taking ownership.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-08</span> Every value keeps its source; the badges show how it was obtained, and assumed, conflicting or missing values stand out. Each exception row carries the source authority behind the proposal and one action per route: use source A, use source B, delegate, or leave flagged. Conflicts and missing sponsors become cards or owner tasks.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-10, BR-46</span> Stages before the current one are recorded as completed before Metis with their sources; no gate decision is created; one Decision Log entry records the adoption and who approved it.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">BR-47, CHG-06</span> A committed project gets a baseline captured at launch from the imported values, labelled from import; after launch it changes only through change requests. The panel says what will be locked, so the executive knows the consequence before approving. Computed metrics wait for an imported plan (BR-39).</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">ONB-10, BR-53</span> A budget or a date counts as approved only on a source authority: a document class the client names as authoritative, carrying an approval marker and its date, and the approver where the document states one. Model confidence never establishes approval, and two authoritative sources that disagree become an exception for the executive rather than a choice the model makes. A project whose only evidence is a planning sheet is offered as uncommitted instead of locking a baseline that nobody approved.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

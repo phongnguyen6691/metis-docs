@@ -1,0 +1,15 @@
+# Requirements of this addendum whose behaviour a wireframe cannot prove, and what proves it instead.
+# ID <tab> evidence type <tab> what proves it <tab> what the screen does prove.
+# Evidence type is one of: contract test, security suite, performance test, legal decision.
+# Everything not listed here is proven by its screen; build.py fills {{EVIDENCE_TABLE}} and reports the counts per type.
+ONB-01	contract test	Resume test across devices, with an interrupted upload and a closed session during reading	The session card, its saved state and the step it reopens at
+ONB-06	contract test	Reference corpus with the resolved, missing and ambiguous identity cases	The reading feed and the questions the agent raises
+ONB-07	contract test	Tool-class test on draft-only writes, schema rejection, object caps and idempotency	The screens naming the setup tools and their draft-only scope
+ONB-15	contract test	Transaction and fault-injection test, including a refused privileged grant at commit	The summary, the access difference and the approval control
+ONB-16	contract test	Post-launch undo scenarios over changed, unchanged and dependent records	The undo window, its scope and the list of what it cannot remove
+ONB-21	contract test	Token scope and revocation test, with a write in flight at revocation	The token page, its limits and the connection test
+ONB-22	legal decision	Data processing agreement, lawful basis and sub-processor and transfer matrix, with a masking and deletion test	The authorization screen, the masking switch and the two deletion actions
+ONB-23	security suite	Boundary suite: cross-tenant probing, enumeration, error envelope and timing band	The policy and evidence surfaces of the tenant admin screen
+ONB-24	security suite	Red-team suite per file type, plus parser, cost and tool-policy tests	The guardrail list and the quarantined findings
+ONB-25	security suite	The versioned suite reports themselves, with the provider, model, prompt and dependency versions	That the latest suite results are shown to the tenant admin
+ONB-26	contract test	Event schema and metric reconciliation test, including the five clocks and the activation event	The metrics surfaces of the provider and tenant consoles

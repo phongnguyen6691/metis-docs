@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: draft cockpit · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-draft-cockpit">
+<meta name="wf:title" content="Onboarding: draft cockpit">
+<meta name="wf:area" content="Onboarding">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-03 ONB-08 ONB-09 ONB-11 ONB-13 EXE-01 EXE-02 BR-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="The executive cockpit of the Draft workspace, built from the client's own files: Draft banner, figures with source badges and as-of time, the projects that may slip first, the business units, the Portfolio X-ray with owners, and the to-confirm rail.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-banner { align-items: center; }
+  .x-kpis .k-delta { margin-top: 6px; }
+  .x-kpis .src-pop { grid-column: 2 / span 2; max-width: 440px; }
+  .x-rag { display: flex; flex-direction: column; gap: 3px; margin: 6px 0 4px; }
+  .x-slip td, .x-slip th { padding-left: 8px; padding-right: 8px; }
+  .x-slip td.wrap { vertical-align: middle; }
+  .x-bu { grid-template-columns: 108px minmax(0, 1fr) auto auto; row-gap: 14px; }
+  .x-attn { width: 130px; flex: none; }
+  .x-xray .list-row { padding-top: 7px; padding-bottom: 7px; }
+  .x-confirm .grow { text-wrap: balance; }
+</style>
+</head>
+<body data-shell="app" data-nav="cockpit" data-workspace="Nova Energy Portfolio" data-tenant="Nova Energy" data-user="RO" data-crumbs="Nova Energy Portfolio / Executive cockpit (draft)">
+<main>
+
+  <section>
+    <h1 class="title">Executive cockpit</h1>
+    <div class="muted small" style="margin-top:4px">Nova Energy Portfolio · by business unit · built from your 7 files</div>
+  </section>
+
+  <div class="banner accent x-banner" data-req="ONB-09">
+    <div style="flex:1"><b>Draft</b> · only you and admins can see this workspace. Every figure comes from your files: one click opens the file and the passage it came from. <b>Of the values behind this page, 92% were read from your documents, 6% are assumed or set by default and 2% were asked.</b> <span class="anno" data-n="1"></span></div>
+    <span class="btn secondary sm">Back to setup</span><span class="btn primary sm">Review launch</span>
+  </div>
+
+  <section class="stack s" data-req="ONB-08 BR-39">
+    <div class="grid c5 x-kpis">
+      <div class="card kpi"><div class="k-label">Projects</div><div class="k-value">34</div><div class="k-delta"><span class="src read">Read</span></div></div>
+      <div class="card kpi"><div class="k-label">Total budget</div><div class="k-value">EUR 214.6M</div><div class="k-delta"><span class="src conflict">3 in conflict</span></div></div>
+      <div class="card kpi"><div class="k-label">Committed</div><div class="k-value">21 of 34</div><div class="k-delta"><span class="src read">Read</span></div></div>
+      <div class="card kpi"><div class="k-label">Declared health</div><div class="x-rag"><span class="rag g">18 green</span><span class="rag a">10 amber</span><span class="rag r">4 red</span></div><div class="small muted">2 not reported</div><div class="k-delta"><span class="src read">Read</span></div></div>
+      <div class="card kpi"><div class="k-label">May slip or overrun</div><div class="k-value">5</div><div class="k-delta"><span class="src read">Read</span></div></div>
+      <div class="src-pop"><div class="small muted">North Grid Substation Upgrade · budget</div><b>Capex plan 2026-2028.xlsx</b> · sheet 2026, row 9 · EUR 13.1M · differs from Portfolio tracker row 14: EUR 12.4M</div>
+    </div>
+    <div class="row" style="gap:8px"><span class="anno" data-n="2"></span><span class="fresh partial">As of 30 Sep 2026 status reports · partial: 2 projects not reported (Wind Repowering Study, Outage Prediction Pilot) · metric version 1</span></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start">
+
+    <div class="card" data-req="EXE-01">
+      <div class="head"><span class="h3">Projects that may slip or overrun · your first question <span class="anno" data-n="3"></span></span><span class="small muted">Showing 4 of 5</span></div>
+      <table class="table x-slip">
+        <thead><tr><th>Project</th><th>Business unit</th><th>Stage</th><th class="num">Budget</th><th>Declared</th><th>Signal</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td class="wrap"><b>Smart Meter Rollout Wave 3</b></td><td class="wrap">Retail &amp; Digital</td><td class="wrap">Execute</td><td class="wrap num">EUR 9.6M</td><td><span class="rag r">Red</span></td><td class="wrap">Target moved 30 Nov 2026 → 15 Feb 2027 (77 days)</td><td><span class="src read">2 status reports</span></td></tr>
+          <tr><td class="wrap"><b>Almeria Solar Phase 2</b></td><td class="wrap">Generation</td><td class="wrap">Execute <span class="src verify">Check</span></td><td class="wrap num">EUR 18.0M</td><td><span class="rag a">Amber</span></td><td class="wrap">2 milestones late in the schedule</td><td><span class="src read">schedule.xml</span></td></tr>
+          <tr><td class="wrap"><b>ERP Finance Migration</b></td><td class="wrap">Corporate</td><td class="wrap">Execute</td><td class="wrap num">EUR 4.8M</td><td><span class="rag a">Amber</span></td><td class="wrap">Last status older than 30 days</td><td><span class="src assumed">Assumed</span></td></tr>
+          <tr><td class="wrap"><b>North Grid Substation Upgrade</b></td><td class="wrap">Grid</td><td class="wrap">Define</td><td class="wrap num">EUR 12.4M or 13.1M</td><td><span class="rag g">Green</span></td><td class="wrap">Budget in conflict</td><td><span class="src conflict">Conflicting</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" data-req="EXE-01">
+      <div class="head"><span class="h3">By business unit</span></div>
+      <div class="body hbars x-bu">
+        <div>Generation<div class="small muted">12 projects</div></div><span class="track"><span class="s1" style="width:100%"></span></span><span class="val">EUR 118.2M</span><span class="src read">Read</span>
+        <div>Grid<div class="small muted">9 projects</div></div><span class="track"><span class="s1" style="width:46%"></span></span><span class="val">EUR 54.3M</span><span class="src read">Read</span>
+        <div>Retail &amp; Digital<div class="small muted">8 projects</div></div><span class="track"><span class="s1" style="width:23%"></span></span><span class="val">EUR 27.4M</span><span class="src read">Read</span>
+        <div>Corporate<div class="small muted">5 projects</div></div><span class="track"><span class="s1" style="width:12%"></span></span><span class="val">EUR 14.7M</span><span class="src read">Read</span>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start">
+
+    <div class="card x-xray" data-req="ONB-13 EXE-02">
+      <div class="head"><span class="h3">Portfolio X-ray · 8 findings in your documents <span class="anno" data-n="4"></span></span></div>
+      <div class="list-row"><div class="grow"><div class="title-line"><b>Missing accountability</b></div><div class="sub">4 committed projects have no sponsor</div></div><span class="av" title="Sam Varga">SV</span><span class="small muted x-attn">Becomes an attention item at launch</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line"><b>No strategic link</b></div><div class="sub">9 projects are linked to none of your 3 objectives</div></div><span class="av" title="Rosa Okafor">RO</span><span class="small muted x-attn">Becomes an attention item at launch</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line"><b>Conflicting figures</b></div><div class="sub">3 budgets differ between the tracker and the Capex plan</div></div><span class="av" title="Tomas Iwata">TI</span><span class="small muted x-attn">Becomes an attention item at launch</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line"><b>Slipped dates</b></div><div class="sub">5 projects moved their target date between August and September</div></div><span class="av" title="Their project managers">PM</span><span class="small muted x-attn">Becomes an attention item at launch</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line"><b>Possible duplicates</b></div><div class="sub">Grid Outage Analytics and Outage Prediction Pilot</div></div><span class="av" title="Sam Varga">SV</span><span class="small muted x-attn">Becomes an attention item at launch</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line"><b>Overloaded people</b></div><div class="sub">J. Mensah leads 6 projects</div></div><span class="av" title="Priya Duarte">PD</span><span class="small muted x-attn">Becomes an attention item at launch</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line"><b>Stale status</b></div><div class="sub">7 projects have a last status older than 30 days</div></div><span class="av" title="Their project managers">PM</span><span class="small muted x-attn">Becomes an attention item at launch</span></div>
+      <div class="list-row"><div class="grow"><div class="title-line"><b>Suspicious content</b></div><div class="sub">1 passage in the ExCo pack (slide 27 notes) reads like instructions to an AI; it was set aside</div></div><span class="av" title="Rosa Okafor">RO</span><span class="small muted x-attn">Becomes an attention item at launch</span></div>
+    </div>
+
+    <div class="card x-confirm" data-req="ONB-08 ONB-11">
+      <div class="head"><span class="h3">To confirm <span class="anno" data-n="5"></span></span></div>
+      <div class="list-row"><div class="grow"><b>6 questions resolved</b> · 2 can be delegated or left flagged for later</div></div>
+      <div class="list-row"><div class="grow"><a>14 projects will come to you: review the approval flow</a></div></div>
+      <div class="list-row"><div class="grow"><a>34 projects to adopt: review</a></div></div>
+      <div class="list-row"><div class="grow"><a>8 people to check</a></div></div>
+    </div>
+
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-09</span> This is the product itself, the executive cockpit of the Draft workspace; before launch only owners and admins can open it.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-08, BR-39</span> Every figure carries its source badge (read, check, assumed, conflicting) and opens its file and quoted passage in one click, which is what turns a surprising number from a reason to distrust the draft into a reason to trust it. The banner states the split between read, assumed and asked values for the page as a whole, so the executive knows how much of what they are seeing is their own data. The as-of time and metric version are shown, and missing data is marked partial. Computed health waits for imported plans (ONB-10).</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">EXE-01, ONB-03</span> The KPI tiles (EXE-01) follow the executive's answers (ONB-03): grouped by business unit, and opened on the projects that may slip or overrun.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-13, EXE-02</span> The Portfolio X-ray lists eight kinds of finding from the client's own documents, each with its sources and suggested owner; each open finding becomes an attention item at launch.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">ONB-08, ONB-11</span> The to-confirm rail counts the cards within the cap and leads to the approval flow, the projects to adopt and the people to check.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lifecycle framework designer · Metis wireframe</title>
+<meta name="wf:id" content="lifecycle-framework-designer">
+<meta name="wf:title" content="Lifecycle framework designer">
+<meta name="wf:area" content="Workspace & governance">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="GOV-01 GOV-02 GOV-03 GOV-04 GOV-05 GOV-06 GOV-12 GOV-19 GOV-20 GOV-21 GOV-22 BR-15 BR-16">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Edit a draft version of the workspace lifecycle: stages, gates, criteria, mandatory artifacts, role mapping and conditional rules, then submit it for review and publish.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-nav="framework" data-workspace="Digital Products" data-crumbs="Digital Products / Workspace / Lifecycle framework">
+<main>
+
+  <section class="card" data-req="GOV-12 GOV-19 GOV-21 GOV-22">
+    <div class="body row between">
+      <div class="stack s">
+        <div class="row"><span class="title" style="font-size:24px">Company A Digital Delivery</span><span class="chip">Draft v2.2</span><span class="anno" data-n="1"></span></div>
+        <div class="small muted">Cloned from published v2.1 (effective 14 Apr 2026, used by 41 projects) by M. Johnson on 21 Sep 2026 · 4 changes since clone</div>
+      </div>
+      <div class="row">
+        <span class="small muted">Compare with v2.1</span> <span class="tag future">Planned V2</span>
+        <span class="btn secondary">Submit for review</span>
+        <span class="btn accent disabled">Publish v2.2</span>
+      </div>
+    </div>
+    <div class="body stack s" style="padding-top:0"><div class="banner warn small"><span><b>Readiness check: 3 of 4 pass.</b> Compliance Review has no stage owner role. Publish v2.2 stays disabled until the review is approved and every check passes. <span class="anno" data-n="6"></span></span></div><div class="banner small">Published versions never change. Projects keep the version they started with; moving a running project to v2.2 needs an approved migration, which arrives in V2.</div></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr)">
+    <div class="card" data-req="GOV-01 GOV-06">
+      <div class="head"><span class="h3">Stages <span class="anno" data-n="2"></span></span><span class="btn ghost sm">+ Add stage</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><span class="code">1</span><div class="grow"><div class="title-line">Discovery</div><div class="sub">◇ Discovery approval</div></div></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><span class="code">2</span><div class="grow"><div class="title-line">Design</div><div class="sub">◇ Design approval</div></div></div>
+      <div class="list-row" style="background:var(--accent-soft)"><span class="muted">⋮⋮</span><span class="code">3</span><div class="grow"><div class="title-line">Solution</div><div class="sub">◇ Solution approval</div></div><span class="chip">Edited</span></div>
+      <div class="list-row" style="padding-left:34px"><span class="code">3a</span><div class="grow"><div class="title-line">Compliance Review</div><div class="sub">Conditional · added when Regulatory impact = Yes</div></div><span class="chip review">New</span></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><span class="code">4</span><div class="grow"><div class="title-line">Development</div><div class="sub">◇ Build readiness</div></div></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><span class="code">5</span><div class="grow"><div class="title-line">Test</div><div class="sub">◇ Go-live readiness</div></div></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><span class="code">6</span><div class="grow"><div class="title-line">GTM</div><div class="sub">◇ Launch approval</div></div></div>
+      <div class="list-row"><span class="muted">⋮⋮</span><span class="code">7</span><div class="grow"><div class="title-line">Retro</div><div class="sub">Closure and improvement backlog</div></div></div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="GOV-02 GOV-05 GOV-20">
+        <div class="head"><span class="h3">Stage 3 · Solution <span class="anno" data-n="3"></span></span><span class="btn ghost sm">Deactivate stage</span></div>
+        <div class="body grid c2">
+          <div class="field span2"><label>Objective</label><div class="textarea">Define the technical and business solution and confirm it is feasible within budget.</div></div>
+          <div class="field"><label>Stage owner role</label><div class="select">Engineering lead</div></div>
+          <div class="field"><label>Target duration (SLA)</label><div class="select">15 working days</div></div>
+          <div class="field"><label>Entry criteria</label>
+            <div class="stack s"><span class="check on">Design gate passed or passed with conditions</span><span class="check on">Budget range agreed with Finance</span></div>
+          </div>
+          <div class="field"><label>Exit criteria</label>
+            <div class="stack s"><span class="check on">Architecture approved</span><span class="check on">NFRs and integrations listed</span><span class="check on">Security and risk assessment done</span><span class="check on">Estimate within 10% of budget</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid c2">
+        <div class="card" data-req="GOV-04">
+          <div class="head"><span class="h3">Mandatory artifacts <span class="anno" data-n="4"></span></span><span class="btn ghost sm">+ Add</span></div>
+          <table class="table">
+            <thead><tr><th>Artifact</th><th>Kind</th><th>Owner</th></tr></thead>
+            <tbody>
+              <tr><td class="wrap">Architecture document</td><td>File</td><td class="wrap">Engineering lead</td></tr>
+              <tr><td>NFR list</td><td>Field</td><td class="wrap">Engineering lead</td></tr>
+              <tr><td>Integration list</td><td>Checklist</td><td class="wrap">Engineering lead</td></tr>
+              <tr><td class="wrap">Security and risk assessment</td><td>File</td><td>Security</td></tr>
+              <tr><td>Estimate</td><td>Field</td><td class="wrap">Project Manager</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card" data-req="GOV-03">
+          <div class="head"><span class="h3">Gate · Solution approval</span></div>
+          <div class="body stack s">
+            <div class="field"><label>Approvers</label><div class="row"><span class="tag">Engineering lead</span><span class="tag">Product Director</span><span class="tag">Control function: Security</span></div></div>
+            <div class="field"><label>Quorum</label><div class="select">2 of 3 approvers</div></div>
+            <div class="field"><label>Decision options</label><div class="row"><span class="chip good">Pass</span><span class="chip waiting">Pass with conditions</span><span class="chip serious">Rework</span><span class="chip">Hold</span><span class="chip critical">Reject</span></div></div>
+            <span class="check on">Rationale required for every decision</span>
+            <span class="check on">All mandatory artifacts attached before submission</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-req="GOV-06">
+        <div class="head"><span class="h3">Rules <span class="anno" data-n="5"></span></span><span class="btn ghost sm">+ Add rule</span></div>
+        <div class="list-row"><span class="tag accent">IF</span><div class="grow">Project field "Regulatory impact" is <b>Yes</b></div><span class="tag accent">THEN</span><div class="grow">add stage <b>Compliance Review</b> after Solution</div></div>
+        <div class="list-row"><span class="tag accent">IF</span><div class="grow">Approved budget is more than <b>$2M</b></div><span class="tag accent">THEN</span><div class="grow">add approver <b>Control function: Finance</b> to the Solution gate</div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">GOV-12, GOV-19, GOV-21, GOV-22</span> Changes happen in a draft cloned from the published version; publishing needs review and creates v2.2 with an effective date. Projects stay on the version they started with (BR-15, BR-16).</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">GOV-01</span> Stages can be added, edited, deactivated and reordered by drag; each published stage becomes a Phase value in the workspace.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">GOV-02, GOV-05, GOV-20</span> Each stage stores objective, owner role, SLA, entry and exit criteria; roles route stage tasks to the right people.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">GOV-03, GOV-04</span> Gate submission is blocked until the five mandatory artifacts are attached; quorum and decision options are set per gate.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">GOV-06</span> Conditional rules add or remove stages and approvers from project fields, as in the v3 example "regulatory impact = yes adds Compliance Review".</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">GOV-21</span> Publishing runs a readiness check: every stage has an owner role, every gate has approvers and a quorum those approvers can meet, mandatory artifacts are defined, and the stage list gives the Phase values. A failing check names each failure and keeps Publish disabled; a disabled button means "not allowed yet", while planned features carry a Planned tag instead.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

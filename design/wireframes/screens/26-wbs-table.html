@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WBS Master, table · Metis wireframe</title>
+<meta name="wf:id" content="wbs-table">
+<meta name="wf:title" content="WBS Master: table view">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="WBS-01 WBS-02 WBS-03 WBS-04 WBS-05 WBS-06 WBS-18 WBS-19 WBS-20 BR-04 BR-24">
+<meta name="wf:poc" content="09 10 11">
+<meta name="wf:summary" content="Single source of truth for project work: tree table with category rows, saved views and column presets, instant filters, bulk actions, inline edits and baseline locks.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-wbs th, .x-wbs td { padding-left: 5px; padding-right: 5px; font-size: 12px; }
+  .x-wbs th { letter-spacing: .03em; }
+  .x-wbs .x-desc { max-width: 118px; overflow: hidden; text-overflow: ellipsis; color: var(--muted); }
+  .x-wbs .x-act { color: var(--muted); letter-spacing: .12em; }
+  .x-wbs .row { flex-wrap: nowrap; gap: 5px; }
+  .x-wbs .av { width: 20px; height: 20px; font-size: 9px; }
+  .x-wbs .chip { height: 20px; padding: 0 7px; font-size: 11px; gap: 5px; }
+  .x-lock::after { content: " \1F512"; font-size: 10px; }
+  .x-cols { position: relative; }
+  .x-menu { position: absolute; right: 0; top: calc(100% + 4px); z-index: 10; width: 300px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); box-shadow: 0 12px 32px rgba(17, 24, 39, .18); padding: 4px 0; }
+  .x-menu .x-mi { display: flex; flex-direction: column; gap: 2px; padding: 7px 12px; font-size: 13px; }
+  .x-menu .x-mi.on { background: var(--accent-soft); }
+  .x-menu .x-foot { border-top: 1px solid var(--line); padding: 7px 12px; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="wbs">
+<main>
+
+  <section class="row between">
+    <div class="row">
+      <span class="h2">WBS Master</span>
+      <span class="seg"><span class="on">Table</span><span>Tree</span><span>Blueprint</span></span>
+      <span class="muted small">12 work items · 6 categories · codes generated automatically <span class="anno" data-n="5"></span></span>
+    </div>
+    <div class="row"><span class="btn secondary">Deliverable Builder</span><span class="btn primary">+ Add item</span></div>
+  </section>
+
+  <section class="row between" data-req="WBS-20">
+    <div class="row">
+      <span class="label">Views <span class="anno" data-n="7"></span></span>
+      <div class="seg"><span class="on">All items</span><span>My open items</span><span>Client inputs · shared</span><span>This phase · shared</span></div>
+      <span class="btn ghost sm">Save current view</span>
+    </div>
+    <div class="row x-cols">
+      <div class="field" style="flex-direction:row;align-items:center;gap:8px"><label>Columns</label><div class="select">All columns</div></div>
+      <div class="x-menu">
+        <div class="x-mi"><b>Planning</b><span class="muted small">Start, Target, Duration, Dependencies</span></div>
+        <div class="x-mi"><b>Tracking</b><span class="muted small">Status, PIC, Target</span></div>
+        <div class="x-mi"><b>Risk</b><span class="muted small">Risk level, Labels</span></div>
+        <div class="x-mi on"><b>✓ All columns</b><span class="muted small">Every column of the item form that fits a table</span></div>
+        <div class="x-foot">WBS and Description stay frozen in every preset</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="filters" data-req="WBS-05">
+    <div class="field"><label>Category</label><div class="select">All</div></div>
+    <div class="field"><label>Phase</label><div class="select">All</div></div>
+    <div class="field"><label>Type</label><div class="select">All</div></div>
+    <div class="field"><label>Status</label><div class="select">All</div></div>
+    <div class="field"><label>PIC <span class="anno" data-n="3"></span></label><div class="select">All</div></div>
+    <span class="muted small" style="padding-bottom:9px">Filters apply as you choose; matches keep their parent rows.</span>
+  </section>
+
+  <section class="banner accent row" data-req="WBS-06 WBS-19">
+    <b>2 selected</b>
+    <span class="btn secondary sm">Status</span><span class="btn secondary sm">PIC</span><span class="btn secondary sm">Phase</span>
+    <span class="btn secondary sm">Priority</span><span class="btn secondary sm">Risk</span><span class="btn danger sm">Delete</span>
+    <span class="anno" data-n="4"></span>
+    <span class="right btn ghost sm">Clear selection</span>
+  </section>
+
+  <section class="card" data-req="WBS-01 WBS-02 WBS-04 WBS-18 BR-04 BR-24">
+    <table class="table x-wbs">
+      <thead><tr>
+        <th></th><th>WBS <span class="anno" data-n="1"></span></th><th>Description</th><th>Type</th><th>Phase</th><th>PIC</th>
+        <th>Start</th><th>Target <span class="anno" data-n="6"></span></th><th class="num">Dur.</th><th>Status</th><th>Priority</th><th>Risk</th><th>Actions</th>
+      </tr></thead>
+      <tbody>
+        <tr class="cat"><td><span class="check"></span></td><td>▾ 1.0 Deliverables <span class="muted">(5)</span> <span class="anno" data-n="2"></span></td><td class="x-desc">All client-facing outputs</td><td class="muted">Category</td><td></td><td></td><td>6 Jul</td><td>2 Sep</td><td></td><td class="muted small">Rolled up</td><td></td><td></td><td class="x-act">+</td></tr>
+        <tr><td><span class="check"></span></td><td class="l2"><span class="code">1.1</span> 51 Render Images</td><td class="x-desc">Full still-frame render set</td><td>Deliverable</td><td>Production</td><td><span class="row"><span class="av">DK</span>Denny K.</span></td><td>6 Jul</td><td class="x-lock">10 Aug</td><td class="num">36d</td><td><span class="chip running">In Progress</span></td><td><span class="chip serious">High</span></td><td><span class="chip waiting">Medium</span></td><td class="x-act">+ ⧉ ⌁ ×</td></tr>
+        <tr><td><span class="check"></span></td><td class="l3"><span class="code">1.1.1</span> <span class="lbl ms"></span> Phase 1 Render Delivery</td><td class="x-desc">First 25 renders for sign-off</td><td>Task</td><td>Production</td><td><span class="row"><span class="av">DK</span>Denny K.</span></td><td>6 Jul</td><td class="x-lock">24 Jul</td><td class="num">19d</td><td><span class="chip running">In Progress</span></td><td><span class="chip serious">High</span></td><td><span class="chip waiting">Medium</span></td><td class="x-act">+ ⧉ ⌁ ×</td></tr>
+        <tr class="sel"><td><span class="check on"></span></td><td class="l3"><span class="code">1.1.2</span> <span class="lbl ms"></span> Phase 2 Render Delivery</td><td class="x-desc">Remaining 26 renders</td><td>Task</td><td>Production</td><td><span class="row"><span class="av">DK</span>Denny K.</span></td><td>25 Jul</td><td class="x-lock">10 Aug</td><td class="num">17d</td><td><span class="chip">Not Started</span></td><td><span class="chip serious">High</span></td><td><span class="chip waiting">Medium</span></td><td class="x-act">+ ⧉ ⌁ ×</td></tr>
+        <tr class="sel"><td><span class="check on"></span></td><td class="l2"><span class="code">1.2</span> 3D Film (2 to 3 minutes)</td><td class="x-desc">Hero animated film for launch</td><td>Deliverable</td><td>Production</td><td><span class="row"><span class="av">SW</span>Sasha W.</span></td><td>13 Jul</td><td class="x-lock">28 Aug</td><td class="num">47d</td><td><span class="chip">Not Started</span></td><td><span class="chip critical">Critical</span></td><td><span class="chip serious">High</span></td><td class="x-act">+ ⧉ ⌁ ×</td></tr>
+        <tr><td><span class="check"></span></td><td class="l2"><span class="code">1.3</span> <span class="lbl ms"></span> Final Delivery</td><td class="x-desc">Final assets packaged and handed over</td><td>Deliverable</td><td>Delivery</td><td><span class="row"><span class="av">NR</span>Nadia R.</span></td><td>29 Aug</td><td class="x-lock">2 Sep</td><td class="num">5d</td><td><span class="chip">Not Started</span></td><td><span class="chip critical">Critical</span></td><td><span class="chip waiting">Medium</span></td><td class="x-act">+ ⧉ ⌁ ×</td></tr>
+        <tr class="cat"><td><span class="check"></span></td><td>▾ 2.0 Technical <span class="muted">(2)</span></td><td class="x-desc">Source assets and references</td><td class="muted">Category</td><td></td><td></td><td>29 Jun</td><td>5 Jul</td><td></td><td class="muted small">Rolled up</td><td></td><td></td><td class="x-act">+</td></tr>
+        <tr><td><span class="check"></span></td><td class="l2"><span class="code">2.1</span> <span class="lbl inreq"></span> CAD / Design Files</td><td class="x-desc">Product CAD geometry from the client</td><td>Work Package</td><td>Initiation</td><td><span class="row"><span class="av client">JP</span>Client</span></td><td>29 Jun</td><td>3 Jul</td><td class="num">5d</td><td><span class="chip good">Done</span></td><td><span class="chip serious">High</span></td><td><span class="chip">Low</span></td><td class="x-act">+ ⧉ ⌁ ×</td></tr>
+        <tr><td><span class="check"></span></td><td class="l2"><span class="code">2.2</span> <span class="lbl inreq"></span> Tone / Mood Reference</td><td class="x-desc">Lighting, palette and mood board</td><td>Work Package</td><td>Initiation</td><td><span class="row"><span class="av">SW</span>Sasha W.</span></td><td>29 Jun</td><td>5 Jul</td><td class="num">7d</td><td><span class="chip good">Done</span></td><td><span class="chip waiting">Medium</span></td><td><span class="chip">Low</span></td><td class="x-act">+ ⧉ ⌁ ×</td></tr>
+        <tr class="cat"><td><span class="check"></span></td><td>▾ 3.0 Quality <span class="muted">(2)</span></td><td class="x-desc">Reviews and approvals</td><td class="muted">Category</td><td></td><td></td><td class="muted">Not set</td><td>28 Aug</td><td></td><td class="muted small">Rolled up</td><td></td><td></td><td class="x-act">+</td></tr>
+        <tr><td><span class="check"></span></td><td class="l2"><span class="code">3.1</span> <span class="lbl gate"></span> Visual Quality Approval</td><td class="x-desc">Internal visual sign-off</td><td>Task</td><td>Review</td><td><span class="row"><span class="av">AL</span>Art Lead</span></td><td class="muted">Not set</td><td>25 Jul</td><td class="num muted">-</td><td><span class="chip waiting">Waiting</span></td><td><span class="chip serious">High</span></td><td><span class="chip waiting">Medium</span></td><td class="x-act">+ ⧉ ⌁ ×</td></tr>
+        <tr><td><span class="check"></span></td><td class="l2"><span class="code">3.2</span> <span class="lbl gate"></span> Client Approval Gate</td><td class="x-desc">Client approval of final set</td><td>Task</td><td>Review</td><td><span class="row"><span class="av">NR</span>Nadia R.</span></td><td>20 Aug</td><td>28 Aug</td><td class="num">9d</td><td class="kbd-focus"><span class="chip">Not Started</span></td><td><span class="chip critical">Critical</span></td><td><span class="chip serious">High</span></td><td class="x-act">+ ⧉ ⌁ ×</td></tr>
+        <tr class="cat"><td><span class="check"></span></td><td>▸ 4.0 Timeline <span class="muted">(1)</span></td><td class="x-desc">Schedule risks</td><td class="muted">Category</td><td></td><td></td><td class="muted">Not set</td><td>10 Aug</td><td></td><td class="muted small">Rolled up</td><td></td><td></td><td class="x-act">+</td></tr>
+        <tr class="cat"><td><span class="check"></span></td><td>▸ 5.0 Resource <span class="muted">(1)</span></td><td class="x-desc">Render capacity</td><td class="muted">Category</td><td></td><td></td><td class="muted">Not set</td><td>29 Jun</td><td></td><td class="muted small">Rolled up</td><td></td><td></td><td class="x-act">+</td></tr>
+        <tr class="cat"><td><span class="check"></span></td><td>▸ 6.0 Risks <span class="muted">(1)</span></td><td class="x-desc">Client feedback risk</td><td class="muted">Category</td><td></td><td></td><td class="muted">Not set</td><td>28 Aug</td><td></td><td class="muted small">Rolled up</td><td></td><td></td><td class="x-act">+</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="row small muted">
+    <span>Legend:</span><span class="lbl ms">Milestone</span><span class="lbl cp">Checkpoint</span><span class="lbl gate">Approval Gate</span><span class="lbl inreq">Input Required</span><span class="lbl risk">Risk Related</span>
+    <span>· Dur. = duration in calendar days · actions: add child, duplicate, attach, delete · <span class="x-lock">baselined target</span></span>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">WBS-01, WBS-04</span> Every column except code and Duration edits inline. The table, tree, item form, Board and Builder all write to this one WBS; no other view keeps a copy.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">WBS-18, BR-24</span> Category rows group work by PM control area. Their dates and status roll up and they are never counted; the POC stored them as Type = Deliverable and counted them.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">WBS-05</span> Category, Phase, Type, Status and PIC filters apply instantly, with no Apply button, and keep each match's parent rows visible.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">WBS-06, WBS-19</span> Bulk changes are written to each item's activity. Delete asks for confirmation and lists children and dependencies that go with it.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">WBS-02, WBS-03</span> Codes are generated and renumbered when items move; a permanent internal ID keeps links and history. The POC made users type the WBS ID by hand.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">BR-04</span> Deliverable and milestone targets captured in baseline v1 show a lock; changing one opens a change request instead of an inline edit.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">WBS-20</span> Saved views keep filters, columns, sort and expansion: personal views (My open items) are the user's own, shared views (Client inputs, This phase) are available to every project member. Column presets: Planning (dates, duration, dependencies), Tracking (status, PIC, target), Risk (risk level, labels) or All columns; WBS and Description stay frozen, and the table is fully operable from the keyboard (arrow keys move between cells, Enter edits, Space selects a row); the ring marks the cell with keyboard focus (3.2 Status), while selected rows use the light accent fill.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Workspace settings: team and roles · Metis wireframe</title>
+<meta name="wf:id" content="workspace-team-roles">
+<meta name="wf:title" content="Workspace settings: team and roles">
+<meta name="wf:area" content="Workspace & governance">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="WSP-10 WSP-11 PLT-03 BR-26">
+<meta name="wf:poc" content="34">
+<meta name="wf:summary" content="Workspace members with their workspace role, project overrides and open assignments; invitations; removal keeps names on history and flags open items for reassignment.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-nav="settings" data-workspace="Creative Studio" data-crumbs="Creative Studio / Settings / Team & roles">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Team &amp; roles</div>
+      <div class="muted small" style="margin-top:4px">6 active members in Creative Studio · roles decide what each person can see and change</div>
+    </div>
+    <div class="seg"><span>General</span><span>Fields &amp; options</span><span class="on">Team &amp; roles</span><span>Frameworks</span><span>Data</span></div>
+  </section>
+
+  <div class="banner" data-req="WSP-10">
+    <span class="anno" data-n="1"></span>
+    <div>Everyone here can be chosen as PIC, Reviewer or Approver and can be @mentioned. Renaming a member updates their assignments in every project. Removing a member keeps their name on existing items so history stays accurate.</div>
+  </div>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr)">
+    <div class="card" data-req="WSP-11 BR-26">
+      <div class="head"><span class="h3">Members</span><div class="input ph" style="width:220px">Search members</div></div>
+      <table class="table">
+        <thead><tr><th>Member</th><th>Workspace role <span class="anno" data-n="2"></span></th><th>Project overrides</th><th class="num">Open items</th></tr></thead>
+        <tbody>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">HL</span><div><div>H. Le</div><div class="small muted">Studio Director</div></div></div></td><td><div class="select">Workspace Owner</div></td><td class="muted">None</td><td class="num">0</td></tr>
+          <tr class="sel"><td><div class="row" style="flex-wrap:nowrap"><span class="av">NR</span><div><div>Nadia R.</div><div class="small muted">Project Manager</div></div></div></td><td><div class="select">Project Manager</div></td><td class="wrap"><span class="tag">Northwind Showroom VR · Team member</span></td><td class="num">3</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">DK</span><div><div>Denny K.</div><div class="small muted">3D Lead</div></div></div></td><td><div class="select">Team member</div></td><td class="muted">None</td><td class="num">4</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">SW</span><div><div>Sasha W.</div><div class="small muted">Art Director</div></div></div></td><td><div class="select">Team member</div></td><td class="wrap"><span class="tag">Meridian CGI Campaign · Reviewer of renders</span></td><td class="num">1</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av client">JP</span><div><div>J. Park</div><div class="small muted">Northwind Furniture Co.</div></div></div></td><td><div class="select">Client</div></td><td class="wrap"><span class="tag">Meridian CGI Campaign only</span></td><td class="num">0</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">QT</span><div><div>Q. Tran</div><div class="small muted">Tenant admin</div></div></div></td><td><div class="select">Viewer</div></td><td class="muted">None</td><td class="num">0</td></tr>
+          <tr><td><div class="row" style="flex-wrap:nowrap"><span class="av">AL</span><div><div>Art Lead</div><div class="small muted">Former member</div></div></div></td><td><span class="chip">Removed 21 Sep 2026</span> <span class="anno" data-n="4"></span></td><td class="muted">None</td><td class="num">1</td></tr>
+        </tbody>
+      </table>
+      <div class="body">
+        <div class="banner warn small">Art Lead still has 1 open item (3.1 Visual Quality Approval, Waiting). Reassign it so the approval is not stuck. <a>Reassign</a></div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="PLT-03">
+        <div class="head"><span class="h3">Invite member <span class="anno" data-n="3"></span></span></div>
+        <div class="body stack s">
+          <div class="field"><label>Email <span class="req">*</span></label><div class="input ph">name@acme.example</div></div>
+          <div class="field"><label>Workspace role</label><div class="select">Team member</div></div>
+          <div class="field"><label>Limit to projects (optional)</label><div class="select ph">All projects in the workspace</div></div>
+          <span class="btn primary" style="align-self:flex-start">Send invitation</span>
+        </div>
+      </div>
+
+      <div class="card" data-req="WSP-11">
+        <div class="head"><span class="h3">What each role can do <span class="anno" data-n="5"></span></span></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Workspace Owner</div><div class="sub">Members, fields and options, frameworks, policies</div></div></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Portfolio Manager</div><div class="sub">Portfolio governance, registry, reporting cadence</div></div></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Project Manager</div><div class="sub">Charter, WBS, plan, risks, change requests, reports</div></div></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Team member</div><div class="sub">Assigned items: status, effort, comments, files</div></div></div>
+        <div class="list-row"><div class="grow"><div class="title-line">Viewer</div><div class="sub">Read-only views</div></div></div>
+        <div class="list-row"><span class="av client">CL</span><div class="grow"><div class="title-line">Client (external)</div><div class="sub">Invited projects only: comments, own inputs, client approvals</div></div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">WSP-10</span> Members are the only people selectable as PIC, Reviewer or Approver; renaming a member updates assignments everywhere, as in the POC Team settings.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">WSP-11</span> A workspace role plus optional project overrides gives each person's effective permission; the POC only had Admin and Member labels that were not enforced.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLT-03</span> Invitations go by email with a role and an optional project limit; the person joins on acceptance.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">BR-26</span> Removing a member revokes access at once but keeps the name on items and history; open items are flagged for reassignment.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">WSP-11</span> Role summaries match the BRD role model; the Client role exists only if client access is approved (decision D-02).</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

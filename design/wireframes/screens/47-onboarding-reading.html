@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: reading · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-reading">
+<meta name="wf:title" content="Onboarding: reading">
+<meta name="wf:area" content="Onboarding">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-01 ONB-04 ONB-05 ONB-06 ONB-07 ONB-08 ONB-09 ONB-11 ONB-12">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Metis reads the dropped files: a live feed per file of what was found and how, running totals, provenance on every value, cards that stream in while reading, items already sent to owners, and the resumable session.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-method { width: 96px; display: flex; flex: none; }
+  .x-state { width: 156px; display: flex; flex: none; }
+  .x-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .x-pair > div { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface-sunk); padding: 8px 10px; font-size: 12.5px; font-weight: 500; }
+  .x-wrap { white-space: normal; text-align: left; line-height: 1.3; }
+  .x-done { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .x-done li { display: flex; gap: 7px; }
+  .x-done li::before { content: "✓"; color: var(--good); font-weight: 700; flex: none; }
+</style>
+</head>
+<body data-shell="none" data-tenant="Nova Energy" data-user="RO">
+<main>
+
+  <header class="ob-head">
+    <img src="../../brand/logo/metis-wordmark.svg" alt="Metis">
+    <div class="ob-steps"><span class="ob-step done">Frame</span><span class="ob-step cur" aria-current="step">Drop</span><span class="ob-step">Draft</span><span class="ob-step">Launch</span></div>
+    <span class="ob-clock">Step 2 of 4 · Saved · you can leave and resume</span>
+  </header>
+
+  <div class="wf-page">
+
+    <section>
+      <h1 class="title">Reading your 7 files</h1>
+      <div class="muted" style="margin-top:4px">Cards appear as soon as Metis finds something only you can settle. Answer them now or later. Reading 7 files, 5 read so far, and your first draft is forming.</div>
+    </section>
+
+    <section class="grid" style="grid-template-columns: minmax(0, 1fr) 380px; align-items: start">
+
+      <div class="stack">
+
+        <div class="card" data-req="ONB-13">
+          <div class="head"><span class="h3">First signal, after your first file <span class="anno" data-n="7"></span></span><span class="tag">2 min 10 s into reading</span></div>
+          <div class="body row" style="flex-wrap:wrap; gap:10px">
+            <span class="chip">34 projects found <span class="src read">source</span></span>
+            <span class="chip">3 budgets conflict <span class="src conflict">source</span></span>
+            <span class="chip">7 projects without a sponsor <span class="src read">source</span></span>
+            <span class="chip">2 projects overdue since August <span class="src read">source</span></span>
+          </div>
+        </div>
+
+        <div class="grid c4">
+          <div class="card kpi"><div class="k-label">Projects found</div><div class="k-value">34</div></div>
+          <div class="card kpi"><div class="k-label">People found</div><div class="k-value">86</div></div>
+          <div class="card kpi"><div class="k-label">Budget found</div><div class="k-value">EUR 214.6M</div><div class="k-delta"><span class="src conflict">3 conflicts</span></div></div>
+          <div class="card kpi"><div class="k-label">Questions</div><div class="k-value" style="font-size:18px">6 for you · 3 for owners</div></div>
+        </div>
+
+        <div class="card" data-req="ONB-04 ONB-05 ONB-06">
+          <div class="head"><span class="h3">What Metis is finding <span class="anno" data-n="1"></span></span></div>
+          <div class="feed-row"><span class="ic" aria-hidden="true">▦</span><div class="grow"><b>Portfolio tracker Q3 2026.xlsx</b><div class="small muted">34 projects, owners, dates; status colours read as health</div></div><span class="x-method"><span class="tag">Exact parser</span></span><span class="x-state"><span class="chip good">Read</span></span></div>
+          <div class="feed-row"><span class="ic" aria-hidden="true">▦</span><div class="grow"><b>Capex plan 2026-2028.xlsx</b><div class="small muted">Budgets for 31 projects; 3 differ from the tracker</div></div><span class="x-method"><span class="tag">Exact parser</span></span><span class="x-state"><span class="chip waiting">3 conflicts</span></span></div>
+          <div class="feed-row"><span class="ic" aria-hidden="true">⇥</span><div class="grow"><b>Almeria Solar Phase 2 schedule.xml</b><div class="small muted">412 tasks and 389 dependencies, ready as a plan</div></div><span class="x-method"><span class="tag">Exact parser</span></span><span class="x-state"><span class="chip good">Read</span></span></div>
+          <div class="feed-row"><span class="ic" aria-hidden="true">▤</span><div class="grow"><b>PMO Handbook v3.pdf</b><div class="small muted">6 stages and 4 approval points; closest to the Capital projects pack (92%)</div></div><span class="x-method"><span class="tag">Metis AI</span></span><span class="x-state"><span class="chip good">Read</span></span></div>
+          <div class="feed-row"><span class="ic" aria-hidden="true">▭</span><div class="grow"><b>ExCo pack September 2026.pptx</b><div class="small muted">Executive committee of 5, 3 strategic objectives, top risks; 1 passage set aside</div></div><span class="x-method"><span class="tag">Metis AI</span></span><span class="x-state"><span class="chip serious">1 passage set aside</span></span></div>
+          <div class="feed-row"><span class="ic" aria-hidden="true">▨</span><div class="grow"><b>Org chart 2026.png</b><div class="small muted">86 people with titles; 8 to check</div></div><span class="x-method"><span class="tag">Metis AI, vision</span></span><span class="x-state"><span class="chip good">Read</span></span></div>
+          <div class="feed-row"><span class="ic" aria-hidden="true">▣</span><div class="grow"><b>Status reports Aug to Sep 2026.zip</b><div class="small muted">Declared health and dates per project</div></div><span class="x-method"><span class="tag">Metis AI</span></span><span class="x-state"><span class="chip running">Reading 7 of 12</span></span></div>
+          <div class="feed-row"><span class="ic" aria-hidden="true">▤</span><div class="grow"><b>Board minutes 2025 scan.pdf</b><div class="small muted">This file is password protected, so nothing was read from it. Remove the password and drop it again, or skip it: your draft is built from the other 7 files.</div></div><span class="x-method"><span class="tag">Exact parser</span></span><span class="x-state"><span class="chip critical">Not read</span><span class="btn ghost sm">Retry</span></span></div>
+        </div>
+
+        <div class="card" data-req="ONB-08">
+          <div class="head"><span class="h3">How each value is kept <span class="anno" data-n="2"></span></span></div>
+          <div class="list-row" style="align-items:flex-start; padding-top:11px; padding-bottom:11px">
+            <div class="grow">
+              <div class="row" style="gap:8px"><span class="title-line">North Grid Substation Upgrade · budget</span><span class="src conflict">Conflicting</span></div>
+              <div class="src-pop" style="margin-top:8px; max-width:460px">
+                <div>Portfolio tracker Q3 2026.xlsx · sheet Projects, row 14 · EUR 12.4M</div>
+                <div style="margin-top:4px">Capex plan 2026-2028.xlsx · sheet 2026, row 9 · EUR 13.1M</div>
+              </div>
+            </div>
+          </div>
+          <div class="list-row" style="align-items:flex-start; padding-top:11px; padding-bottom:11px">
+            <div class="grow">
+              <div class="row" style="gap:8px"><span class="title-line">Almeria Solar Phase 2 · schedule</span><span class="src read">Read</span></div>
+              <div class="sub">Almeria Solar Phase 2 schedule.xml: 412 tasks and 389 dependencies</div>
+            </div>
+          </div>
+          <div class="list-row" style="align-items:flex-start; padding-top:11px; padding-bottom:11px">
+            <div class="grow">
+              <div class="row" style="gap:8px"><span class="title-line">Smart Meter Rollout Wave 3 · sponsor Lucia Ferrer</span><span class="src verify">Check</span></div>
+              <div class="sub">Named only on slide 12 of the ExCo pack</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="stack">
+
+        <div class="card" data-req="ONB-11 ONB-12">
+          <div class="head"><span class="h3">For you now <span class="anno" data-n="3"></span></span><span class="chip running">4 answered · 2 waiting · cap 10</span></div>
+          <div class="body stack">
+
+            <div class="qcard">
+              <div class="q">Is this your executive committee?</div>
+              <div class="guess"><span class="check on">Best guess</span><b>Henrik Dahl, Rosa Okafor, Tomas Iwata, Amara Diallo, Lucia Ferrer · quorum 3 of 5</b><span class="small muted">from ExCo pack September 2026.pptx, slide 2</span></div>
+              <div class="row"><span class="btn primary sm">Use this</span><span class="btn secondary sm">Change</span><span class="btn ghost sm">Ask someone</span></div>
+            </div>
+
+            <div class="qcard">
+              <div class="q">Which budget is right for North Grid Substation Upgrade?</div>
+              <div class="x-pair">
+                <div>EUR 12.4M · Portfolio tracker, row 14</div>
+                <div>EUR 13.1M · Capex plan, row 9</div>
+              </div>
+              <div class="row"><span class="btn secondary sm">Use the tracker</span><span class="btn secondary sm">Use the Capex plan</span></div>
+              <div><span class="btn ghost sm x-wrap">Ask Tomas Iwata (CFO, owner of the Capex plan)</span></div>
+            </div>
+
+            <ul class="x-done small muted">
+              <li>Currency and fiscal year confirmed</li>
+              <li>Your view: by business unit</li>
+              <li>Your 3 strategic objectives, as in the ExCo pack (slide 4)</li>
+              <li>J. Mensah leads 6 projects: keep as is for now</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="card" data-req="ONB-11">
+          <div class="head"><span class="h3">Already sent to owners <span class="anno" data-n="4"></span></span></div>
+          <div class="list-row"><span class="av" title="Tomas Iwata">TI</span><div class="grow"><div class="title-line">Budgets of 2 projects</div></div><span class="chip waiting">Due 12 Oct</span></div>
+          <div class="list-row"><span class="av" title="Sam Varga">SV</span><div class="grow"><div class="title-line">Sponsors of 4 committed projects</div></div><span class="chip waiting">Due 12 Oct</span></div>
+          <div class="list-row"><span class="av" title="Priya Duarte">PD</span><div class="grow"><div class="title-line">Capacity of the delivery teams</div></div><span class="chip waiting">Due 12 Oct</span></div>
+        </div>
+
+        <div class="card" data-req="ONB-01 ONB-09">
+          <div class="head"><span class="h3">Your session <span class="anno" data-n="5"></span></span></div>
+          <div class="body stack s">
+            <div class="small muted">Saved as you go · Draft workspace Nova Energy Portfolio · batch NE-2026-10-05-01</div>
+            <div class="row"><span class="btn secondary sm">Pause and resume later</span><span class="btn ghost sm">Start over</span></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="small muted" data-req="ONB-07"><span class="anno" data-n="6"></span> Metis writes only into your Draft workspace, through its setup tools. Nothing is live until you launch.</div>
+
+  </div>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-04, ONB-05, ONB-06</span> Each row names which reader produced it, and the AI rows name the path rather than only "AI": Metis AI with its provider on this path, Customer AI with its client on the bring-your-own-AI path, where Metis never read the file itself. A live feed per file: exact parsers read the tracker, the Capex plan and the MS Project export without AI; the AI reads the handbook, the deck, the image and the reports, resolves the same project across files and matches the handbook to the Capital projects pack. A passage that reads like instructions to an AI is set aside and reported. The subtitle shows the time left until the draft is ready.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-08</span> Every value keeps its source, confidence and status: two sources that disagree make a conflict, a weak source gets a check badge, a strong one reads quietly.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-11, ONB-12</span> Cards stream in while reading, irreversible and launch-blocking first, within the cap of 10; a bulk card and a contradiction card; "Ask someone" pre-fills the owner found in the documents.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-11</span> Items that a named owner knows better are delegated at once; launch will not wait for them (ONB-17).</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">ONB-01, ONB-09</span> The session saves as it goes, with its batch ID; start over deletes every record the batch created in the Draft workspace; the audit log and the session's inputs remain.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">ONB-07</span> The agent writes only through the setup tool group into the Draft workspace; nothing is live until launch.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">ONB-13</span> The first signal appears as soon as one supported source is read, about two minutes in, and states what Metis found in the client's own data with a source behind each figure. Without it the executive sees only progress until the draft cockpit at around minute 15, which is where the review found the value arriving too late to hold attention. Each figure opens its source in one click.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

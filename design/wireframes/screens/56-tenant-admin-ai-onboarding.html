@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tenant admin: AI onboarding policy · Metis wireframe</title>
+<meta name="wf:id" content="tenant-admin-ai-onboarding">
+<meta name="wf:title" content="Tenant admin: AI onboarding policy">
+<meta name="wf:area" content="Access &amp; tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-07 ONB-22 ONB-23 ONB-24 ONB-25 ONB-26 TEN-04 MCP-11 BR-49 BR-50">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Tenant admin page for the onboarding AI: consent and processing, masking, what happens to uploaded files, quotas and spend cap, the setup tool switch for external clients, security events, the assurance evidence of the current release, and the onboarding metrics of the tenant's own sessions.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-kv { margin: 0; }
+  .x-kv dd { text-wrap: balance; }
+  main .card > .head { min-height: 47px; }
+  .x-flush { margin-left: -11px; }
+  .x-lead { display: block; margin-bottom: 4px; }
+  .x-tbl th:first-child, .x-tbl td:first-child { padding-left: 14px; }
+  .x-events th:nth-child(1) { width: 120px; }
+  .x-events th:nth-child(2) { width: 190px; }
+  .x-events th:nth-child(4) { width: 130px; }
+  .x-evidence th:nth-child(1) { width: 220px; }
+  .x-evidence th:nth-child(2) { width: 230px; }
+  .small.muted { text-wrap: pretty; }
+</style>
+</head>
+<body data-shell="admin" data-nav="admin-ai" data-tenant="Nova Energy" data-user="RO" data-crumbs="Tenant admin / AI access / AI onboarding policy">
+<main>
+
+  <section>
+    <h1 class="title">AI onboarding policy</h1>
+    <div class="muted" style="margin-top:4px">Applies to every onboarding session of Nova Energy · last changed by Rosa Okafor on 5 Oct 2026, 10:01</div>
+  </section>
+
+  <section class="grid c2">
+
+    <div class="stack">
+
+      <div class="card" data-req="ONB-22 BR-49">
+        <div class="head"><span class="h3">AI processing for this tenant <span class="anno" data-n="1"></span></span><span class="chip good">Enabled by Rosa Okafor, 5 Oct 2026, 10:01</span></div>
+        <div class="body stack">
+          <dl class="kv x-kv">
+            <dt>Provider</dt><dd>Named here once chosen (D-33)</dd>
+            <dt>Region</dt><dd>EU</dd>
+            <dt>What is sent</dt><dd>The passages each step needs; never other companies' data</dd>
+            <dt>Training</dt><dd>Never</dd>
+            <dt>Provider retention</dt><dd>As agreed in the data processing agreement</dd>
+            <dt>Metis keeps</dt><dd>Uploaded files in your tenant storage</dd>
+          </dl>
+          <div><span class="btn danger sm">Switch the onboarding AI off</span></div>
+        </div>
+      </div>
+
+      <div class="card" data-req="ONB-22">
+        <div class="head"><span class="h3">Masking before sending <span class="anno" data-n="2"></span></span></div>
+        <div class="list-row"><span class="toggle on grow">Salaries and pay</span><span class="small muted">Masked</span></div>
+        <div class="list-row"><span class="toggle on grow">Private phone numbers</span><span class="small muted">Masked</span></div>
+        <div class="list-row"><span class="toggle on grow">Home addresses</span><span class="small muted">Masked</span></div>
+        <div class="list-row"><span class="toggle grow">Personal email addresses</span><span class="small muted">Not masked: switched off by the tenant admin</span></div>
+        <div class="body"><span class="btn ghost sm x-flush">Add a category</span></div>
+      </div>
+
+    </div>
+
+    <div class="stack">
+
+      <div class="card" data-req="ONB-22">
+        <div class="head"><span class="h3">Uploaded files after launch <span class="anno" data-n="3"></span></span></div>
+        <div class="body stack s">
+          <div class="ob-choice on">Keep them as the sources behind each value</div>
+          <div class="ob-choice">Delete the original files after launch: the stored files go, and provenance keeps the file name and the quoted passage</div>
+          <div class="ob-choice">Delete the source content after launch: the files, the extracted text and the quoted passages all go; each value keeps a source identifier, a hash and the mark "source removed"</div>
+        </div>
+      </div>
+
+      <div class="card" data-req="ONB-24">
+        <div class="head"><span class="h3">Quotas and spend <span class="anno" data-n="4"></span></span></div>
+        <div class="body stack">
+          <div class="stack s"><div class="small">Files, this onboarding: 7 of 500</div><div class="meter acc"><span style="width:1.4%"></span></div></div>
+          <div class="stack s"><div class="small">Pages read, this onboarding: 211 of 5,000</div><div class="meter acc"><span style="width:4.2%"></span></div></div>
+          <div class="stack s"><div class="small">AI calls, this onboarding: 1,940 of 20,000</div><div class="meter acc"><span style="width:9.7%"></span></div></div>
+          <div class="stack s"><div class="small">Provider spend cap for the tenant: 23% used</div><div class="meter acc"><span style="width:23%"></span></div></div>
+          <div class="small row">Audio minutes <span class="tag future">Planned V2</span></div>
+          <div class="small muted">At the cap AI reading stops with a clear message; rule-based import keeps working.</div>
+        </div>
+      </div>
+
+      <div class="card" data-req="ONB-07 TEN-04">
+        <div class="head"><span class="h3">Setup tools for MCP clients <span class="anno" data-n="5"></span></span></div>
+        <div class="body stack s">
+          <span class="toggle">External clients may use the setup tools</span>
+          <div class="small muted">Off: Nova Energy onboards with the Metis AI. When on, onboarding tokens are limited to one Draft workspace and, by default, 7 days.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card span2" data-req="ONB-23 ONB-24 BR-50">
+      <div class="head"><span class="h3">Security events <span class="anno" data-n="6"></span></span></div>
+      <table class="table x-tbl x-events">
+        <thead><tr><th>Time</th><th>Event</th><th>Detail</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>5 Oct 10:02</td><td>Suspicious content</td><td class="wrap">ExCo pack September 2026.pptx, slide 27 notes: text addressed to an AI was removed from reading</td><td><span class="chip good">Reviewed</span></td></tr>
+          <tr><td>5 Oct 10:31</td><td>Out-of-scope questions</td><td class="wrap">2 questions about how Metis is built got the fixed reply</td><td><span class="chip">No action</span></td></tr>
+          <tr><td>6 Oct 14:32</td><td>Unknown identifier</td><td class="wrap">An MCP client using K. Brandt's token asked for a project identifier that is not in this tenant; it got the same answer as for an identifier that does not exist</td><td><span class="chip good">Reviewed</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card span2" data-req="ONB-25">
+      <div class="head"><span class="h3">Assurance evidence of the current release <span class="anno" data-n="7"></span></span></div>
+      <table class="table x-tbl x-evidence">
+        <thead><tr><th>Suite</th><th>Run</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Boundary suite</td><td>release 1.4.2, 1 Oct 2026</td><td><span class="chip good">Passed: 0 findings</span></td></tr>
+          <tr><td>Agent red-team suite</td><td>1 Oct 2026</td><td><span class="chip good">Passed: 0 leaks, 0 writes outside a Draft workspace, 0 person-only actions</span></td></tr>
+          <tr><td>Extraction accuracy</td><td>1 Oct 2026</td><td><span class="chip good">Passed: above the threshold for every record type</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card span2" data-req="ONB-26">
+      <div class="head"><span class="h3">Onboarding metrics <span class="anno" data-n="9"></span></span></div>
+      <div class="body stack s">
+        <div><b class="x-lead">Session of 5 Oct 2026, as of 7 Oct 2026:</b> to draft 14 min · to launch 27 min · 6 cards answered · values 92% read, 6% assumed or default, 2% asked · 12 of 31 delegated items closed</div>
+        <div class="small muted">The provider console shows the same figures for your tenant, without any business data.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="small muted" data-req="MCP-11"><span class="anno" data-n="8"></span> Every AI call, tool call, refusal and security event is in the audit log; full content is kept only for security events, for 90 days. <a>Open the audit log</a></div>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-22, BR-49, D-43</span> Customer content reaches the LLM provider only after a tenant admin enables AI processing here. It is called enabling AI processing, not consent, because consent reads as the legal basis for processing personal data: that basis, the privacy notice and the data processing agreement sit outside the product and are linked from this page. The no-training term is a contractual commitment of the selected provider, shown with a link to the agreement rather than as something Metis verifies itself. Switching this off blocks the next tool call at once, and a staged write already in flight re-checks the policy before it commits, so it is not applied.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-22</span> Masking before sending is on by default; the tenant admin switches categories on or off.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-22, D-38</span> Uploaded files stay in tenant storage under the retention policy, and deletion is offered as two named actions, because one word cannot mean both: deleting the original files removes the stored binaries and keeps the quoted passages, which are themselves content from the document; deleting the source content removes the binaries, the extracted text and those passages, leaving each value a source identifier, a hash and the mark "source removed". Neither action reaches what audit retention (D-34) or the backup purge period still holds, and the page says what remains and until when rather than promising that the data is gone.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-24</span> Quotas per onboarding and a provider spend cap per tenant (TEN-10); at the cap AI reading stops and the rule-based path keeps working.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">ONB-07, TEN-04</span> The setup tool group stays off for external clients unless switched on here, in the tenant admin console.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">ONB-23, ONB-24, BR-50</span> Security events: suspicious content removed, a guessed identifier answered exactly like a missing one, and out-of-scope questions answered with the fixed reply.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">ONB-25</span> The three assurance suites gate every release; the tenant sees the latest results.</span></li>
+    <li><span class="anno" data-n="8"></span><span><span class="req">MCP-11</span> Every call is in the audit log; full content is kept only for security events, for 90 days (D-34).</span></li>
+    <li><span class="anno" data-n="9"></span><span><span class="req">ONB-26</span> The tenant admin sees the same onboarding metrics for the tenant's own sessions; the provider console shows them without business data (TEN-08).</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WBS item · Metis wireframe</title>
+<meta name="wf:id" content="wbs-item">
+<meta name="wf:title" content="WBS item form and activity">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="WBS-11 WBS-12 WBS-13 WBS-15 WBS-16 WBS-17 MCP-06 MCP-11 BR-23 BR-40">
+<meta name="wf:poc" content="19 20 21">
+<meta name="wf:summary" content="Item form for 1.1.2 split into General, Schedule, Dependencies and Activity tabs: derived level, generated code, assignments from the team, dependencies that flag but never move dates, and an activity feed that marks actions made through MCP.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-bg { position: absolute; inset: 0; z-index: 1; overflow: hidden; }
+  .x-itabs { margin: 0; padding: 0 14px; border-bottom: 1px solid var(--line); align-items: center; }
+  .x-cnt { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; padding: 0 5px; margin-left: 4px; border-radius: 9px; background: var(--surface-sunk); color: var(--muted); font: 600 12px/1 var(--font-ui); }
+  .x-feed .list-row { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="wbs">
+<main>
+
+  <section class="overlay" style="border-radius:var(--radius-lg);padding:24px 36px">
+    <div class="card x-bg">
+      <table class="table">
+        <thead><tr><th>WBS</th><th>Description</th><th>Type</th><th>Phase</th><th>PIC</th><th>Start</th><th>Target</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr class="cat"><td>1.0 Deliverables</td><td>All client-facing outputs</td><td>Category</td><td></td><td></td><td>6 Jul</td><td>2 Sep</td><td>Rolled up</td></tr>
+          <tr><td class="l2">1.1 51 Render Images</td><td>Full still-frame render set</td><td>Deliverable</td><td>Production</td><td>Denny K.</td><td>6 Jul</td><td>10 Aug</td><td>In Progress</td></tr>
+          <tr><td class="l3">1.1.1 Phase 1 Render Delivery</td><td>First 25 renders</td><td>Task</td><td>Production</td><td>Denny K.</td><td>6 Jul</td><td>24 Jul</td><td>In Progress</td></tr>
+          <tr class="sel"><td class="l3">1.1.2 Phase 2 Render Delivery</td><td>Remaining 26 renders</td><td>Task</td><td>Production</td><td>Denny K.</td><td>25 Jul</td><td>10 Aug</td><td>Not Started</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal" style="max-width:1100px;margin:0 auto">
+      <div class="head"><span class="h3">Edit WBS item · 1.1.2 Phase 2 Render Delivery</span><span class="right btn ghost sm">Close</span></div>
+      <nav class="wf-tabs x-itabs" data-req="WBS-11"><a class="active">General</a><a>Schedule</a><a>Dependencies<span class="x-cnt">1</span></a><a>Activity<span class="x-cnt">3</span></a><span class="anno" data-n="7" style="margin-left:8px"></span></nav>
+
+      <div class="stack" style="padding:18px 20px" data-req="WBS-11 WBS-12 WBS-17">
+        <div class="grid c3">
+          <div class="field"><label>WBS code <span class="anno" data-n="1"></span></label><div class="input locked">1.1.2 · generated</div></div>
+          <div class="field"><label>Parent</label><div class="select">1.1 51 Render Images</div></div>
+          <div class="field"><label>Level</label><div class="input locked">Level 3 · derived</div></div>
+          <div class="field"><label>Category (PM control area)</label><div class="select">Deliverables</div></div>
+          <div class="field"><label>Type (work object level)</label><div class="select">Task</div></div>
+          <div class="field"><label>Phase (lifecycle stage)</label><div class="select">Production</div></div>
+        </div>
+        <div class="field"><label>Labels</label>
+          <div class="row"><span class="check on">Milestone</span><span class="check">Checkpoint</span><span class="check">Approval Gate</span><span class="check">Input Required</span><span class="check">Risk Related</span></div>
+        </div>
+        <div class="field"><label>Name <span class="req">*</span></label><div class="input">Phase 2 Render Delivery</div></div>
+        <div class="grid c2">
+          <div class="field"><label>Description</label><div class="textarea" style="min-height:44px">Remaining 26 renders delivered.</div></div>
+          <div class="field"><label>Notes</label><div class="textarea ph" style="min-height:44px">Notes</div></div>
+          <div class="field"><label>Input required (list)</label><div class="input ph">Comma-separated inputs</div></div>
+          <div class="field"><label>Output produced (list)</label><div class="input ph">Comma-separated outputs</div></div>
+        </div>
+        <div class="grid c3">
+          <div class="field"><label>PIC <span class="anno" data-n="2"></span></label><div class="select"><span class="row"><span class="av">DK</span>Denny K.</span></div></div>
+          <div class="field"><label>Reviewer</label><div class="select ph">Select a team member</div></div>
+          <div class="field"><label>Approver</label><div class="select ph">Select a team member</div></div>
+          <div class="field"><label>Status</label><div class="select"><span class="chip">Not Started</span></div></div>
+          <div class="field"><label>Priority</label><div class="select"><span class="chip serious">High</span></div></div>
+          <div class="field"><label>Risk level</label><div class="select"><span class="chip waiting">Medium</span></div></div>
+        </div>
+        <div class="field"><label>Files and links <span class="anno" data-n="6"></span></label><div class="empty" style="padding:12px">No files yet · <span class="btn secondary sm">Add file or link</span></div></div>
+      </div>
+      <div class="foot"><span class="btn ghost">Discard changes</span><span class="btn primary">Save item</span></div>
+    </div>
+  </section>
+
+  <section class="stack s">
+    <div class="row between"><span class="h2">The other three tabs of the same form</span><span class="small muted">Shown side by side for review; in the product one tab is visible at a time</span></div>
+    <div class="grid c3" style="align-items:start">
+
+      <div class="card" data-req="WBS-11 WBS-15">
+        <div class="head"><span class="h3">Schedule tab</span></div>
+        <div class="body stack s">
+          <div class="grid c2">
+            <div class="field"><label>Start date</label><div class="input">25 Jul 2026</div></div>
+            <div class="field"><label>Target date</label><div class="input locked">10 Aug 2026</div></div>
+            <div class="field"><label>Duration (auto) <span class="anno" data-n="4"></span></label><div class="input locked">17 calendar days</div></div>
+            <div class="field"><label>Planned effort</label><div class="input ph">e.g. 40h</div></div>
+            <div class="field"><label>Actual effort</label><div class="input ph">12h or 2d 4h</div></div>
+          </div>
+          <div class="small muted">The target date is locked by baseline v1; change it through a change request.</div>
+        </div>
+      </div>
+
+      <div class="card" data-req="WBS-13 BR-23 BR-40">
+        <div class="head"><span class="h3">Dependencies tab <span class="anno" data-n="3"></span></span><span class="chip waiting">1 waiting</span></div>
+        <div class="list-row"><span class="tag">FS</span><div class="grow"><div class="title-line small">After 1.1.1 Phase 1 Render Delivery</div><div class="sub">Predecessor is In Progress and 60 days past its 24 Jul target; this item cannot start yet</div></div></div>
+        <div class="list-row" style="padding-top:8px;padding-bottom:8px"><div class="stack s grow"><div class="select ph">Type: FS, SS, FF, SF</div><div class="select ph">Add a predecessor this item depends on</div></div></div>
+        <div class="body small muted">A conflict needs both compared dates; a missing date shows "schedule data incomplete". Conflicts are flagged on both items and dates never move.</div>
+      </div>
+
+      <div class="card x-feed" data-req="WBS-16 MCP-06 MCP-11">
+        <div class="head"><span class="h3">Activity tab <span class="anno" data-n="5"></span></span><span class="seg"><span class="on">All</span><span>Comments</span><span>Changes</span></span></div>
+        <div class="list-row"><span class="av ai">AI</span><div class="grow"><div class="title-line small">Comment via MCP · token Nadia's assistant</div><div class="sub">Summary of a client email added from the journal entry of 22 Sep. Posted on behalf of Nadia R. · 22 Sep 2026</div></div></div>
+        <div class="list-row"><span class="av">NR</span><div class="grow"><div class="title-line small">Nadia R. commented</div><div class="sub">Hold Phase 2 renders until CR-001 is decided. <b style="color:var(--accent)">@Denny K.</b> · 19 Sep 2026</div></div></div>
+        <div class="list-row"><span class="av" style="border-radius:6px;background:var(--surface-sunk);color:var(--muted)">◇</span><div class="grow"><div class="title-line small">Baseline v1 captured</div><div class="sub">Target 10 Aug 2026 locked; changes go through change requests · 25 Jun 2026</div></div></div>
+        <div style="padding:12px 14px;border-top:1px solid var(--line)" class="stack s">
+          <div class="textarea ph" style="min-height:44px">Write a comment, use @ to mention</div>
+          <div class="row"><span class="small muted">as Nadia R.</span><span class="right btn ghost sm">Attach</span><span class="btn primary sm">Send</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">WBS-11</span> The code is generated and the level is derived from the position, so neither is typed by hand as in the POC. Planned effort (Schedule tab) is new and feeds capacity.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">WBS-12</span> PIC, Reviewer and Approver are picked from workspace members; the client can be picked only for Input Required items. Free-text names are not accepted.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">WBS-13, BR-23, BR-40</span> Predecessor links use FS, SS, FF or SF. An overdue predecessor is flagged on this item; no date is changed automatically. A conflict is evaluated only when both compared dates exist; otherwise the link shows "schedule data incomplete".</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">WBS-15</span> Duration is target minus start plus one: 25 Jul to 10 Aug is 17 calendar days. Workspaces can switch to working days.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">WBS-16, MCP-06, MCP-11</span> Activity mixes changes and comments with @mentions. A comment written through MCP shows the square AI avatar, the token name and the person it acts for, and is audited.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">WBS-17</span> Files and links attach once the item exists and are stored with access control, unlike the POC where uploads lived in browser storage.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">WBS-11</span> The form is split into four tabs so no view is longer than one screen. General: WBS code, parent, level, Category, Type, Phase, Labels, Name, Description, Notes, Input Required and Output Produced lists, PIC, Reviewer, Approver, Status, Priority, Risk Level, Files and Links. Schedule: Start, Target, Duration, Planned and Actual Effort. Dependencies: predecessor links. Activity: changes and comments. Every WBS-11 field is one click away, and a tab label shows a red dot when a field inside it fails validation.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI copilot · Metis wireframe</title>
+<meta name="wf:id" content="ai-copilot">
+<meta name="wf:title" content="AI portfolio copilot">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="V3">
+<meta name="wf:requirements" content="AIC-01 AIC-02 AIC-03 MCP-04 MCP-08 MCP-10 BR-10">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="In-app copilot that answers portfolio questions with cited records, evidence, assumptions and confidence, and turns recommendations into a scenario or a prepared decision, never an executed one.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-msg { display: flex; gap: 12px; align-items: flex-start; }
+  .x-bubble { background: var(--surface-sunk); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 12px 14px; font-size: 13.5px; line-height: 1.55; max-width: 760px; }
+  .x-bubble.x-me { background: var(--accent-soft); border-color: transparent; }
+  .x-bubble ul { margin: 6px 0 0; padding-left: 18px; }
+  .x-bubble .x-cite { color: var(--accent); font-weight: 500; }
+  .x-tool { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; padding: 9px 14px; border-bottom: 1px solid var(--line); font-size: 12.5px; }
+  .x-tool code { font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; }
+</style>
+</head>
+<body data-shell="app" data-nav="copilot" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / AI copilot">
+<main>
+
+  <div class="banner accent small"><b>Planned for V3.</b> <span>The copilot uses the same tool layer and permissions as the MCP server; it can prepare decisions but never execute them.</span></div>
+
+  <section class="row between">
+    <div class="title">AI copilot</div>
+    <div class="row"><span class="tag">Scope: Digital Products</span><span class="tag">As: Linh T., Executive <span class="anno" data-n="4"></span></span><span class="btn secondary">New conversation</span></div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 1fr 320px; align-items: start">
+    <div class="card pad stack" data-req="AIC-01 AIC-02 AIC-03 BR-10">
+      <div class="x-msg"><span class="av lg">LT</span><div class="x-bubble x-me">Which projects should I stop if I need to reduce investment by 10%?</div></div>
+
+      <div class="x-msg">
+        <span class="av lg ai">AI</span>
+        <div class="x-bubble">
+          <p>A 10% cut is <b>$5.0M</b> of the $50.2M approved portfolio. Stopping or deferring these five items reaches <b>$5.1M</b> and releases <b>29 FTE</b>, mostly in Data and Engineering where Q4 demand is above capacity. <span class="anno" data-n="1"></span></p>
+          <table class="table" style="margin:8px 0">
+            <thead><tr><th>Action</th><th>Project</th><th class="num">Score</th><th class="num">Saves</th><th class="num">FTE</th><th class="num">Value lost</th></tr></thead>
+            <tbody>
+              <tr><td><span class="chip critical">Stop</span></td><td><span class="x-cite">PRJ-009 Branch Kiosk</span></td><td class="num">38</td><td class="num">$0.8M</td><td class="num">4</td><td class="num">$0.6M</td></tr>
+              <tr><td><span class="chip critical">Stop</span></td><td><span class="x-cite">4 proposals scored below 45</span></td><td class="num">39 to 44</td><td class="num">$1.6M</td><td class="num">8</td><td class="num">$0.9M</td></tr>
+              <tr><td><span class="chip waiting">Defer</span></td><td><span class="x-cite">PRJ-008 CRM Refresh</span></td><td class="num">44</td><td class="num">$0.9M</td><td class="num">5</td><td class="num">$0.4M</td></tr>
+              <tr><td><span class="chip waiting">Defer</span></td><td><span class="x-cite">PRJ-004 Mobile App</span>, iOS scope and <span class="x-cite">CR-016</span></td><td class="num">52</td><td class="num">$0.8M</td><td class="num">6</td><td class="num">$0.3M</td></tr>
+              <tr><td><span class="chip waiting">Defer</span></td><td><span class="x-cite">PRJ-011 Treasury API</span> phase 2</td><td class="num">58</td><td class="num">$1.0M</td><td class="num">6</td><td class="num">$0.5M</td></tr>
+              <tr class="cat"><td></td><td>Total</td><td></td><td class="num">$5.1M</td><td class="num">29</td><td class="num">$2.7M</td></tr>
+            </tbody>
+          </table>
+          <div class="grid c3 small">
+            <div><div class="label">Evidence <span class="anno" data-n="2"></span></div><ul><li>portfolio score below 50, or below 60 with no committed release</li><li>value to investment under 1.5x</li><li>demand on Data or Engineering in Q4</li></ul></div>
+            <div><div class="label">Assumptions</div><ul><li>proposals carry no sunk cost</li><li>deferral costs not included</li><li>FY2027 budget only</li></ul></div>
+            <div><div class="label">Confidence</div><div style="margin-top:6px"><span class="chip waiting">Medium</span></div><div class="muted" style="margin-top:6px">2 proposals have no benefit estimate yet.</div><div class="muted">Protected: AML Upgrade, KYC Automation (regulatory), MSME Payment (committed MVP1).</div></div>
+          </div>
+          <div class="row" style="margin-top:12px">
+            <span class="btn primary sm">Create scenario</span>
+            <span class="btn secondary sm">Prepare decision <span class="anno" data-n="5"></span></span>
+            <span class="btn secondary sm">View evidence</span>
+            <span class="btn ghost sm">Ask follow-up</span>
+          </div>
+          <div class="muted small" style="margin-top:8px">I cannot stop or defer projects. "Prepare decision" drafts a proposal that an authorized executive approves in the Decision Log.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input ph" style="flex:1">Ask about this portfolio, a project or a decision</div>
+        <span class="btn primary">Send</span>
+      </div>
+      <div class="row small muted"><span>Try:</span><span class="tag">Which gates are at risk this month?</span><span class="tag">Summarise Core Platform for SteerCo</span><span class="tag">What changed since last week?</span></div>
+    </div>
+
+    <div class="card" data-req="MCP-04 MCP-10">
+      <div class="head"><span class="h3">Tools used <span class="anno" data-n="3"></span></span><span class="muted small">same layer as MCP</span></div>
+      <div class="x-tool"><code>get_portfolio_summary</code><span class="muted">09:41:02</span><span class="muted">budget, capacity and scores, computed by the server</span><span class="num">1</span></div>
+      <div class="x-tool"><code>list_projects</code><span class="muted">09:41:03</span><span class="muted">score below 60, not protected</span><span class="num">8</span></div>
+      <div class="x-tool"><code>list_change_requests</code><span class="muted">09:41:03</span><span class="muted">open requests that add cost</span><span class="num">1</span></div>
+      <div class="x-tool"><code>list_risks</code><span class="muted">09:41:04</span><span class="muted">systemic risks on candidates</span><span class="num">2</span></div>
+      <div class="list-row"><span class="small muted grow">Runs with Linh T.'s permissions in Digital Products only; every call is in the audit log.</span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">AIC-01</span> Answers cite the records they rely on; every project, CR and figure is a link to its source.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">AIC-02</span> A recommendation always carries its evidence, assumptions and confidence, and names the projects it protected.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">MCP-10</span> Totals and KPIs come from server tools with the BRD Section 12 definitions; the model narrates and does not calculate them.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">MCP-04</span> The copilot acts as the signed-in user, inside the selected workspace, with the same permissions as the app and the MCP server.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">AIC-03, MCP-08, BR-10</span> Actions only create a scenario or prepare a decision; stopping, deferring or approving needs an authorized person in the app.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Workspace setup · Metis wireframe</title>
+<meta name="wf:id" content="workspace-setup">
+<meta name="wf:title" content="Workspace setup">
+<meta name="wf:area" content="Workspace & governance">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="WSP-01 WSP-03 WSP-04 WSP-05 WSP-06 WSP-14 BR-14 PLT-20 BLD-13">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Guided setup of a new workspace in Draft: six steps with progress, the profile form that drives durations and reporting periods, the four WSP-14 readiness rules checked before activation, the workspace lifecycle and the navigation tree.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-step { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--line-strong); display: inline-flex; align-items: center; justify-content: center; font: 600 11px/1 var(--font-ui); color: var(--muted); flex: none; }
+  .x-step.cur { border-color: var(--accent); background: var(--accent); color: #fff; }
+  .x-step.part { border-style: dashed; border-color: var(--running); color: var(--running-text); }
+  .x-steps .list-row { min-height: 54px; }
+  .x-steps .list-row.on { background: var(--accent-soft); }
+  .x-help { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1px solid var(--line-strong); font: 600 10px/1 var(--font-ui); color: var(--muted); margin-left: 4px; }
+  .x-tip { border: 1px solid var(--accent); background: var(--surface); border-radius: var(--radius); padding: 10px 12px; font-size: 12.5px; box-shadow: 0 8px 22px rgba(17, 24, 39, .12); }
+  .x-check { display: inline-flex; width: 18px; justify-content: center; font-weight: 700; flex: none; }
+  .x-check.bad { color: var(--critical); } .x-check.ok { color: var(--good); }
+  .x-state { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; }
+  .x-state.cur { border-color: var(--accent); background: var(--accent-soft); }
+  .x-ready .list-row { padding-top: 8px; padding-bottom: 8px; }
+  .x-tree { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; font-size: 12.5px; background: var(--surface-sunk); }
+</style>
+</head>
+<body data-shell="app" data-nav="settings" data-workspace="Corporate PMO" data-crumbs="Corporate PMO / Settings / Workspace setup">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="row"><span class="title">Set up Corporate PMO</span><span class="chip review">Draft</span></div>
+      <div class="muted small" style="margin-top:4px">Created by Q. Tran on 18 Sep 2026 · owner M. Johnson · members join when the workspace is active</div>
+    </div>
+    <div class="row">
+      <span class="btn secondary sm">Glossary</span>
+      <span class="btn primary disabled">Activate workspace</span>
+    </div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: 260px minmax(0, 1fr) 330px; align-items: start">
+
+    <div class="card x-steps" data-req="WSP-14">
+      <div class="head"><span class="h3">Setup steps <span class="anno" data-n="1"></span></span></div>
+      <div class="body stack s">
+        <div class="small muted">0 of 6 complete · 4 in progress · saved as you go</div>
+        <div class="stackbar"><span class="f-running" style="flex:1"></span><span class="f-neutral" style="flex:1"></span><span class="f-running" style="flex:1"></span><span class="f-running" style="flex:1"></span><span class="f-running" style="flex:1"></span><span class="f-neutral" style="flex:1"></span></div>
+      </div>
+      <div class="list-row on"><span class="x-step cur">1</span><div class="grow"><div class="title-line">Profile</div><div class="sub">In progress · 8 of 11 fields</div></div></div>
+      <div class="list-row"><span class="x-step">2</span><div class="grow"><div class="title-line">Starter template</div><div class="sub">Optional · not started</div></div></div>
+      <div class="list-row"><span class="x-step part">3</span><div class="grow"><div class="title-line">Fields and options</div><div class="sub">1 status without a system state</div></div></div>
+      <div class="list-row"><span class="x-step part">4</span><div class="grow"><div class="title-line">Team and roles</div><div class="sub">1 invitation pending</div></div></div>
+      <div class="list-row"><span class="x-step part">5</span><div class="grow"><div class="title-line">Lifecycle framework</div><div class="sub">Draft · not published</div></div></div>
+      <div class="list-row"><span class="x-step">6</span><div class="grow"><div class="title-line">Process frameworks</div><div class="sub">Not started · opens the template library</div></div><span class="chip">Optional for activation</span></div>
+      <div class="list-row"><div class="grow small muted">The readiness check tests the four rules below. Step 6 is not one of them: recommended before anyone uses the Deliverable Builder, and never a reason a workspace cannot activate. Built-in process frameworks are available meanwhile.</div></div>
+    </div>
+
+    <div class="card" data-req="WSP-01 WSP-03 PLT-20">
+      <div class="head"><span class="h3">Step 1 of 6 · Workspace profile <span class="anno" data-n="2"></span></span><span class="save">All changes saved · 10:12</span></div>
+      <div class="body grid c2">
+        <div class="field"><label>Workspace name <span class="req">*</span></label><div class="input">Corporate PMO</div></div>
+        <div class="field"><label>Company or business unit <span class="req">*</span></label><div class="select">Acme Holdings · Group PMO</div></div>
+        <div class="field"><label>Workspace owner <span class="req">*</span></label><div class="select"><span class="row" style="gap:6px"><span class="av">MJ</span>M. Johnson</span></div></div>
+        <div class="field"><label>Governance owner</label><div class="select"><span class="row" style="gap:6px"><span class="av">LT</span>Linh T.</span></div></div>
+        <div class="field span2"><label>Purpose</label><div class="textarea">Oversight of group-wide change initiatives and the quarterly portfolio review.</div></div>
+        <div class="field"><label>Operating model</label><div class="select ph">Choose an operating model</div></div>
+        <div class="field"><label>Timezone <span class="req">*</span></label><div class="select">Singapore (UTC+08:00)</div></div>
+        <div class="field"><label>Currency <span class="req">*</span></label><div class="select">USD · US dollar</div></div>
+        <div class="field"><label>Fiscal calendar <span class="req">*</span></label><div class="select">Calendar year (Jan to Dec)</div></div>
+        <div class="field"><label>Business calendar <span class="req">*</span><span class="x-help">?</span> <span class="anno" data-n="3"></span></label><div class="select ph">Choose working days and holidays</div>
+          <div class="x-tip"><b>Business calendar</b><div class="muted" style="margin-top:3px">The working days and public holidays of this workspace. Durations counted in working days and due dates skip non-working days.</div><a class="small">Open in glossary</a></div>
+        </div>
+        <div class="field"><label>Reporting cadence <span class="req">*</span><span class="x-help">?</span></label><div class="select ph">Choose a cadence</div><div class="small muted">Sets the weekly status periods and their due day.</div></div>
+      </div>
+      <div class="body row between" style="border-top:1px solid var(--line)">
+        <span class="small muted">2 required fields left: business calendar and reporting cadence</span>
+        <span class="btn primary">Save and continue</span>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card x-ready" data-req="WSP-14 WSP-05 BR-14">
+        <div class="head"><span class="h3">Readiness check <span class="anno" data-n="4"></span></span><span class="chip critical">3 open</span></div>
+        <div class="list-row"><span class="x-check ok">✓</span><div class="grow"><div class="title-line">Owner set</div><div class="sub">M. Johnson</div></div></div>
+        <div class="list-row"><span class="x-check bad">✕</span><div class="grow"><div class="title-line">Published default lifecycle framework</div><div class="sub">Still a draft. Publishing needs review approval and the framework's own readiness check, where gate approvers are checked.</div></div><a class="small">Go to step 5</a></div>
+        <div class="list-row"><span class="x-check bad">✕</span><div class="grow"><div class="title-line">Every Status value mapped to a system state</div><div class="sub">1 status without a system state: Parked</div></div><a class="small">Go to step 3</a></div>
+        <div class="list-row"><span class="x-check bad">✕</span><div class="grow"><div class="title-line">At least one portfolio</div><div class="sub">No portfolios yet</div></div><a class="small">Add a portfolio</a></div>
+        <div class="body stack s"><div class="banner warn small">Activate becomes available when all four checks pass.</div><div class="small muted">After activation: create the first project (CHR-17)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid c2">
+    <div class="card" data-req="WSP-05 WSP-04">
+      <div class="head"><span class="h3">Workspace lifecycle <span class="anno" data-n="5"></span></span><span class="small muted">Changes are made by tenant admins and audited</span></div>
+      <div class="body grid c2">
+        <div class="x-state cur"><div class="row between"><b>Draft</b><span class="tag accent">Now</span></div><div class="small muted">Being set up. Only owners and admins open it; it is not yet in members' workspace switcher.</div></div>
+        <div class="x-state"><b>Active</b><div class="small muted">Members work here. It appears in the workspace switcher, which reopens the last project and tab.</div></div>
+        <div class="x-state"><b>Suspended</b><div class="small muted">Temporarily read-only. Members can read and export; nobody can edit.</div></div>
+        <div class="x-state"><b>Archived</b><div class="small muted">Read-only and auditable for good, including configuration and gate decisions.</div></div>
+      </div>
+    </div>
+
+    <div class="card" data-req="WSP-06">
+      <div class="head"><span class="h3">Navigation tree <span class="anno" data-n="6"></span></span><span class="btn secondary sm">+ Portfolio</span><span class="btn secondary sm">+ Program</span></div>
+      <div class="body stack s">
+        <div class="x-tree"><div class="muted">Workspace › Portfolio › Program › Project</div><div style="margin-top:6px">No portfolios yet. Create one here, or let the starter template in step 2 add a first structure.</div></div>
+        <div class="list-row" style="padding:0"><span class="tag">Rename</span><div class="grow small">Updates the name in the sidebar, registry and reports at once</div></div>
+        <div class="list-row" style="padding:0"><span class="tag">Move</span><div class="grow small">A project moved to another program keeps all its data and history</div></div>
+        <div class="list-row" style="padding:0"><span class="tag">Archive</span><div class="grow small">Leaves the tree; its records stay read-only and auditable</div></div>
+        <div class="small muted">Programs show their project count; a project node opens Docs &amp; Links.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">WSP-14</span> Guided setup follows the WSP-14 checklist in six steps that can be done in any order: profile, an optional starter template, fields and options, team and roles, lifecycle framework, process frameworks. The step list shows progress and partial steps such as a pending invitation. Step 6 opens the template library, where process frameworks are copied or drafted in their editor and published by the Workspace Owner (BLD-13, BLD-16); it is not part of the readiness check. Creating the first project is not a setup step; it follows activation.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">WSP-01, WSP-03</span> A new workspace starts in Draft with its owner. The profile holds purpose, operating model, governance owner, timezone, currency, fiscal and business calendars and reporting cadence; it autosaves.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLT-20</span> Every governance term has inline help with a link to the glossary. The business calendar drives working-day durations (WBS-15) and the cadence drives reporting periods (RPT-04).</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">WSP-14, BR-14</span> The checklist now says which steps the check tests and which it does not, so the process framework step reads as recommended rather than as a blocker nobody can clear. The readiness check shows exactly the four WSP-14 rules: owner set, a published default lifecycle framework (BR-14), every Status value mapped to a system state, and at least one portfolio. The server runs the same four rules when Activate is pressed; the screen only renders their result. Each failing rule links to the step that fixes it. Gate approvers are checked when the framework is published (GOV-21), not here.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">WSP-05, WSP-04</span> The four workspace states and what each allows. Only Active workspaces appear in members' switcher, and switching returns to the last project and tab.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">WSP-06</span> Portfolios and programs are created, renamed, moved and archived here or from the sidebar; moving a project keeps its data and history.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

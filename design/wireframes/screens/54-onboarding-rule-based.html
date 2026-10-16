@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: rule-based import · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-rule-based">
+<meta name="wf:title" content="Onboarding: rule-based import">
+<meta name="wf:area" content="Onboarding">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-05 ONB-20">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Setup with the Metis onboarding AI switched off: columns of a project list mapped by header rules, status colours read as health, an MS Project plan read exactly, and the kept-and-dropped report before anything is written.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-grow { flex: 1; }
+  .x-map td { padding-top: 6px; padding-bottom: 6px; }
+  .x-map td:first-child { font-weight: 500; }
+  .x-map th:nth-child(1) { width: 200px; }
+  .x-map th:nth-child(2) { width: 260px; }
+  .x-map th:nth-child(3) { width: 340px; }
+  .x-sel { display: flex; align-items: center; gap: 8px; }
+  .x-sel .select { width: 220px; flex: none; }
+  .x-sel .select.ph { color: var(--muted); }
+  .x-report { column-gap: 32px; }
+  .x-report > div + div { border-left: 1px solid var(--line); padding-left: 32px; }
+  .x-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; }
+  .x-list li { display: flex; gap: 8px; }
+  .x-kept li::before { content: "✓"; color: var(--good); font-weight: 700; flex: none; }
+  .x-dropped li::before { content: "×"; color: var(--waiting-text); font-weight: 700; flex: none; }
+</style>
+</head>
+<body data-shell="none" data-tenant="Kite Logistics" data-user="OS">
+<main>
+
+  <header class="ob-head">
+    <img src="../../brand/logo/metis-wordmark.svg" alt="Metis">
+    <div class="ob-steps"><span class="ob-step done">Frame</span><span class="ob-step cur" aria-current="step">Drop</span><span class="ob-step">Draft</span><span class="ob-step">Launch</span></div>
+    <span class="ob-clock">Step 2 of 4 · Saved · mapping kept for next time</span>
+  </header>
+
+  <div class="wf-page">
+
+    <section>
+      <h1 class="title">Check how Metis reads your 4 files</h1>
+    </section>
+
+    <div class="banner warn" data-req="ONB-20">
+      <div class="x-grow">Metis AI is off for Kite Logistics (tenant policy). Structured files are read by exact rules; PDFs and slide decks are listed but not read. <span class="anno" data-n="1"></span></div>
+    </div>
+
+    <div class="card" data-req="ONB-05 ONB-20">
+      <div class="head"><span class="h3">Map the columns of Fleet projects 2026.xlsx <span class="anno" data-n="2"></span></span></div>
+      <table class="table x-map">
+        <thead><tr><th>Column in your file</th><th>Sample</th><th>Metis field</th><th>How it was matched</th></tr></thead>
+        <tbody>
+          <tr><td>Project</td><td>Hub expansion Rotterdam</td><td><div class="x-sel"><div class="select">Project name</div></div></td><td>Header name</td></tr>
+          <tr><td>Owner</td><td>T. Berger</td><td><div class="x-sel"><div class="select">Project manager</div></div></td><td>Header name; 14 of 15 names match people, 1 placeholder</td></tr>
+          <tr><td>Budget (EUR k)</td><td>2,400</td><td><div class="x-sel"><div class="select">Approved budget</div></div></td><td>Header name; thousands converted to euros</td></tr>
+          <tr><td>Go-live</td><td>30/06/2027</td><td><div class="x-sel"><div class="select">Target date</div></div></td><td>Header name; day/month/year</td></tr>
+          <tr><td>RAG (cell colour)</td><td><span class="rag r">red cell</span></td><td><div class="x-sel"><div class="select">Declared health</div></div></td><td>Cell colour: red, amber, green</td></tr>
+          <tr><td>Phase</td><td>Build</td><td><div class="x-sel"><div class="select">Current stage</div><span class="src verify">Check</span></div></td><td>Value list: Build maps to Execute</td></tr>
+          <tr><td>Notes</td><td>Waiting for the port authority</td><td><div class="x-sel"><div class="select ph">Not imported</div></div></td><td>Free text has no field</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" data-req="ONB-05">
+      <div class="head"><span class="h3">Fleet telematics rollout.mpp <span class="anno" data-n="3"></span></span><span class="chip good">Read</span></div>
+      <div class="body">MS Project file read exactly: 186 tasks, 171 dependencies, 4 milestones. It becomes the WBS of Fleet telematics rollout at launch.</div>
+    </div>
+
+    <div class="card" data-req="ONB-20">
+      <div class="head"><span class="h3">Kept and dropped <span class="anno" data-n="4"></span></span></div>
+      <div class="body grid c2 x-report">
+        <div class="stack s">
+          <div class="label">Kept</div>
+          <ul class="x-list x-kept">
+            <li>15 projects</li>
+            <li>15 owners: 14 matched, 1 placeholder</li>
+            <li>15 budgets</li>
+            <li>186 plan tasks</li>
+          </ul>
+        </div>
+        <div class="stack s">
+          <div class="label">Dropped</div>
+          <ul class="x-list x-dropped">
+            <li>Column Notes: free text, no matching field</li>
+            <li>Sheet Archive 2024: not selected</li>
+            <li>Ops handbook 2025.pdf and Board deck Q3.pptx: not read on this path. Handbooks, decks and minutes need the Metis AI or your own AI; this path reads structured files only</li>
+          </ul>
+          <div class="row"><span class="btn secondary sm">Ask your admin to turn on Metis AI</span><span class="btn secondary sm">Use your own AI</span></div>
+          <div class="small muted">Your mapping is saved for these headers: the next file with the same columns opens already mapped, and you can leave this screen and come back to it.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" data-req="ONB-20">
+      <span class="btn primary">Write to the Draft workspace</span>
+      <span class="small muted">Nothing is written before you press this; nothing is sent to an AI provider.</span>
+    </div>
+
+  </div>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-20</span> With the onboarding AI switched off, the same session works with exact rules; unstructured documents are listed but not read, and nothing reaches an LLM provider.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-05, ONB-20</span> Columns are matched by header names, value lists, units and cell colours; the executive can change any mapping. A mapping is saved per set of headers and offered for the next matching file, so a long mapping can be interrupted and resumed rather than repeated. The dropped list says plainly that unstructured documents are not read here: this path is not equivalent to the AI path for handbooks and decks, and the screen does not imply that it is.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-05</span> An MS Project file is read exactly into WBS items with dates, dependencies and milestones.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-20</span> The kept-and-dropped report comes before anything is written, and names the paths that can read what was dropped.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

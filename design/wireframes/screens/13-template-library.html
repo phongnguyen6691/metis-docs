@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Template library · Metis wireframe</title>
+<meta name="wf:id" content="template-library">
+<meta name="wf:title" content="Template library">
+<meta name="wf:area" content="Workspace & governance">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="GOV-17 GOV-18 GOV-23 GOV-24 GOV-25 GOV-26 GOV-28 BLD-09 BLD-11 BLD-13 BLD-16">
+<meta name="wf:poc" content="35">
+<meta name="wf:summary" content="Catalog of lifecycle and process frameworks at global, tenant and workspace level with version, owner, status, usage and provenance; clone is the POC's Edit a copy; a process framework draft opens in its editor and the Workspace Owner publishes it once its check passes; review, deprecation with a replacement template, compare and migrate arrive in V2.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-nav="templates" data-workspace="Creative Studio" data-crumbs="Creative Studio / Workspace / Templates">
+<main>
+
+  <section class="row between">
+    <div>
+      <div class="title">Template library</div>
+      <div class="muted small" style="margin-top:4px">New projects and the Deliverable Builder offer only published templates <span class="anno" data-n="1"></span></div>
+    </div>
+    <div class="row">
+      <div class="seg"><span class="on">All</span><span>Lifecycle frameworks</span><span>Process frameworks</span><span>Project templates <span class="tag future">Planned V2</span></span></div>
+      <span class="btn primary">New framework</span>
+    </div>
+  </section>
+
+  <section class="stack" style="opacity:.6" data-req="GOV-26">
+    <div class="row"><span class="label">Global · provided by Metis, read-only</span><span class="tag future">Planned V2</span><span class="anno" data-n="2"></span></div>
+    <div class="grid c3">
+      <div class="card">
+        <div class="head"><span class="tag">Lifecycle</span><span class="h3">Company A reference lifecycle</span><span class="chip good">v1.0 Published</span></div>
+        <div class="body stack s"><div class="small">Discovery, Design, Solution, Development, Test, GTM, Retro · 7 stages, 6 gates · reference framework from BRD v3.0</div><dl class="kv"><dt>Owner</dt><dd>Metis</dd><dt>Status</dt><dd><span class="chip good">Active</span></dd><dt>Used by</dt><dd>0 projects in this tenant directly</dd></dl><div class="row"><span class="btn secondary sm">Preview</span><span class="btn secondary sm">Clone</span></div></div>
+      </div>
+      <div class="card">
+        <div class="head"><span class="tag">Process</span><span class="h3">Simple Review Loop</span><span class="chip good">v1.0 Published</span></div>
+        <div class="body stack s"><div class="small">Draft, Internal Review, Client Review, Final · 6 items, 5 relationships</div><dl class="kv"><dt>Owner</dt><dd>Metis</dd><dt>Status</dt><dd><span class="chip good">Active</span></dd><dt>Used by</dt><dd>9 projects in this tenant</dd></dl><div class="row"><span class="btn secondary sm">Preview</span><span class="btn secondary sm">Clone</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" data-req="GOV-17 GOV-18 GOV-23">
+    <div class="row"><span class="label">Tenant · Acme Holdings</span></div>
+    <div class="grid c3">
+      <div class="card">
+        <div class="head"><span class="tag">Lifecycle</span><span class="h3">Company A Digital Delivery</span><span class="chip good">v2.1 Published</span></div>
+        <div class="body stack s">
+          <div class="small">Discovery, Design, Solution, Development, Test, GTM, Retro · 7 stages, 6 gates</div>
+          <dl class="kv"><dt>Owner</dt><dd><span class="av">MJ</span> M. Johnson <span class="anno" data-n="6"></span></dd><dt>Status</dt><dd><span class="chip good">Active</span></dd><dt>Used by</dt><dd>41 projects · draft v2.2 in progress</dd></dl>
+          <div class="small muted">Provenance: cloned from Company A reference lifecycle v1.0 by M. Johnson, 2 Feb 2026 <span class="anno" data-n="4"></span></div>
+          <div class="row"><span class="btn secondary sm">Preview</span><span class="btn secondary sm">Clone</span><span class="btn secondary sm">Compare <span class="tag future">Planned V2</span></span><span class="btn secondary sm">Migrate projects <span class="tag future">Planned V2</span></span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="head"><span class="tag">Process</span><span class="h3">3D Animation / Video</span><span class="chip good">v1.0 Published</span></div>
+        <div class="body stack s">
+          <div class="small">PreViz, Draft Flow, Frame Check, Final Render · 12 items, 11 relationships</div>
+          <dl class="kv"><dt>Owner</dt><dd><span class="av">HL</span> H. Le</dd><dt>Status</dt><dd><span class="chip good">Active</span></dd><dt>Used by</dt><dd>2 projects</dd></dl>
+          <div class="row" style="gap:6px; flex-wrap:wrap"><span class="chip">Source: built-in, maintained by the provider</span><span class="chip">Scope: available to every workspace</span><span class="chip">Version: v1.0, read-only</span></div>
+          <div class="small muted">A starter template or a starting pack may offer this provider version directly; that is a reference and creates no publication in your workspace. Editing it creates a workspace draft that your Workspace Owner publishes.</div>
+          <div class="row"><span class="btn secondary sm">Preview</span><span class="btn secondary sm">Edit a copy</span></div>
+        </div>
+      </div>
+      <div class="card" style="opacity:.6" data-req="GOV-28">
+        <div class="head"><span class="tag">Lifecycle</span><span class="h3">Classic Waterfall</span><span class="chip">v3.0 Published</span></div>
+        <div class="body stack s">
+          <div class="small">Initiate, Plan, Execute, Close · 4 stages, 3 gates</div>
+          <dl class="kv"><dt>Owner</dt><dd><span class="av">AW</span> A. Wong</dd><dt>Status</dt><dd><span class="chip waiting">Deprecated</span> <span class="tag future">Planned V2</span> <span class="anno" data-n="7"></span></dd><dt>Used by</dt><dd>4 running projects · not offered for new projects</dd><dt>Replacement</dt><dd>Company A Digital Delivery v2.1</dd><dt>Reason</dt><dd>Superseded by the 7-stage digital lifecycle</dd></dl>
+          <div class="row"><span class="btn secondary sm">Preview</span><span class="btn secondary sm">Migrate projects <span class="tag future">Planned V2</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" data-req="GOV-18 BLD-09 BLD-11 BLD-13 BLD-16">
+    <div class="row"><span class="label">Workspace · Creative Studio</span></div>
+    <div class="grid c3">
+      <div class="card">
+        <div class="head"><span class="tag">Lifecycle</span><span class="h3">Creative Production</span><span class="chip good">v1.2 Published</span></div>
+        <div class="body stack s">
+          <div class="small">Initiation, Planning, Production, Review, Delivery, Closing · 6 stages, 5 gates</div>
+          <dl class="kv"><dt>Owner</dt><dd><span class="av">HL</span> H. Le</dd><dt>Status</dt><dd><span class="chip good">Active</span></dd><dt>Used by</dt><dd>3 projects</dd></dl>
+          <div class="small muted">Provenance: created by H. Le from the POC phase list, 20 May 2026</div>
+          <div class="row"><span class="btn secondary sm">Preview</span><span class="btn secondary sm">Clone</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="head"><span class="tag">Process</span><span class="h3">CGI Still Renders</span><span class="chip good">v1.1 Published</span></div>
+        <div class="body stack s">
+          <div class="small">Camera Angle, Draft, Pre-Finals, Final; approvals, quality checks, deposits, milestones · 16 items, 15 relationships</div>
+          <dl class="kv"><dt>Owner</dt><dd><span class="av">HL</span> H. Le</dd><dt>Status</dt><dd><span class="chip good">Active</span></dd><dt>Used by</dt><dd>3 projects</dd></dl>
+          <div class="small muted">Provenance: built-in framework from the POC, edited by H. Le</div>
+          <div class="row"><span class="btn secondary sm">Preview</span><span class="btn secondary sm">Edit a copy <span class="anno" data-n="3"></span></span><span class="btn ghost sm">Deprecate</span></div>
+        </div>
+      </div>
+      <div class="card" style="border-color:var(--accent)">
+        <div class="head"><span class="tag">Process</span><span class="h3">CGI Still Renders, 5 angles</span><span class="chip">v0.1 Draft</span></div>
+        <div class="body stack s">
+          <div class="small">Copy with one more camera angle · 17 items, 17 relationships so far</div>
+          <dl class="kv"><dt>Owner</dt><dd><span class="av">NR</span> Nadia R.</dd><dt>Status</dt><dd><span class="chip">Draft, not offered yet</span></dd><dt>Used by</dt><dd>0 projects · visible to editors only</dd><dt>Check</dt><dd>4 of 5 pass: a dependency cycle</dd></dl>
+          <div class="small muted">Provenance: copy of CGI Still Renders v1.1 by Nadia R., 21 Sep 2026</div>
+          <div class="row"><span class="btn secondary sm">Open in editor <span class="anno" data-n="8"></span></span><span class="btn accent sm disabled">Publish</span><span class="btn ghost sm">Delete draft</span><span class="btn secondary sm">Submit for review <span class="tag future">Planned V2</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-req="GOV-24 GOV-25">
+    <div class="body row between">
+      <div class="pipeline" style="flex:1">
+        <div class="st">Clone</div><span class="gate"></span><div class="st">Adapt</div><span class="gate"></span><div class="st">Review</div><span class="gate"></span><div class="st">Publish</div><span class="gate"></span><div class="st">Instantiate</div>
+      </div>
+      <div class="small muted" style="max-width:300px">How a template changes. Comparing versions and migrating running projects to a new version are V2 <span class="anno" data-n="5"></span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">GOV-17</span> The catalog lists approved templates for the user's scope; drafts are visible to editors but never offered for new projects or in the Builder. A process framework draft is offered once the Workspace Owner publishes it (BLD-16).</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">GOV-26</span> A provider-maintained global library is P1; tenants will clone from it but cannot edit it.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">GOV-18, BLD-09</span> Each card carries its source, scope and version as persistent badges, so nobody has to remember whether a framework is a provider built-in or a workspace copy. A pack or template that offers a built-in version references the provider version and creates no publication event in the workspace, which is what keeps the publishing authority of BLD-16 intact. "Edit a copy" from the POC is the clone action: built-in and published frameworks never change in place; editing always produces a new draft.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">GOV-23</span> Provenance records the source template, author and date, so every framework can be traced to its origin.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">GOV-24, GOV-25, BLD-11</span> Version comparison, project migration and the review step before a custom process framework is published are P1 (V2); in Release 1 the Workspace Owner publishes process frameworks directly (BLD-16).</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">GOV-28</span> Every template card shows its owner, its status (Active or Deprecated) and how many projects use it; the owner answers for changes and for retiring the template.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">GOV-28</span> Deprecation is P1 (V2): a deprecated template names its replacement and a reason, is no longer offered for new projects, and still shows on the running projects that use it until they migrate. Templates unused or unreviewed for a set period are flagged to their owner.</span></li>
+    <li><span class="anno" data-n="8"></span><span><span class="req">BLD-13, BLD-16</span> Open in editor opens the process framework editor (screen 58). Project Managers such as Nadia R. draft process frameworks; the Workspace Owner publishes a draft once its check passes, and here a dependency cycle keeps Publish disabled. Delete draft removes a draft that was never published. A published process framework is deprecated instead (Deprecate on CGI Still Renders): it is no longer offered in the Builder and still shows on the items built from it; naming a replacement is V2.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

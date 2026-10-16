@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WBS Master, tree diagram · Metis wireframe</title>
+<meta name="wf:id" content="wbs-tree">
+<meta name="wf:title" content="WBS Master: tree diagram and blueprint">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="WBS-08 WBS-09 WBS-10 WBS-13 BR-23 BR-40 BR-41">
+<meta name="wf:poc" content="12 13 14">
+<meta name="wf:summary" content="Hierarchy canvas of the same WBS with automatic layouts, zoom, keyboard navigation and dependency arrows that flag conflicts only when both dates exist; Blueprint shows the Builder canvas per deliverable.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-tree .tnode { position: absolute; height: 30px; overflow: hidden; }
+  .x-tree .tnode .code { font-size: 11px; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="wbs">
+<main>
+
+  <section class="row between">
+    <div class="row">
+      <span class="h2">WBS Master</span>
+      <span class="seg"><span>Table</span><span class="on">Tree</span><span>Blueprint</span></span>
+    </div>
+    <div class="row" data-req="WBS-08 WBS-09">
+      <span class="seg"><span>Auto vertical</span><span class="on">Auto horizontal</span><span style="opacity:.55">Free move <span class="tag future">Planned V2</span></span></span>
+      <span class="anno" data-n="2"></span>
+      <span class="btn secondary sm">−</span><span class="small num">85%</span><span class="btn secondary sm">+</span>
+      <span class="btn secondary sm">Expand view</span>
+    </div>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1fr) 300px; align-items: start">
+    <div class="canvas x-tree" style="height:470px" data-req="WBS-08 WBS-13">
+      <svg class="links" viewBox="0 0 860 470" width="860" height="470" aria-hidden="true">
+        <defs>
+          <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#6D3BEF"/></marker>
+          <marker id="ahr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#D6402C"/></marker>
+          <marker id="ahg" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#9A9AA6"/></marker>
+        </defs>
+        <g fill="none" stroke="#C9C9D2" stroke-width="1.5">
+          <path d="M174 270H181M181 105V435M181 105H196M181 215H196M181 295H196M181 355H196M181 395H196M181 435H196"/>
+          <path d="M336 105H351M351 55V155M351 55H366M351 115H366M351 155H366"/>
+          <path d="M336 215H351M351 195V235M351 195H366M351 235H366"/>
+          <path d="M336 295H351M351 275V315M351 275H366M351 315H366"/>
+          <path d="M336 355H366M336 395H366M336 435H366"/>
+          <path d="M566 55H581M581 35V75M581 35H596M581 75H596"/>
+        </g>
+        <g fill="none" stroke-width="2">
+          <path d="M806 35C840 35 840 75 810 75" stroke="#6D3BEF" marker-end="url(#ah)"/>
+          <path d="M566 115C650 115 650 315 572 315" stroke="#D6402C" marker-end="url(#ahr)"/>
+          <path d="M566 321C730 321 730 155 572 155" stroke="#6D3BEF" marker-end="url(#ah)"/>
+          <path d="M566 235C598 235 598 275 572 275" stroke="#9A9AA6" stroke-dasharray="4 3" marker-end="url(#ahg)"/>
+        </g>
+      </svg>
+      <div class="tnode cat" style="left:8px;top:255px;width:166px">Meridian CGI Campaign</div>
+
+      <div class="tnode cat" style="left:196px;top:90px;width:140px"><span class="code">1.0</span> Deliverables</div>
+      <div class="tnode cat" style="left:196px;top:200px;width:140px"><span class="code">2.0</span> Technical</div>
+      <div class="tnode cat" style="left:196px;top:280px;width:140px"><span class="code">3.0</span> Quality</div>
+      <div class="tnode cat" style="left:196px;top:340px;width:140px"><span class="code">4.0</span> Timeline</div>
+      <div class="tnode cat" style="left:196px;top:380px;width:140px"><span class="code">5.0</span> Resource</div>
+      <div class="tnode cat" style="left:196px;top:420px;width:140px"><span class="code">6.0</span> Risks</div>
+
+      <div class="tnode" style="left:366px;top:40px;width:200px"><span class="code">1.1</span> 51 Render Images</div>
+      <div class="tnode" style="left:366px;top:100px;width:200px;border-color:var(--critical)"><span class="code">1.2</span> 3D Film (2 to 3 min)</div>
+      <div class="tnode" style="left:366px;top:140px;width:200px"><span class="code">1.3</span> <span class="lbl ms"></span> Final Delivery</div>
+      <div class="tnode" style="left:366px;top:180px;width:200px"><span class="code">2.1</span> <span class="lbl inreq"></span> CAD / Design Files</div>
+      <div class="tnode" style="left:366px;top:220px;width:200px"><span class="code">2.2</span> <span class="lbl inreq"></span> Tone / Mood Ref.</div>
+      <div class="tnode" style="left:366px;top:260px;width:200px"><span class="code">3.1</span> <span class="lbl gate"></span> Visual Quality Appr.</div>
+      <div class="tnode" style="left:366px;top:300px;width:200px;border-color:var(--critical)"><span class="code">3.2</span> <span class="lbl gate"></span> Client Approval Gate</div>
+      <div class="tnode" style="left:366px;top:340px;width:200px"><span class="code">4.1</span> <span class="lbl risk"></span> Timeline Risk</div>
+      <div class="tnode" style="left:366px;top:380px;width:200px"><span class="code">5.1</span> Render Farm Alloc.</div>
+      <div class="tnode" style="left:366px;top:420px;width:200px"><span class="code">6.1</span> <span class="lbl risk"></span> Client Feedback Risk</div>
+
+      <div class="tnode" style="left:596px;top:20px;width:210px"><span class="code">1.1.1</span> <span class="lbl ms"></span> Phase 1 Render Delivery</div>
+      <div class="tnode" style="left:596px;top:60px;width:210px"><span class="code">1.1.2</span> <span class="lbl ms"></span> Phase 2 Render Delivery</div>
+
+      <span class="chip critical" style="position:absolute;left:592px;top:204px;z-index:3">Conflict</span>
+      <span class="anno" data-n="1" style="position:absolute;left:10px;top:10px;z-index:3"></span>
+      <span class="anno" data-n="3" style="position:absolute;left:568px;top:206px;z-index:4"></span>
+    </div>
+
+    <div class="stack">
+      <div class="card" data-req="WBS-13">
+        <div class="head"><span class="h3">Dependencies</span><span class="chip critical">1 conflict</span></div>
+        <div class="list-row"><span class="tag">FS</span><div class="grow small">1.1.1 then 1.1.2</div><span class="chip good">OK</span></div>
+        <div class="list-row"><span class="tag">FS</span><div class="grow"><div class="title-line small">1.2 then 3.2</div><div class="sub">3.2 starts 20 Aug before 1.2 finishes 28 Aug</div></div><span class="chip critical">Conflict</span></div>
+        <div class="list-row"><span class="tag">FS</span><div class="grow small">3.2 then 1.3</div><span class="chip good">OK</span></div>
+        <div class="list-row"><span class="tag">FS</span><div class="grow"><div class="title-line small">2.2 then 3.1</div><div class="sub">Schedule data incomplete: 3.1 has no start date</div></div><span class="chip">Incomplete</span></div>
+        <div class="list-row"><div class="grow small muted">Conflicts are flagged on both items. Dates never move on their own.</div></div>
+      </div>
+      <div class="card" data-req="WBS-10">
+        <div class="head"><span class="h3">Blueprint <span class="anno" data-n="4"></span></span></div>
+        <div class="body stack s">
+          <div class="field"><label>Deliverable</label><div class="select">1.1 51 Render Images</div></div>
+          <div class="empty">No blueprint for 1.1 yet. Blueprints are saved when a deliverable is built with the Deliverable Builder.<div style="margin-top:10px"><span class="btn secondary sm">Open Deliverable Builder</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row small muted">
+    <span>Arrows:</span><span style="color:var(--violet)">violet = finish-to-start</span><span style="color:var(--critical-text)">red = conflict</span><span>grey dashed = schedule data incomplete</span>
+    <span>· grey lines = hierarchy · rounded nodes = work items, dark border = categories (not counted)</span>
+  </section>
+  <section class="row small muted" data-req="BR-41">
+    <span>Keyboard: arrow keys move between nodes · Enter opens the item · Tab moves along dependency links · the Table view is the list equivalent <span class="anno" data-n="5"></span></span>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">WBS-08</span> Same data as the table, drawn as a hierarchy with Auto vertical and Auto horizontal layouts, zoom and an expanded full-screen view.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">WBS-09</span> Free move, where users drag nodes anywhere and positions are remembered, is planned for V2. The POC offered it as the default layout.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">WBS-13, BR-23, BR-40</span> Dependency arrows show FS, SS, FF and SF links. 3.2 starts 20 Aug before 1.2 finishes 28 Aug, so the FS link is flagged on both items and no date is moved. A conflict is evaluated only when both compared dates exist: 3.1 has no start date, so the 2.2 then 3.1 link shows "schedule data incomplete" instead of a conflict.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">WBS-10</span> Blueprint shows the Deliverable Builder canvas saved for each deliverable, one per deliverable; the empty state points to the Builder, as in the POC.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">BR-41</span> Everything on the canvas works from the keyboard: arrow keys move between nodes, Enter opens the item, Tab follows dependency links; the Table view shows the same items and links as a list.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

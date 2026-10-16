@@ -1,0 +1,12 @@
+{
+  "name": "metis-brand-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Builds the Metis logo set from Fraunces glyph outlines.",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "opentype.js": "^1.3.4"
+  }
+}

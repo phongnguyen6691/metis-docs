@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Editor states: save failed and conflict · Metis wireframe</title>
+<meta name="wf:id" content="editor-states">
+<meta name="wf:title" content="Editor states: save failed and edit conflict">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLT-05 PLT-06 MCP-07 MCP-14 MCP-19 WBS-11 BR-34 BR-04">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="WBS item 1.1.2 editor after a failed save and a retry that found newer versions: the save state, the conflicting field marked in place, a compare table (yours, theirs, current) with Reload, Keep mine and Merge, a change made through MCP with Undo, and the one version and idempotency rule shared by the application, MCP and the API.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-bg { position: absolute; inset: 0; z-index: 1; overflow: hidden; }
+  .x-feed .list-row { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
+  .x-conflict { border: 1.5px solid var(--critical); border-radius: var(--radius); }
+  .x-conflict > .head { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--critical-bg); border-bottom: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; }
+  .x-conflict .table { table-layout: fixed; }
+  .x-conflict .table td { padding-top: 8px; padding-bottom: 8px; height: auto; vertical-align: top; }
+  .x-field-bad { border-color: var(--critical); box-shadow: 0 0 0 1px var(--critical); }
+  .x-step { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); }
+  .x-step b { width: 18px; height: 18px; border-radius: 50%; background: var(--ink); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="wbs" data-save="failed" data-save-label="Save failed · retry">
+<main>
+
+  <section class="overlay" style="border-radius:var(--radius-lg);padding:24px 28px">
+    <div class="card x-bg">
+      <table class="table">
+        <thead><tr><th>WBS</th><th>Description</th><th>Type</th><th>Phase</th><th>PIC</th><th>Start</th><th>Target</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr class="cat"><td>1.0 Deliverables</td><td>All client-facing outputs</td><td>Category</td><td></td><td></td><td>6 Jul</td><td>28 Aug</td><td>Rolled up</td></tr>
+          <tr><td class="l2">1.1 51 Render Images</td><td>Full still-frame render set</td><td>Deliverable</td><td>Production</td><td>Denny K.</td><td>6 Jul</td><td>10 Aug</td><td>In Progress</td></tr>
+          <tr><td class="l3">1.1.1 Phase 1 Render Delivery</td><td>First 25 renders</td><td>Task</td><td>Production</td><td>Denny K.</td><td>6 Jul</td><td>24 Jul</td><td>In Progress</td></tr>
+          <tr class="sel"><td class="l3">1.1.2 Phase 2 Render Delivery</td><td>Remaining 26 renders</td><td>Task</td><td>Production</td><td>Denny K.</td><td>25 Jul</td><td>10 Aug</td><td>In Progress</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal" style="max-width:1160px;margin:0 auto">
+      <div class="head">
+        <span class="h3">Edit WBS item · 1.1.2 Phase 2 Render Delivery <span class="anno" data-n="7"></span></span>
+        <span class="row" style="gap:6px"><span class="av">DK</span><span class="small muted">Denny K. is also on this item</span></span>
+        <span class="save failed">Couldn't save · 09:41 <span class="anno" data-n="1"></span></span>
+        <span class="btn ghost sm">Close</span>
+      </div>
+
+      <div class="grid" style="grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 0">
+        <div class="stack" style="padding:16px 18px">
+          <div class="row"><span class="x-step"><b>1</b>Save failed</span><span class="muted">→</span><span class="x-step"><b>2</b>Retry found newer versions</span></div>
+
+          <div class="banner bad" data-req="PLT-05">
+            <div class="grow">
+              <div class="h3">Your changes were not saved at 09:41</div>
+              <div class="small">The connection dropped while saving. Your edits are still in this form, nothing was lost. Closing the form now asks before discarding them.</div>
+              <div class="small muted" style="margin-top:4px">Keep my changes: they stay here and are sent again when the connection is back.</div>
+            </div>
+            <span class="btn primary sm">Retry</span><span class="btn secondary sm">Keep my changes</span>
+          </div>
+
+          <div class="grid c3" data-req="WBS-11 PLT-06">
+            <div class="field"><label>Start date</label><div class="input">25 Jul 2026</div></div>
+            <div class="field"><label>Target date</label><div class="input locked">10 Aug 2026</div><div class="small muted">Baseline v1 · change through a CR</div></div>
+            <div class="field"><label>Status</label><div class="select"><span class="chip running">In Progress</span></div><div class="small muted">Updated via MCP at 09:40</div></div>
+            <div class="field span2"><label>Description</label><div class="input">Remaining 26 renders; client preview first.</div></div>
+            <div class="field"><label>Planned effort <span class="anno" data-n="2"></span></label><div class="input x-field-bad">24h</div><div class="small" style="color:var(--critical-text)">Denny K. saved 32h at 09:38 · compare below</div></div>
+          </div>
+        </div>
+
+        <div class="panel x-feed" data-req="PLT-06 BR-34 MCP-19">
+          <div class="head" style="display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)"><span class="h3">Activity</span><span class="small muted right">updates live, no reload</span></div>
+          <div class="list-row"><span class="av ai">AI</span><div class="grow"><div class="title-line">Status: Not Started → In Progress</div><div class="sub">via MCP · token "Denny's assistant" · acting for Denny K.</div><div class="sub">22 Sep 2026, 09:40 · version 14 · reversible write</div><div class="sub">Undo stays available while Status is still In Progress</div></div><span class="btn secondary sm">Undo</span><span class="anno" data-n="6"></span></div>
+          <div class="list-row"><span class="av">DK</span><div class="grow"><div class="title-line">Denny K. set Planned effort to 32h</div><div class="sub">22 Sep 2026, 09:38 · version 13</div></div></div>
+          <div class="list-row"><span class="av">NR</span><div class="grow"><div class="title-line">You opened this item</div><div class="sub">22 Sep 2026, 09:31 · version 12</div></div></div>
+          <div class="list-row"><span class="av" style="border-radius:6px;background:var(--surface-sunk);color:var(--muted)">◇</span><div class="grow"><div class="title-line">Baseline v1 captured</div><div class="sub">Target 10 Aug 2026 locked · 25 Jun 2026</div></div></div>
+        </div>
+      </div>
+
+      <div class="stack" style="padding:0 18px 16px">
+        <div class="x-conflict" data-req="PLT-06 MCP-07 MCP-14 BR-34">
+          <div class="head"><span class="h3" style="flex:1">This item changed while you were editing <span class="anno" data-n="3"></span></span><span class="chip critical">1 conflict</span><span class="tag">You started from version 12 · now version 14</span></div>
+          <table class="table">
+            <thead><tr><th style="width:110px">Field</th><th style="width:190px">Yours (not saved)</th><th>Theirs</th><th style="width:140px">Current (v14)</th><th style="width:280px">Outcome</th></tr></thead>
+            <tbody>
+              <tr><td><b>Planned effort</b></td><td>24h</td><td class="wrap"><div class="row" style="flex-wrap:nowrap;align-items:flex-start"><span class="av">DK</span><div>32h<div class="small muted">Denny K. · 09:38 · version 13</div></div></div></td><td>32h</td><td><div class="row" style="flex-wrap:nowrap;gap:8px"><span class="chip critical">Conflict</span><span class="seg"><span class="on">Keep mine</span><span>Take theirs</span></span></div></td></tr>
+              <tr><td><b>Status</b></td><td class="muted">Not changed by you</td><td class="wrap"><div class="row" style="flex-wrap:nowrap;align-items:flex-start"><span class="av ai">AI</span><div>In Progress <span class="anno" data-n="4"></span><div class="small muted">via MCP · token "Denny's assistant" for Denny K. · 09:40 · version 14</div></div></div></td><td>In Progress</td><td><span class="chip good">Kept, no conflict</span></td></tr>
+              <tr><td><b>Description</b></td><td class="wrap">Remaining 26 renders; client preview first.</td><td class="muted">Not changed</td><td class="wrap">Remaining 26 renders delivered.</td><td><span class="chip running">Yours applies</span></td></tr>
+            </tbody>
+          </table>
+          <div class="row" style="padding:10px 12px;border-top:1px solid var(--line)">
+            <span class="small muted" style="flex:1">Merge saves your edits and your choice for each conflict as version 15. Nothing is overwritten without a choice. The compare table is reachable with the keyboard alone, each row announces the field and whose value is selected, and the choice can be made without a pointer.</span>
+            <span class="btn secondary sm">Reload</span><span class="btn secondary sm">Keep mine</span><span class="btn primary sm">Merge</span>
+          </div>
+        </div>
+
+        <div class="card sunk pad small" data-req="MCP-14 PLT-06">
+          <b>One write rule for every channel</b> <span class="anno" data-n="5"></span><br>
+          The application, MCP tools and the API send the version they started from and an idempotency key with every save. A save based on an old version is rejected and shows the newer values, as above. A retried save with the same key is applied once, so Retry can never create a duplicate change.
+        </div>
+      </div>
+
+      <div class="foot"><span class="small muted" style="margin-right:auto">Leaving with unsaved changes asks first</span><span class="btn ghost">Discard my changes</span><span class="btn primary">Merge and save</span></div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLT-05</span> The save state sits in the same place on every editor (project header and form header): saving, saved with time, or failed with the reason and Retry. Failed edits stay in the form and leaving warns first.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">WBS-11, PLT-06</span> The conflicting field is marked where it is, with who changed it and when. Fields of the item form behave as on the WBS item screen; the target date stays read-only, locked by baseline v1, and changes only through a change request (BR-04).</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">PLT-06</span> Compare per field: yours, theirs, current saved value and the outcome. Edits that do not collide merge on their own; a collision needs a choice. Reload drops your edits, Keep mine replaces theirs, Merge combines. Nothing is overwritten silently.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">MCP-07, BR-34</span> A change made through MCP is a normal save with its own version. It shows the square AI avatar, the token name and the person the token acts for, and stays within that person's permissions and the token's scopes. MCP update tools arrive at Release 1 milestone 1B.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">MCP-14, PLT-06</span> One write contract for the application, MCP and the API: record version plus idempotency key. A stale write is rejected with the newer values; a repeated key changes nothing the second time.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">MCP-19, BR-04</span> A status change through MCP is a reversible write, so its activity entry offers Undo to people with edit rights on the item, here Nadia R. as PM. Undo stays available while the field still holds the value the MCP call wrote; after a later change to that field, Undo is replaced by a normal edit. An undo is itself a new versioned write, shown in the activity as "Undone by Nadia R." while the original MCP entry stays. MCP writes never touch baseline-locked fields such as the target date, so an undo never changes the baseline.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">WBS-11</span> Dialog accessibility (style guide 7a): focus starts on the first field, Tab stays inside the dialog, Esc closes it, and focus returns to the WBS row it was opened from.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

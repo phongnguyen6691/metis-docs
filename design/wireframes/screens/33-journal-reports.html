@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Journal and reports · Metis wireframe</title>
+<meta name="wf:id" content="journal-reports">
+<meta name="wf:title" content="Journal and project reporting">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="RPT-01 RPT-02 RPT-03 RPT-04 CHG-11 MCP-06 PLT-16 BR-39">
+<meta name="wf:poc" content="26 27 28">
+<meta name="wf:summary" content="Reports area with three mutually exclusive tabs: the everyday journal, the report builder whose generated Weekly Status is a snapshot with as-of time and metric version and is published as the weekly status submission, and the saved snapshots.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-type { display: inline-flex; align-items: center; height: 26px; padding: 0 11px; border: 1px solid var(--line-strong); border-radius: 999px; font: 500 12.5px/1 var(--font-control); color: var(--muted); }
+  .x-type.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .x-entry { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
+  .x-doc h4 { font: 600 11px/1.2 var(--font-ui); letter-spacing: .07em; text-transform: uppercase; color: var(--accent); margin: 12px 0 4px; }
+  .x-doc p, .x-doc li { font-size: 13px; margin: 0 0 3px; }
+  .x-doc ul { margin: 0; padding-left: 18px; }
+  .x-state { border: 1.5px dashed var(--line-strong); border-radius: var(--radius-lg); padding: 12px; background: var(--rail); }
+  .x-cap { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--muted); }
+  .x-cap b { color: var(--text); }
+  .x-state > .seg { align-self: flex-start; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="plan">
+<main>
+
+  <section class="row between">
+    <span class="seg"><span>Timeline</span><span>Board</span><span>Changes</span><span class="on">Reports</span></span>
+    <span class="small muted">Reports has three tabs and shows one at a time; the three frames below are the three tab states <span class="anno" data-n="7"></span></span>
+  </section>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); align-items: start">
+
+    <div class="x-state stack" data-req="RPT-01 CHG-11 MCP-06">
+      <div class="x-cap"><b>Tab state 1</b><span>Journal</span></div>
+      <span class="seg"><span class="on">Journal (5)</span><span>Build a report</span><span>Saved (0)</span></span>
+      <div class="card pad stack s">
+        <div class="label">Journal <span class="anno" data-n="1"></span></div>
+        <div class="small muted">Everyday project log. Entries are timestamped, attributed and flow straight into reports.</div>
+        <div class="row"><span class="x-type on">Note</span><span class="x-type">Meeting</span><span class="x-type">Decision</span><span class="x-type">Issue</span><span class="x-type">Highlight</span></div>
+        <div class="textarea ph">What happened today?</div>
+        <div class="row"><div class="select ph" style="min-width:200px">Link WBS item</div><span class="right btn primary sm">+ Log entry</span></div>
+      </div>
+      <div class="card">
+        <div class="list-row x-entry"><span class="av ai">AI</span><div class="grow"><div class="row"><span class="tag">Note</span><span class="small muted">22 Sep · via MCP · token Nadia's assistant · for Nadia R.</span></div><div style="margin-top:4px">Summary of a client email from Northwind.</div></div></div>
+        <div class="list-row x-entry"><span class="av">NR</span><div class="grow"><div class="row"><span class="tag" style="color:var(--good-text)">Highlight</span><span class="small muted">21 Sep</span></div><div style="margin-top:4px">Phase 1 renders approved internally.</div></div></div>
+        <div class="list-row x-entry"><span class="av">NR</span><div class="grow"><div class="row"><span class="tag" style="color:var(--critical-text)">Issue</span><span class="small muted">20 Sep</span></div><div style="margin-top:4px">Render farm queue adds 2 days.</div></div></div>
+        <div class="list-row x-entry"><span class="av">NR</span><div class="grow"><div class="row"><span class="tag" style="color:var(--accent)">Decision</span><span class="small muted">19 Sep</span></div><div style="margin-top:4px">Hold Phase 2 renders until CR-001 is decided.</div><div style="margin-top:6px"><span class="btn secondary sm">Promote to Decision Log</span> <span class="anno" data-n="2"></span></div></div></div>
+        <div class="list-row x-entry"><span class="av">NR</span><div class="grow"><div class="row"><span class="tag">Meeting</span><span class="small muted">18 Sep · linked 1.1 51 Render Images</span></div><div style="margin-top:4px">Weekly client sync: Northwind wants a top-down angle.</div></div></div>
+      </div>
+    </div>
+
+    <div class="x-state stack">
+      <div class="x-cap"><b>Tab state 2</b><span>Build a report, after Generate report</span></div>
+      <span class="seg"><span>Journal (5)</span><span class="on">Build a report</span><span>Saved (0)</span></span>
+      <div class="card pad stack s" data-req="RPT-02">
+        <div class="label">Build a report <span class="anno" data-n="3"></span></div>
+        <div class="row"><span class="small muted" style="width:70px">Template</span><span class="x-type on">Weekly Status</span><span class="x-type">Executive Summary</span><span class="x-type">Full History</span><span class="x-type">Custom</span></div>
+        <div class="row"><span class="small muted" style="width:70px">Period</span><div class="input">15 Sep 2026</div><span class="muted">to</span><div class="input">22 Sep 2026</div></div>
+        <div class="row"><span class="small muted" style="width:70px">Sections</span><span class="check on">Health summary</span><span class="check on">Completed this period</span><span class="check on">Coming up (next 7 days)</span><span class="check on">Overdue</span><span class="check on">Milestones</span><span class="check on">Journal entries</span><span class="check">Item notes</span><span class="check on">Change requests</span><span class="check">Activity log</span></div>
+        <div class="row"><span class="small muted" style="width:70px">Title</span><div class="input" style="flex:1">Weekly Status: 15 Sep to 22 Sep 2026</div><span class="btn primary sm">Generate report</span></div>
+      </div>
+
+      <div class="card" data-req="RPT-03 PLT-16 BR-39">
+        <div class="head"><span class="h3">Weekly Status: 15 Sep to 22 Sep 2026</span><span class="btn secondary sm">Copy Markdown</span><span class="btn secondary sm">PDF</span><span class="btn secondary sm">Save report <span class="anno" data-n="6"></span></span></div>
+        <div class="body x-doc">
+          <div class="small muted">Meridian CGI Campaign · 15 Sep to 22 Sep 2026 · prepared by Nadia R.</div>
+          <div class="row" style="margin-top:4px"><span class="fresh">Data as of 22 Sep 2026 09:40 · snapshot S-0922-01 · metrics v1</span><span class="anno" data-n="8"></span></div>
+          <h4>Health summary <span class="anno" data-n="4"></span></h4>
+          <p>Progress: 3 of 12 work items done (25%) · In progress: 3 · Overdue: 9</p>
+          <h4>Completed this period</h4>
+          <p class="muted">Nothing completed in this period.</p>
+          <h4>Coming up (next 7 days)</h4>
+          <p class="muted">Nothing due in the next 7 days.</p>
+          <h4>Overdue</h4>
+          <ul><li>1.1.1 Phase 1 Render Delivery · 60 days</li><li>3.1 Visual Quality Approval · 59 days</li><li>1.1 51 Render Images, 1.1.2 Phase 2 Render Delivery, 4.1 Timeline Risk · 43 days</li><li>1.2, 3.2, 6.1 · 25 days · 1.3 Final Delivery · 20 days</li></ul>
+          <h4>Milestones</h4>
+          <p>1.1.1, 1.1.2 and 1.3 are overdue.</p>
+          <h4>Journal entries</h4>
+          <ul><li>22 Sep Note (via MCP): summary of a client email</li><li>21 Sep Highlight: Phase 1 renders approved internally</li><li>20 Sep Issue: render farm queue adds 2 days</li><li>19 Sep Decision: hold Phase 2 renders until CR-001 is decided</li><li>18 Sep Meeting: Northwind wants a top-down angle</li></ul>
+          <h4>Change requests</h4>
+          <p>CR-001 Add a 4th hero render angle · Under review · CR-002 Move render farm to overnight queue · Approved, pending application</p>
+        </div>
+      </div>
+
+      <div class="card pad stack s" data-req="RPT-04">
+        <div class="row"><span class="h3">Publish as weekly status</span><span class="anno" data-n="5"></span><span class="right small muted">Cadence: weekly (workspace setting)</span></div>
+        <div class="grid" style="grid-template-columns: 200px minmax(0, 1fr)">
+          <div class="field"><label>Declared health</label><div class="select"><span class="rag a">At risk</span></div></div>
+          <div class="field"><label>Narrative</label><div class="textarea ph" style="min-height:52px">What changed, what is at risk, what you need from leadership</div></div>
+        </div>
+        <div class="row"><span class="small muted">Computed health is Off track; the difference is flagged to the PMO.</span><span class="right btn primary sm">Publish weekly status</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="x-state stack" data-req="RPT-03 PLT-16 BR-39">
+    <div class="x-cap"><b>Tab state 3</b><span>Saved, after Save report</span></div>
+    <span class="seg"><span>Journal (5)</span><span>Build a report</span><span class="on">Saved (1)</span></span>
+    <div class="card">
+      <table class="table">
+        <thead><tr><th>Report</th><th>Period</th><th>Snapshot</th><th>Data as of</th><th>Metrics</th><th>Saved by</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Weekly Status: 15 Sep to 22 Sep 2026</td><td>15 to 22 Sep 2026</td><td class="code">S-0922-01</td><td>22 Sep 2026 09:40</td><td>v1</td><td>Nadia R.</td><td><span class="btn secondary sm">Open</span> <span class="btn secondary sm">PDF</span> <span class="btn ghost sm">Copy Markdown</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="small muted">A saved report never changes: reopening it shows the figures of its snapshot, even after the WBS has moved on. Generate a new report for current figures.</div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">RPT-01, MCP-06</span> Journal types Note, Meeting, Decision, Issue and Highlight, optionally linked to a WBS item. An LLM client can append entries through MCP; they show the square AI avatar, the token and the person it acts for.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">CHG-11</span> A Decision entry can be promoted to the Decision Log, which keeps rationale, evidence and approver and links back to the entry.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">RPT-02</span> Templates Weekly Status, Executive Summary, Full History and Custom; each preselects its sections. The default title follows template and period.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">RPT-03</span> The health summary uses the Section 12 definitions, so it matches the Overview (25%, 12 work items). In the POC the two screens disagreed (25% here, 22% on the Overview).</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">RPT-04</span> Publishing the generated report with declared health and narrative is the weekly status submission; a missing or late one appears in the executive attention queue.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">RPT-03, PLT-16</span> Copy as Markdown, export to PDF and save to the Saved list, as in the POC. The PDF, the Markdown and the saved copy all carry the same snapshot.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">RPT-01, RPT-02, RPT-03</span> Journal, Build a report and Saved are mutually exclusive tabs: selecting one hides the other two. The three frames here are separate states of one area, not one screen; the POC also showed them as separate tabs (POC 26, 27, 28).</span></li>
+    <li><span class="anno" data-n="8"></span><span><span class="req">RPT-03, PLT-16, BR-39</span> Generating a report takes a snapshot: the report states its data as-of time, snapshot ID and metric version, and its PDF and saved copy keep those figures when the data changes.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

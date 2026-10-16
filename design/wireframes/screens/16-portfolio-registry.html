@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portfolio registry · Metis wireframe</title>
+<meta name="wf:id" content="portfolio-registry">
+<meta name="wf:title" content="Portfolio and project registry">
+<meta name="wf:area" content="Portfolio">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="REG-01 REG-02 REG-03 CHR-15 RSK-04 BR-02 BR-39">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Single list of every project in the workspace, searchable and filterable, grouped by portfolio, with stage, health, budget and framework version.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-reg { font-size: 12.5px; }
+  .x-reg th, .x-reg td { padding-left: 7px; padding-right: 7px; }
+  .x-reg td.x-tags { white-space: normal; padding-top: 5px; padding-bottom: 5px; }
+  .x-reg td.x-tags .tag, .x-reg td.x-tags .chip { margin: 1px 0; }
+</style>
+</head>
+<body data-shell="app" data-nav="registry" data-workspace="Digital Products" data-crumbs="Digital Products / Portfolio / Registry">
+<main>
+
+  <section class="row between">
+    <div class="row"><span class="title">Registry</span><span class="muted">128 projects · 96 committed · 32 proposed</span><span class="fresh">As of 22 Sep 2026, 09:40 · metrics v1</span></div>
+    <div class="row"><span class="btn secondary">Saved views</span><span class="btn secondary">Export</span><span class="btn primary">+ New project</span></div>
+  </section>
+
+  <section class="card pad stack s" data-req="REG-02">
+    <div class="row">
+      <div class="input ph" style="width:340px">Search by project ID or name</div>
+      <span class="anno" data-n="2"></span>
+      <span class="muted small">Filters apply instantly, no reload</span>
+    </div>
+    <div class="filters">
+      <div class="field"><label>Portfolio</label><div class="select">All</div></div>
+      <div class="field"><label>Program</label><div class="select">All</div></div>
+      <div class="field"><label>Owner</label><div class="select">All</div></div>
+      <div class="field"><label>Health</label><div class="select">All</div></div>
+      <div class="field"><label>Stage</label><div class="select">All</div></div>
+      <div class="field"><label>Strategic objective</label><div class="select">All</div></div>
+      <div class="field"><label>Status</label><div class="select">Committed, Proposed</div></div>
+    </div>
+  </section>
+
+  <section class="card" data-req="REG-01 REG-03 CHR-15">
+    <table class="table x-reg">
+      <thead>
+        <tr><th></th><th>Project <span class="anno" data-n="1"></span></th><th>Program</th><th>Owner</th><th>Sponsor</th><th>Stage</th><th>Health</th><th class="num">Budget</th><th class="num">Forecast</th><th>End date</th><th>Version</th><th>Tags <span class="anno" data-n="4"></span></th></tr>
+      </thead>
+      <tbody>
+        <tr class="cat"><td colspan="12">Growth <span class="anno" data-n="3"></span> <span class="muted small" style="font-weight:400">· 70 projects · $27.1M approved</span></td></tr>
+        <tr><td>☆</td><td><span class="code">PRJ-001</span> MSME Payment</td><td>MSME Transformation</td><td>A. Wong</td><td>Linh T.</td><td>Development</td><td><span class="rag g">On track</span></td><td class="num">$2.4M</td><td class="num">$2.5M</td><td>30 Jun 2027</td><td><span class="tag">v2.1</span></td><td class="x-tags"><span class="tag accent">MSME revenue +20%</span></td></tr>
+        <tr><td>☆</td><td><span class="code">PRJ-002</span> Merchant Onboarding</td><td>MSME Transformation</td><td>M. Johnson</td><td>A. Wong</td><td>Solution</td><td><span class="rag a">At risk</span></td><td class="num">$1.2M</td><td class="num">$1.3M</td><td>15 Jul 2027</td><td><span class="tag">v2.1</span></td><td class="x-tags"><span class="tag accent">MSME revenue +20%</span></td></tr>
+        <tr><td>☆</td><td><span class="code">PRJ-003</span> Digital Sales</td><td>Customer</td><td>M. Johnson</td><td>Linh T.</td><td>Design</td><td><span class="rag a">At risk</span></td><td class="num">$1.9M</td><td class="num" style="color:var(--critical-text)">$2.3M</td><td>30 Sep 2027</td><td><span class="tag">v2.1</span></td><td class="x-tags"><span class="tag accent">Digital share 40%</span></td></tr>
+        <tr class="sel"><td>★</td><td><span class="code">PRJ-004</span> Mobile App</td><td>Customer</td><td>A. Wong</td><td>Linh T.</td><td>Development</td><td><span class="rag a">At risk</span></td><td class="num">$1.5M</td><td class="num">$1.8M</td><td>15 Dec 2027</td><td><span class="tag">v2.1</span></td><td class="x-tags"><span class="tag accent">Digital share 40%</span> <span class="tag">CR-016</span></td></tr>
+        <tr><td>☆</td><td><span class="code">PRJ-008</span> CRM Refresh</td><td>Customer</td><td>M. Johnson</td><td>A. Wong</td><td>Discovery</td><td><span class="rag g">On track</span></td><td class="num">$0.9M</td><td class="num">$0.9M</td><td>31 Mar 2028</td><td><span class="tag">v2.1</span></td><td class="x-tags"><span class="tag accent">Digital share 40%</span></td></tr>
+        <tr><td>☆</td><td><span class="code">PRJ-010</span> Card Rewards</td><td>Customer</td><td>A. Wong</td><td>Linh T.</td><td>Test</td><td><span class="rag g">On track</span></td><td class="num">$1.1M</td><td class="num">$1.1M</td><td>30 Nov 2026</td><td><span class="tag">v2.1</span></td><td class="x-tags"><span class="chip critical">No objective</span></td></tr>
+        <tr class="cat"><td colspan="12">Technology & Regulatory <span class="muted small" style="font-weight:400">· 58 projects · $23.1M approved</span></td></tr>
+        <tr><td>★</td><td><span class="code">PRJ-005</span> ▾ Core Platform</td><td>Platform</td><td>L. Wang</td><td>Linh T.</td><td>Development</td><td><span class="rag r">Off track</span></td><td class="num">$3.8M</td><td class="num" style="color:var(--critical-text)">$4.7M</td><td>20 Aug 2027</td><td><span class="tag">v1.9</span></td><td class="x-tags"><span class="tag accent">Cost to serve -15%</span></td></tr>
+        <tr><td colspan="12" class="wrap" style="background:var(--surface-sunk)">
+          <div class="grid c4 small">
+            <div><div class="label">Health <span class="anno" data-n="5"></span></div><div>Declared <span class="rag g">On track</span> · computed <span class="rag r">Off track</span></div><div class="muted">3 milestones overdue, 2 critical risks</div></div>
+            <div><div class="label">Next gate</div><div>Test entry · planned 14 Nov 2026</div><div class="muted">Stage SLA breached by 34 days</div></div>
+            <div><div class="label">Budget</div><div>Variance +24% vs approved</div><div class="muted">Forecast $4.7M vs approved $3.8M</div></div>
+            <div class="row"><span class="btn secondary sm">Pin</span><span class="btn primary sm">Open project</span></div>
+          </div>
+        </td></tr>
+        <tr><td>☆</td><td><span class="code">PRJ-006</span> Data Platform</td><td>Platform</td><td>L. Wang</td><td>A. Wong</td><td>Development</td><td><span class="rag a">At risk</span></td><td class="num">$2.9M</td><td class="num">$3.1M</td><td>31 Oct 2027</td><td><span class="tag">v1.9</span></td><td class="x-tags"><span class="tag accent">Cost to serve -15%</span></td></tr>
+        <tr><td>☆</td><td><span class="code">PRJ-011</span> Treasury API</td><td>Platform</td><td>L. Wang</td><td>A. Wong</td><td>Solution</td><td><span class="rag g">On track</span></td><td class="num">$1.4M</td><td class="num">$1.4M</td><td>31 May 2027</td><td><span class="tag">v2.1</span></td><td class="x-tags"><span class="tag accent">Cost to serve -15%</span></td></tr>
+        <tr><td>☆</td><td><span class="code">PRJ-007</span> AML Upgrade</td><td>Regulatory</td><td>A. Wong</td><td>Linh T.</td><td>Test</td><td><span class="rag g">On track</span></td><td class="num">$1.6M</td><td class="num" style="color:var(--critical-text)">$1.92M</td><td>31 Mar 2027</td><td><span class="tag">v2.1</span></td><td class="x-tags"><span class="tag">Exempt: regulatory</span></td></tr>
+        <tr><td>☆</td><td><span class="code">PRJ-012</span> KYC Automation</td><td>Regulatory</td><td>A. Wong</td><td>Linh T.</td><td>Test</td><td><span class="rag a">At risk</span></td><td class="num">$1.3M</td><td class="num">$1.4M</td><td>28 Feb 2027</td><td><span class="tag">v2.1</span></td><td class="x-tags"><span class="tag">Exempt: regulatory</span></td></tr>
+      </tbody>
+    </table>
+    <div class="list-row"><span class="muted small grow">Showing 11 of 128 · forecast in red is 20% or more above approved</span><span class="btn secondary sm">Load more</span></div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">REG-01</span> One master record per project with a unique ID; the version column shows the framework version the project was created with, which never changes without an approved migration.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">REG-02</span> Search by ID or name and one filter row above the table; results update without a page reload and the filters can be saved as a view.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">REG-03</span> Rows are grouped by the primary portfolio (POC "Space") and program (POC "Folder"); a project can carry secondary tags for other groupings.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">CHR-15, BR-02</span> The tag column shows the linked strategic objective or an approved exemption; a committed project with neither is flagged, as for Card Rewards.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">RSK-04, BR-39</span> The expanded row compares declared and computed health; a declared Green with a computed Red is green-but-risky and also appears in the executive attention queue. Computed values state their as-of time and metric version in the page header.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

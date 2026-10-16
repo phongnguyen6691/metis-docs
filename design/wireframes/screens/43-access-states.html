@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Access and session states · Metis wireframe</title>
+<meta name="wf:id" content="access-states">
+<meta name="wf:title" content="Access and session states">
+<meta name="wf:area" content="Access &amp; tenancy">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="PLT-04 TEN-02 WSP-02 WSP-05 TEN-06 PLT-01 BR-38 PLT-03 TEN-03">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Seven states people meet when access is missing, limited or interrupted, each with its reason and next step: no permission for a project, an archived workspace that is read-only, an expired session that keeps unsaved input, a suspended tenant that can still read and export, a forgotten password, a failed single sign-on and an expired invitation.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-frame { border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--canvas); overflow: hidden; }
+  .x-frame .x-bar { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--line); background: var(--rail); font-size: 12px; color: var(--muted); }
+  .x-lock { width: 40px; height: 40px; border-radius: 50%; background: var(--neutral-bg); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; }
+  .x-ro { background: var(--neutral-bg); }
+  .x-lines { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .x-lines i { display: block; height: 10px; border-radius: 4px; background: var(--line); }
+  .x-paper { background: var(--paper); padding: 22px; display: flex; justify-content: center; }
+</style>
+</head>
+<body data-shell="app" data-workspace="Digital Products" data-crumbs="Digital Products / Access and session states">
+<main>
+
+  <section>
+    <div class="title">Access and session states</div>
+    <div class="muted small" style="margin-top:4px">What people see when access is missing, limited or expired. Each state says why and what to do next, and shows no data the person may not see.</div>
+  </section>
+
+  <section class="grid c2">
+
+    <div class="card" data-req="PLT-04 WSP-02 TEN-02">
+      <div class="head"><span class="h3">1 · No permission for a project <span class="anno" data-n="1"></span></span><span class="chip">403</span></div>
+      <div class="body stack">
+        <div class="x-frame">
+          <div class="x-bar">Digital Products / Growth / MSME Transformation / Merchant Onboarding</div>
+          <div class="stack s" style="padding:22px;align-items:center;text-align:center">
+            <span class="x-lock">🔒</span>
+            <div class="h2">You don't have access to Merchant Onboarding</div>
+            <div class="small muted" style="max-width:420px">You need a role on this project: Team member to work on it, or Viewer to read it. No project data is shown until access is granted.</div>
+            <div class="row" style="justify-content:center"><span class="av">MJ</span><span class="small">Project manager: M. Johnson</span></div>
+            <div class="row" style="justify-content:center"><span class="btn primary sm">Request access</span><span class="btn ghost sm">Back to My focus</span></div>
+            <div class="small muted">After you ask: "Request sent to M. Johnson. You get an email when it is decided."</div>
+          </div>
+        </div>
+        <div class="stack s">
+          <div class="label">Same link, other cases <span class="anno" data-n="2"></span></div>
+          <div class="list-row" style="padding:0;min-height:36px"><span class="tag">Workspace you are not in</span><span class="small grow">"You are not a member of this workspace. Ask its owner to invite you." The project name and path are not shown.</span></div>
+          <div class="list-row" style="padding:0;min-height:36px"><span class="tag">Another organization</span><span class="small grow">"Page not found. Check the link or ask the person who sent it." Same answer as a link that never existed.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-req="WSP-05">
+      <div class="head"><span class="h3">2 · Archived workspace, read-only <span class="anno" data-n="3"></span></span><span class="chip">Archived</span></div>
+      <div class="body">
+        <div class="x-frame">
+          <div class="x-bar">Retail Pilot 2025 / Projects</div>
+          <div class="stack s" style="padding:14px">
+            <div class="banner x-ro">
+              <span>🔒</span>
+              <div class="grow"><div class="h3">Read-only: this workspace is archived</div><div class="small">Retail Pilot 2025 was archived on 30 Jun 2026 by a tenant admin. You can open, search and export everything, including configuration and gate decisions. Nothing can be edited.</div></div>
+            </div>
+            <div class="row"><span class="btn secondary sm">Export workspace data</span><span class="btn ghost sm">Ask a tenant admin to restore</span></div>
+            <table class="table">
+              <thead><tr><th>Project</th><th>Status</th><th>Last change</th><th></th></tr></thead>
+              <tbody>
+                <tr><td>Store Refit Pilot</td><td><span class="chip">Closed</span></td><td>28 Jun 2026</td><td><span class="btn ghost sm">Open</span></td></tr>
+                <tr><td>Loyalty Kiosk Trial</td><td><span class="chip">Closed</span></td><td>15 Jun 2026</td><td><span class="btn ghost sm">Open</span></td></tr>
+              </tbody>
+            </table>
+            <div class="small muted">No New, Edit, Upload or Raise change request controls appear in an archived workspace.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-req="PLT-01 PLT-04">
+      <div class="head"><span class="h3">3 · Session expired <span class="anno" data-n="4"></span></span><span class="chip">Signed out</span></div>
+      <div class="body">
+        <div class="overlay x-frame" style="padding:26px 22px">
+          <div class="x-lines" style="position:absolute;inset:0"><i style="width:60%"></i><i style="width:85%"></i><i style="width:72%"></i><i style="width:90%"></i><i style="width:55%"></i><i style="width:80%"></i><i style="width:66%"></i><i style="width:88%"></i></div>
+          <div class="modal" style="max-width:420px;margin:0 auto">
+            <div class="head"><span class="h3">Your session expired</span></div>
+            <div class="body stack s">
+              <div class="small">Acme Holdings signs you out after 12 hours, a setting of your tenant admin. Sign in again to carry on where you were.</div>
+              <div class="banner ok small"><div class="grow">Your unsaved draft comment is kept in this window and comes back after you sign in.</div></div>
+              <div class="small muted">Signing in as someone else discards it.</div>
+            </div>
+            <div class="foot"><span class="btn ghost sm">Sign out</span><span class="btn primary sm">Sign in again with SSO</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-req="TEN-06 BR-38 PLT-01">
+      <div class="head"><span class="h3">4 · Tenant suspended, at sign-in <span class="anno" data-n="5"></span></span><span class="chip waiting">Suspended</span></div>
+      <div class="body">
+        <div class="x-frame x-paper">
+          <div class="card pad stack s" style="width:420px">
+            <img src="../../brand/logo/metis-wordmark.svg" alt="Metis" style="height:26px;align-self:flex-start">
+            <div class="h2">Orchid Retail</div>
+            <div class="banner warn">
+              <div class="grow"><div class="h3">This organization's account is suspended</div><div class="small">You can sign in, open and export your data. Editing, invitations and uploads are paused until the account is reactivated.</div></div>
+            </div>
+            <div class="kv" style="grid-template-columns:130px 1fr">
+              <dt>Still available</dt><dd>Read, search, export</dd>
+              <dt>Paused</dt><dd>Edit, invite, upload, MCP writes</dd>
+              <dt>Who can fix it</dt><dd>Your tenant admin, with the provider</dd>
+            </div>
+            <span class="btn primary" style="justify-content:center">Continue read-only</span>
+            <div class="small muted center">Tenant admins export everything from Tenant admin › Data export</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="grid c3">
+
+    <div class="card" data-req="PLT-01 TEN-03">
+      <div class="head"><span class="h3">5 · Forgot password <span class="anno" data-n="6"></span></span><span class="chip">Sign-in help</span></div>
+      <div class="body">
+        <div class="x-frame x-paper">
+          <div class="card pad stack s" style="width:100%">
+            <img src="../../brand/logo/metis-wordmark.svg" alt="Metis" style="height:24px;align-self:flex-start">
+            <div class="h2">Reset your password</div>
+            <div class="small muted">Enter the email you sign in with. We send a reset link that works once.</div>
+            <div class="field"><label>Email</label><div class="input">j.park@northwind.example</div></div>
+            <span class="btn primary" style="justify-content:center">Send reset link</span>
+            <div class="banner ok small"><div class="grow">If an account exists for this address, a reset link is on its way. Check your inbox.</div></div>
+            <div class="small muted">Lost your second sign-in factor? Your tenant admin resets it for you.</div>
+            <div class="small muted">Your organization signs in with SSO? Change your password with its sign-in service.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-req="PLT-01 TEN-03">
+      <div class="head"><span class="h3">6 · Single sign-on failed <span class="anno" data-n="7"></span></span><span class="chip critical">SSO error</span></div>
+      <div class="body">
+        <div class="x-frame x-paper">
+          <div class="card pad stack s" style="width:100%">
+            <img src="../../brand/logo/metis-wordmark.svg" alt="Metis" style="height:24px;align-self:flex-start">
+            <div class="h2">Acme Holdings</div>
+            <div class="banner bad">
+              <div class="grow"><div class="h3">Your organization's sign-in service did not respond</div><div class="small">We could not finish signing you in. Your Metis account is not affected.</div></div>
+            </div>
+            <div class="row"><span class="btn primary sm">Try again</span><span class="btn secondary sm">Contact your tenant admin</span></div>
+            <div class="small">Reference for support: <span class="mono">SSO-7F3K2</span></div>
+            <div class="stack s">
+              <div class="label">Other answers from the sign-in service</div>
+              <div class="list-row" style="padding:0;min-height:36px"><span class="tag">Refused</span><span class="small grow">"Your organization's sign-in service did not accept this sign-in. Your account there may be disabled."</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-req="PLT-03">
+      <div class="head"><span class="h3">7 · Invitation expired <span class="anno" data-n="8"></span></span><span class="chip waiting">Expired</span></div>
+      <div class="body">
+        <div class="x-frame x-paper">
+          <div class="card pad stack s" style="width:100%">
+            <img src="../../brand/logo/metis-wordmark.svg" alt="Metis" style="height:24px;align-self:flex-start">
+            <div class="h2">This invitation has expired</div>
+            <div class="small">Q. Tran invited you to the Creative Studio workspace of Acme Holdings on 2 Sep 2026. Invitation links are valid for a limited time, and this one has run out.</div>
+            <span class="btn primary" style="justify-content:center">Request a new invitation</span>
+            <div class="banner ok small"><div class="grow">After you ask: "Request sent to Q. Tran. You get a new invitation by email when it is approved."</div></div>
+            <div class="small muted">Already joined from another invitation? Sign in instead.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">PLT-04</span> Missing access is explained, never an empty page: the resource, the role it needs and who decides. Request access notifies the project manager. The server rejects the same request from the application, the API or MCP, even if the screen is bypassed.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">WSP-02, TEN-02</span> A link into a workspace the person is not in does not reveal the project name. A link to another organization's record gets the same answer as a link that never existed, so nothing proves it exists.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">WSP-05</span> An archived workspace stays readable, searchable, exportable and auditable. The banner says who archived it and when; editing controls are absent rather than greyed out.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">PLT-01, PLT-04</span> Sessions last until expiry or sign-out; the lifetime is a tenant setting. Expiry asks the person to sign in again and keeps unsaved input in the window.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">TEN-06, BR-38</span> A suspended tenant is read-only: people can still sign in, read and export. The notice lists what is paused and who can lift it.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">PLT-01, TEN-03</span> Password reset applies to email and password accounts. The answer is the same whether or not the address has an account, so the page never reveals who is registered. The link works once. A lost second factor is reset by a tenant admin; people whose tenant uses SSO are sent to their organization's sign-in service.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">PLT-01, TEN-03</span> When the tenant's identity provider refuses the sign-in or does not answer, the message names the category in plain words and offers Try again and Contact your tenant admin. A reference code lets support find the event in the logs; no technical detail of the identity provider is shown.</span></li>
+    <li><span class="anno" data-n="8"></span><span><span class="req">PLT-03</span> An expired invitation names who invited the person and to which workspace. Request a new invitation notifies the inviter, who sends a fresh one; nothing is joined until the new invitation is accepted.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

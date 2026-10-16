@@ -1,0 +1,13 @@
+# Requirements whose behaviour a wireframe cannot prove, and what proves it instead.
+# ID <tab> evidence type <tab> what proves it <tab> what the screen does prove.
+# Evidence type is one of: contract test, security suite, performance test, legal decision.
+# Everything not listed here is proven by its screen; build.py fills {{EVIDENCE_TABLE}} and reports the counts per type.
+TEN-02	security suite	Negative isolation suite per data path, with the isolation decision record and matrix	The admin and security surfaces that configure isolation
+MCP-05	contract test	Authorization test per tool, asserting the token scope and the user's roles	The tool list and the connection page
+MCP-07	contract test	Integration test on record version conflict and baseline lock	The update surfaces and their error states
+MCP-13	contract test	Per-tool test on returned fields, page size and contact scope	The tool contracts shown on the connection page
+MCP-16	security suite	Fuzz and error-message suite over every tool and error path	The error states a user sees
+MCP-19	contract test	Per-class test asserting the class and the confirmation mode of every published tool	The class and policy metadata shown in the tool list
+BLD-13	contract test	Parity matrix with one keyboard test per editor operation	The canvas, the list view and the editor controls
+BLD-14	contract test	Selector resolution test for the resolved, missing and ambiguous outcomes	The node form and the resolution states in the build preview
+BLD-16	contract test	Publish-check test per rule, constraint consistency included	The publish control, the failure list and the version history

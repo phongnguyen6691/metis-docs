@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project charter · Metis wireframe</title>
+<meta name="wf:id" content="project-charter">
+<meta name="wf:title" content="Project charter and business case">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="CHR-01 CHR-02 CHR-03 CHR-04 CHR-05 CHR-06 CHR-07 CHR-08 CHR-09 CHR-10 CHR-11 CHR-12 CHR-13 CHR-14 CHR-15 CHR-16 BR-01 BR-02 BR-03 BR-22 BR-39 PLT-16 PLT-20">
+<meta name="wf:poc" content="04 05 06 07 08">
+<meta name="wf:summary" content="Nine-section charter that is a live slice of project data, with a sticky section navigator showing completion and what is required before commitment: sections V and VI are derived from the WBS and collapsed, VII reads from the risk register, sign-off freezes a revision and a PDF pins a data snapshot.">
+<style>
+  .x-toc .list-row { padding: 7px 14px; gap: 8px; font-size: 13px; }
+  .x-toc .x-st { font-size: 12px; white-space: nowrap; }
+  .x-toc .x-ok { color: var(--good-text); } .x-toc .x-part { color: var(--waiting-text); }
+  .x-tip { position: relative; display: inline-flex; width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--line-strong); font-size: 10.5px; font-weight: 700; align-items: center; justify-content: center; color: var(--muted); }
+  .x-pop { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface); box-shadow: 0 8px 24px rgba(17, 24, 39, .14); padding: 9px 11px; font-size: 12.5px; max-width: 340px; }
+</style>
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+</head>
+<body data-shell="app" data-workspace="Creative Studio" data-crumbs="Creative Studio / Client Delivery / Northwind Furniture Co. / Meridian CGI Campaign" data-project="Meridian CGI Campaign" data-tab="charter">
+<main>
+
+  <section class="row between" data-req="CHR-09 CHR-10 CHR-11">
+    <div class="row">
+      <span class="h2">Charter</span>
+      <span class="chip good">Rev 1 · signed 25 Jun 2026</span>
+      <span class="chip review">Rev 2 draft · 4th hero angle pending CR-001</span>
+    </div>
+    <div class="row">
+      <span class="btn ghost sm">View revisions</span>
+      <span class="btn secondary sm">Compare <span class="tag future">Planned V2</span></span>
+      <span class="btn secondary sm">Export JSON</span>
+      <span class="btn secondary sm">Export PDF <span class="anno" data-n="6"></span></span>
+      <span class="btn primary sm">Issue Rev 2</span>
+    </div>
+  </section>
+  <div class="small muted" style="text-align:right;margin-top:-6px" data-req="PLT-16 BR-39">Export PDF pins a data snapshot: it states its as-of time, metric version and generator, and downloading it again returns the same file.</div>
+
+  <section class="grid" style="grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start">
+    <div class="stack">
+
+      <div class="card" data-req="CHR-01 CHR-02 CHR-16">
+        <div class="head"><span class="h3">I. Project identification</span><span class="muted small">Shared with Overview, WBS and Timeline</span></div>
+        <div class="body stack">
+          <dl class="kv">
+            <dt>Project name</dt><dd><b>Meridian CGI Campaign</b></dd>
+            <dt>Client / department</dt><dd>Northwind Furniture Co.</dd>
+            <dt>Project number</dt><dd class="num">NW-2026-014</dd>
+            <dt>Project manager</dt><dd class="row"><span class="av">NR</span>Nadia R.</dd>
+            <dt>Start date</dt><dd>25 Jun 2026</dd>
+            <dt>Target completion</dt><dd class="stack s"><div class="row"><div class="input locked" style="min-height:28px;padding:3px 8px">2 Sep 2026</div><span class="muted small">Baseline v1 <span class="anno" data-n="5"></span></span><span class="x-tip">?</span></div><div class="x-pop"><b>Baseline</b> Approved snapshot of scope, dates, budget and critical dependencies; changed only through CRs. <span class="muted">Open glossary</span> <span class="anno" data-n="8"></span></div></dd>
+            <dt>Overall status</dt><dd><span class="chip running">In Progress</span></dd>
+            <dt>Contract value / no.</dt><dd class="num">$148,000</dd>
+            <dt>Lifecycle position</dt><dd class="row"><span class="chip running">Production · stage 3 of 6</span><span class="tag">Creative Production v1.2</span></dd>
+            <dt>Revision</dt><dd>Rev 2 (draft) · "Adds a 4th hero render angle, pending CR-001"</dd>
+          </dl>
+          <div>
+            <div class="label" style="margin-bottom:6px">Project team</div>
+            <table class="table">
+              <thead><tr><th>Name</th><th>Title / role</th></tr></thead>
+              <tbody>
+                <tr><td><span class="row"><span class="av">NR</span>Nadia R.</span></td><td>Project Manager</td></tr>
+                <tr><td><span class="row"><span class="av">DK</span>Denny K.</span></td><td>3D Lead</td></tr>
+                <tr><td><span class="row"><span class="av">SW</span>Sasha W.</span></td><td>Art Director</td></tr>
+                <tr><td><span class="row"><span class="av">HL</span>H. Le</span></td><td>Studio Director, project owner</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-req="CHR-03">
+        <div class="head"><span class="h3">II. Key contacts</span><span class="btn ghost sm">+ Add contact</span></div>
+        <table class="table">
+          <thead><tr><th>Role</th><th>Name</th><th>Email</th><th>Phone</th></tr></thead>
+          <tbody>
+            <tr><td>Approved Representative</td><td><span class="row"><span class="av client">JP</span>J. Park</span></td><td><span class="muted">name@client.example</span></td><td><span class="muted">Not set</span></td></tr>
+            <tr><td>Contracting Officer Representative</td><td><span class="muted">Not set</span></td><td><span class="muted">Not set</span></td><td><span class="muted">Not set</span></td></tr>
+            <tr><td>Key Contact</td><td><span class="row"><span class="av">NR</span>Nadia R.</span></td><td><span class="muted">name@acme.example</span></td><td><span class="muted">Not set</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" data-req="CHR-04">
+        <div class="head"><span class="h3">III. Description and objectives · IV. Scope</span></div>
+        <div class="body grid c2">
+          <div class="stack s">
+            <div class="label">Description</div>
+            <p style="max-width:65ch">Still renders and a hero film for the Meridian product launch of Northwind Furniture Co.</p>
+            <div class="label">Objectives</div>
+            <ul class="small" style="margin:0;padding-left:18px">
+              <li>Deliver 51 still renders of the hero product range</li>
+              <li>Deliver a 2 to 3 minute hero film</li>
+              <li>Hand over all final assets by the target completion date</li>
+            </ul>
+          </div>
+          <div class="stack s">
+            <div class="label">In scope</div>
+            <p class="small">51 still renders, 3D film, final asset package.</p>
+            <div class="label">Out of scope</div>
+            <p class="small muted">Not entered yet.</p>
+            <div class="small muted">Detailed deliverables and dates come from the WBS (section V).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-req="CHR-05 BR-22">
+        <div class="head"><span class="muted">▸</span><span class="h3">V. Deliverables <span class="anno" data-n="1"></span></span><span class="tag accent">Derived from WBS</span><span class="muted small" style="flex:1">3 deliverables · 1 in progress, 2 not started</span><span class="btn ghost sm">Expand</span></div>
+      </div>
+
+      <div class="card" data-req="CHR-06">
+        <div class="head"><span class="muted">▸</span><span class="h3">VI. Input required: client commitments <span class="anno" data-n="2"></span></span><span class="tag accent">Derived from WBS</span><span class="muted small" style="flex:1">2 commitments · both done</span><span class="btn ghost sm">Expand</span></div>
+      </div>
+
+      <div class="card" data-req="CHR-07">
+        <div class="head"><span class="h3">VII. Overall project risk <span class="anno" data-n="3"></span></span><span class="tag accent">From risk register</span><span class="btn ghost sm">+ Add risk</span></div>
+        <table class="table">
+          <thead><tr><th>WBS</th><th>Risk</th><th>Owner</th><th>Level</th><th>Mitigation plan</th></tr></thead>
+          <tbody>
+            <tr><td class="code">6.1</td><td>Client Feedback Risk</td><td>Nadia R.</td><td><span class="chip critical">Critical</span></td><td class="muted">Not entered</td></tr>
+            <tr><td class="code">1.2</td><td>3D Film (2 to 3 minutes)</td><td>Sasha W.</td><td><span class="chip serious">High</span></td><td class="muted">Not entered</td></tr>
+            <tr><td class="code">4.1</td><td>Timeline Risk</td><td>Denny K.</td><td><span class="chip serious">High</span></td><td>Overnight render queue (CR-002)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" data-req="CHR-08">
+        <div class="head"><span class="h3">VIII. Other notes · IX. Sign-off <span class="anno" data-n="4"></span></span></div>
+        <div class="body stack">
+          <div class="textarea ph">Other notes</div>
+          <table class="table">
+            <thead><tr><th>Signer</th><th>Role</th><th>Date</th><th>Revision</th><th>Method</th></tr></thead>
+            <tbody>
+              <tr><td><span class="row"><span class="av client">JP</span>J. Park</span></td><td>Client Representative</td><td>25 Jun 2026</td><td>Rev 1</td><td>In-app sign-off</td></tr>
+              <tr><td><span class="row"><span class="av">HL</span>H. Le</span></td><td>Project Owner</td><td>25 Jun 2026</td><td>Rev 1</td><td>In-app sign-off</td></tr>
+              <tr><td><span class="row"><span class="av">NR</span>Nadia R.</span></td><td>Project Manager</td><td>25 Jun 2026</td><td>Rev 1</td><td>In-app sign-off</td></tr>
+            </tbody>
+          </table>
+          <div class="banner accent small">Rev 1 is frozen. Edits made since then form Rev 2, which needs a new sign-off once issued.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stack">
+      <nav class="card x-toc" style="position:sticky;top:12px" data-req="CHR-01 CHR-14 CHR-15 BR-01 BR-02 BR-03">
+        <div class="head"><span class="h3">Sections <span class="anno" data-n="7"></span></span><span class="muted small">stays in view while scrolling</span></div>
+        <div class="list-row"><span class="grow">I. Project identification <span class="req">*</span></span><span class="x-st x-ok">✓ Complete</span></div>
+        <div class="list-row"><span class="grow">II. Key contacts <span class="req">*</span></span><span class="x-st x-part">◐ 1 role not set</span></div>
+        <div class="list-row"><span class="grow">III. Description and objectives <span class="req">*</span></span><span class="x-st x-ok">✓ Complete</span></div>
+        <div class="list-row"><span class="grow">IV. Scope <span class="req">*</span></span><span class="x-st x-part">◐ Out of scope missing</span></div>
+        <div class="list-row"><span class="grow muted">V. Deliverables</span><span class="x-st muted">⇄ Derived</span></div>
+        <div class="list-row"><span class="grow muted">VI. Input required</span><span class="x-st muted">⇄ Derived</span></div>
+        <div class="list-row"><span class="grow">VII. Overall project risk</span><span class="x-st x-part">◐ 2 mitigations missing</span></div>
+        <div class="list-row"><span class="grow">VIII. Other notes</span><span class="x-st muted">○ Empty, optional</span></div>
+        <div class="list-row"><span class="grow">IX. Sign-off</span><span class="x-st x-ok">✓ Rev 1 signed</span></div>
+        <div class="list-row"><span class="grow">Business case and budget <span class="req">*</span></span><span class="x-st x-part">◐ 3 fields missing</span></div>
+        <div class="list-row small muted"><span class="grow"><span class="req">*</span> Required before commitment</span><span class="x-tip">?</span></div>
+      </nav>
+      <div class="card" data-req="CHR-12 CHR-13 CHR-14 CHR-15">
+        <div class="head"><span class="h3">Business case and budget</span><span class="chip good">Approved</span></div>
+        <div class="body stack">
+          <dl class="kv" style="grid-template-columns: 130px 1fr">
+            <dt>Contract value</dt><dd class="num">$148,000</dd>
+            <dt>Budget approved</dt><dd><div class="input ph" style="min-height:28px;padding:3px 8px">Not set</div></dd>
+            <dt>Actual to date</dt><dd><div class="input ph" style="min-height:28px;padding:3px 8px">Enter or import</div></dd>
+            <dt>Forecast</dt><dd><div class="input ph" style="min-height:28px;padding:3px 8px">Not set</div></dd>
+            <dt>Variance</dt><dd class="muted small">Calculated once budget and forecast exist</dd>
+            <dt>Project owner</dt><dd class="row"><span class="av">HL</span>H. Le</dd>
+            <dt>Executive sponsor</dt><dd><div class="select ph">Select sponsor</div></dd>
+            <dt>Strategic objective</dt><dd><div class="select ph">Select objective or record exemption</div></dd>
+          </dl>
+          <div class="small muted">Problem, opportunity, target customer, rationale, alternatives, benefits and assumptions open in the business case editor.</div>
+          <span class="btn secondary sm" style="align-self:flex-start">Open business case</span>
+        </div>
+      </div>
+      <div class="card" data-req="CHR-09 CHR-10">
+        <div class="head"><span class="h3">Revisions</span><span class="btn ghost sm">Compare <span class="tag future">Planned V2</span></span></div>
+        <div class="list-row"><span class="chip review">Rev 2</span><div class="grow"><div class="title-line">Draft</div><div class="sub">Adds a 4th hero render angle, pending CR-001 · not issued</div></div></div>
+        <div class="list-row"><span class="chip good">Rev 1</span><div class="grow"><div class="title-line">Issued and frozen</div><div class="sub">Signed 25 Jun 2026 by J. Park, H. Le, Nadia R.</div></div><span class="btn ghost sm">Open</span></div>
+      </div>
+      <div class="card pad stack s">
+        <div class="label">How this charter stays current</div>
+        <div class="small">Sections V and VI read from the WBS Master. Section VII reads from the risk register. Section I shares its fields with the project record.</div>
+        <div class="small muted">Editing a deliverable date in the WBS updates section V immediately.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">CHR-05, BR-22</span> Read-only view of WBS work items with Type = Deliverable, collapsed by default to a one-line summary because it is derived; it is edited in the WBS. The POC showed none here because its Category rows were stored as Deliverable.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">CHR-06</span> Items labelled Input Required are the client's commitments, with PIC (the client shows a dashed avatar), target and a note that lives only on the charter; derived, so collapsed by default like section V.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">CHR-07</span> Top risks come from the project risk register; a risk added here is saved to the register, so the two never diverge.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">CHR-08, CHR-09</span> Sign-off is recorded per authenticated signer, date and revision instead of the POC's plain text boxes. A signed revision is frozen; comparison of revisions is V2 (CHR-10).</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">CHR-02, BR-04</span> Target completion is locked by baseline v1; changing it opens a change request instead of an inline edit.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">CHR-11, PLT-16, BR-39, CHR-12 to CHR-15</span> PDF and JSON export as in the POC; a PDF is a snapshot that states its as-of time, metric version and generator and is kept, so downloading it again returns the same file. The side card holds the business case, budget, owner, sponsor and strategic link required before commitment; unknown values stay empty.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">CHR-01, BR-01, BR-02, BR-03</span> The section navigator stays in view while scrolling and jumps to each section. It shows completion with shape and words (✓ complete, ◐ partial with what is missing, ○ empty, ⇄ derived) and marks with * what must be complete before commitment: sections I to IV and the business case with owner, sponsor, strategic link, budget and target date. The business case gaps are flagged because this project is already committed.</span></li>
+    <li><span class="anno" data-n="8"></span><span><span class="req">PLT-20</span> Product terms used as labels (Baseline here, commitment in the navigator) have a ? that opens the glossary definition in place, taken from Appendix A.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

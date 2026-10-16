@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: questions and conversation · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-questions">
+<meta name="wf:title" content="Onboarding: questions and conversation">
+<meta name="wf:area" content="Onboarding">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-11 ONB-12 ONB-17 ONB-28">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="The cards an executive answers in the 30-minute path: a single card with its sourced best guess, a bulk card, a contradiction card sent to its owner, the cap, the conversation panel, and the same card on a phone.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .x-pair > div { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface-sunk); padding: 8px 10px; font-size: 12.5px; font-weight: 500; }
+  .x-rows { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-sunk); font-size: 13px; }
+  .x-rows > div { padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  .x-rows > div:last-child { border-bottom: 0; }
+  .x-flag { position: relative; }
+  .x-flag > .anno { position: absolute; top: 12px; right: 12px; z-index: 2; }
+  .x-flag .q { padding-right: 30px; }
+  .qcard .q { text-wrap: balance; }
+  .x-chat { display: flex; flex-direction: column; }
+  .x-chat > .body { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+  .x-msg { display: flex; gap: 10px; align-items: flex-start; }
+  .x-bubble { min-width: 0; background: var(--surface-sunk); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 10px 12px; font-size: 13.5px; line-height: 1.5; }
+  .x-bubble.x-me { background: var(--accent-soft); border-color: transparent; }
+  .x-bubble .row { margin-top: 8px; }
+  .x-compose { flex-wrap: nowrap; padding: 12px 14px; border-top: 1px solid var(--line); }
+  .x-compose .input { flex: 1; min-width: 0; }
+  .x-phonecol { display: flex; justify-content: center; align-items: flex-start; }
+  .x-phonecol .phone { min-height: 520px; }
+</style>
+</head>
+<body data-shell="none" data-tenant="Nova Energy" data-user="RO">
+<main>
+
+  <header class="ob-head">
+    <img src="../../brand/logo/metis-wordmark.svg" alt="Metis">
+    <div class="ob-steps"><span class="ob-step done">Frame</span><span class="ob-step done">Drop</span><span class="ob-step cur" aria-current="step">Draft</span><span class="ob-step">Launch</span></div>
+    <span class="ob-clock">Step 3 of 4 · Saved · you can leave and resume</span>
+  </header>
+
+  <div class="wf-page">
+
+    <section data-req="ONB-11">
+      <div class="row"><h1 class="title">6 of your 10 cards answered</h1><span class="anno" data-n="1"></span></div>
+      <div class="muted" style="margin-top:4px">Everything else is assumed, set to a safe default, sent to its owner or kept for later. You will see the full list before launch.</div>
+    </section>
+
+    <section class="grid" style="grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 320px; align-items: stretch">
+
+      <div class="stack">
+
+        <div class="qcard" data-req="ONB-12">
+          <div class="q">Is Almeria Solar Phase 2 in the Execute stage? <span class="anno" data-n="2"></span></div>
+          <div class="guess"><span class="check on">Best guess</span><b>Execute, since 14 Jul 2026</b><span class="small muted">from Status report September 2026 (Almeria), page 1</span></div>
+          <div class="row"><span class="btn primary sm">Use this</span><span class="btn secondary sm">Change</span><span class="btn ghost sm">Ask someone</span><span class="small muted right">About 10 seconds</span></div>
+        </div>
+
+        <div class="qcard" data-req="ONB-12">
+          <div class="q">We matched 78 of 86 people to roles. Check the 8 we are unsure about? <span class="anno" data-n="3"></span></div>
+          <div class="x-rows">
+            <div>K. Brandt: project manager or product owner?</div>
+            <div>A. Haddad: project manager (named in one status report)</div>
+            <div>Engineering director: title in the handbook, no name in the org chart</div>
+            <div class="small muted">and 5 more</div>
+          </div>
+          <div class="row"><span class="btn primary sm">Confirm the 78</span><span class="btn secondary sm">Review the 8</span></div>
+        </div>
+
+        <div class="x-flag" data-req="ONB-12 ONB-17">
+          <div class="qcard done">
+            <div class="q">Which budget is right for North Grid Substation Upgrade?</div>
+            <div class="x-pair">
+              <div>EUR 12.4M · Portfolio tracker, row 14</div>
+              <div>EUR 13.1M · Capex plan, row 9</div>
+            </div>
+            <div class="banner ok small"><span aria-hidden="true">✓</span><span>Sent to Tomas Iwata, CFO, owner of the Capex plan · due 12 Oct · the tracker value stays assumed until he answers</span></div>
+          </div>
+          <span class="anno" data-n="4"></span>
+        </div>
+
+      </div>
+
+      <div class="card x-chat" data-req="ONB-12">
+        <div class="head"><span class="h3">Talk to Metis <span class="anno" data-n="5"></span></span></div>
+        <div class="body">
+          <div class="x-msg"><span class="av" title="Rosa Okafor">RO</span><div class="x-bubble x-me">For projects below the big ones, Sam takes the investment decision alone. No board.</div></div>
+          <div class="x-msg"><span class="av ai">AI</span>
+            <div class="x-bubble">
+              <div>Done: for projects that do not come to you, the final investment decision now has one approver, Sam Varga.</div>
+              <div class="row between"><span class="small muted">Source: your message at 10:16.</span><span class="btn ghost sm">Undo</span></div>
+            </div>
+          </div>
+          <div class="x-msg"><span class="av" title="Rosa Okafor">RO</span><div class="x-bubble x-me">Who approves the Ready to energize step?</div></div>
+          <div class="x-msg"><span class="av ai">AI</span>
+            <div class="x-bubble">
+              <div>The handbook names the role, Engineering director, but no person. Shall I ask Sam Varga to name them?</div>
+              <div class="row"><span class="btn primary sm">Ask Sam</span><span class="btn secondary sm">I'll name them</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="x-compose row" data-req="ONB-28">
+          <div class="input ph">Ask or tell Metis anything about your company</div>
+          <span class="tag future">Voice: Planned V2</span><span class="anno" data-n="6"></span>
+        </div>
+      </div>
+
+      <div class="x-phonecol" data-req="ONB-12">
+        <div class="phone">
+          <div class="small muted">Nova Energy setup · 6 resolved, 2 can wait <span class="anno" data-n="7"></span></div>
+          <div class="qcard">
+            <div class="q">Is Battery Storage Pilot committed?</div>
+            <div class="guess"><span class="check on">Best guess</span><b>Not committed: no approved budget in the Capex plan</b><span class="small muted">from Capex plan 2026-2028.xlsx, row 18</span></div>
+            <div class="row"><span class="btn primary">Use this</span><span class="btn ghost">Ask someone</span></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-11</span> The executive answers at most 10 cards in the 30-minute path; every other gap gets another treatment and is listed on the launch summary.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-12</span> A card asks one question in business words, with the best guess pre-selected and its quoted source; "Use this" marks the value as assumed by the executive, or as confirmed when only the executive knows the answer.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-12</span> A bulk card confirms the matched items and shows only the exceptions.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-12, ONB-17</span> A contradiction card shows both sources; "Ask someone" creates a task for the suggested owner and the current value stays assumed meanwhile.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">ONB-12</span> The conversation takes free answers, turns them into changes and says what changed, with its source and Undo.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">ONB-28</span> Voice answers come after Release 1.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">ONB-12</span> Cards also work on a phone as responsive web, with no native app in the MVP (D-19), so the executive can finish the remaining ones from mobile.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

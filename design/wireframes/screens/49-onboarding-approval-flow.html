@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: approval flow · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-approval-flow">
+<meta name="wf:title" content="Onboarding: approval flow">
+<meta name="wf:area" content="Onboarding">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-03 ONB-14 ONB-27 GOV-03 GOV-05 GOV-06 GOV-21 CHG-10">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="How a project gets approved, in business words for the executive: the lifecycle read from the PMO handbook and matched to the Capital projects pack, the big-or-strategic boundary computed from the client's data, the differences from the pack, and the dry run on three real projects.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-flow { align-items: flex-start; }
+  .x-gate { width: 104px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 9px; text-align: center; }
+  .x-gate .gate { margin-top: 14px; }
+  .x-gate .small { line-height: 1.3; }
+  .x-nb { white-space: nowrap; }
+  .x-fix { align-items: center; }
+  .x-fix .btn.ghost { color: var(--text); }
+</style>
+</head>
+<body data-shell="app" data-nav="framework" data-workspace="Nova Energy Portfolio" data-tenant="Nova Energy" data-user="RO" data-crumbs="Nova Energy Portfolio / Approval flow (draft)">
+<main>
+
+  <section class="row between" data-req="ONB-03 GOV-21">
+    <div>
+      <div class="row"><h1 class="title">How a project gets approved at Nova Energy</h1><span class="chip review">Draft v1.0</span><span class="anno" data-n="1"></span></div>
+      <div class="muted" style="margin-top:4px">Read from PMO Handbook v3.pdf · closest to the Capital projects pack (92% match)</div>
+    </div>
+    <span class="btn secondary sm">Open the full designer (PMO)</span>
+  </section>
+
+  <section class="card" data-req="ONB-03">
+    <div class="body">
+      <div class="pipeline x-flow">
+        <div class="st">Identify</div>
+        <div class="st">Assess</div>
+        <div class="x-gate"><span class="gate" aria-hidden="true"></span><span class="small">Concept approval</span></div>
+        <div class="st">Define</div>
+        <div class="x-gate"><span class="gate" aria-hidden="true"></span><span class="small">Final investment decision</span></div>
+        <div class="st">Execute</div>
+        <div class="x-gate"><span class="gate" aria-hidden="true"></span><span class="small">Ready to energize</span></div>
+        <div class="st">Commission</div>
+        <div class="x-gate"><span class="gate" aria-hidden="true"></span><span class="small">Handover acceptance</span></div>
+        <div class="st">Close</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-req="GOV-03 GOV-05">
+    <div class="head"><span class="h3">Who approves what <span class="anno" data-n="2"></span></span></div>
+    <table class="table">
+      <thead><tr><th>Approval point</th><th>After</th><th>Who decides</th><th>How</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td><b>Concept approval</b></td><td>Assess</td><td>PMO portfolio board (chair Sam Varga)</td><td>Majority of 3</td><td><span class="src read">Handbook p. 14</span></td></tr>
+        <tr><td><b>Final investment decision</b></td><td>Define</td><td>Big or strategic projects: executive committee</td><td>3 of 5 approvers must agree<span class="src read">Metis calls this a quorum</span></td><td><span class="src read">Handbook p. 17; ExCo pack slide 2</span></td></tr>
+        <tr><td><b>Final investment decision</b></td><td>Define</td><td>Other projects: PMO portfolio board</td><td>Majority of 3</td><td><span class="src default">Capital projects pack</span></td></tr>
+        <tr><td><b>Ready to energize</b></td><td>Execute</td><td>Engineering director (no person named)</td><td>Single approver</td><td><span class="src assumed">Handbook p. 22 names the role only</span></td></tr>
+        <tr><td><b>Handover acceptance</b></td><td>Commission</td><td>Operations director</td><td>Single approver</td><td><span class="src read">Handbook p. 25</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="grid c2" style="align-items: start">
+
+    <div class="card" data-req="ONB-14 GOV-06 CHG-10">
+      <div class="head"><span class="h3">Big or strategic: worked out from your data <span class="anno" data-n="3"></span></span></div>
+      <div class="body stack">
+        <div>In your data, the 11 largest projects hold 66% of the budget; they start at <span class="x-nb">EUR 4.5M.</span> With the 3 smaller projects your ExCo pack ties to a strategic objective, 14 projects will come to you.</div>
+        <div class="stack s">
+          <div class="stackbar"><span class="f-running" style="width:66%"></span><span class="f-neutral" style="width:34%"></span></div>
+          <div class="legend"><span><i class="f-running"></i>11 largest projects · 66% of budget</span><span><i class="f-neutral"></i>23 other projects · 34%</span></div>
+        </div>
+        <div class="row"><span class="btn primary sm">Keep these 14</span><span class="btn secondary sm">Adjust</span></div>
+        <div class="small muted">Adjust shows fewer or more projects with the share of budget for each choice; you never type an amount.</div>
+        <div class="small">Major changes to these 14 projects also come to you; your team sets what counts as major (CHG-10).</div>
+      </div>
+    </div>
+
+    <div class="card" data-req="ONB-27">
+      <div class="head"><span class="h3">Three differences from the Capital projects pack <span class="anno" data-n="4"></span></span></div>
+      <div class="list-row"><div class="grow">Commission is its own stage</div><span class="btn ghost sm">Keep</span><span class="btn ghost sm">Use the pack's way</span></div>
+      <div class="list-row"><div class="grow">The final investment decision goes to the executive committee for big or strategic projects</div><span class="btn ghost sm">Keep</span><span class="btn ghost sm">Use the pack's way</span></div>
+      <div class="list-row"><div class="grow">There is no approval point after Identify</div><span class="btn ghost sm">Keep</span><span class="btn ghost sm">Use the pack's way</span></div>
+    </div>
+
+  </section>
+
+  <section class="card" data-req="ONB-14">
+    <div class="head"><span class="h3">Dry run on three of your projects <span class="anno" data-n="5"></span></span></div>
+    <table class="table">
+      <thead><tr><th>Project</th><th>Why this one</th><th>Next approval</th><th>Who</th><th>Can they decide?</th><th>Documents that become mandatory</th></tr></thead>
+      <tbody>
+        <tr><td><b>Almeria Solar Phase 2</b></td><td>Largest (EUR 18.0M)</td><td>Ready to energize</td><td>Engineering director</td><td><span class="chip critical">No person holds the role</span></td><td class="wrap">Commissioning plan; grid connection test report</td></tr>
+        <tr><td><b>North Grid Substation Upgrade</b></td><td>Comes to you</td><td>Final investment decision</td><td>Executive committee</td><td><span class="chip good">Yes: 5 named, 3 needed</span></td><td class="wrap">Business case; cost estimate; permit status</td></tr>
+        <tr><td><b>Customer App Relaunch</b></td><td>Typical</td><td>Final investment decision</td><td>PMO portfolio board</td><td><span class="chip good">Yes: 3 named</span></td><td class="wrap">Business case; cost estimate</td></tr>
+      </tbody>
+    </table>
+    <div class="body" style="border-top:1px solid var(--line)">
+      <div class="banner bad small x-fix">
+        <div style="flex:1">1 failure to fix before launch: nobody holds the Engineering director role.</div>
+        <span class="btn secondary sm">Let Amara Diallo approve meanwhile</span><span class="btn ghost sm">Ask Sam Varga to name the director</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="row" data-req="GOV-21"><span class="av ai">AI</span><span class="small muted">This draft is published at launch: Metis is its author and you are its reviewer.</span></div>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-03, GOV-21</span> The approval flow in business words for the executive; the full designer (wireframe 11) stays for the PMO. It is published at launch with the AI as author and the executive as reviewer.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">GOV-03, GOV-05</span> Approvers, committee and how many must agree for each approval point, each with its source badge; a role named without a person is shown as assumed. The column says "how many approvers must agree" and keeps the word quorum as a note, because the executive setting this up is not a PMO administrator. Everything on this screen except the irreversible settings can be changed after launch, which the screen says, so a high-stakes feeling does not stall the session.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-14, GOV-06, CHG-10</span> The boundary of big or strategic projects is computed from the client's data and shown as a consequence, never asked as an amount; it becomes a budget-based routing rule and also routes major changes (CHG-10, raised to P0 by the addendum).</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-27</span> Each difference between the handbook and the starting pack is kept or replaced in one tap.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">ONB-14</span> The dry run uses the largest project, one routed to the executive and one typical project: who approves next, whether they can decide, which documents become mandatory. A failure carries its one-click fix.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

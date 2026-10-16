@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: launch · Metis wireframe</title>
+<meta name="wf:id" content="onboarding-launch">
+<meta name="wf:title" content="Onboarding: launch">
+<meta name="wf:area" content="Onboarding">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="ONB-15 ONB-16 WSP-14 GOV-21 BR-44 PLT-03">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="Launch summary that leads with the four outcomes reached, then the exceptions: access changes with privileged roles approved by name and their access difference, unconfirmed values grouped by risk class with two blocking the launch, the load per owner, the readiness results, and what an undo would not remove.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-rows .list-row { padding-top: 9px; padding-bottom: 9px; }
+  .x-ready .list-row { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
+  .x-owners th:first-child, .x-owners td:first-child { padding-left: 14px; }
+  .x-owners th:nth-child(2), .x-owners td:nth-child(2) { width: 150px; }
+  .x-owners th:nth-child(3), .x-owners td:nth-child(3) { width: 220px; }
+  .x-who { flex-wrap: nowrap; gap: 8px; }
+  .x-after > div { text-wrap: pretty; }
+</style>
+</head>
+<body data-shell="none" data-tenant="Nova Energy" data-user="RO">
+<main>
+
+  <header class="ob-head">
+    <img src="../../brand/logo/metis-wordmark.svg" alt="Metis">
+    <div class="ob-steps"><span class="ob-step done">Frame</span><span class="ob-step done">Drop</span><span class="ob-step done">Draft</span><span class="ob-step cur" aria-current="step">Launch</span></div>
+    <span class="ob-clock">Step 4 of 4 · Saved · you can leave and resume</span>
+  </header>
+
+  <div class="wf-page">
+
+    <section class="stack s">
+      <h1 class="title">Your portfolio is ready to run</h1>
+      <div class="muted">From seven of your own files, in one session. One approval makes it live; below it, the four things that need you first.</div>
+      <div class="grid c4">
+        <div class="card kpi"><div class="k-label">Workspace and governance</div><div class="k-value" style="font-size:18px">Nova Capital Projects v1.0</div><div class="k-delta"><span class="src read">from your PMO handbook</span></div></div>
+        <div class="card kpi"><div class="k-label">Your people</div><div class="k-value">86</div><div class="k-delta"><span class="src read">from your org chart</span></div></div>
+        <div class="card kpi"><div class="k-label">Projects in the portfolio</div><div class="k-value">34</div><div class="k-delta"><span class="src read">21 with an approved baseline</span></div></div>
+        <div class="card kpi"><div class="k-label">Live metrics</div><div class="k-value">EUR 214.6M</div><div class="k-delta"><span class="src read">your cockpit, your figures</span></div></div>
+      </div>
+    </section>
+
+    <section class="grid" style="grid-template-columns: minmax(0, 1fr) 400px; align-items: start">
+
+      <div class="stack">
+
+        <div class="card x-rows" data-req="ONB-15 PLT-03">
+          <div class="head"><span class="h3">What your approval will do <span class="anno" data-n="1"></span></span><span class="btn ghost sm">View the technical transaction</span></div>
+          <div class="list-row"><div class="grow">Publish your approval flow, with Metis as the author and you as the reviewer</div></div>
+          <div class="list-row"><div class="grow">Bring in your 34 running projects, with their history before Metis</div></div>
+          <div class="list-row"><div class="grow">Open the workspace and invite your people with the roles below</div></div>
+          <div class="list-row"><div class="grow">Send 31 pre-filled tasks to 6 owners, and turn 8 findings into attention items</div></div>
+          <div class="list-row"><div class="grow small muted">All of it in one transaction: if any check fails, nothing changes at all.</div></div>
+        </div>
+
+        <div class="card x-rows" data-req="ONB-15 BR-44">
+          <div class="head"><span class="h3">Access changes <span class="anno" data-n="7"></span></span><span class="chip waiting">3 need your name on them</span></div>
+          <div class="list-row"><span class="chip critical">Privileged</span><div class="grow"><div class="title-line">Sam Varga · Portfolio Manager, whole portfolio</div><div class="sub">Now: no access. After: approve portfolio change requests, see every project, assign roles. Source: PMO handbook, page 4, "Head of PMO owns the portfolio"</div></div><span class="btn secondary sm">Approve for Sam</span></div>
+          <div class="list-row"><span class="chip critical">Privileged</span><div class="grow"><div class="title-line">Tomas Iwata · Tenant Admin</div><div class="sub">Now: no access. After: users, sign-in policy, AI policy, audit log for the whole tenant. Source: assumed from the title Chief Financial Officer<span class="src assumed">Assumed</span></div></div><span class="btn secondary sm">Approve for Tomas</span> <span class="btn ghost sm">Remove</span></div>
+          <div class="list-row"><span class="chip critical">Privileged</span><div class="grow"><div class="title-line">Amara Diallo · Executive, approves Ready to energize</div><div class="sub">Now: no access. After: gate decisions on 14 projects. Source: ExCo pack, slide 3</div></div><span class="btn secondary sm">Approve for Amara</span></div>
+          <div class="list-row"><span class="chip">Standard</span><div class="grow"><div class="title-line">83 team roles: 11 project managers, 52 team members, 16 viewers, 4 control functions</div><div class="sub">Each from a named source. No approval, publish or permission rights.</div></div><span class="btn secondary sm">Approve all 83</span> <span class="btn ghost sm">Review</span></div>
+        </div>
+
+        <div class="card x-rows" data-req="ONB-15 ONB-08">
+          <div class="head"><span class="h3">Values still not confirmed, by what they affect <span class="anno" data-n="2"></span></span></div>
+          <div class="list-row"><span class="chip critical">High impact · 2</span><div class="grow"><div class="title-line">These two must be settled before launch</div><div class="sub">Amara Diallo as the approver of Ready to energize, assumed from a slide; the Tenant Admin role for Tomas Iwata, assumed from a title. Both decide who can approve or change access, so neither can stay assumed.</div></div><span class="btn secondary sm">Settle both</span></div>
+          <div class="list-row"><span class="chip waiting">Normal · 64</span><div class="grow"><div class="title-line">Applied with a badge, owned by a person, correctable any time</div><div class="sub">For example: Almeria Solar Phase 2 in Execute, from the September status report; the tracker budget kept for North Grid Substation Upgrade until Tomas Iwata answers.</div></div><span class="btn ghost sm">See all 64</span></div>
+          <div class="list-row"><span class="chip">Informational · 7</span><div class="grow"><div class="title-line">Defaults from the Capital projects pack, nothing depends on them yet</div><div class="sub">Stage owner roles and mandatory artifacts, as the pack defines them.</div></div><span class="btn ghost sm">See all 7</span></div>
+          <div class="list-row"><div class="grow small muted">Assumed means inferred for your company. Default means taken from the starting pack. Both stay flagged until someone confirms them.</div></div>
+        </div>
+
+        <div class="card" data-req="ONB-15">
+          <div class="head"><span class="h3">What goes to owners <span class="anno" data-n="3"></span></span></div>
+          <table class="table x-owners">
+            <thead><tr><th>Owner</th><th class="num">Items</th><th>Due</th></tr></thead>
+            <tbody>
+              <tr><td>Sam Varga</td><td class="num">9</td><td>12 Oct 2026</td></tr>
+              <tr><td>Tomas Iwata</td><td class="num">7</td><td>12 Oct 2026</td></tr>
+              <tr><td>J. Mensah</td><td class="num">5</td><td>12 Oct 2026</td></tr>
+              <tr><td>Priya Duarte</td><td class="num">4</td><td>12 Oct 2026</td></tr>
+              <tr><td>L. Novak</td><td class="num">3</td><td>12 Oct 2026</td></tr>
+              <tr><td>K. Brandt</td><td class="num">3</td><td>12 Oct 2026</td></tr>
+              <tr class="cat"><td>Total</td><td class="num">31 items</td><td>12 Oct 2026</td></tr>
+            </tbody>
+          </table>
+          <div class="body stack s" style="border-top:1px solid var(--line)">
+            <div class="banner warn small">Sam Varga carries 9 of the 31 items on top of his own work. Move some to another owner, or extend the due date.</div>
+            <div class="small muted">Launch does not wait for these. A normal value applied today is kept unchanged after its due date if nobody answers; a high-impact value is never kept that way, it escalates.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="stack">
+
+        <div class="card" data-req="ONB-15">
+          <div class="head"><span class="h3">Who will finish the rest for you? <span class="anno" data-n="4"></span></span></div>
+          <div class="body stack s">
+            <div class="select"><span class="row x-who"><span class="av">SV</span>Sam Varga, Head of PMO</span></div>
+            <div class="small muted">Suggested from the org chart and the PMO handbook</div>
+          </div>
+        </div>
+
+        <div class="card x-ready" data-req="WSP-14 GOV-21 BR-44">
+          <div class="head"><span class="h3">Readiness <span class="anno" data-n="5"></span></span></div>
+          <div class="list-row"><span aria-hidden="true" style="color:var(--good)">✓</span><div class="grow">Owner set: Rosa Okafor</div><span class="chip good">Passed</span></div>
+          <div class="list-row"><span aria-hidden="true" style="color:var(--good)">✓</span><div class="grow">Default lifecycle ready to publish: the draft passes the publish check</div><span class="chip good">Passed</span></div>
+          <div class="list-row"><span aria-hidden="true" style="color:var(--good)">✓</span><div class="grow">Every status mapped to a system state</div><span class="chip good">Passed</span></div>
+          <div class="list-row"><span aria-hidden="true" style="color:var(--good)">✓</span><div class="grow">At least one portfolio: 4</div><span class="chip good">Passed</span></div>
+          <div class="list-row"><span aria-hidden="true" style="color:var(--good)">✓</span><div class="grow">Every approval point has approvers who can decide: fixed at 10:21 (Amara Diallo approves Ready to energize meanwhile)</div><span class="chip good">Passed</span></div>
+          <div class="list-row"><span aria-hidden="true" style="color:var(--good)">✓</span><div class="grow">Dry run: 3 of 3 projects pass</div><span class="chip good">Passed</span></div>
+          <div class="body stack">
+            <span class="btn primary" style="justify-content:center">Approve and launch</span>
+          </div>
+        </div>
+
+        <div class="card" data-req="ONB-16">
+          <div class="head"><span class="h3">After launch <span class="anno" data-n="6"></span></span></div>
+          <div class="body stack s x-after">
+            <div>You can undo this launch until 19 Oct 2026. Records nobody changed are removed; records someone changed stay, and are listed with who changed them.</div>
+            <div><b>An undo will not remove:</b> invitations already sent, a published approval flow once a gate decision has used it, a baseline a change request has since changed. <span class="btn ghost sm">See what cannot be undone</span></div>
+            <div>Each step is in the audit log: Metis as author of each proposal, you as approver, each granted role with your name, channel onboarding.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">ONB-15, PLT-03</span> The page leads with the four outcomes reached, because this is the end of the journey and the moment the executive remembers; the consequences follow as exceptions to check, not as a list of counts to absorb. What the approval does is stated in business words, with the seven-step transaction behind one link. At launch the invitations go out and the approved roles take effect, and invitations are queued so that a rolled-back launch sends none.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">ONB-15, ONB-08</span> Unconfirmed values are grouped by what they affect, never shown as one number: a count of 73 tells the executive nothing about which of them can hurt. The two high-impact ones, an approver and an access grant, block the launch until they are confirmed or delegated; the rest are applied with a badge and an owner. The two badges are explained in one sentence on the screen, because assumed and default read alike to someone seeing them for the first time.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">ONB-15, ONB-17</span> Owners, their items and the due date; launch does not wait for them. The owner carrying the heaviest load is named before the approval, so a launch that is fast for the executive does not quietly become a long queue for the organization. A normal value left past its due date is kept unchanged, which the screen says in those words; a high-impact value escalates instead.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">ONB-15</span> The person who finishes the rest becomes the default owner of delegated items.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">WSP-14, GOV-21, BR-44</span> The activation rules, the publish check and the dry run run again on the server when the executive approves; any failure stops the launch, nothing changes, and the failing rule is named with its one-click fix (here the approval fix applied at 10:21). The lifecycle is published with the executive as reviewer and the AI as author, and launch needs this person's approval.</span></li>
+    <li><span class="anno" data-n="6"></span><span><span class="req">ONB-16</span> The undo window, 14 days by default, removes the batch's unchanged records and lists and keeps the others. What an undo cannot remove is named here, before the approval, rather than discovered afterwards: sent invitations, a published approval flow a gate decision has used, and a baseline a change request has changed.</span></li>
+    <li><span class="anno" data-n="7"></span><span><span class="req">ONB-15, BR-44, BR-51</span> Every role the launch would grant is a proposal with its source and the difference between the person's current and proposed access. Standard team roles are approved in bulk. A privileged role, one that can approve, publish or change access, is listed by person and approved against that name, because approving 86 invitations in one gesture is not an informed approval of three administrators. The server re-checks every grant against the permission matrix when the launch commits, so a proposal the matrix refuses stops the launch instead of being granted.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# The reviewers of each folder (spec 3.7). While the repositories live on the personal account
+# phongnguyen6691, every line names @phongnguyen6691, until the people of each role have
+# accounts with write access.
+/business/ @phongnguyen6691
+/design/ @phongnguyen6691
+/architecture/ @phongnguyen6691
+/components/app/ @phongnguyen6691
+/components/core/ @phongnguyen6691
+/components/mcp-gateway/ @phongnguyen6691
+/components/agent/ @phongnguyen6691
+/components/keycloak/ @phongnguyen6691
+/components/sandbox/ @phongnguyen6691
+/components/infra/ @phongnguyen6691
+/operations/ @phongnguyen6691

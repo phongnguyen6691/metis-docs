@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Create project · Metis wireframe</title>
+<meta name="wf:id" content="project-create">
+<meta name="wf:title" content="Create project">
+<meta name="wf:area" content="Project execution">
+<meta name="wf:phase" content="MVP">
+<meta name="wf:requirements" content="CHR-17 REG-01 GOV-12 CHR-14 CHR-15 BR-01 BR-13 BR-15 PLT-20">
+<meta name="wf:poc" content="">
+<meta name="wf:summary" content="New project dialog over the registry: placement in workspace, portfolio and an optional program, master record fields, a lifecycle framework version pinned at creation, and the checklist the Draft project must complete before commitment.">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../assets/wireframe.css">
+<style>
+  .x-bg { position: absolute; inset: 0; z-index: 1; overflow: hidden; }
+  .x-help { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1px solid var(--line-strong); font: 600 10px/1 var(--font-ui); color: var(--muted); margin-left: 4px; }
+  .x-tip { border: 1px solid var(--accent); background: var(--surface); border-radius: var(--radius); padding: 9px 11px; font-size: 12.5px; }
+  .x-check { display: inline-flex; width: 18px; justify-content: center; font-weight: 700; flex: none; color: var(--muted); }
+  .x-check.bad { color: var(--critical); } .x-check.ok { color: var(--good); }
+  .x-list .list-row { padding-top: 8px; padding-bottom: 8px; }
+  .x-later { opacity: .6; }
+  .x-pad { padding: 16px 18px; }
+</style>
+</head>
+<body data-shell="app" data-nav="registry" data-workspace="Digital Products" data-crumbs="Digital Products / Registry / New project">
+<main>
+  <section class="overlay" style="border-radius:var(--radius-lg);padding:24px 36px">
+    <div class="card x-bg">
+      <table class="table">
+        <thead><tr><th>ID</th><th>Project</th><th>Program</th><th>Owner</th><th>Sponsor</th><th>Stage</th><th>Health</th><th>Framework</th></tr></thead>
+        <tbody>
+          <tr><td class="code">PRJ-001</td><td>MSME Payment</td><td>MSME Transformation</td><td>A. Wong</td><td>Linh T.</td><td>Development</td><td><span class="rag g">On track</span></td><td>v2.1</td></tr>
+          <tr><td class="code">PRJ-002</td><td>Merchant Onboarding</td><td>MSME Transformation</td><td>M. Johnson</td><td>A. Wong</td><td>Solution</td><td><span class="rag a">At risk</span></td><td>v2.1</td></tr>
+          <tr><td class="code">PRJ-003</td><td>Digital Sales</td><td>Customer</td><td>M. Johnson</td><td>Linh T.</td><td>Design</td><td><span class="rag a">At risk</span></td><td>v2.1</td></tr>
+          <tr><td class="code">PRJ-004</td><td>Mobile App</td><td>Customer</td><td>A. Wong</td><td>Linh T.</td><td>Development</td><td><span class="rag a">At risk</span></td><td>v2.1</td></tr>
+          <tr><td class="code">PRJ-005</td><td>Core Platform</td><td>Platform</td><td>L. Wang</td><td>Linh T.</td><td>Development</td><td><span class="rag r">Off track</span></td><td>v1.9</td></tr>
+          <tr><td class="code">PRJ-006</td><td>Data Platform</td><td>Platform</td><td>L. Wang</td><td>A. Wong</td><td>Development</td><td><span class="rag a">At risk</span></td><td>v1.9</td></tr>
+          <tr><td class="code">PRJ-007</td><td>AML Upgrade</td><td>Regulatory</td><td>A. Wong</td><td>Linh T.</td><td>Test</td><td><span class="rag g">On track</span></td><td>v2.1</td></tr>
+          <tr><td class="code">PRJ-008</td><td>CRM Refresh</td><td>Customer</td><td>M. Johnson</td><td>A. Wong</td><td>Discovery</td><td><span class="rag g">On track</span></td><td>v2.1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal" style="max-width:1120px;margin:0 auto">
+      <div class="head"><span class="h3">New project</span><span class="tag">Digital Products</span><span class="right btn ghost sm">Close</span></div>
+      <div class="grid" style="grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 0">
+        <div class="x-pad grid c2" data-req="CHR-17 REG-01 BR-13">
+          <div class="field"><label>Workspace <span class="anno" data-n="1"></span></label><div class="input locked">Digital Products</div></div>
+          <div class="field"><label>Project ID</label><div class="input locked">Assigned when created</div></div>
+          <div class="field"><label>Portfolio <span class="req">*</span></label><div class="select">Growth</div></div>
+          <div class="field"><label>Program <span class="small muted">optional</span></label><div class="select">MSME Transformation</div></div>
+          <div class="field"><label>Project name <span class="req">*</span> <span class="anno" data-n="2"></span></label><div class="input">MSME Lending Pilot</div><div class="small" style="color:var(--good-text)">✓ No other project in Digital Products has this name</div></div>
+          <div class="field"><label>Client or business unit <span class="req">*</span></label><div class="select">Internal · MSME Banking</div></div>
+          <div class="field span2"><label>Description</label><div class="textarea">Pilot of small-business loans through the merchant app for 200 merchants.</div></div>
+          <div class="field"><label>Project manager <span class="req">*</span></label><div class="select"><span class="row" style="gap:6px"><span class="av">MJ</span>M. Johnson</span></div></div>
+          <div class="field" data-req="CHR-14"><label>Project owner <span class="req">*</span></label><div class="select"><span class="row" style="gap:6px"><span class="av">AW</span>A. Wong</span></div></div>
+          <div class="field" data-req="CHR-14 BR-01"><label>Executive sponsor <span class="anno" data-n="4"></span></label><div class="select ph">Select sponsor</div><div class="small muted">Optional now, required before commitment</div></div>
+          <div class="field" data-req="CHR-15"><label>Strategic objective</label><div class="select">MSME revenue +20%</div><a class="small">Record an exemption instead</a></div>
+          <div class="field span2" data-req="GOV-12 BR-15 PLT-20">
+            <label>Lifecycle framework <span class="req">*</span><span class="x-help">?</span> <span class="anno" data-n="3"></span></label>
+            <div class="select"><span>Company A Digital Delivery v2.1 <span class="chip good" style="margin-left:6px">Published</span></span></div>
+            <div class="x-tip"><b>Pinned at creation.</b> <span class="muted">The project keeps v2.1 and its 7 stages, Discovery to Retro. The v2.2 draft and later versions never change it.</span> <a>What is a lifecycle framework?</a></div>
+          </div>
+          <div class="field span2 x-later"><label>Project template <span class="tag future">Planned V2</span></label><div class="select ph">Start from a saved project with its WBS and charter</div></div>
+        </div>
+
+        <div class="panel x-list" data-req="CHR-17 BR-01 CHR-15">
+          <div class="x-pad stack s">
+            <span class="h3">After you create it <span class="anno" data-n="5"></span></span>
+            <div class="banner accent small"><div>The project starts in <b>Draft</b> at stage 1, Discovery, of the pinned framework.</div></div>
+            <div class="label" style="margin-top:4px">Needed before commitment</div>
+          </div>
+          <div class="list-row"><span class="x-check ok">✓</span><div class="grow"><div class="title-line">Project owner</div><div class="sub">A. Wong, from this form</div></div></div>
+          <div class="list-row"><span class="x-check bad">✕</span><div class="grow"><div class="title-line">Executive sponsor</div><div class="sub">Missing · every committed project needs one</div></div></div>
+          <div class="list-row"><span class="x-check ok">✓</span><div class="grow"><div class="title-line">Strategic objective or exemption</div><div class="sub">MSME revenue +20%</div></div></div>
+          <div class="list-row"><span class="x-check">○</span><div class="grow"><div class="title-line">Charter sections I to IV</div><div class="sub">Identification, key contacts, description and objectives, scope</div></div></div>
+          <div class="list-row"><span class="x-check">○</span><div class="grow"><div class="title-line">Business case, approved</div><div class="sub">Problem, opportunity, benefits, assumptions</div></div></div>
+          <div class="list-row"><span class="x-check">○</span><div class="grow"><div class="title-line">Approved budget</div><div class="sub">Actuals and forecast follow later</div></div></div>
+          <div class="x-pad small muted">This list stays on the project overview until every item is done.</div>
+        </div>
+      </div>
+      <div class="foot"><span class="small muted" style="margin-right:auto">Required: portfolio, name, client or business unit, project manager, owner, framework</span><span class="btn ghost">Cancel</span><span class="btn primary">Create as Draft</span></div>
+    </div>
+  </section>
+</main>
+<section class="wf-notes">
+  <h2>Annotations</h2>
+  <ol>
+    <li><span class="anno" data-n="1"></span><span><span class="req">CHR-17, BR-13</span> A project is always created inside a workspace, here the current one, and placed in a portfolio and, when used, a program of the navigation tree (programs are optional, BRD 7.1); the ID is assigned on creation.</span></li>
+    <li><span class="anno" data-n="2"></span><span><span class="req">REG-01</span> The master record checks required fields and duplicates before creation: the name is checked against the workspace while you type.</span></li>
+    <li><span class="anno" data-n="3"></span><span><span class="req">GOV-12, BR-15, PLT-20</span> Only published framework versions can be chosen; the project stores the exact version and keeps it when v2.2 is published. Inline help explains the term and links to the glossary.</span></li>
+    <li><span class="anno" data-n="4"></span><span><span class="req">CHR-14, BR-01</span> Owner is required now; the sponsor may follow, but the project cannot be committed without both.</span></li>
+    <li><span class="anno" data-n="5"></span><span><span class="req">CHR-17, CHR-15</span> The Draft project gets a setup checklist of what commitment needs: owner and sponsor, strategic objective or exemption (BR-02), charter I to IV, approved business case (CHR-12) and budget. Starting from a project template is planned for V2.</span></li>
+  </ol>
+</section>
+<script src="../assets/shell.js"></script>
+</body>
+</html>
