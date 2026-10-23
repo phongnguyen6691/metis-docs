@@ -209,6 +209,8 @@ Generated from the page headers by tools/generate.mjs; never edit it by hand. Re
 
 - [Metis repositories and central documentation, design](proposals/2026-10-11-repos-and-docs-design.md): Draft. The approved design of the four repositories, the documentation repository and how documents update themselves.
 - [Fast checks](proposals/2026-10-16-fast-checks.md): Draft. The owner's decisions of 16 and 17 Oct 2026 for metis-backend and metis-app, as built; while working a change runs what it touches, GitHub runs the fast group on a push to main and every check on a pull request, the full mutation runs and every counter-test are for a sandbox CI still to be set up and run by hand at night until it exists, and no run of the checks takes more than half the processors or about a third of the memory of the machine; what changed, the times and peaks measured before and after, and the decisions.
+- [Development and checks on the VPS](proposals/2026-10-21-vps-development-design.md): Draft. Proposal of 21 Oct 2026 for Metis to run its dev loop, its checks, its full runs and its Android emulator on a Docker host such as the VPS ai-initiatives, through the pdev remote pack, with everything it runs there and its share of the host coming from inside Metis, so that any VPS with SSH and Docker works the same.
+- [Development and checks on the VPS, implementation plan](proposals/2026-10-21-vps-development-plan.md): Draft. The plan of 21 Oct 2026 that builds the part of the remote runs that is Metis's (the manifest and images in metis-infra, the dev loop with Spring Boot DevTools, the page updates) and proves it on the VPS ai-initiatives, every VPS step after the pdev remote pack passes its own tests on the Mac.
 
 ## tools
 
